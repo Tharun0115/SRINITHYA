@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Compactor Models | SEPL</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#d97706',
+                        dark: '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2" width="64" height="64"> 
+                        <span class="font-bold text-xl md:text-2xl text-primary">SRINITHYA ENGINEERING</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
+                    <a href="index.html#manufacturing" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Manufacturing</a>
+                    <a href="index.html#trading" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Catalogue</a>
+                    <a href="index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get Quote</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg absolute left-0 top-20">
+            <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
+                <a href="index.html#home" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Home</a>
+                <a href="index.html#manufacturing" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Manufacturing</a>
+                <a href="index.html#trading" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Catalogue</a>
+                <a href="index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="py-20 pt-32">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div class="mb-4">
+                <a href="../INDEX.HTML#trading" class="text-primary hover:text-secondary font-semibold inline-flex items-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Equipment Catalogue
+                </a>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-3">Earth Compactor Models</h1>
+            <p class="text-xl text-gray-600 mb-12">Heavy-duty rollers for reliable soil and asphalt densification.</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+                
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition lg:col-start-2">
+                    <div class="h-56 bg-gray-100 flex items-center justify-center">
+                        <img src="https://via.placeholder.com/600x400/1E3A8A/FFFFFF?text=EC-500+Roller" alt="EC-500 Earth Compactor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">EC-500 (Walk-Behind)</h3>
+                        <p class="text-sm text-gray-600 mb-3">500kg centrifugal force, double-drum vibratory action for trenches and foundations.</p>
+                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
+                            <li><i class="fa-solid fa-road text-primary mr-2"></i> Drum Width: 650mm</li>
+                            <li><i class="fa-solid fa-gauge-high text-primary mr-2"></i> Force: 10 kN</li>
+                            <li><i class="fa-solid fa-engine text-primary mr-2"></i> Engine: Diesel 8HP</li>
+                        </ul>
+                        <button class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition">Get Specs</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
+                    <div class="h-56 bg-gray-100 flex items-center justify-center">
+                        <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=EC-1500+Trench" alt="EC-1500 Earth Compactor" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">EC-1500 (Trench Roller)</h3>
+                        <p class="text-sm text-gray-600 mb-3">Remote control operation, ideal for confined spaces and high-density soil.</p>
+                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
+                            <li><i class="fa-solid fa-road text-primary mr-2"></i> Drum Width: 850mm</li>
+                            <li><i class="fa-solid fa-gauge-high text-primary mr-2"></i> Force: 20 kN</li>
+                            <li><i class="fa-solid fa-engine text-primary mr-2"></i> Control: Remote/Wired</li>
+                        </ul>
+                        <button class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition">Get Specs</button>
+                    </div>
+                </div>
+
+            </div>
+            
+            </div>
+    </section>
+    
+    <footer class="bg-dark text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 SRINITHYA ENGINEERING.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
