@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Srinithya Engineering</title>
+    <link rel="icon" type="image/png" href="./Assets/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#d97706',
+                        dark: '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="./Assets/logo.png" alt="SEPL Logo" class="h-16 w-auto mr-2"> 
+                        <span class="font-bold text-xl md:text-2xl text-primary">SEPL</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
+                    <a href="about.html" class="text-secondary font-bold px-2 py-1 border-b-2 border-secondary">About Us</a>
+                    <a href="index.html#manufacturing" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Manufacturing</a>
+                    <a href="index.html#trading" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Catalogue</a>
+                    <a href="index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get Quote</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg absolute left-0 top-20">
+            <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
+                <a href="index.html" class="block text-gray-700 hover:text-secondary font-medium px-3 py-3 rounded">Home</a>
+                <a href="about.html" class="block text-secondary font-bold bg-gray-50 px-3 py-3 rounded">About Us</a>
+                <a href="index.html#manufacturing" class="block text-gray-700 hover:text-secondary font-medium px-3 py-3 rounded">Manufacturing</a>
+                <a href="index.html#contact" class="block text-primary font-bold px-3 py-3 rounded">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary pt-32 pb-16 text-white text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">About Srinithya Engineering</h1>
+        <p class="text-lg text-blue-200">Building trust through precision and durability.</p>
+    </header>
+
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-20 left-0 w-32 h-32 bg-yellow-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute top-20 right-0 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">Who We Are</h2>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Srinithya Engineering Private Limited (SEPL) was established with a singular vision: to revolutionize the construction infrastructure sector in India. We recognized a gap in the market for machinery that is not only technologically advanced but also rugged enough to withstand the demanding conditions of Indian construction sites.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Today, we stand as a dual-force entity: a direct manufacturer of heavy-duty Bar Processing Machinery and a premier trading house for global Light Construction Equipment. By combining indigenous engineering with international standards, we deliver solutions that reduce downtime and maximize productivity.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 border-t pt-8 mt-8">
+                        <div>
+                            <span class="block text-3xl font-bold text-secondary">10+</span>
+                            <span class="text-sm text-gray-500">Years Experience</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-secondary">500+</span>
+                            <span class="text-sm text-gray-500">Happy Clients</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-secondary">24/7</span>
+                            <span class="text-sm text-gray-500">Service Support</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative h-96 rounded-lg overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1000&auto=format&fit=crop" alt="Factory Floor" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-inner border border-gray-200">
+                <div class="grid md:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="md:col-span-5 relative">
+                        <div class="absolute inset-0 border-4 border-secondary rounded-lg transform -translate-x-3 -translate-y-3"></div>
+                        <div class="relative bg-white p-2 shadow-lg rounded-lg">
+                             <img src="./Assets/MD.png" 
+                                 alt="Director Photo" 
+                                 class="w-full h-auto rounded object-cover aspect-[6/5]">
+                            
+                            <div class="bg-primary text-white text-center py-3 mt-2 rounded">
+                                <h3 class="text-xl font-bold">Mr. Krishna Varma</h3> 
+                                <p class="text-xs uppercase tracking-widest text-blue-200">Managing Director</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7">
+                        <i class="fa-solid fa-quote-left text-5xl text-blue-100 mb-6 block"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">A Note from the Director's Desk</h3>
+                        
+                        <div class="space-y-4 text-gray-600 italic text-lg leading-relaxed">
+                            <p>
+                                "At Srinithya Engineering, we believe that the strength of a building lies in the quality of its foundation, and the speed of its construction relies on the quality of its equipment."
+                            </p>
+                            <p>
+                                "Our mission is not just to sell machines, but to be a partner in every pillar you build. We have engineered our bar benders and cutters to be the workhorses of your site—reliable, safe, and efficient. When you choose SEPL, you are choosing a promise of quality that endures."
+                            </p>
+                        </div>
+                        <div class="mt-8 flex items-center">
+                             <img src="./Assets/logo.png" alt="Signature" class="h-12 opacity-50 grayscale">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-dark text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 SRINITHYA ENGINEERING.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
+            }
+        });
+    </script>
+</body>
+</html>
