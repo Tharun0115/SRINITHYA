@@ -24,8 +24,8 @@
         }
     </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <style>
         .sr-only {
@@ -48,12 +48,6 @@
             0% { left: -10%; }
             100% { left: 110%; }
         }
-        @keyframes vibrate-machine {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(1px, 1px); }
-            50% { transform: translate(-1px, -1px); }
-            75% { transform: translate(-1px, 1px); }
-        }
         @keyframes fly-across {
             0% { left: -10%; transform: translateY(0); }
             100% { left: 110%; transform: translateY(-20px); }
@@ -73,7 +67,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 ease-in-out will-change-transform" id="navbar">
+    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 ease-in-out will-change-transform transform-gpu" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out group" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
@@ -108,13 +102,9 @@
                             <!-- City Flyover -->
                             <div class="absolute bottom-0 left-0 w-full h-full pointer-events-none opacity-20 z-0">
                                 <div class="absolute bottom-2 left-[-10%] w-[120%] h-24 border-t-8 border-gray-400 rounded-[50%]"></div>
-                                <!-- Pillars -->
-                                <div class="absolute bottom-0 left-[10%] w-2 h-6 bg-gray-400"></div>
-                                <div class="absolute bottom-0 left-[30%] w-2 h-10 bg-gray-400"></div>
-                                <div class="absolute bottom-0 left-[50%] w-2 h-12 bg-gray-400"></div>
-                                <div class="absolute bottom-0 left-[70%] w-2 h-10 bg-gray-400"></div>
-                                <div class="absolute bottom-0 left-[90%] w-2 h-6 bg-gray-400"></div>
                             </div>
+
+                           
 
                             <!-- Singapore Towers & Skyscrapers -->
                             <div class="absolute bottom-1 left-1 md:left-4 flex items-end space-x-1 opacity-30 text-gray-500 z-10">
@@ -236,10 +226,10 @@
                 <p class="text-gray-600 mt-4">Engineered in-house for durability and high-volume processing.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group">
                     <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src="./Assets/bar_cutter.png" alt="Bar Cutting Machine" class="h-40 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+                        <img src="./Assets/bar_cutter.png" alt="Bar Cutting Machine" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Bar Cutting Machine</h3>
@@ -254,7 +244,7 @@
 
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group">
                     <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src="./Assets/bar_bender.png" alt="Bar Bending Machine" class="h-40 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+                        <img src="./Assets/bar_bender.png" alt="Bar Bending Machine" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Bar Bending Machine</h3>
@@ -269,7 +259,7 @@
 
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group">
                     <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src="./Assets/scrap_straightener.png" alt="Scrap Straightener" class="h-40 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+                        <img src="./Assets/scrap_straightener.png" alt="Scrap Straightener" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Scrap Straightener</h3>
@@ -284,7 +274,7 @@
 
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group">
                     <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src="./Assets/srp.png" alt="Suspended Rope Platform" class="h-40 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+                        <img src="./Assets/srp.png" alt="Suspended Rope Platform" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Suspended Rope Platform (SRP/RSP)</h3>
@@ -309,7 +299,7 @@
                 <p class="text-gray-600 mt-4">Top-tier equipment for surface preparation and concrete finishing.</p>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between">
                     <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
@@ -479,6 +469,24 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website.%0APlease%20call%20me%20back%20for%20a%20detailed%20description%20of%20my%20requirements." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Callback Success Modal -->
+    <div id="callback-modal" class="fixed inset-0 flex items-center justify-center z-[60] hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="bg-white p-6 rounded-lg shadow-2xl z-10 max-w-sm mx-4 text-center transform transition-all scale-100">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa-solid fa-check text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
+            <p class="text-gray-600 mb-6">Your callback request has been submitted.<br>Please wait for one of our representatives to call you.</p>
+            <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
+        </div>
+    </div>
+
     <script>
         // Mobile Menu Toggle Logic
         const btn = document.getElementById('mobile-menu-button');
@@ -609,6 +617,30 @@
                 ticking = true;
             }
         });
+
+        // WhatsApp Callback Modal Logic
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        const modal = document.getElementById('callback-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', () => {
+                sessionStorage.setItem('whatsapp_clicked', 'true');
+            });
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible' && sessionStorage.getItem('whatsapp_clicked') === 'true') {
+                modal.classList.remove('hidden');
+                sessionStorage.removeItem('whatsapp_clicked');
+            }
+        });
+
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+        }
     </script>
 </body>
 </html>
