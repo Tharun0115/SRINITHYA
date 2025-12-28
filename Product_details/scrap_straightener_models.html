@@ -69,7 +69,7 @@
                 
                 <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/525252/FFFFFF?text=SS-12+Straightener" alt="SS-12 Scrap Straightener" class="w-full h-full object-cover">
+                        <img src="../Assets/scrap_straightener.png" alt="SS-12 Scrap Straightener" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 text-center">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">SS-12 Eco Model</h3>
@@ -85,7 +85,7 @@
 
                 <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/525252/FFFFFF?text=SSC-16+With+Cutter" alt="SSC-16 Straightener with Cutter" class="w-full h-full object-cover">
+                        <img src="../Assets/scrap_straightener.png" alt="SSC-16 Straightener with Cutter" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6 text-center">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">SSC-16 Pro (+ Cutter)</h3>
@@ -121,6 +121,18 @@
                 icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
             } else {
                 icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Disable Right Click
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        // Disable Image Dragging
+        document.addEventListener('dragstart', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
             }
         });
     </script>

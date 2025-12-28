@@ -67,12 +67,12 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition group">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=GW-40+Manual+Bender" alt="GW-40 Bar Bending Machine" class="w-full h-full object-cover">
+                        <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=SBB42+Manual+Bender" alt="SBB42" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                     </div>
                     <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">GW-40 Semi-Auto</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SBB42</h3>
                         <p class="text-sm text-gray-600 mb-4">Reliable bending for stirrups and standard angles with pin-type control.</p>
                         <ul class="text-sm text-left text-gray-700 space-y-2 mb-6 inline-block w-full px-4">
                             <li class="flex items-center"><i class="fa-solid fa-rotate text-primary w-6"></i> <span>Bend Dia: 6mm - 32mm</span></li>
@@ -83,13 +83,13 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition group">
                     <div class="h-64 bg-gray-100 flex items-center justify-center relative">
-                        <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=GW-50+CNC+Bender" alt="GW-50 CNC Bar Bending Machine" class="w-full h-full object-cover">
+                        <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=SBB52+CNC+Bender" alt="SBB52" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                         <span class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-2 py-1 rounded">Digital Control</span>
                     </div>
                     <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">GW-50 CNC Digital</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SBB52</h3>
                         <p class="text-sm text-gray-600 mb-4">High-precision bending with programmable angles for complex shapes.</p>
                         <ul class="text-sm text-left text-gray-700 space-y-2 mb-6 inline-block w-full px-4">
                             <li class="flex items-center"><i class="fa-solid fa-rotate text-primary w-6"></i> <span>Bend Dia: Up to 42mm</span></li>
@@ -122,6 +122,18 @@
                 icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
             } else {
                 icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Disable Right Click
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        // Disable Image Dragging
+        document.addEventListener('dragstart', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
             }
         });
     </script>
