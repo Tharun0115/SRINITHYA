@@ -19,6 +19,14 @@
             }
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY"); // IMPORTANT: Replace with your EmailJS Public Key
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .sr-only {
@@ -40,17 +48,21 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2" width="64" height="64"> 
-                        <span class="font-bold text-xl md:text-2xl text-primary">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                    <a href="../index.html" class="flex items-center">
+                        <img src="../Assets/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2" id="nav-logo"> 
+                        <span class="font-extrabold text-2xl md:text-4xl text-primary tracking-tight drop-shadow-sm">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                     </a>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
-                    <a href="index.html#manufacturing" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Manufacturing</a>
-                    <a href="index.html#trading" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Catalogue</a>
-                    <a href="index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get Quote</a>
+                    <a href="../index.html#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
+                    <a href="../index.html#manufacturing" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Manufacturing</a>
+                    <a href="../index.html#trading" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Catalogue</a>
+                    <a href="../index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
+                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
+                        <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </button>
                 </div>
 
                 <div class="md:hidden flex items-center">
@@ -63,10 +75,11 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg absolute left-0 top-20">
             <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
-                <a href="index.html#home" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Home</a>
-                <a href="index.html#manufacturing" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Manufacturing</a>
-                <a href="index.html#trading" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Catalogue</a>
-                <a href="index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get Quote</a>
+                <a href="../index.html#home" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Home</a>
+                <a href="../index.html#manufacturing" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Manufacturing</a>
+                <a href="../index.html#trading" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Catalogue</a>
+                <a href="../index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
+                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Estimate Cart</button>
             </div>
         </div>
     </nav>
@@ -75,7 +88,7 @@
         <div class="max-w-7xl mx-auto px-4">
             
             <div class="mb-4">
-                <a href="../index.html#trading" class="text-primary hover:text-secondary font-semibold inline-flex items-center">
+                <a href="../index.html#trading" class="text-primary hover:text-secondary font-semibold inline-flex items-center cursor-pointer">
                     <i class="fa-solid fa-arrow-left mr-2"></i> Back to Equipment Catalogue
                 </a>
             </div>
@@ -85,67 +98,103 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="PC-80" data-weight="80 kg" data-force="15 kN" data-engine="5.5 HP Petrol" data-feature="-">
                     <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/1E3A8A/FFFFFF?text=PC-80+Compactor" alt="PC-80 Plate Compactor" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/600x400/1E3A8A/FFFFFF?text=PC-80+Compactor" alt="PC-80 Plate Compactor" class="w-full h-full object-cover cursor-pointer">
                     </div>
-                    <div class="p-4 text-center">
+                    <div class="p-4 text-center flex flex-col flex-grow">
+                        <div class="flex justify-end -mt-2 -mr-2">
+                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
+                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
+                                <span>Compare</span>
+                            </label>
+                        </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">PC-80 (Light Duty)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Ideal for walkways, small patches, and general light repair work. Forward travel only.</p>
+                        <p class="text-sm text-gray-600 mb-3 flex-grow">Ideal for walkways, small patches, and general light repair work. Forward travel only.</p>
                         <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
                             <li><i class="fa-solid fa-weight-hanging text-primary mr-2"></i> Operating Weight: 80 kg</li>
                             <li><i class="fa-solid fa-gauge-high text-primary mr-2"></i> Centrifugal Force: 15 kN</li>
                             <li><i class="fa-solid fa-gas-pump text-primary mr-2"></i> Engine: 5.5 HP Petrol</li>
                         </ul>
-                        <button class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition">Get Specs</button>
+                        <div class="flex flex-col gap-2 mt-auto">
+                            <button class="w-full bg-primary text-white py-2 rounded text-sm hover:bg-blue-800 transition">Get Specs</button>
+                            <button onclick="addToCart('PC-80', 1000, '8429', 18)" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Estimate</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="PC-150" data-weight="150 kg" data-force="25 kN" data-engine="8 HP Diesel" data-feature="-">
                     <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=PC-150+Compactor" alt="PC-150 Plate Compactor" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=PC-150+Compactor" alt="PC-150 Plate Compactor" class="w-full h-full object-cover cursor-pointer">
                     </div>
-                    <div class="p-4 text-center">
+                    <div class="p-4 text-center flex flex-col flex-grow">
+                        <div class="flex justify-end -mt-2 -mr-2">
+                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
+                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
+                                <span>Compare</span>
+                            </label>
+                        </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">PC-150 (Medium Duty)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Higher compaction depth suitable for medium bases, gravel, and utility trenches.</p>
+                        <p class="text-sm text-gray-600 mb-3 flex-grow">Higher compaction depth suitable for medium bases, gravel, and utility trenches.</p>
                         <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
                             <li><i class="fa-solid fa-weight-hanging text-primary mr-2"></i> Operating Weight: 150 kg</li>
                             <li><i class="fa-solid fa-gauge-high text-primary mr-2"></i> Centrifugal Force: 25 kN</li>
                             <li><i class="fa-solid fa-engine text-primary mr-2"></i> Engine: 8 HP Diesel</li>
                         </ul>
-                        <button class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition">Get Specs</button>
+                        <div class="flex flex-col gap-2 mt-auto">
+                            <button class="w-full bg-primary text-white py-2 rounded text-sm hover:bg-blue-800 transition">Get Specs</button>
+                            <button onclick="addToCart('PC-150', 2000, '8429', 18)" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Estimate</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="PC-250R" data-weight="250 kg" data-force="35 kN" data-engine="10 HP Petrol/Diesel" data-feature="Reversible">
                     <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/1E3A8A/FFFFFF?text=PC-250R+Compactor" alt="PC-250R Plate Compactor" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/600x400/1E3A8A/FFFFFF?text=PC-250R+Compactor" alt="PC-250R Plate Compactor" class="w-full h-full object-cover cursor-pointer">
                     </div>
-                    <div class="p-4 text-center">
+                    <div class="p-4 text-center flex flex-col flex-grow">
+                        <div class="flex justify-end -mt-2 -mr-2">
+                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
+                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
+                                <span>Compare</span>
+                            </label>
+                        </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">PC-250R (Reversible)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Reversible control for maximum maneuverability in confined backfill areas and trenches.</p>
+                        <p class="text-sm text-gray-600 mb-3 flex-grow">Reversible control for maximum maneuverability in confined backfill areas and trenches.</p>
                         <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
                             <li><i class="fa-solid fa-weight-hanging text-primary mr-2"></i> Operating Weight: 250 kg</li>
                             <li><i class="fa-solid fa-gauge-high text-primary mr-2"></i> Centrifugal Force: 35 kN</li>
                             <li><i class="fa-solid fa-gas-pump text-primary mr-2"></i> Engine: 10 HP Petrol/Diesel</li>
                         </ul>
-                        <button class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition">Get Specs</button>
+                        <div class="flex flex-col gap-2 mt-auto">
+                            <button class="w-full bg-primary text-white py-2 rounded text-sm hover:bg-blue-800 transition">Get Specs</button>
+                            <button onclick="addToCart('PC-250R', 3000, '8429', 18)" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Estimate</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="PC-300H" data-weight="300 kg" data-force="40 kN" data-engine="-" data-feature="Hydraulic Reversible">
                     <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=PC-300H+Compactor" alt="PC-300H Plate Compactor" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=PC-300H+Compactor" alt="PC-300H Plate Compactor" class="w-full h-full object-cover cursor-pointer">
                     </div>
-                    <div class="p-4 text-center">
+                    <div class="p-4 text-center flex flex-col flex-grow">
+                        <div class="flex justify-end -mt-2 -mr-2">
+                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
+                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
+                                <span>Compare</span>
+                            </label>
+                        </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">PC-300H (High Force)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Hydraulic system for superior deep compaction and smooth directional changes.</p>
+                        <p class="text-sm text-gray-600 mb-3 flex-grow">Hydraulic system for superior deep compaction and smooth directional changes.</p>
                         <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
                             <li><i class="fa-solid fa-weight-hanging text-primary mr-2"></i> Operating Weight: 300 kg</li>
                             <li><i class="fa-solid fa-gauge-high text-primary mr-2"></i> Centrifugal Force: 40 kN</li>
                             <li><i class="fa-solid fa-engine text-primary mr-2"></i> Feature: Hydraulic Reversible</li>
                         </ul>
-                        <button class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition">Get Specs</button>
+                        <div class="flex flex-col gap-2 mt-auto">
+                            <button class="w-full bg-primary text-white py-2 rounded text-sm hover:bg-blue-800 transition">Get Specs</button>
+                            <button onclick="addToCart('PC-300H', 1000, '8429', 18)" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Estimate</button>
+                        </div>
                     </div>
                 </div>
 
@@ -159,6 +208,97 @@
         </div>
     </footer>
 
+    <!-- Compare Bar -->
+    <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-dark text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center">
+                        <span class="font-bold text-lg">Compare Models</span>
+                        <span id="compare-count" class="ml-2 bg-secondary text-white text-sm font-bold w-6 h-6 flex items-center justify-center rounded-full">0</span>
+                    </div>
+                    <button onclick="clearCompare()" class="text-gray-400 hover:text-white" title="Clear Selection">&times; Clear</button>
+                    <button id="compare-now-btn" onclick="showCompareModal()" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:cursor-not-allowed" disabled>
+                        Compare Now
+                    </button>
+                </div>
+            </div>
+            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-gray-600">
+                <!-- Preview items will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Compare Modal -->
+    <div id="compare-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
+            <div class="p-4 border-b flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-primary">Compare Plate Compactors</h2>
+                <button onclick="closeCompareModal()" class="text-gray-500 hover:text-red-600 text-3xl">&times;</button>
+            </div>
+            <div id="compare-modal-body" class="p-6 overflow-y-auto">
+                <!-- Comparison table will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website.%0APlease%20call%20me%20back%20for%20a%20detailed%20description%20of%20my%20requirements." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Callback Success Modal -->
+    <div id="callback-modal" class="fixed inset-0 flex items-center justify-center z-[60] hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="bg-white p-6 rounded-lg shadow-2xl z-10 max-w-sm mx-4 text-center transform transition-all scale-100">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa-solid fa-check text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
+            <p class="text-gray-600 mb-6">Your callback request has been submitted.<br>Please wait for one of our representatives to call you.</p>
+            <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 overflow-hidden">
+                <div id="modal-progress-bar" class="bg-green-500 h-1.5 rounded-full w-full"></div>
+            </div>
+            <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
+        </div>
+    </div>
+
+    <!-- Cart/Estimate Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-[70] hidden">
+        <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
+            <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
+                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice mr-2"></i>Estimate Builder</h2>
+                <div>
+                    <button onclick="clearCart()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Estimate">
+                        <i class="fa-solid fa-trash-can"></i> Clear
+                    </button>
+                    <button onclick="toggleCart()" class="text-white hover:text-gray-200 focus:outline-none"><i class="fa-solid fa-xmark text-2xl"></i></button>
+                </div>
+            </div>
+            <div class="p-4 overflow-y-auto flex-grow bg-gray-50" id="cart-items">
+                <!-- Cart Items will be injected here -->
+            </div>
+            <div class="p-4 border-t bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-600 font-medium">Estimated Total (Excl. GST):</span>
+                    <span id="cart-total" class="text-2xl font-bold text-primary">₹0</span>
+                </div>
+                <button onclick="generatePDF()" class="w-full bg-secondary text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-download"></i> Download Quotation/Estimate
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Viewer Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
+            <img id="modal-image" src="" alt="Enlarged Product View" class="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl">
+            <button onclick="closeImageModal()" class="absolute -top-2 -right-2 text-white bg-red-600 rounded-full h-8 w-8 flex items-center justify-center text-xl hover:bg-red-700 focus:outline-none">&times;</button>
+        </div>
+    </div>
+
     <script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
@@ -171,8 +311,8 @@
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
             } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
             }
         });
 
@@ -184,6 +324,294 @@
                 icon.classList.add('fa-bars');
             });
         });
+
+        // WhatsApp Callback Modal Logic
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        const modal = document.getElementById('callback-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', () => {
+                sessionStorage.setItem('whatsapp_clicked', 'true');
+            });
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible' && sessionStorage.getItem('whatsapp_clicked') === 'true') {
+                setTimeout(() => {
+                    modal.classList.remove('hidden');
+                    playNotificationSound();
+                    sessionStorage.removeItem('whatsapp_clicked');
+
+                    const progressBar = document.getElementById('modal-progress-bar');
+                    if (progressBar) {
+                        progressBar.style.transition = 'none';
+                        progressBar.style.width = '100%';
+                        void progressBar.offsetWidth; // Force reflow
+                        progressBar.style.transition = 'width 3s linear';
+                        progressBar.style.width = '0%';
+                    }
+
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                    }, 3000);
+                }, 1000);
+            }
+        });
+
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+        }
+
+        function playNotificationSound() {
+            // Simple "Ding" sound using Web Audio API
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+            gain.gain.setValueAtTime(0.1, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.00001, ctx.currentTime + 0.5);
+            
+            osc.start();
+            osc.stop(ctx.currentTime + 0.5);
+        }
+
+        // --- Cart & Estimate Logic ---
+        let cart = JSON.parse(localStorage.getItem('sepl_cart')) || [];
+
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            if(badge) {
+                const count = cart.reduce((acc, item) => acc + item.qty, 0);
+                if (count > 0) {
+                    badge.textContent = count;
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            }
+        }
+
+        function addToCart(name, price, hsn, gst) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, hsn, gst, qty: 1 });
+            }
+            saveCart();
+            updateCartBadge();
+            renderCart();
+            
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Added';
+            btn.classList.add('bg-green-600');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-green-600');
+            }, 1000);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCart();
+            renderCart();
+            updateCartBadge();
+        }
+
+        function updateQty(index, change) {
+            if (cart[index].qty + change > 0) {
+                cart[index].qty += change;
+            } else {
+                cart.splice(index, 1);
+            }
+            saveCart();
+            renderCart();
+            updateCartBadge();
+        }
+
+        function saveCart() {
+            localStorage.setItem('sepl_cart', JSON.stringify(cart));
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            const panel = document.getElementById('cart-panel');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                renderCart();
+                setTimeout(() => panel.classList.remove('translate-x-full'), 10);
+            } else {
+                panel.classList.add('translate-x-full');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+            if (!container) return;
+            if (cart.length === 0) {
+                container.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-gray-400"><i class="fa-solid fa-cart-arrow-down text-6xl mb-4"></i><p>Your estimate list is empty.</p></div>';
+                totalEl.textContent = '₹0';
+                return;
+            }
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price * item.qty;
+                html += `<div class="bg-white p-4 rounded-lg shadow-sm mb-3 border border-gray-100"><div class="flex justify-between items-start mb-2"><h3 class="font-bold text-gray-800">${item.name}</h3><button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></div><div class="flex justify-between items-center"><div class="text-sm text-gray-500">Unit: ₹${item.price.toLocaleString('en-IN')}</div><div class="flex items-center border rounded"><button onclick="updateQty(${index}, -1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">-</button><span class="px-2 py-1 font-medium text-sm w-8 text-center">${item.qty}</span><button onclick="updateQty(${index}, 1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">+</button></div></div></div>`;
+            });
+            container.innerHTML = html;
+            totalEl.textContent = '₹' + total.toLocaleString('en-IN');
+        }
+
+        async function generatePDF() {
+            if (cart.length === 0) { alert("Please add items to the estimate first."); return; }
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const logoImg = document.getElementById('nav-logo');
+            if (logoImg) { try { doc.addImage(logoImg, 'PNG', 14, 10, 25, 25); } catch (e) {} }
+            doc.setFontSize(16); doc.setTextColor(30, 58, 138); doc.setFont("helvetica", "bold");
+            doc.text("SRINITHYA ENGINEERING PRIVATE LIMITED", 45, 20);
+            doc.setFontSize(10); doc.setTextColor(80); doc.setFont("helvetica", "normal");
+            doc.text("9-95/8, Jyothi Nagar Colony, Balaji Nagar,", 45, 26); doc.text("Hyderabad, Telangana - 500087", 45, 31);
+            doc.setFont("helvetica", "bold"); doc.text("GST NO: 36ABDCS5864M1ZP", 45, 38);
+            doc.setDrawColor(200); doc.line(14, 45, 196, 45);
+            doc.setFontSize(14); doc.setTextColor(0); doc.text("ESTIMATE / QUOTATION", 14, 55);
+            doc.setFontSize(10); doc.text(`Date: ${new Date().toLocaleDateString('en-IN')}`, 160, 55);
+            const tableColumn = ["S.No", "Item", "Quantity", "Taxable Value", "GST (18%)", "Amount"];
+            const tableRows = []; let grandTotal = 0;
+            cart.forEach((item, index) => { const taxable = item.price * item.qty; const gstAmt = taxable * (item.gst / 100); const total = taxable + gstAmt; grandTotal += total; tableRows.push([index + 1, item.name, item.qty, "Rs. " + taxable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), "Rs. " + gstAmt.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), "Rs. " + total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })]); });
+            tableRows.push([{ content: 'Grand Total', colSpan: 5, styles: { halign: 'right', fontStyle: 'bold' } }, { content: "Rs. " + grandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), styles: { fontStyle: 'bold' } }]);
+            doc.autoTable({ head: [tableColumn], body: tableRows, startY: 60, theme: 'grid', headStyles: { fillColor: [30, 58, 138], textColor: 255 }, footStyles: { fillColor: [217, 119, 6] }, styles: { fontSize: 9, cellPadding: 3 }, columnStyles: { 0: { cellWidth: 15 }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 20, halign: 'center' }, 3: { halign: 'right' }, 4: { halign: 'right' }, 5: { halign: 'right' } } });
+            const finalY = doc.lastAutoTable.finalY + 10; doc.setFontSize(8); doc.setTextColor(100); doc.text("This is a computer generated estimate.", 14, finalY); doc.save("SEPL_Estimate.pdf");
+        }
+        updateCartBadge();
+
+        // --- Image Modal Logic ---
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+
+        function openImageModal(src) {
+            if (imageModal && modalImage) {
+                modalImage.src = src;
+                imageModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeImageModal() {
+            if (imageModal) {
+                imageModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
+
+        // --- Compare Logic ---
+        let compareItems = [];
+
+        function toggleCompare(checkbox) {
+            const card = checkbox.closest('[data-model]');
+            const model = card.dataset.model;
+
+            if (checkbox.checked) {
+                if (compareItems.length >= 4) {
+                    alert("You can only compare up to 4 models at a time.");
+                    checkbox.checked = false;
+                    return;
+                }
+                const specs = {
+                    'Model': model,
+                    'Weight': card.dataset.weight,
+                    'Force': card.dataset.force,
+                    'Engine': card.dataset.engine,
+                    'Feature': card.dataset.feature || '-'
+                };
+                compareItems.push(specs);
+            } else {
+                compareItems = compareItems.filter(item => item.Model !== model);
+            }
+            updateCompareBar();
+        }
+
+        function updateCompareBar() {
+            const compareBar = document.getElementById('compare-bar');
+            const compareCount = document.getElementById('compare-count');
+            const compareNowBtn = document.getElementById('compare-now-btn');
+            const previewContainer = document.getElementById('compare-items-preview');
+
+            if (compareItems.length > 0) {
+                compareBar.classList.remove('hidden');
+                setTimeout(() => compareBar.classList.remove('translate-y-full'), 10);
+            } else {
+                compareBar.classList.add('translate-y-full');
+                setTimeout(() => compareBar.classList.add('hidden'), 300);
+            }
+
+            compareCount.textContent = compareItems.length;
+            
+            previewContainer.innerHTML = compareItems.map(item => `
+                <span class="text-xs bg-gray-700 px-2 py-1 rounded">${item.Model.split(' ')[0]}</span>
+            `).join('');
+
+            compareNowBtn.disabled = compareItems.length < 2;
+        }
+
+        function clearCompare() {
+            compareItems = [];
+            document.querySelectorAll('.compare-checkbox').forEach(cb => cb.checked = false);
+            updateCompareBar();
+        }
+
+        function showCompareModal() {
+            const modal = document.getElementById('compare-modal');
+            const modalBody = document.getElementById('compare-modal-body');
+            
+            if (compareItems.length < 2) return;
+
+            const headers = ['Model', 'Weight', 'Force', 'Engine', 'Feature'];
+            let tableHTML = '<table class="w-full border-collapse text-left"><thead><tr><th class="p-3 border-b-2 border-gray-200 font-bold text-primary">Feature</th>';
+            compareItems.forEach(item => {
+                tableHTML += `<th class="p-3 border-b-2 border-gray-200 font-bold text-primary text-center">${item.Model}</th>`;
+            });
+            tableHTML += '</tr></thead><tbody>';
+
+            headers.forEach((header) => {
+                if (header === 'Model') return;
+                tableHTML += `<tr class="hover:bg-gray-50 even:bg-gray-50"><td class="p-3 border-b border-gray-200 font-semibold">${header}</td>`;
+                compareItems.forEach(item => {
+                    tableHTML += `<td class="p-3 border-b border-gray-200 text-center">${item[header]}</td>`;
+                });
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</tbody></table>';
+            modalBody.innerHTML = tableHTML;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCompareModal() {
+            const modal = document.getElementById('compare-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
     </script>
 </body>
 </html>

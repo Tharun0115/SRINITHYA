@@ -24,6 +24,15 @@
         }
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            // IMPORTANT: Replace with your EmailJS Public Key from your EmailJS account settings.
+            emailjs.init("YOUR_PUBLIC_KEY"); 
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
@@ -63,6 +72,26 @@
             position: absolute;
             animation: fly-across 25s linear infinite;
         }
+        @keyframes total-flash {
+          50% {
+            transform: scale(1.1);
+            color: #d97706; /* secondary color */
+          }
+        }
+        .flash-animation {
+          animation: total-flash 0.5s ease-in-out;
+        }
+
+        /* Scroll-triggered animation styles */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -72,9 +101,9 @@
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out group" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
                 <div class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out" id="brand-wrapper">
-                    <img src="./Assets/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo"> 
+                    <img src="./Assets/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden px-2 py-1 flex-grow text-center transition-all duration-300 ease-in-out" id="name-strip">
-                        <span class="font-bold text-sm sm:text-lg md:text-2xl text-primary relative z-10 transition-all duration-300 ease-in-out md:whitespace-nowrap leading-tight" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="font-extrabold text-2xl md:text-4xl text-primary relative z-10 transition-all duration-300 ease-in-out md:whitespace-nowrap tracking-tight drop-shadow-sm block" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
                         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
@@ -172,7 +201,11 @@
                     <a href="about.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">About Us</a>
                     <a href="#manufacturing" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Manufacturing</a>
                     <a href="#trading" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Catalogue</a>
-                    <a href="#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get Quote</a>
+                    <a href="#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
+                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
+                        <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -183,7 +216,8 @@
                 <a href="about.html" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">About Us</a>
                 <a href="#manufacturing" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Manufacturing</a>
                 <a href="#trading" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Catalogue</a>
-                <a href="#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get Quote</a>
+                <a href="#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
+                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Estimate Cart</button>
             </div>
         </div>
     </nav>
@@ -201,7 +235,7 @@
             >
         </div>
         
-        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center sm:text-left">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center sm:text-left fade-in-section">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
                 Precision <span class="text-secondary">Machinery</span> & <br> reliable Equipment.
             </h1>
@@ -220,16 +254,16 @@
 
     <section id="manufacturing" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 fade-in-section">
                 <span class="text-secondary font-bold uppercase tracking-wider">Our Production</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Our Top selling Machinery</h2>
                 <p class="text-gray-600 mt-4">Engineered in-house for durability and high-volume processing.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group">
+                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-100">
                     <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src="./Assets/bar_cutter.png" alt="Bar Cutting Machine" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110">
+                        <img onclick="openImageModal(this.src)" src="./Assets/bar_cutter.png" alt="Bar Cutting Machine" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Bar Cutting Machine</h3>
@@ -238,13 +272,13 @@
                             <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Heavy Duty Gearbox</li>
                             <li><i class="fa-solid fa-check text-green-600 mr-2"></i> ISO Certified Components</li>
                         </ul>
-                        <a href="Product_details/bar_cutting_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition">Details</a>
+                        <a href="Product_details/bar_cutting_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
                     </div>
                 </div>
 
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group">
+                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-200">
                     <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src="./Assets/bar_bender.png" alt="Bar Bending Machine" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110">
+                        <img onclick="openImageModal(this.src)" src="./Assets/bar_bender.png" alt="Bar Bending Machine" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Bar Bending Machine</h3>
@@ -253,13 +287,13 @@
                             <li><i class="fa-solid fa-check text-green-600 mr-2"></i> CNC Control Options</li>
                             <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Emergency Stop Safety</li>
                         </ul>
-                        <a href="Product_details/bar_bending_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition">Details</a>
+                        <a href="Product_details/bar_bending_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
                     </div>
                 </div>
 
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group">
+                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-300">
                     <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src="./Assets/scrap_straightener.png" alt="Scrap Straightener" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110">
+                        <img onclick="openImageModal(this.src)" src="./Assets/scrap_straightener.png" alt="Scrap Straightener" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Scrap Straightener</h3>
@@ -268,13 +302,13 @@
                             <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Multiple models</li>
                             <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Overload Protection</li>
                         </ul>
-                        <a href="Product_details/scrap_straightener_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition">Details</a>
+                        <a href="Product_details/scrap_straightener_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
                     </div>
                 </div>
 
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group">
+                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-500">
                     <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src="./Assets/srp.png" alt="Suspended Rope Platform" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110">
+                        <img onclick="openImageModal(this.src)" src="./Assets/srp.png" alt="Suspended Rope Platform" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Suspended Rope Platform (SRP/RSP)</h3>
@@ -285,7 +319,7 @@
                             <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Length upto 100Mtr</li>
                             <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Weight upto 1000Kgs</li>
                         </ul>
-                        <a href="#contact" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition">Details</a>
+                        <a href="#contact" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
                     </div>
                 </div>
             </div>
@@ -294,103 +328,89 @@
 
     <section id="trading" class="py-20 bg-gray-100">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 fade-in-section">
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Light Construction Equipment</h2>
                 <p class="text-gray-600 mt-4">Top-tier equipment for surface preparation and concrete finishing.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between">
+                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-100">
                     <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
                         <span class="absolute top-2 right-2 z-10 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                         <div id="pc-carousel" class="flex h-full w-full transition-transform duration-700 ease-in-out">
-                            <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+1" alt="Plate Compactor 1" class="w-full h-full object-cover flex-shrink-0">
-                            <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+2" alt="Plate Compactor 2" class="w-full h-full object-cover flex-shrink-0">
-                            <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+3" alt="Plate Compactor 3" class="w-full h-full object-cover flex-shrink-0">
-                            <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+4" alt="Plate Compactor 4" class="w-full h-full object-cover flex-shrink-0">
-                            <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+5" alt="Plate Compactor 5" class="w-full h-full object-cover flex-shrink-0">
+                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+1" alt="Plate Compactor 1" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
+                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+2" alt="Plate Compactor 2" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
+                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+3" alt="Plate Compactor 3" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
+                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+4" alt="Plate Compactor 4" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
+                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+5" alt="Plate Compactor 5" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
                         </div>
                     </div>
                     
                     <h4 class="font-bold text-lg text-gray-900">Plate Compactors</h4>
                     <p class="text-xs text-gray-600 mt-2 mb-4">For soil and asphalt compaction.</p>
                     
-                    <a href="Product_details/plate_compactor_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">
-                        Click to View Models
-                    </a>
+                    <a href="Product_details/plate_compactor_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
                 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between">
+                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-200">
                     <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+PT+Models" alt="Power Trowel Models Preview" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+PT+Models" alt="Power Trowel Models Preview" class="w-full h-full object-cover cursor-pointer">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Power Trowels</h4>
                     <p class="text-xs text-gray-600 mt-2 mb-4">Professional concrete finishing.</p>
-                    <a href="Product_details/power_trowel_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">
-                        Click to View Models
-                    </a>
+                    <a href="Product_details/power_trowel_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between">
+                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-300">
                     <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+CM+Models" alt="Concrete Mixer Models Preview" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+CM+Models" alt="Concrete Mixer Models Preview" class="w-full h-full object-cover cursor-pointer">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Concrete Mixers</h4>
                     <p class="text-xs text-gray-600 mt-2 mb-4">Portable 1-bag / 2-bag mixers.</p>
-                    <a href="Product_details/concrete_mixer_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">
-                        Click to View Models
-                    </a>
+                    <a href="Product_details/concrete_mixer_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
                 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between">
+                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-500">
                     <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+HFC+Models" alt="High Frequency Converter Models Preview" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+HFC+Models" alt="High Frequency Converter Models Preview" class="w-full h-full object-cover cursor-pointer">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">High Freq. Converter</h4>
                     <p class="text-xs text-gray-600 mt-2 mb-4">High performance frequency generators.</p>
-                    <a href="Product_details/hfc_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">
-                        Click to View Models
-                    </a>
+                    <a href="Product_details/hfc_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
                 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between">
+                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-100">
                     <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+EC+Models" alt="Earth Compactor Models Preview" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+EC+Models" alt="Earth Compactor Models Preview" class="w-full h-full object-cover cursor-pointer">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Earth Compactor</h4>
                     <p class="text-xs text-gray-600 mt-2 mb-4">Heavy duty surface compaction.</p>
-                    <a href="Product_details/earth_compactor_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">
-                        Click to View Models
-                    </a>
+                    <a href="Product_details/earth_compactor_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
                 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between">
+                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-200">
                     <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Safety+Gear" alt="Safety Equipment Preview" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Safety+Gear" alt="Safety Equipment Preview" class="w-full h-full object-cover cursor-pointer">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Options</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Safety Equipment</h4>
                     <p class="text-xs text-gray-600 mt-2 mb-4">Helmets, jackets, shoes and eye protection.</p>
-                    <a href="Product_details/safety_equipment_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">
-                        Click to View Models
-                    </a>
+                    <a href="Product_details/safety_equipment_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between">
+                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-300">
                     <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
                         <span class="absolute top-2 right-2 z-10 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
-                        <img src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Vibrators" alt="Vibrators Preview" class="w-full h-full object-cover">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Vibrators" alt="Vibrators Preview" class="w-full h-full object-cover cursor-pointer">
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Vibrators</h4>
                     <p class="text-xs text-gray-600 mt-2 mb-4">Electric and petrol vibrators for concrete consolidation.</p>
-                    <a href="Product_details/vibrators.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">
-                        Click to View Models
-                    </a>
+                    <a href="Product_details/vibrators.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
             </div>
         </div>
@@ -398,7 +418,7 @@
 
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid md:grid-cols-2 gap-12 fade-in-section">
                 <div>
                     <a href="./Assets/Service Campaign catalogue 2025.pdf" download class="inline-flex items-center bg-secondary text-white font-bold px-6 py-3 rounded shadow-md hover:bg-yellow-600 transition mb-8">
                         <i class="fa-solid fa-download mr-2"></i> Download Brochure
@@ -421,28 +441,36 @@
                             <i class="fa-solid fa-envelope text-secondary mt-1 mr-4"></i>
                             <p>sales@srinithyaepl.in</p>
                         </div>
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-id-card text-secondary mt-1 mr-4 w-4 text-center"></i>
+                            <p>CIN: U51909TG2020PTC139942</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-receipt text-secondary mt-1 mr-4 w-4 text-center"></i>
+                            <p>GSTIN: 36ABDCS5864M1ZP</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-50 p-8 rounded-lg shadow-inner">
-                    <form>
+                    <form id="contact-form">
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div>
                                 <label for="name" class="sr-only">Your Name</label>
-                                <input id="name" type="text" placeholder="Your Name" name="name" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                                <input id="name" type="text" placeholder="Your Name" name="from_name" required class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                             </div>
                             <div>
                                 <label for="company" class="sr-only">Company Name</label>
-                                <input id="company" type="text" placeholder="Company Name" name="company" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                                <input id="company" type="text" placeholder="Company Name" name="company_name" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                             </div>
                         </div>
                         <div class="mb-4">
                             <label for="email" class="sr-only">Contact Number</label>
-                            <input id="phone" type="tel" placeholder="Contact Number" name="contact" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                            <input id="phone" type="tel" placeholder="Contact Number" name="contact_number" required class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                         </div>
                         <div class="mb-4">
                             <label for="product" class="sr-only">Product Interest</label>
-                            <select id="product" name="product" class="p-3 border rounded w-full bg-white text-gray-700 focus:outline-none focus:border-secondary">
+                            <select id="product" name="product_interest" class="p-3 border rounded w-full bg-white text-gray-700 focus:outline-none focus:border-secondary">
                                 <option value="">Select Product Interest</option>
                                 <option>Bar Cutting Machine</option>
                                 <option>Bar Bending Machine</option>
@@ -452,9 +480,9 @@
                         </div>
                         <div class="mb-4">
                             <label for="message" class="sr-only">Message</label>
-                            <textarea id="message" rows="4" placeholder="Message / Specific Requirements" name="message" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800"></textarea>
+                            <textarea id="message" rows="4" placeholder="Message / Specific Requirements" name="message" required class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800"></textarea>
                         </div>
-                        <button type="submit" class="bg-primary text-white font-bold w-full py-3 rounded hover:bg-blue-800 transition">
+                        <button type="submit" id="inquiry-submit-btn" class="bg-primary text-white font-bold w-full py-3 rounded hover:bg-blue-800 transition">
                             Send Inquiry
                         </button>
                     </form>
@@ -484,6 +512,47 @@
             <h3 class="text-xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
             <p class="text-gray-600 mb-6">Your callback request has been submitted.<br>Please wait for one of our representatives to call you.</p>
             <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
+        </div>
+    </div>
+
+    <!-- Cart/Estimate Modal -->
+    <div id="cart-modal" class="fixed inset-0 z-[70] hidden">
+        <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
+            <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
+                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice mr-2"></i>Estimate Builder</h2>
+                <div>
+                    <button onclick="clearCart()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Estimate">
+                        <i class="fa-solid fa-trash-can"></i> Clear
+                    </button>
+                    <button onclick="toggleCart()" class="text-white hover:text-gray-200 focus:outline-none"><i class="fa-solid fa-xmark text-2xl"></i></button>
+                </div>
+            </div>
+            <div class="p-4 overflow-y-auto flex-grow bg-gray-50" id="cart-items">
+                <!-- Cart Items will be injected here -->
+            </div>
+            <div class="p-4 border-t bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-600 font-medium">Estimated Total (Excl. GST):</span>
+                    <span id="cart-total" class="text-2xl font-bold text-primary">₹0</span>
+                </div>
+                <button onclick="generatePDF()" class="w-full bg-secondary text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-download"></i> Download Quotation/Estimate
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="hidden fixed bottom-6 right-24 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition z-50 flex items-center justify-center">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Image Viewer Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
+            <img id="modal-image" src="" alt="Enlarged Product View" class="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl">
+            <button onclick="closeImageModal()" class="absolute -top-2 -right-2 text-white bg-red-600 rounded-full h-8 w-8 flex items-center justify-center text-xl hover:bg-red-700 focus:outline-none">&times;</button>
         </div>
     </div>
 
@@ -563,13 +632,14 @@
                         navbar.classList.add('shadow-lg');
                         
                         // Grid Layout Change (Desktop)
-                        navContainer.classList.remove('md:grid-cols-1');
-                        navContainer.classList.add('md:grid-cols-[auto_1fr]', 'md:items-center');
+                        navContainer.classList.remove('md:grid', 'md:grid-cols-1');
+                        navContainer.classList.add('md:flex', 'md:flex-row', 'md:items-center');
 
                         // Top Bar Adjustments
                         topBar.classList.remove('py-2');
-                        topBar.classList.add('py-1', 'md:w-auto');
+                        topBar.classList.add('py-1', 'md:w-auto', 'flex-shrink', 'min-w-0');
                         
+                        // Brand Wrapper Adjustments
                         // Logo Shrink
                         logo.classList.remove('h-16');
                         logo.classList.add('h-10');
@@ -582,35 +652,36 @@
                         animationLayer.classList.add('opacity-0');
                         
                         // Font Size
-                        companyName.classList.remove('text-sm', 'sm:text-lg', 'md:text-2xl');
-                        companyName.classList.add('text-xs', 'sm:text-sm', 'md:text-lg');
+                        companyName.classList.remove('text-2xl', 'md:text-4xl');
+                        companyName.classList.add('text-xs', 'md:text-base');
 
                         // Nav Links Adjustments
                         navLinks.classList.remove('w-full', 'border-t', 'justify-center', 'py-2');
-                        navLinks.classList.add('justify-start', 'pl-8', 'py-1');
+                        navLinks.classList.add('justify-start', 'pl-8', 'py-1', 'flex-shrink-0');
                     } else {
                         // Revert to Default State
                         navbar.classList.remove('shadow-lg');
                         
-                        navContainer.classList.add('md:grid-cols-1');
-                        navContainer.classList.remove('md:grid-cols-[auto_1fr]', 'md:items-center');
+                        // Grid Layout Revert
+                        navContainer.classList.add('md:grid', 'md:grid-cols-1');
+                        navContainer.classList.remove('md:flex', 'md:flex-row', 'md:items-center');
 
                         topBar.classList.add('py-2');
-                        topBar.classList.remove('py-1', 'md:w-auto');
+                        topBar.classList.remove('py-1', 'md:w-auto', 'flex-shrink', 'min-w-0');
                         
+                        // Brand Wrapper Revert
                         logo.classList.add('h-16');
                         logo.classList.remove('h-10');
 
                         nameStrip.classList.add('flex-grow', 'text-center', 'px-2', 'py-1');
                         nameStrip.classList.remove('ml-2', 'text-left');
-                        
                         animationLayer.classList.remove('opacity-0');
                         
-                        companyName.classList.add('text-sm', 'sm:text-lg', 'md:text-2xl');
-                        companyName.classList.remove('text-xs', 'sm:text-sm', 'md:text-lg');
+                        companyName.classList.add('text-2xl', 'md:text-4xl');
+                        companyName.classList.remove('text-xs', 'md:text-base');
 
                         navLinks.classList.add('w-full', 'border-t', 'justify-center', 'py-2');
-                        navLinks.classList.remove('justify-start', 'pl-8', 'py-1');
+                        navLinks.classList.remove('justify-start', 'pl-8', 'py-1', 'flex-shrink-0');
                     }
                     ticking = false;
                 });
@@ -631,8 +702,15 @@
 
         document.addEventListener('visibilitychange', () => {
             if (document.visibilityState === 'visible' && sessionStorage.getItem('whatsapp_clicked') === 'true') {
-                modal.classList.remove('hidden');
-                sessionStorage.removeItem('whatsapp_clicked');
+                setTimeout(() => {
+                    modal.classList.remove('hidden');
+                    playNotificationSound();
+                    sessionStorage.removeItem('whatsapp_clicked');
+
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                    }, 3000);
+                }, 1000);
             }
         });
 
@@ -641,6 +719,417 @@
                 modal.classList.add('hidden');
             });
         }
+
+        function playNotificationSound() {
+            // Simple "Ding" sound using Web Audio API
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+            gain.gain.setValueAtTime(0.1, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.00001, ctx.currentTime + 0.5);
+            
+            osc.start();
+            osc.stop(ctx.currentTime + 0.5);
+        }
+
+        // --- Cart & Estimate Logic ---
+        let cart = JSON.parse(localStorage.getItem('sepl_cart')) || [];
+
+        // --- New Helper Functions for Quote Numbering ---
+        function getFinancialYear() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth(); // 0-11 (April is 3)
+
+            if (month >= 3) { // April or later
+                const start = String(year).slice(-2);
+                const end = String(year + 1).slice(-2);
+                return `${start}${end}`;
+            } else { // Before April
+                const start = String(year - 1).slice(-2);
+                const end = String(year).slice(-2);
+                return `${start}${end}`;
+            }
+        }
+
+        function getNextQuoteNumber() {
+            const currentFY = getFinancialYear();
+            let quoteData = JSON.parse(localStorage.getItem('sepl_quote_counter')) || { number: 0, fy: '' };
+
+            if (quoteData.fy === currentFY) {
+                quoteData.number += 1;
+            } else {
+                // Reset for the new financial year
+                quoteData.number = 1;
+                quoteData.fy = currentFY;
+            }
+
+            localStorage.setItem('sepl_quote_counter', JSON.stringify(quoteData));
+            return String(quoteData.number).padStart(3, '0');
+        }
+
+        // --- New function to send email via EmailJS ---
+        function sendPdfByEmail(pdfDoc, filename) {
+            // IMPORTANT: You need to set up an EmailJS account (emailjs.com).
+            // 1. Get your Service ID.
+            // 2. Create an email template. Your template should be configured to handle an attachment.
+            //    EmailJS has documentation on sending attachments via Base64.
+            // 3. Get your Template ID.
+            const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS Service ID
+            const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS Template ID
+
+            // Convert the PDF to a Base64 string, removing the data URI prefix
+            const pdfBase64 = pdfDoc.output('datauristring').split(',')[1];
+
+            const templateParams = {
+                to_email: 'tharun05312@gmail.com',
+                quote_filename: filename,
+                pdf_attachment: pdfBase64,
+                // You can add more variables here to match your template
+                // e.g., customer_name, total_amount, etc.
+            };
+
+            // Check if placeholder IDs are still there
+            if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID') {
+                console.warn("EmailJS is not configured. Please replace placeholder IDs in the script.");
+                // Silently fail for the user, but log for the developer.
+                return;
+            }
+
+            emailjs.send(serviceID, templateID, templateParams)
+                .then(function(response) {
+                   console.log('Email successfully sent!', response.status, response.text);
+                   alert('A copy of the estimate has been sent to our office.');
+                }, function(error) {
+                   console.error('Failed to send email:', error);
+                   alert('Failed to send email copy. Please check console for details.');
+                });
+        }
+
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            if(!badge) return;
+            const count = cart.reduce((acc, item) => acc + item.qty, 0);
+            if (count > 0) {
+                badge.textContent = count;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        function addToCart(name, price, hsn, gst) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, hsn, gst, qty: 1 });
+            }
+            saveCart();
+            updateCartBadge();
+            renderCart();
+            
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Added';
+            btn.classList.add('bg-green-600');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-green-600');
+            }, 1000);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCart();
+            renderCart();
+            updateCartBadge();
+        }
+
+        function clearCart() {
+            if (cart.length > 0 && confirm("Are you sure you want to clear all items from the estimate?")) {
+                cart = [];
+                saveCart();
+                renderCart();
+                updateCartBadge();
+            }
+        }
+
+        function updateQty(index, change) {
+            if (cart[index].qty + change > 0) {
+                cart[index].qty += change;
+            } else {
+                cart.splice(index, 1);
+            }
+            saveCart();
+            renderCart();
+            updateCartBadge();
+        }
+
+        function saveCart() {
+            localStorage.setItem('sepl_cart', JSON.stringify(cart));
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            const panel = document.getElementById('cart-panel');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                renderCart();
+                setTimeout(() => panel.classList.remove('translate-x-full'), 10);
+            } else {
+                panel.classList.add('translate-x-full');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+            if (!container) return;
+            if (cart.length === 0) {
+                container.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-gray-400"><i class="fa-solid fa-cart-arrow-down text-6xl mb-4"></i><p>Your estimate list is empty.</p></div>';
+                totalEl.textContent = '₹0';
+                return;
+            }
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                html += `
+                    <div class="bg-white p-4 rounded-lg shadow-sm mb-3 border border-gray-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-gray-800">${item.name}</h3>
+                            <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">Unit: ₹${item.price.toLocaleString('en-IN')}</div>
+                            <div class="flex items-center border rounded">
+                                <button onclick="updateQty(${index}, -1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">-</button>
+                                <span class="px-2 py-1 font-medium text-sm w-8 text-center">${item.qty}</span>
+                                <button onclick="updateQty(${index}, 1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+            
+            const newTotalText = '₹' + total.toLocaleString('en-IN');
+            // Only animate if the total text is different
+            if (totalEl.textContent !== newTotalText) {
+                totalEl.textContent = newTotalText;
+                totalEl.classList.add('flash-animation');
+                totalEl.addEventListener('animationend', () => {
+                    totalEl.classList.remove('flash-animation');
+                }, { once: true });
+            } else {
+                totalEl.textContent = newTotalText;
+            }
+        }
+
+        async function generatePDF() {
+            if (cart.length === 0) {
+                alert("Please add items to the estimate first.");
+                return;
+            }
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Header
+            const logoImg = document.getElementById('nav-logo');
+            if (logoImg) {
+                try {
+                    doc.addImage(logoImg, 'PNG', 14, 10, 25, 25);
+                } catch (e) {
+                    console.warn("Logo could not be added", e);
+                }
+            }
+            doc.setFontSize(16);
+            doc.setTextColor(30, 58, 138); // Primary Blue
+            doc.setFont("helvetica", "bold");
+            doc.text("SRINITHYA ENGINEERING PRIVATE LIMITED", 45, 20);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(80);
+            doc.setFont("helvetica", "normal");
+            doc.text("9-95/8, Jyothi Nagar Colony, Balaji Nagar,", 45, 26);
+            doc.text("Hyderabad, Telangana - 500087", 45, 31);
+            doc.setFont("helvetica", "bold");
+            doc.text("GST NO: 36ABDCS5864M1ZP", 45, 38);
+            
+            doc.setDrawColor(200);
+            doc.line(14, 45, 196, 45);
+            
+            doc.setFontSize(14);
+            doc.setTextColor(0);
+            doc.text("ESTIMATE / QUOTATION", 14, 55);
+            doc.setFontSize(10);
+            doc.text(`Date: ${new Date().toLocaleDateString('en-IN')}`, 160, 55);
+            // Table Data
+            const tableColumn = ["S.No", "Item", "Quantity", "Taxable Value", "GST (18%)", "Amount"];
+            const tableRows = [];
+            let grandTotal = 0;
+            
+            cart.forEach((item, index) => {
+                const taxable = item.price * item.qty;
+                const gstAmt = taxable * (item.gst / 100);
+                const total = taxable + gstAmt;
+                grandTotal += total;
+                tableRows.push([
+                    index + 1,
+                    item.name,
+                    item.qty,
+                    "Rs. " + taxable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+                    "Rs. " + gstAmt.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+                    "Rs. " + total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                ]);
+            });
+            // Grand Total Row
+            tableRows.push([
+                { content: 'Grand Total', colSpan: 5, styles: { halign: 'right', fontStyle: 'bold' } },
+                { content: "Rs. " + grandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), styles: { fontStyle: 'bold' } }
+            ]);
+            doc.autoTable({
+                head: [tableColumn],
+                body: tableRows,
+                startY: 60,
+                theme: 'grid',
+                headStyles: { fillColor: [30, 58, 138], textColor: 255 },
+                footStyles: { fillColor: [217, 119, 6] },
+                styles: { fontSize: 9, cellPadding: 3 },
+                columnStyles: {
+                    0: { cellWidth: 15 },
+                    1: { cellWidth: 'auto' },
+                    2: { cellWidth: 20, halign: 'center' },
+                    3: { halign: 'right' },
+                    4: { halign: 'right' },
+                    5: { halign: 'right' }
+                }
+            });
+            // Footer
+            const finalY = doc.lastAutoTable.finalY + 10;
+            doc.setFontSize(8);
+            doc.setTextColor(100);
+            doc.text("This is a computer generated estimate.", 14, finalY);
+            
+            // --- New Filename and Email Logic ---
+            const quoteNumber = getNextQuoteNumber();
+            const financialYear = getFinancialYear();
+            const newFilename = `Q-${financialYear}${quoteNumber}.pdf`;
+
+            // 1. Save the file for the user
+            doc.save(newFilename);
+
+            // 2. Send a copy via EmailJS
+            try {
+                sendPdfByEmail(doc, newFilename);
+            } catch (e) {
+                console.error("EmailJS sending failed. Ensure you have configured your Public Key, Service ID, and Template ID.", e);
+            }
+        }
+
+        // Initialize
+        updateCartBadge();
+
+        // --- Scroll to Top Logic ---
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        }, { passive: true });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // --- Scroll Animation Observer ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // --- Contact Form Submission Logic ---
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('inquiry-submit-btn');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // IMPORTANT: Configure a new template in EmailJS for this form.
+            const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS Service ID
+            const templateID = 'YOUR_INQUIRY_TEMPLATE_ID'; // Replace with a NEW Template ID for inquiries
+
+            if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_INQUIRY_TEMPLATE_ID') {
+                alert("The contact form is not yet configured. Please contact the site administrator.");
+                return;
+            }
+
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending...';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    submitBtn.innerHTML = 'Inquiry Sent!';
+                    alert('Thank you for your inquiry! We will get back to you shortly.');
+                    contactForm.reset();
+                    setTimeout(() => { submitBtn.innerHTML = originalBtnText; submitBtn.disabled = false; }, 4000);
+                }, (err) => {
+                    submitBtn.innerHTML = 'Failed to Send';
+                    alert('An error occurred. Please try again.\n' + JSON.stringify(err));
+                    setTimeout(() => { submitBtn.innerHTML = originalBtnText; submitBtn.disabled = false; }, 4000);
+                });
+        });
+
+        // --- Image Modal Logic ---
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+
+        function openImageModal(src) {
+            if (imageModal && modalImage) {
+                modalImage.src = src;
+                imageModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        function closeImageModal() {
+            if (imageModal) {
+                imageModal.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        }
+
+        // Close modal on escape key press
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
     </script>
 </body>
 </html>
