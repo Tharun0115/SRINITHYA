@@ -91,7 +91,7 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition group flex flex-col" data-model="SBC52 Heavy Duty" data-capacity="Up to 42mm TMT" data-power="4 KW Motor" data-gearbox="Reinforced Oil Bath">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition group flex flex-col" data-model="SBC52 Heavy Duty" data-category="bar-cutters" data-capacity="Up to 42mm TMT" data-power="4 KW Motor" data-gearbox="Reinforced Oil Bath">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img onclick="openImageModal(this.src)" src="../Assets/bar_cutter.png" alt="SBC52 Bar Cutting Machine" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition group flex flex-col" data-model="SBC42 Standard" data-capacity="Up to 32mm TMT" data-power="3 KW Motor" data-gearbox="Speed: 32 times/min">
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition group flex flex-col" data-model="SBC42 Standard" data-category="bar-cutters" data-capacity="Up to 32mm TMT" data-power="3 KW Motor" data-gearbox="Speed: 32 times/min">
                     <div class="h-64 bg-gray-100 flex items-center justify-center relative">
                         <img onclick="openImageModal(this.src)" src="../Assets/bar_cutter.png" alt="SBC42 Bar Cutting Machine" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                         <span class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-2 py-1 rounded">Best Seller</span>
@@ -154,7 +154,7 @@
     </footer>
 
     <!-- Compare Bar -->
-    <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-dark text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
+    <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-3">
                 <div class="flex items-center gap-4">
@@ -162,24 +162,24 @@
                         <span class="font-bold text-lg">Compare Models</span>
                         <span id="compare-count" class="ml-2 bg-secondary text-white text-sm font-bold w-6 h-6 flex items-center justify-center rounded-full">0</span>
                     </div>
-                    <button onclick="clearCompare()" class="text-gray-400 hover:text-white" title="Clear Selection">&times; Clear</button>
-                    <button id="compare-now-btn" onclick="showCompareModal()" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:cursor-not-allowed" disabled>
-                        Compare Now
-                    </button>
+                    <button onclick="clearCompare()" class="text-gray-300 hover:text-white" title="Clear Selection">&times; Clear</button>
                 </div>
+                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>
+                    Compare Now
+                </button>
             </div>
-            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-gray-600">
+            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800">
                 <!-- Preview items will be injected here -->
             </div>
         </div>
     </div>
 
     <!-- Compare Modal -->
-    <div id="compare-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
+    <div id="compare-modal" class="fixed inset-0 z-[90] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
-            <div class="p-4 border-b flex justify-between items-center">
-                <h2 class="text-2xl font-bold text-primary">Compare Bar Cutters</h2>
-                <button onclick="closeCompareModal()" class="text-gray-500 hover:text-red-600 text-3xl">&times;</button>
+            <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
+                <h2 class="text-xl font-bold">Compare Products</h2>
+                <button onclick="closeCompareModal()" class="text-white hover:text-red-200 text-3xl">&times;</button>
             </div>
             <div id="compare-modal-body" class="p-6 overflow-y-auto">
                 <!-- Comparison table will be injected here -->
@@ -235,6 +235,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Link the Universal Compare Script -->
+    <script src="../compare.js"></script>
 
     <!-- Image Viewer Modal -->
     <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
@@ -565,95 +568,6 @@
             }
         });
 
-        // --- Compare Logic ---
-        let compareItems = [];
-
-        function toggleCompare(checkbox) {
-            const card = checkbox.closest('[data-model]');
-            const model = card.dataset.model;
-
-            if (checkbox.checked) {
-                if (compareItems.length >= 4) {
-                    alert("You can only compare up to 4 models at a time.");
-                    checkbox.checked = false;
-                    return;
-                }
-                const specs = {
-                    'Model': model,
-                    'Capacity': card.dataset.capacity,
-                    'Power': card.dataset.power,
-                    'Gearbox': card.dataset.gearbox
-                };
-                compareItems.push(specs);
-            } else {
-                compareItems = compareItems.filter(item => item.Model !== model);
-            }
-            updateCompareBar();
-        }
-
-        function updateCompareBar() {
-            const compareBar = document.getElementById('compare-bar');
-            const compareCount = document.getElementById('compare-count');
-            const compareNowBtn = document.getElementById('compare-now-btn');
-            const previewContainer = document.getElementById('compare-items-preview');
-
-            if (compareItems.length > 0) {
-                compareBar.classList.remove('hidden');
-                setTimeout(() => compareBar.classList.remove('translate-y-full'), 10);
-            } else {
-                compareBar.classList.add('translate-y-full');
-                setTimeout(() => compareBar.classList.add('hidden'), 300);
-            }
-
-            compareCount.textContent = compareItems.length;
-            
-            previewContainer.innerHTML = compareItems.map(item => `
-                <span class="text-xs bg-gray-700 px-2 py-1 rounded">${item.Model.split(' ')[0]}</span>
-            `).join('');
-
-            compareNowBtn.disabled = compareItems.length < 2;
-        }
-
-        function clearCompare() {
-            compareItems = [];
-            document.querySelectorAll('.compare-checkbox').forEach(cb => cb.checked = false);
-            updateCompareBar();
-        }
-
-        function showCompareModal() {
-            const modal = document.getElementById('compare-modal');
-            const modalBody = document.getElementById('compare-modal-body');
-            
-            if (compareItems.length < 2) return;
-
-            const headers = ['Model', 'Capacity', 'Power', 'Gearbox'];
-            let tableHTML = '<table class="w-full border-collapse text-left"><thead><tr><th class="p-3 border-b-2 border-gray-200 font-bold text-primary">Feature</th>';
-            compareItems.forEach(item => {
-                tableHTML += `<th class="p-3 border-b-2 border-gray-200 font-bold text-primary text-center">${item.Model}</th>`;
-            });
-            tableHTML += '</tr></thead><tbody>';
-
-            headers.forEach((header) => {
-                if (header === 'Model') return;
-                tableHTML += `<tr class="hover:bg-gray-50 even:bg-gray-50"><td class="p-3 border-b border-gray-200 font-semibold">${header}</td>`;
-                compareItems.forEach(item => {
-                    tableHTML += `<td class="p-3 border-b border-gray-200 text-center">${item[header]}</td>`;
-                });
-                tableHTML += '</tr>';
-            });
-
-            tableHTML += '</tbody></table>';
-            modalBody.innerHTML = tableHTML;
-
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeCompareModal() {
-            const modal = document.getElementById('compare-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
     </script>
 </body>
 </html>

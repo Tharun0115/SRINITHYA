@@ -174,7 +174,7 @@
     </footer>
 
     <!-- Compare Bar -->
-    <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-dark text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
+    <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-3">
                 <div class="flex items-center gap-4">
@@ -182,13 +182,13 @@
                         <span class="font-bold text-lg">Compare Models</span>
                         <span id="compare-count" class="ml-2 bg-secondary text-white text-sm font-bold w-6 h-6 flex items-center justify-center rounded-full">0</span>
                     </div>
-                    <button onclick="clearCompare()" class="text-gray-400 hover:text-white" title="Clear Selection">&times; Clear</button>
+                    <button onclick="clearCompare()" class="text-gray-300 hover:text-white" title="Clear Selection">&times; Clear</button>
                 </div>
-                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:cursor-not-allowed" disabled>
+                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>
                     Compare Now
                 </button>
             </div>
-            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-gray-600">
+            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800">
                 <!-- Preview items will be injected here -->
             </div>
         </div>
@@ -197,15 +197,18 @@
     <!-- Compare Modal -->
     <div id="compare-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
-            <div class="p-4 border-b flex justify-between items-center">
-                <h2 class="text-2xl font-bold text-primary">Compare Safety Gear</h2>
-                <button onclick="closeCompareModal()" class="text-gray-500 hover:text-red-600 text-3xl">&times;</button>
+            <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
+                <h2 class="text-2xl font-bold">Compare Safety Gear</h2>
+                <button onclick="closeCompareModal()" class="text-white hover:text-red-200 text-3xl">&times;</button>
             </div>
             <div id="compare-modal-body" class="p-6 overflow-y-auto">
                 <!-- Comparison table will be injected here -->
             </div>
         </div>
     </div>
+
+    <!-- Link the Universal Compare Script -->
+    <script src="../compare.js"></script>
 
     <!-- Floating WhatsApp Button -->
     <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website.%0APlease%20call%20me%20back%20for%20a%20detailed%20description%20of%20my%20requirements." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
