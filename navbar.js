@@ -128,8 +128,7 @@ const navbarHTML = `
                 <div class="hidden md:flex items-center justify-center w-full py-2 border-t border-gray-100 space-x-8 transition-all duration-300 ease-in-out" id="nav-links">
                     <a href="${rootPath}index.html#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
                     <a href="${rootPath}about.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">About Us</a>
-                    <a href="${rootPath}index.html#manufacturing" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Manufacturing</a>
-                    <a href="${rootPath}index.html#trading" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Catalogue</a>
+                    <a href="${rootPath}index.html#products" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Products</a>
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
                     <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
                         <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
@@ -143,8 +142,7 @@ const navbarHTML = `
             <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
                 <a href="${rootPath}index.html#home" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Home</a>
                 <a href="${rootPath}about.html" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">About Us</a>
-                <a href="${rootPath}index.html#manufacturing" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Manufacturing</a>
-                <a href="${rootPath}index.html#trading" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Catalogue</a>
+                <a href="${rootPath}index.html#products" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Products</a>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
                 <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Estimate Cart</button>
             </div>
