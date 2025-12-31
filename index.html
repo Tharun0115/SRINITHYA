@@ -30,131 +30,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 ease-in-out will-change-transform transform-gpu" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out group" id="nav-container">
-                <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
-                <div class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out" id="brand-wrapper">
-                    <img src="./Assets/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
-                    <div class="relative overflow-hidden px-2 py-1 flex-grow text-center transition-all duration-300 ease-in-out" id="name-strip">
-                        <span class="font-extrabold text-2xl md:text-4xl text-primary relative z-10 transition-all duration-300 ease-in-out md:whitespace-nowrap tracking-tight drop-shadow-sm block" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
-                        
-                        <!-- Construction Animations Layer -->
-                        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
-                            <!-- 3D Road Surface -->
-                            <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-20 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
-                                <div class="absolute top-1/2 left-0 w-full border-t border-dashed border-white opacity-70"></div>
-                            </div>
-
-                            <!-- Flights -->
-                            <div class="animate-fly top-2 opacity-30 text-blue-500 flex items-center" style="animation-delay: 2s;">
-                                <div class="flex flex-col space-y-1 mr-0.5 transform -rotate-12 origin-right opacity-60 blur-[0.5px]">
-                                    <div class="w-32 h-0.5 bg-gradient-to-r from-transparent to-gray-400"></div>
-                                    <div class="w-32 h-0.5 bg-gradient-to-r from-transparent to-gray-400"></div>
-                                </div>
-                                <i class="fa-solid fa-plane text-xs transform -rotate-12"></i>
-                            </div>
-                            <div class="animate-fly top-4 opacity-20 text-gray-500 flex items-center" style="animation-delay: 15s; animation-duration: 30s;">
-                                <div class="flex flex-col space-y-1 mr-0.5 transform rotate-6 origin-right opacity-60 blur-[0.5px]">
-                                    <div class="w-40 h-0.5 bg-gradient-to-r from-transparent to-gray-500"></div>
-                                    <div class="w-40 h-0.5 bg-gradient-to-r from-transparent to-gray-500"></div>
-                                </div>
-                                <i class="fa-solid fa-plane text-xs transform rotate-6"></i>
-                            </div>
-                            
-                            <!-- City Flyover -->
-                            <div class="absolute bottom-0 left-0 w-full h-full pointer-events-none opacity-20 z-0">
-                                <div class="absolute bottom-2 left-[-10%] w-[120%] h-24 border-t-8 border-gray-400 rounded-[50%]"></div>
-                            </div>
-
-                           
-
-                            <!-- Singapore Towers & Skyscrapers -->
-                            <div class="absolute bottom-1 left-1 md:left-4 flex items-end space-x-1 opacity-30 text-gray-500 z-10">
-                                <!-- Singapore MBS Style -->
-                                <div class="relative flex items-end mx-2">
-                                    <div class="absolute -top-1 left-[-10%] w-[120%] h-1.5 bg-gray-500 rounded-full"></div>
-                                    <i class="fa-solid fa-building text-3xl transform scale-y-125 mx-[1px]"></i>
-                                    <i class="fa-solid fa-building text-3xl transform scale-y-125 mx-[1px]"></i>
-                                    <i class="fa-solid fa-building text-3xl transform scale-y-125 mx-[1px]"></i>
-                                </div>
-                                <i class="fa-solid fa-building text-4xl"></i>
-                                <i class="fa-solid fa-hotel text-3xl"></i>
-                            </div>
-
-                            <!-- High Tech City Skyline -->
-                            <div class="hidden md:flex absolute bottom-1 right-1/4 items-end space-x-0.5 opacity-20 text-gray-400">
-                                <i class="fa-solid fa-building text-2xl"></i>
-                                <i class="fa-solid fa-hotel text-3xl"></i>
-                                <i class="fa-solid fa-gopuram text-2xl"></i>
-                                <i class="fa-solid fa-landmark text-xl"></i>
-                            </div>
-
-                            <!-- Twin Towers & Skyscrapers -->
-                            <div class="hidden md:flex absolute bottom-1 left-1/3 items-end space-x-1 opacity-30 text-gray-500">
-                                <div class="flex flex-col items-center">
-                                    <i class="fa-solid fa-satellite-dish text-xs mb-1"></i>
-                                    <i class="fa-solid fa-building text-4xl transform scale-y-150 origin-bottom"></i>
-                                </div>
-                                <i class="fa-solid fa-building text-4xl transform scale-y-150 origin-bottom"></i>
-                                <i class="fa-solid fa-city text-3xl"></i>
-                            </div>
-
-                            <!-- Car 1 with Smoke -->
-                            <div class="animate-roll bottom-1 text-red-600 opacity-50 flex items-center" style="animation-duration: 10s;">
-                                <div class="w-24 h-2 bg-gradient-to-r from-transparent to-gray-400 opacity-60 mr-1 rounded-l-full"></div>
-                                <i class="fa-solid fa-car-side text-lg"></i>
-                            </div>
-                           
-                            
-                        
-                            
-                            <!-- Scrap Straightener (Gears) -->
-                            <div class="absolute -top-2 -right-2 text-gray-300 opacity-30 animate-spin">
-                                <i class="fa-solid fa-gear text-xl"></i>
-                            </div>
-                            
-                            <!-- Building Construction (Bars rising) -->
-                            <div class="hidden md:flex absolute bottom-1 right-1/4 space-x-1 opacity-30">
-                                <div class="w-1 bg-gray-300 h-2 animate-pulse"></div>
-                                <div class="w-1 bg-gray-300 h-4 animate-pulse delay-75"></div>
-                                <div class="w-1 bg-gray-300 h-3 animate-pulse delay-150"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-                </div>
-                <div class="hidden md:flex items-center justify-center w-full py-2 border-t border-gray-100 space-x-8 transition-all duration-300 ease-in-out" id="nav-links">
-                    <a href="#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
-                    <a href="about.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">About Us</a>
-                    <a href="#manufacturing" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Manufacturing</a>
-                    <a href="#trading" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Catalogue</a>
-                    <a href="#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
-                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
-                        <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
-                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg absolute left-0 top-full">
-            <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
-                <a href="#home" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Home</a>
-                <a href="about.html" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">About Us</a>
-                <a href="#manufacturing" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Manufacturing</a>
-                <a href="#trading" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Catalogue</a>
-                <a href="#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
-                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Estimate Cart</button>
-            </div>
-        </div>
-    </nav>
+    <script src="navbar.js"></script>
 
     <section id="home" class="relative bg-dark min-h-screen flex items-center pt-20">
         <div class="absolute inset-0 z-0 opacity-40">
@@ -196,8 +72,8 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-100">
-                    <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="./Assets/bar_cutter.png" alt="Bar Cutting Machine" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="./Assets/bar_cutter.png" alt="Bar Cutting Machine" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Bar Cutting Machine</h3>
@@ -211,8 +87,8 @@
                 </div>
 
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-200">
-                    <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="./Assets/bar_bender.png" alt="Bar Bending Machine" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="./Assets/bar_bender.png" alt="Bar Bending Machine" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Bar Bending Machine</h3>
@@ -226,8 +102,8 @@
                 </div>
 
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-300">
-                    <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="./Assets/scrap_straightener.png" alt="Scrap Straightener" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="./Assets/scrap_straightener.png" alt="Scrap Straightener" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Scrap Straightener</h3>
@@ -241,8 +117,8 @@
                 </div>
 
                 <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-500">
-                    <div class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="./Assets/srp.png" alt="Suspended Rope Platform" class="h-40 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="./Assets/srp.png" alt="Suspended Rope Platform" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Suspended Rope Platform (SRP/RSP)</h3>
@@ -270,15 +146,9 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-100">
-                    <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
+                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
                         <span class="absolute top-2 right-2 z-10 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
-                        <div id="pc-carousel" class="flex h-full w-full transition-transform duration-700 ease-in-out">
-                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+1" alt="Plate Compactor 1" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
-                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+2" alt="Plate Compactor 2" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
-                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+3" alt="Plate Compactor 3" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
-                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+4" alt="Plate Compactor 4" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
-                            <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=PC+Model+5" alt="Plate Compactor 5" class="w-full h-full object-cover flex-shrink-0 cursor-pointer">
-                        </div>
+                        <img onclick="openImageModal(this.src)" src="./Assets/plate_compactor.png" alt="Plate Compactor" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
                     </div>
                     
                     <h4 class="font-bold text-lg text-gray-900">Plate Compactors</h4>
@@ -288,8 +158,8 @@
                 </div>
                 
                 <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-200">
-                    <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+PT+Models" alt="Power Trowel Models Preview" class="w-full h-full object-cover cursor-pointer">
+                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+PT+Models" alt="Power Trowel Models Preview" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Power Trowels</h4>
@@ -298,8 +168,8 @@
                 </div>
 
                 <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-300">
-                    <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+CM+Models" alt="Concrete Mixer Models Preview" class="w-full h-full object-cover cursor-pointer">
+                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+CM+Models" alt="Concrete Mixer Models Preview" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Concrete Mixers</h4>
@@ -308,8 +178,8 @@
                 </div>
                 
                 <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-500">
-                    <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+HFC+Models" alt="High Frequency Converter Models Preview" class="w-full h-full object-cover cursor-pointer">
+                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+HFC+Models" alt="High Frequency Converter Models Preview" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">High Freq. Converter</h4>
@@ -318,8 +188,8 @@
                 </div>
                 
                 <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-100">
-                    <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+EC+Models" alt="Earth Compactor Models Preview" class="w-full h-full object-cover cursor-pointer">
+                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+EC+Models" alt="Earth Compactor Models Preview" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
                         <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Earth Compactor</h4>
@@ -327,20 +197,10 @@
                     <a href="Product_details/earth_compactor_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
                 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-200">
-                    <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Safety+Gear" alt="Safety Equipment Preview" class="w-full h-full object-cover cursor-pointer">
-                        <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Options</span>
-                    </div>
-                    <h4 class="font-bold text-lg text-gray-900">Safety Equipment</h4>
-                    <p class="text-xs text-gray-600 mt-2 mb-4">Helmets, jackets, shoes and eye protection.</p>
-                    <a href="Product_details/safety_equipment_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
-                </div>
-
                 <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-300">
-                    <div class="h-48 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
+                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
                         <span class="absolute top-2 right-2 z-10 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Vibrators" alt="Vibrators Preview" class="w-full h-full object-cover cursor-pointer">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Vibrators" alt="Vibrators Preview" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
                     </div>
                     <h4 class="font-bold text-lg text-gray-900">Vibrators</h4>
                     <p class="text-xs text-gray-600 mt-2 mb-4">Electric and petrol vibrators for concrete consolidation.</p>
@@ -354,7 +214,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-12 fade-in-section">
                 <div>
-                    <a href="./Assets/Service Campaign catalogue 2025.pdf" download class="inline-flex items-center bg-secondary text-white font-bold px-6 py-3 rounded shadow-md hover:bg-yellow-600 transition mb-8">
+                    <a href="./Assets/Catalogue SEPL.pdf" download class="inline-flex items-center bg-secondary text-white font-bold px-6 py-3 rounded shadow-md hover:bg-yellow-600 transition mb-8">
                         <i class="fa-solid fa-download mr-2"></i> Download Brochure
                     </a>
                     <h2 class="text-3xl font-bold text-primary mb-6">Request a Quote</h2>
@@ -449,39 +309,6 @@
         </div>
     </div>
 
-    <!-- Cart/Estimate Modal -->
-    <div id="cart-modal" class="fixed inset-0 z-[70] hidden">
-        <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
-        <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
-            <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice mr-2"></i>Estimate Builder</h2>
-                <div>
-                    <button onclick="clearCart()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Estimate">
-                        <i class="fa-solid fa-trash-can"></i> Clear
-                    </button>
-                    <button onclick="toggleCart()" class="text-white hover:text-gray-200 focus:outline-none"><i class="fa-solid fa-xmark text-2xl"></i></button>
-                </div>
-            </div>
-            <div class="p-4 overflow-y-auto flex-grow bg-gray-50" id="cart-items">
-                <!-- Cart Items will be injected here -->
-            </div>
-            <div class="p-4 border-t bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-gray-600 font-medium">Estimated Total (Excl. GST):</span>
-                    <span id="cart-total" class="text-2xl font-bold text-primary">₹0</span>
-                </div>
-                <button onclick="generatePDF()" class="w-full bg-secondary text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition shadow-md flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-download"></i> Download Quotation/Estimate
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" class="hidden fixed bottom-6 right-24 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition z-50 flex items-center justify-center">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
-
     <!-- Image Viewer Modal -->
     <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
         <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
@@ -491,71 +318,6 @@
     </div>
 
     <script>
-        // Mobile Menu
-        const btn = document.getElementById('mobile-menu-button');
-        const menu = document.getElementById('mobile-menu');
-        if (btn && menu) {
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-        }
-
-        // Scroll Animation
-        const navbar = document.getElementById('navbar');
-        const navContainer = document.getElementById('nav-container');
-        const topBar = document.getElementById('top-bar');
-        const logo = document.getElementById('nav-logo');
-        const nameStrip = document.getElementById('name-strip');
-        const companyName = document.getElementById('company-name');
-        const animationLayer = document.getElementById('animation-layer');
-        const navLinks = document.getElementById('nav-links');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-                navContainer.classList.remove('md:grid', 'md:grid-cols-1');
-                navContainer.classList.add('md:flex', 'md:flex-row', 'md:items-center');
-                
-                topBar.classList.remove('py-2');
-                topBar.classList.add('py-1', 'md:w-auto', 'flex-shrink', 'min-w-0');
-                
-                logo.classList.remove('h-16');
-                logo.classList.add('h-10');
-                
-                nameStrip.classList.remove('flex-grow', 'text-center', 'px-2', 'py-1');
-                nameStrip.classList.add('ml-2', 'text-left');
-                
-                animationLayer.classList.add('opacity-0');
-                
-                companyName.classList.remove('text-2xl', 'md:text-4xl');
-                companyName.classList.add('text-xs', 'md:text-base');
-                
-                navLinks.classList.remove('w-full', 'border-t', 'justify-center', 'py-2');
-                navLinks.classList.add('justify-start', 'pl-8', 'py-1', 'flex-shrink-0');
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navContainer.classList.add('md:grid', 'md:grid-cols-1');
-                navContainer.classList.remove('md:flex', 'md:flex-row', 'md:items-center');
-                
-                topBar.classList.add('py-2');
-                topBar.classList.remove('py-1', 'md:w-auto', 'flex-shrink', 'min-w-0');
-                
-                logo.classList.add('h-16');
-                logo.classList.remove('h-10');
-                
-                nameStrip.classList.add('flex-grow', 'text-center', 'px-2', 'py-1');
-                nameStrip.classList.remove('ml-2', 'text-left');
-                
-                animationLayer.classList.remove('opacity-0');
-                
-                companyName.classList.add('text-2xl', 'md:text-4xl');
-                companyName.classList.remove('text-xs', 'md:text-base');
-                
-                navLinks.classList.add('w-full', 'border-t', 'justify-center', 'py-2');
-                navLinks.classList.remove('justify-start', 'pl-8', 'py-1', 'flex-shrink-0');
-            }
-        });
-
         // Fade In Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -583,18 +345,6 @@
             if (modal) modal.classList.add('hidden');
         }
 
-        // Cart Toggle (Placeholder)
-        function toggleCart() {
-            const modal = document.getElementById('cart-modal');
-            const panel = document.getElementById('cart-panel');
-            if (modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-                setTimeout(() => panel.classList.remove('translate-x-full'), 10);
-            } else {
-                panel.classList.add('translate-x-full');
-                setTimeout(() => modal.classList.add('hidden'), 300);
-            }
-        }
     </script>
 </body>
 </html>

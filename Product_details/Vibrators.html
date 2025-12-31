@@ -14,6 +14,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../navbar.js"></script>
 
   <style>
     .sr-only {
@@ -31,32 +33,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-  <nav class="bg-white shadow-md fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-20">
-            <div class="flex items-center">
-                <a href="../index.html" class="flex items-center">
-                    <img src="../Assets/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2" id="nav-logo"> 
-                    <span class="font-extrabold text-2xl md:text-4xl text-primary tracking-tight drop-shadow-sm">SEPL</span>
-                </a>
-            </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="../index.html#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
-                <a href="../index.html#manufacturing" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Manufacturing</a>
-                <a href="../index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
-                <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
-                    <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
-                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
-                </button>
-            </div>
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none p-2"><i class="fa-solid fa-bars text-2xl"></i></button>
-            </div>
-        </div>
-    </div>
-  </nav>
-
-  <section class="py-20 pt-32">
+  <section class="py-20 pt-48">
     <div class="max-w-7xl mx-auto px-4">
 
       <div class="mb-4">
@@ -71,8 +48,8 @@
       <div class="grid md:grid-cols-3 gap-6">
         <!-- 3HP 1PH Electrical Vibrators (Single Phase specs) -->
         <div class="bg-white p-4 rounded shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col group" data-model="3HP 1PH Vibrator" data-power="3 HP" data-voltage="220V-240V" data-current="12-15 A" data-speed="2800-3000 RPM">
-          <div class="h-40 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-            <img src="../Assets/electrical_vibrator.png" alt="3HP 1PH Electrical vibrator" class="max-h-40 w-auto object-contain mx-auto transition-transform duration-300 group-hover:scale-110">
+          <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
+            <img src="../Assets/electrical_vibrator.png" alt="3HP 1PH Electrical vibrator" class="h-full w-auto object-contain mx-auto transition-transform duration-300 group-hover:scale-110">
           </div>
           <div class="flex justify-end -mt-2 -mr-2 mb-2">
               <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
@@ -100,8 +77,8 @@
 
         <!-- 3HP 3PH Electrical Vibrators (Three Phase specs) -->
         <div class="bg-white p-4 rounded shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col group" data-model="3HP 3PH Vibrator" data-power="3 HP" data-voltage="380V-415V" data-current="4.5-6 A" data-speed="2850-3000 RPM">
-          <div class="h-40 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-            <img src="../Assets/electrical_vibrator.png" alt="3HP 3PH Electrical vibrator" class="max-h-40 w-auto object-contain mx-auto transition-transform duration-300 group-hover:scale-110">
+          <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
+            <img src="../Assets/electrical_vibrator.png" alt="3HP 3PH Electrical vibrator" class="h-full w-auto object-contain mx-auto transition-transform duration-300 group-hover:scale-110">
           </div>
           <div class="flex justify-end -mt-2 -mr-2 mb-2">
               <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
@@ -129,8 +106,8 @@
 
         <!-- 2HP Electrical Vibrators (2HP typical specs) -->
         <div class="bg-white p-4 rounded shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col group" data-model="2HP Vibrator" data-power="2 HP" data-voltage="220V-240V" data-current="8-10 A" data-speed="2800-3000 RPM">
-          <div class="h-40 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
-            <img src="../Assets/electrical_vibrator.png" alt="2HP Electrical vibrator" class="maxh-40 w-auto object-contain mx-auto transition-transform duration-300 group-hover:scale-110">
+          <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden">
+            <img src="../Assets/electrical_vibrator.png" alt="2HP Electrical vibrator" class="h-full w-auto object-contain mx-auto transition-transform duration-300 group-hover:scale-110">
           </div>
           <div class="flex justify-end -mt-2 -mr-2 mb-2">
               <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
@@ -196,29 +173,6 @@
 
   <!-- Link the Universal Compare Script -->
   <script src="../compare.js"></script>
-
-  <!-- Cart/Estimate Modal -->
-  <div id="cart-modal" class="fixed inset-0 z-[70] hidden">
-    <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
-    <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
-        <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-            <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice mr-2"></i>Estimate Builder</h2>
-            <button onclick="toggleCart()" class="text-white hover:text-gray-200 focus:outline-none"><i class="fa-solid fa-xmark text-2xl"></i></button>
-        </div>
-        <div class="p-4 overflow-y-auto flex-grow bg-gray-50" id="cart-items">
-            <!-- Cart Items will be injected here -->
-        </div>
-        <div class="p-4 border-t bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-            <div class="flex justify-between items-center mb-4">
-                <span class="text-gray-600 font-medium">Estimated Total (Excl. GST):</span>
-                <span id="cart-total" class="text-2xl font-bold text-primary">₹0</span>
-            </div>
-            <button onclick="generatePDF()" class="w-full bg-secondary text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition shadow-md flex items-center justify-center gap-2">
-                <i class="fa-solid fa-download"></i> Download Quotation/Estimate
-            </button>
-        </div>
-    </div>
-  </div>
 
   <!-- Floating WhatsApp Button -->
   <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website.%0APlease%20call%20me%20back%20for%20a%20detailed%20description%20of%20my%20requirements." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
@@ -424,7 +378,9 @@
         doc.autoTable({ head: [tableColumn], body: tableRows, startY: 60, theme: 'grid', headStyles: { fillColor: [30, 58, 138], textColor: 255 }, footStyles: { fillColor: [217, 119, 6] }, styles: { fontSize: 9, cellPadding: 3 }, columnStyles: { 0: { cellWidth: 15 }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 20, halign: 'center' }, 3: { halign: 'right' }, 4: { halign: 'right' }, 5: { halign: 'right' } } });
         const finalY = doc.lastAutoTable.finalY + 10; doc.setFontSize(8); doc.setTextColor(100); doc.text("This is a computer generated estimate.", 14, finalY); doc.save("SEPL_Estimate.pdf");
     }
-    updateCartBadge();
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(updateCartBadge, 500);
+    });
   </script>
 </body>
 </html>

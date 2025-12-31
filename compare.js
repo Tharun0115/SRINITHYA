@@ -79,6 +79,37 @@ window.toggleCompare = function(checkbox) {
     updateCompareBar();
 };
 
+window.removeCompareItem = function(model) {
+    const category = getCurrentPageCategory();
+    if (!category) return;
+
+    let compareItems = getCompareList(category);
+    compareItems = compareItems.filter(item => item.Model !== model);
+    
+    saveCompareList(category, compareItems);
+    updateCompareBar();
+
+    // Refresh modal if open
+    const modal = document.getElementById('compare-modal');
+    if (modal && !modal.classList.contains('hidden')) {
+        if (compareItems.length < 2) {
+            closeCompareModal();
+        } else {
+            showCompareModal();
+        }
+    }
+};
+
+window.removeRowWithAnimation = function(btn) {
+    const row = btn.closest('tr');
+    if (row) {
+        row.style.transition = 'all 0.3s ease-out';
+        row.style.opacity = '0';
+        row.style.transform = 'translateX(-10px)';
+        setTimeout(() => row.remove(), 300);
+    }
+};
+
 // 2. Update Floating Bar UI
 window.updateCompareBar = function() {
     const category = getCurrentPageCategory();
@@ -119,8 +150,9 @@ window.updateCompareBar = function() {
     
     if (previewContainer) {
         previewContainer.innerHTML = compareItems.map(item => `
-            <span class="bg-gray-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+            <span class="bg-gray-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center">
                 ${item.Model}
+                <button onclick="removeCompareItem('${item.Model}')" class="ml-2 hover:text-red-300 focus:outline-none font-bold" title="Remove">&times;</button>
             </span>
         `).join('');
     }
@@ -157,12 +189,21 @@ window.showCompareModal = function() {
         });
     });
 
-    let html = '<div class="overflow-x-auto"><table class="w-full border-collapse text-left text-sm">';
+    let html = `
+        <div class="flex justify-end mb-2">
+            <button onclick="showCompareModal()" class="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1">
+                <i class="fa-solid fa-rotate-left"></i> Restore Hidden Rows
+            </button>
+        </div>
+        <div class="overflow-x-auto"><table class="w-full border-collapse text-left text-sm">`;
     
     // Header (Models)
     html += '<thead><tr><th class="p-3 border-b-2 border-gray-200 font-bold text-primary bg-gray-50">Feature</th>';
     compareItems.forEach(item => {
-        html += `<th class="p-3 border-b-2 border-gray-200 font-bold text-primary text-center bg-gray-50">
+        html += `<th class="p-3 border-b-2 border-gray-200 font-bold text-primary text-center bg-gray-50 relative">
+            <button onclick="removeCompareItem('${item.Model}')" class="absolute top-1 right-1 text-gray-400 hover:text-red-500 p-1" title="Remove">
+                <i class="fa-solid fa-circle-xmark text-lg"></i>
+            </button>
             ${item.Image ? `<img src="${item.Image}" class="h-16 mx-auto mb-2 object-contain">` : ''}
             <div class="mt-2">${item.Model}</div>
         </th>`;
@@ -171,7 +212,13 @@ window.showCompareModal = function() {
 
     // Rows
     allKeys.forEach(key => {
-        html += `<tr class="hover:bg-gray-50 even:bg-gray-50"><td class="p-3 border-b border-gray-200 font-semibold text-gray-700">${key}</td>`;
+        html += `<tr class="hover:bg-gray-50 even:bg-gray-50 group">
+            <td class="p-3 border-b border-gray-200 font-semibold text-gray-700 relative pl-8">
+                <button onclick="removeRowWithAnimation(this)" class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity" title="Remove Row">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                ${key}
+            </td>`;
         compareItems.forEach(item => {
             html += `<td class="p-3 border-b border-gray-200 text-center text-gray-600">${item[key] || '-'}</td>`;
         });
