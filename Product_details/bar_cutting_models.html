@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bar Cutting Machine Models | SEPL</title>
-    
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,6 +15,9 @@
                         primary: '#1e3a8a',
                         secondary: '#d97706',
                         dark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
                     }
                 }
             }
@@ -42,23 +46,33 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="text-gray-800 font-sans">
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
             
             <div class="mb-4">
-                <a href="../index.html#products" class="text-primary hover:text-secondary font-semibold inline-flex items-center">
-                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Products
-                </a>
+                <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <li class="inline-flex items-center">
+                            <a href="../index.html" class="inline-flex items-center hover:text-primary"><i class="fa-solid fa-house mr-2"></i>Home</a>
+                        </li>
+                        <li>
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><a href="../index.html#products" class="hover:text-primary">Products</a></div>
+                        </li>
+                        <li aria-current="page">
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><span class="text-gray-800 font-medium">Bar Cutting Machines</span></div>
+                        </li>
+                    </ol>
+                </nav>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-3">Bar Cutting Machine Models</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Bar Cutting Machine Models</h1>
             <p class="text-xl text-gray-600 mb-12">Heavy-duty hydraulic cutting solutions for TMT bars ranging from 6mm to 52mm.</p>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition group flex flex-col" data-model="SBC52 Heavy Duty" data-category="bar-cutters" data-capacity="Up to 42mm TMT" data-power="4 KW Motor" data-gearbox="Reinforced Oil Bath">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="SBC52 Heavy Duty" data-category="bar-cutters" data-capacity="Up to 42mm TMT" data-power="4 KW Motor" data-gearbox="Reinforced Oil Bath">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img onclick="openImageModal(this.src)" src="../Assets/bar_cutter.png" alt="SBC52 Bar Cutting Machine" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                     </div>
@@ -83,7 +97,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition group flex flex-col" data-model="SBC42 Standard" data-category="bar-cutters" data-capacity="Up to 32mm TMT" data-power="3 KW Motor" data-gearbox="Speed: 32 times/min">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="SBC42 Standard" data-category="bar-cutters" data-capacity="Up to 32mm TMT" data-power="3 KW Motor" data-gearbox="Speed: 32 times/min">
                     <div class="h-64 bg-gray-100 flex items-center justify-center relative">
                         <img onclick="openImageModal(this.src)" src="../Assets/bar_cutter.png" alt="SBC42 Bar Cutting Machine" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                         <span class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-2 py-1 rounded">Best Seller</span>

@@ -1,13 +1,7 @@
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+body {
+    background-color: #f8fafc; /* bg-slate-50 */
+    background-image: radial-gradient(circle at top left, rgba(30, 58, 138, 0.03), transparent 30%),
+                      radial-gradient(circle at bottom right, rgba(217, 119, 6, 0.03), transparent 40%);
 }
 html, body {
     max-width: 100%;
@@ -52,4 +46,103 @@ html, body {
 .fade-in-section.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Megamenu Styles */
+.megamenu-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* 12px */
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #4b5563; /* text-gray-600 */
+    transition: all 0.2s ease-in-out;
+}
+
+.megamenu-link:hover {
+    background-color: #f3f4f6; /* bg-gray-100 */
+    color: #1e3a8a; /* text-primary */
+    transform: translateX(4px);
+}
+
+/* Mobile Submenu Styles */
+.mobile-submenu-link {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #4b5563; /* text-gray-600 */
+    transition: background-color 0.2s, color 0.2s;
+}
+.mobile-submenu-link:hover {
+    background-color: #f9fafb; /* bg-gray-50 */
+    color: #d97706; /* text-secondary */
+}
+
+/* --- High-Tech Modern UI Additions --- */
+
+/* 1. Tech Grid Background (CSS only, no images) */
+.bg-tech-grid {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    pointer-events: none;
+}
+
+/* 2. Modern Slim Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* 3. Gradient Text */
+.text-gradient-primary {
+    /* Reverted to solid color for WCAG AA compliance on contrast */
+    color: #1e3a8a;
+}
+
+/* 4. Glassmorphism Service Card */
+.service-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service-card:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); /* shadow-2xl */
+    border-color: #1e3a8a; /* border-primary */
+    transform: translateY(-4px);
+}
+
+/* --- High-Tech Modern UI Additions --- */
+
+/* 1. Tech Grid Background (CSS only, no images) */
+.bg-tech-grid {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    pointer-events: none;
+}
+
+/* 2. Modern Slim Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }

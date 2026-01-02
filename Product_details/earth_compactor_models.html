@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Earth Compactor Models | SEPL</title>
-    
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,6 +15,9 @@
                         primary: '#1e3a8a',
                         secondary: '#d97706',
                         dark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
                     }
                 }
             }
@@ -22,9 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
-    <script src="../navbar.js"></script>
-    <style>
+    <link rel="stylesheet" href="../style.
         .sr-only {
             position: absolute;
             width: 1px;
@@ -47,23 +49,35 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="text-gray-800 font-sans">
+
+    <script src="../navbar.js" defer></script>
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
 
             <div class="mb-4">
-                <a href="../index.html#products" class="text-primary hover:text-secondary font-semibold inline-flex items-center">
-                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Products
-                </a>
+                <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <li class="inline-flex items-center">
+                            <a href="../index.html" class="inline-flex items-center hover:text-primary"><i class="fa-solid fa-house mr-2"></i>Home</a>
+                        </li>
+                        <li>
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><a href="../index.html#products" class="hover:text-primary">Products</a></div>
+                        </li>
+                        <li aria-current="page">
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><span class="text-gray-800 font-medium">Earth Compactors</span></div>
+                        </li>
+                    </ol>
+                </nav>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-3">Earth Compactor Models</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Earth Compactor Models</h1>
             <p class="text-xl text-gray-600 mb-12">Heavy-duty rollers for reliable soil and asphalt densification.</p>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
                 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition lg:col-start-2 flex flex-col" data-model="EC-500" data-drum-width="650mm" data-force="10 kN" data-engine-control="Diesel 8HP">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 lg:col-start-2 flex flex-col" data-model="EC-500" data-drum-width="650mm" data-force="10 kN" data-engine-control="Diesel 8HP">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=EC-1500+Trench" alt="EC-1500 Earth Compactor" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                     </div>
@@ -88,7 +102,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="EC-1500" data-drum-width="850mm" data-force="20 kN" data-engine-control="Remote/Wired">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="EC-1500" data-drum-width="850mm" data-force="20 kN" data-engine-control="Remote/Wired">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=EC-1500+Trench" alt="EC-1500 Earth Compactor" loading="lazy" decoding="async" class="w-full h-full object-cover">
                     </div>
@@ -145,10 +159,10 @@
             <div>
                 <h4 class="text-white text-lg font-bold mb-4">Follow Us</h4>
                 <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Follow us on Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow us on LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow us on Instagram" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow us on YouTube" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -183,7 +197,7 @@
         <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
             <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
                 <h2 class="text-2xl font-bold">Compare Earth Compactors</h2>
-                <button onclick="closeCompareModal()" class="text-white hover:text-red-200 text-3xl">&times;</button>
+                <button onclick="closeCompareModal()" aria-label="Close comparison modal" class="text-white hover:text-red-200 text-3xl">&times;</button>
             </div>
             <div id="compare-modal-body" class="p-6 overflow-y-auto">
                 <!-- Comparison table will be injected here -->
@@ -194,7 +208,6 @@
     <!-- Link the Universal Compare Script -->
     <script src="../compare.js"></script>
 
-    <!-- Floating WhatsApp Button -->
     <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website.%0APlease%20call%20me%20back%20for%20a%20detailed%20description%20of%20my%20requirements." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>

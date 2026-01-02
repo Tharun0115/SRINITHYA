@@ -30,9 +30,9 @@ const rootPath = getRootPath();
 
 // Navbar HTML Template
 const navbarHTML = `
-    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 ease-in-out will-change-transform transform-gpu" id="navbar">
+    <nav class="bg-white/90 backdrop-blur-md border-b border-gray-200/50 fixed w-full z-50 transition-all duration-300 ease-in-out will-change-transform transform-gpu" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out group" id="nav-container">
+            <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
                 <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer" id="brand-wrapper">
                     <img src="${rootPath}Assets/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
@@ -128,7 +128,49 @@ const navbarHTML = `
                 <div class="hidden md:flex items-center justify-center w-full py-2 border-t border-gray-100 space-x-8 transition-all duration-300 ease-in-out" id="nav-links">
                     <a href="${rootPath}index.html#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
                     <a href="${rootPath}about.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">About Us</a>
-                    <a href="${rootPath}index.html#products" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Products</a>
+                    <a href="${rootPath}services.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Services</a>
+                    
+                    <!-- Megamenu Trigger -->
+                    <div class="relative group" id="products-menu-container">
+                        <button type="button" class="text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
+                            <span>Products</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-screen max-w-5xl hidden group-hover:block opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out z-[-1] group-hover:z-10">
+                            <div class="bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 p-8">
+                                    
+                                    <div class="space-y-3">
+                                        <h3 class="text-sm font-bold text-primary uppercase tracking-wider border-b pb-2 mb-3">Heavy Machinery</h3>
+                                        <a href="${rootPath}Product_details/bar_cutting_models.html" class="megamenu-link"><i class="fa-solid fa-scissors w-6 text-secondary"></i> Bar Cutting Machines</a>
+                                        <a href="${rootPath}Product_details/bar_bending_models.html" class="megamenu-link"><i class="fa-solid fa-rotate-left w-6 text-secondary"></i> Bar Bending Machines</a>
+                                        <a href="${rootPath}Product_details/scrap_straightener_models.html" class="megamenu-link"><i class="fa-solid fa-recycle w-6 text-secondary"></i> Scrap Straighteners</a>
+                                        <a href="${rootPath}Product_details/road_roller_models.html" class="megamenu-link"><i class="fa-solid fa-road w-6 text-secondary"></i> Road Rollers</a>
+                                        <a href="${rootPath}index.html#contact" class="megamenu-link"><i class="fa-solid fa-elevator w-6 text-secondary"></i> Suspended Platforms</a>
+                                    </div>
+                                    
+                                    <div class="md:col-span-2">
+                                        <h3 class="text-sm font-bold text-primary uppercase tracking-wider border-b pb-2 mb-3">Light Equipment</h3>
+                                        <div class="grid grid-cols-2 gap-x-8 gap-y-3">
+                                            <a href="${rootPath}Product_details/plate_compactor_models.html" class="megamenu-link"><i class="fa-solid fa-drum-steelpan w-6 text-secondary"></i> Plate Compactors</a>
+                                            <a href="${rootPath}Product_details/power_trowel_models.html" class="megamenu-link"><i class="fa-solid fa-fan w-6 text-secondary"></i> Power Trowels</a>
+                                            <a href="${rootPath}Product_details/concrete_mixer_models.html" class="megamenu-link"><i class="fa-solid fa-blender w-6 text-secondary"></i> Concrete Mixers</a>
+                                            <a href="${rootPath}Product_details/vibrators.html" class="megamenu-link"><i class="fa-solid fa-vibrator w-6 text-secondary"></i> Vibrators</a>
+                                            <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="megamenu-link"><i class="fa-solid fa-wave-square w-6 text-secondary"></i> HF Converters</a>
+                                            <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="megamenu-link"><i class="fa-solid fa-plug-circle-bolt w-6 text-secondary"></i> HF Pokers</a>
+                                            <a href="${rootPath}Product_details/earth_compactor_models.html" class="megamenu-link"><i class="fa-solid fa-mound w-6 text-secondary"></i> Earth Compactors</a>
+                                            <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="megamenu-link"><i class="fa-solid fa-toolbox w-6 text-secondary"></i> Portable Bar Tools</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 text-center border-t">
+                                    <a href="${rootPath}index.html#products" class="text-sm font-semibold text-primary hover:text-secondary transition-colors">View Full Product Catalogue <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
                     <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
                         <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
@@ -137,12 +179,37 @@ const navbarHTML = `
                 </div>
             </div>
         </div>
+        <div id="scroll-progress" class="h-1 bg-secondary w-0 transition-all duration-100 ease-out"></div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg absolute left-0 top-full">
             <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
                 <a href="${rootPath}index.html#home" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Home</a>
                 <a href="${rootPath}about.html" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">About Us</a>
-                <a href="${rootPath}index.html#products" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Products</a>
+                <a href="${rootPath}services.html" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Services</a>
+                <div>
+                    <button id="mobile-products-trigger" class="w-full flex justify-between items-center text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded">
+                        <span>Products</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div id="mobile-products-menu" class="hidden pl-4 pt-2 pb-2 border-l-2 border-gray-200 ml-3 space-y-1">
+                        <a href="${rootPath}index.html#products" class="mobile-submenu-link font-bold text-primary">View All Products</a>
+                        <h4 class="font-semibold text-gray-500 pt-2 text-sm">Heavy Machinery</h4>
+                        <a href="${rootPath}Product_details/bar_cutting_models.html" class="mobile-submenu-link">Bar Cutting</a>
+                        <a href="${rootPath}Product_details/bar_bending_models.html" class="mobile-submenu-link">Bar Bending</a>
+                        <a href="${rootPath}Product_details/scrap_straightener_models.html" class="mobile-submenu-link">Scrap Straighteners</a>
+                        <a href="${rootPath}Product_details/road_roller_models.html" class="mobile-submenu-link">Road Rollers</a>
+                        <a href="${rootPath}index.html#contact" class="mobile-submenu-link">Suspended Platforms</a>
+                        <h4 class="font-semibold text-gray-500 pt-2 text-sm">Light Equipment</h4>
+                        <a href="${rootPath}Product_details/plate_compactor_models.html" class="mobile-submenu-link">Plate Compactors</a>
+                        <a href="${rootPath}Product_details/power_trowel_models.html" class="mobile-submenu-link">Power Trowels</a>
+                        <a href="${rootPath}Product_details/concrete_mixer_models.html" class="mobile-submenu-link">Concrete Mixers</a>
+                        <a href="${rootPath}Product_details/vibrators.html" class="mobile-submenu-link">Vibrators</a>
+                        <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="mobile-submenu-link">HF Converters</a>
+                        <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="mobile-submenu-link">HF Pokers</a>
+                        <a href="${rootPath}Product_details/earth_compactor_models.html" class="mobile-submenu-link">Earth Compactors</a>
+                        <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="mobile-submenu-link">Portable Equipment</a>
+                    </div>
+                </div>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
                 <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Estimate Cart</button>
             </div>
@@ -272,6 +339,17 @@ function initNavbar() {
         });
     }
 
+    // Mobile Products Submenu
+    const mobileProductsTrigger = document.getElementById('mobile-products-trigger');
+    const mobileProductsMenu = document.getElementById('mobile-products-menu');
+    if (mobileProductsTrigger && mobileProductsMenu) {
+        mobileProductsTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileProductsMenu.classList.toggle('hidden');
+            mobileProductsTrigger.querySelector('i').classList.toggle('rotate-180');
+        });
+    }
+
     // Scroll Animation
     const navbar = document.getElementById('navbar');
     const navContainer = document.getElementById('nav-container');
@@ -281,10 +359,11 @@ function initNavbar() {
     const companyName = document.getElementById('company-name');
     const animationLayer = document.getElementById('animation-layer');
     const navLinks = document.getElementById('nav-links');
+    const progressBar = document.getElementById('scroll-progress');
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.classList.add('shadow-lg');
+            navbar.classList.add('shadow-md');
             navContainer.classList.remove('md:grid', 'md:grid-cols-1');
             navContainer.classList.add('md:flex', 'md:flex-row', 'md:items-center');
             
@@ -305,7 +384,7 @@ function initNavbar() {
             navLinks.classList.remove('w-full', 'border-t', 'justify-center', 'py-2');
             navLinks.classList.add('justify-start', 'pl-8', 'py-1', 'flex-shrink-0');
         } else {
-            navbar.classList.remove('shadow-lg');
+            navbar.classList.remove('shadow-md');
             navContainer.classList.add('md:grid', 'md:grid-cols-1');
             navContainer.classList.remove('md:flex', 'md:flex-row', 'md:items-center');
             
@@ -325,6 +404,14 @@ function initNavbar() {
             
             navLinks.classList.add('w-full', 'border-t', 'justify-center', 'py-2');
             navLinks.classList.remove('justify-start', 'pl-8', 'py-1', 'flex-shrink-0');
+        }
+
+        // Update Progress Bar
+        if (progressBar) {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
         }
     });
 }

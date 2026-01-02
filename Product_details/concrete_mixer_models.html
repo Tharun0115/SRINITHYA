@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concrete Mixer Models | SEPL</title>
-    
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,6 +15,9 @@
                         primary: '#1e3a8a',
                         secondary: '#d97706',
                         dark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
                     }
                 }
             }
@@ -47,23 +51,33 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="text-gray-800 font-sans">
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
             
             <div class="mb-4">
-                <a href="../index.html#products" class="text-primary hover:text-secondary font-semibold inline-flex items-center">
-                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Products
-                </a>
+                <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <li class="inline-flex items-center">
+                            <a href="../index.html" class="inline-flex items-center hover:text-primary"><i class="fa-solid fa-house mr-2"></i>Home</a>
+                        </li>
+                        <li>
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><a href="../index.html#products" class="hover:text-primary">Products</a></div>
+                        </li>
+                        <li aria-current="page">
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><span class="text-gray-800 font-medium">Concrete Mixers</span></div>
+                        </li>
+                    </ol>
+                </nav>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-3">Concrete Mixer Models Catalogue</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Concrete Mixer Models</h1>
             <p class="text-xl text-gray-600 mb-12">Portable mixers ranging from 220L (1 bag) to 350L (2 bag) capacity.</p>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="CM-220L Electric" data-capacity="220 Litres" data-power="3 HP Electric Motor" data-mobility="Towable on site">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="CM-220L Electric" data-capacity="220 Litres" data-power="3 HP Electric Motor" data-mobility="Towable on site">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=CM-350L+Engine" alt="350L Engine Concrete Mixer" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                     </div>
@@ -88,7 +102,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="CM-220L Engine" data-capacity="220 Litres" data-power="5 HP Diesel Engine" data-mobility="Towable on site">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="CM-220L Engine" data-capacity="220 Litres" data-power="5 HP Diesel Engine" data-mobility="Towable on site">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=CM-220L+Engine" alt="220L Engine Concrete Mixer" loading="lazy" decoding="async" class="w-full h-full object-cover">
                     </div>
@@ -113,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="CM-350L Electric" data-capacity="350 Litres" data-power="5 HP Electric Motor" data-mobility="Heavy Duty Chassis">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="CM-350L Electric" data-capacity="350 Litres" data-power="5 HP Electric Motor" data-mobility="Heavy Duty Chassis">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/1E3A8A/FFFFFF?text=CM-350L+Electric" alt="350L Electric Concrete Mixer" loading="lazy" decoding="async" class="w-full h-full object-cover">
                     </div>
@@ -138,7 +152,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="CM-350L Engine" data-capacity="350 Litres" data-power="9 HP Diesel Engine" data-mobility="Heavy Duty Chassis">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="CM-350L Engine" data-capacity="350 Litres" data-power="9 HP Diesel Engine" data-mobility="Heavy Duty Chassis">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=CM-350L+Engine" alt="350L Engine Concrete Mixer" loading="lazy" decoding="async" class="w-full h-full object-cover">
                     </div>

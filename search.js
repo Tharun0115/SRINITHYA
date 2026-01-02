@@ -30,6 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
             specs: "4mm - 12mm 25 meters/min Coil Light Scrap 6mm - 16mm Auto-Cut Function High Precision"
         },
         { 
+            name: "Road Rollers", 
+            desc: "Ride-on and Walk-behind rollers.",
+            link: "Product_details/road_roller_models.html", 
+            image: "Assets/road_roller.png",
+            category: "Heavy Machinery",
+            specs: "SRR30 Ride on SWR30 SH Walk behind SWR30 FH Diesel Engine"
+        },
+        { 
             name: "Suspended Rope Platform", 
             desc: "High-safety suspended platform (ZLP800).",
             link: "index.html#contact", 
@@ -62,12 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
             specs: "220 Litres 3 HP Electric Motor Towable 5 HP Diesel Engine 350 Litres 9 HP Diesel Engine Heavy Duty Chassis"
         },
         { 
-            name: "High Freq. Converter", 
+            name: "High Frequency Converter", 
             desc: "High performance frequency generators.",
-            link: "Product_details/hfc_models.html", 
+            link: "Product_details/high_frequency_converter_models.html", 
             image: "Assets/logo.png",
             category: "Light Equipment",
-            specs: "415V 50Hz 42V 200Hz Thermal Overload 230V Lightweight"
+            specs: "SHFC35T 2 Outlet SHFC90P 4 Outlet 415V 50Hz 42V 200Hz"
+        },
+        { 
+            name: "High Frequency Poker", 
+            desc: "Internal concrete vibration needles.",
+            link: "Product_details/high_frequency_poker_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "60MM 40MM 5Mtr 10Mtr 12Mtr Hose"
         },
         { 
             name: "Earth Compactor", 
@@ -84,6 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "Assets/electrical_vibrator.png",
             category: "Light Equipment",
             specs: "3 HP 220V 240V 12 15 A 2800 3000 RPM 380V 415V 4.5 6 A 2 HP 8 10 A"
+        },
+        { 
+            name: "Portable Bar Equipment", 
+            desc: "Portable benders and cutters.",
+            link: "Product_details/portable_bar_processing_models.html", 
+            image: "Assets/bar_bender.png",
+            category: "Light Equipment",
+            specs: "SPB25 SPB32 SPS32 SPC25 SPC32 Portable Bender Cutter Straightener"
         }
     ];
 

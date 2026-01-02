@@ -7,20 +7,20 @@
     <title>SEPL | Construction & Bar Processing Solutions</title>
     <link rel="icon" type="image/png" href="./Assets/logo.png">
     
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=60&w=1200&auto=format&fit=crop" fetchpriority="high">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind-config.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js" defer></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
-            // IMPORTANT: Replace with your EmailJS Public Key from your EmailJS account settings.
-            if (typeof emailjs !== 'undefined') {
-                emailjs.init("YOUR_PUBLIC_KEY"); 
-            }
+            emailjs.init("YOUR_PUBLIC_KEY");
         })();
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -33,7 +33,7 @@
     <script src="navbar.js"></script>
 
     <section id="home" class="relative bg-dark min-h-screen flex items-center pt-24 md:pt-40">
-        <div class="absolute inset-0 z-0 opacity-40">
+        <div class="absolute inset-0 z-0 opacity-30">
             <img 
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=60&w=1200&auto=format&fit=crop" 
                 alt="Construction Site Background" 
@@ -44,6 +44,9 @@
                 decoding="async"
             >
         </div>
+        
+        <!-- Tech Grid Overlay -->
+        <div class="absolute inset-0 z-0 bg-tech-grid"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 text-center sm:text-left fade-in-section">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -62,6 +65,7 @@
 
             <!-- Product Search Bar -->
             <div class="mt-8 max-w-md mx-auto sm:mx-0 relative">
+                <label for="catalogue-search" class="sr-only">Search Products</label>
                 <input type="text" id="catalogue-search" placeholder="Search products..." class="w-full pl-10 pr-4 py-3 rounded-full border-none focus:outline-none focus:ring-2 focus:ring-secondary shadow-lg text-gray-800 bg-white/95 backdrop-blur-sm">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
@@ -85,9 +89,12 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-100">
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-100 bg-white">
                     <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="./Assets/bar_cutter.png" alt="Bar Cutting Machine" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                        <picture>
+                            <source srcset="./Assets/bar_cutter.webp" type="image/webp">
+                            <img onclick="openImageModal(this.src)" src="./Assets/bar_cutter.png" alt="Bar Cutting Machine" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="600" height="337">
+                        </picture>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Bar Cutting Machine</h3>
@@ -100,9 +107,12 @@
                     </div>
                 </div>
 
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-200">
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-200 bg-white">
                     <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="./Assets/bar_bender.png" alt="Bar Bending Machine" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                        <picture>
+                            <source srcset="./Assets/bar_bender.webp" type="image/webp">
+                            <img onclick="openImageModal(this.src)" src="./Assets/bar_bender.png" alt="Bar Bending Machine" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="500" height="500">
+                        </picture>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Bar Bending Machine</h3>
@@ -115,9 +125,12 @@
                     </div>
                 </div>
 
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-300">
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-300 bg-white">
                     <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="./Assets/scrap_straightener.png" alt="Scrap Straightener" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                        <picture>
+                            <source srcset="./Assets/scrap_straightener.webp" type="image/webp">
+                            <img onclick="openImageModal(this.src)" src="./Assets/scrap_straightener.png" alt="Scrap Straightener" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="861" height="655">
+                        </picture>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Scrap Straightener</h3>
@@ -130,9 +143,12 @@
                     </div>
                 </div>
 
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col h-full group fade-in-section delay-500">
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-500 bg-white">
                     <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="./Assets/srp.png" alt="Suspended Rope Platform" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                        <picture>
+                            <source srcset="./Assets/srp.webp" type="image/webp">
+                            <img onclick="openImageModal(this.src)" src="./Assets/srp.png" alt="Suspended Rope Platform" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="800" height="800">
+                        </picture>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-gray-900">Suspended Rope Platform (SRP/RSP)</h3>
@@ -146,6 +162,24 @@
                         <a href="#contact" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
                     </div>
                 </div>
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-500 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <picture>
+                            <source srcset="./Assets/road_roller.webp" type="image/webp">
+                            <img onclick="openImageModal(this.src)" src="./Assets/road_roller.png" alt="Road Rollers" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="500" height="500">
+                        </picture>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Road Rollers</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ride-on and Walk-behind rollers for road construction.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Ride-on & Walk-behind</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Heavy Duty Compaction</li>
+                        </ul>
+                        <a href="Product_details/road_roller_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                    </div>
+                </div>
             </div>
 
             <div class="flex items-center my-12 fade-in-section">
@@ -155,66 +189,177 @@
             </div>
                 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-100">
-                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <span class="absolute top-2 right-2 z-10 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
-                        <img onclick="openImageModal(this.src)" src="./Assets/plate_compactor.png" alt="Plate Compactor" loading="lazy" decoding="async" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-100 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <picture>
+                            <source srcset="./Assets/plate_compactor.webp" type="image/webp">
+                            <img onclick="openImageModal(this.src)" src="./Assets/plate_compactor.png" alt="Plate Compactors" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="1000" height="1250">
+                        </picture>
                     </div>
-                    
-                    <h4 class="font-bold text-lg text-gray-900">Plate Compactors</h4>
-                    <p class="text-xs text-gray-600 mt-2 mb-4">For soil and asphalt compaction.</p>
-                    
-                    <a href="Product_details/plate_compactor_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
-                </div>
-                
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-200">
-                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+PT+Models" alt="Power Trowel Models Preview" loading="lazy" decoding="async" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
-                        <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Plate Compactors</h3>
+                        <p class="text-gray-600 text-sm mb-4">For soil, asphalt, and paving stone compaction.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Forward & Reversible</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Petrol & Diesel Engines</li>
+                        </ul>
+                        <a href="Product_details/plate_compactor_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
                     </div>
-                    <h4 class="font-bold text-lg text-gray-900">Power Trowels</h4>
-                    <p class="text-xs text-gray-600 mt-2 mb-4">Professional concrete finishing.</p>
-                    <a href="Product_details/power_trowel_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
                 </div>
 
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-300">
-                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+CM+Models" alt="Concrete Mixer Models Preview" loading="lazy" decoding="async" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
-                        <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-200 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Power+Trowel" alt="Power Trowel" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">
                     </div>
-                    <h4 class="font-bold text-lg text-gray-900">Concrete Mixers</h4>
-                    <p class="text-xs text-gray-600 mt-2 mb-4">Portable 1-bag / 2-bag mixers.</p>
-                    <a href="Product_details/concrete_mixer_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Power Trowels</h3>
+                        <p class="text-gray-600 text-sm mb-4">For professional, high-quality concrete finishing.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Electric & Petrol Models</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Adjustable Blade Pitch</li>
+                        </ul>
+                        <a href="Product_details/power_trowel_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                    </div>
                 </div>
-                
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-500">
-                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+HFC+Models" alt="High Frequency Converter Models Preview" loading="lazy" decoding="async" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
-                        <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-300 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Concrete+Mixer" alt="Concrete Mixer" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">
                     </div>
-                    <h4 class="font-bold text-lg text-gray-900">High Freq. Converter</h4>
-                    <p class="text-xs text-gray-600 mt-2 mb-4">High performance frequency generators.</p>
-                    <a href="Product_details/hfc_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Concrete Mixers</h3>
+                        <p class="text-gray-600 text-sm mb-4">Portable 1-bag and 2-bag mixers for any site.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Heavy-Duty Chassis</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Electric & Diesel Options</li>
+                        </ul>
+                        <a href="Product_details/concrete_mixer_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                    </div>
                 </div>
-                
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-100">
-                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Sliding+EC+Models" alt="Earth Compactor Models Preview" loading="lazy" decoding="async" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
-                        <span class="absolute top-2 right-2 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-400 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <picture>
+                            <source srcset="./Assets/electrical_vibrator.webp" type="image/webp">
+                            <img onclick="openImageModal(this.src)" src="./Assets/electrical_vibrator.png" alt="Vibrators" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="500" height="500">
+                        </picture>
                     </div>
-                    <h4 class="font-bold text-lg text-gray-900">Earth Compactor</h4>
-                    <p class="text-xs text-gray-600 mt-2 mb-4">Heavy duty surface compaction.</p>
-                    <a href="Product_details/earth_compactor_models.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Vibrators</h3>
+                        <p class="text-gray-600 text-sm mb-4">A wide range of concrete vibrators for perfect consolidation.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> High Frequency Pokers</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Electric & Petrol Motors</li>
+                        </ul>
+                        <a href="Product_details/vibrators.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                    </div>
                 </div>
-                
-                <div class="bg-white p-4 rounded shadow hover:shadow-lg transition text-center flex flex-col justify-between fade-in-section delay-300">
-                    <div class="h-64 mb-4 bg-gray-200 flex items-center justify-center rounded overflow-hidden relative group">
-                        <span class="absolute top-2 right-2 z-10 text-xs text-white bg-secondary px-2 py-0.5 rounded-full font-semibold">Multiple Models</span>
-                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Vibrators" alt="Vibrators Preview" loading="lazy" decoding="async" class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110">
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-500 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Portable+Tools" alt="Portable Bar Equipment" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">
                     </div>
-                    <h4 class="font-bold text-lg text-gray-900">Vibrators</h4>
-                    <p class="text-xs text-gray-600 mt-2 mb-4">Electric and petrol vibrators for concrete consolidation.</p>
-                    <a href="Product_details/vibrators.html" class="bg-primary text-white font-bold py-2 rounded hover:bg-blue-800 transition">View Models</a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Portable Bar Equipment</h3>
+                        <p class="text-gray-600 text-sm mb-4">Lightweight, on-site solutions for rebar cutting and bending.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Portable Cutters up to 32mm</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Portable Benders up to 32mm</li>
+                        </ul>
+                        <a href="Product_details/portable_bar_processing_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-100 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=Earth+Compactor" alt="Earth Compactors" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Earth Compactors</h3>
+                        <p class="text-gray-600 text-sm mb-4">Heavy-duty surface compaction for soil and sub-base layers.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Walk-behind & Trench models</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Remote/Wired control options</li>
+                        </ul>
+                        <a href="Product_details/earth_compactor_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-200 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=HF+Poker" alt="High Frequency Pokers" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">High Frequency Pokers</h3>
+                        <p class="text-gray-600 text-sm mb-4">Internal concrete vibration needles for superior consolidation.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> 40mm & 60mm Diameters</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Hose lengths up to 12 meters</li>
+                        </ul>
+                        <a href="Product_details/high_frequency_poker_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group fade-in-section delay-300 bg-white">
+                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img onclick="openImageModal(this.src)" src="https://via.placeholder.com/300x200/525252/FFFFFF?text=HF+Converter" alt="High Frequency Converters" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">High Frequency Converters</h3>
+                        <p class="text-gray-600 text-sm mb-4">Reliable power conversion for high-frequency concrete vibrators.</p>
+                        <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> 2 & 4 Outlet Models</li>
+                            <li><i class="fa-solid fa-check text-green-600 mr-2"></i> Converts 415V to 42V/200Hz</li>
+                        </ul>
+                        <a href="Product_details/high_frequency_converter_models.html" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12 fade-in-section">
+                <h2 class="text-3xl font-bold text-primary">Trusted by Professionals</h2>
+                <p class="text-gray-600 mt-2">See what our clients have to say about our machinery and service.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 fade-in-section delay-200">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"The Bar Bending machine (SBB52) has significantly reduced our labor costs. The digital control panel is very easy to use for our operators."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-3">R</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">RajKumar</h4>
+                            <p class="text-xs text-gray-500">ASBL lOFT, Hyderabad</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"We rented plate compactors for a quick road repair job. The equipment was in top condition and the service was prompt."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-3">S</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Tarakesh</h4>
+                            <p class="text-xs text-gray-500">Essen Infra, Bengaluru</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"Srinithya's scrap straightener turned our waste steel into usable bars. It paid for itself in just a few months."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-3">V</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Krishna Reddy</h4>
+                            <p class="text-xs text-gray-500">Project Manager, Vijayawada</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -298,6 +443,7 @@
                 <ul class="space-y-2 text-sm">
                     <li><a href="index.html" class="hover:text-secondary transition">Home</a></li>
                     <li><a href="about.html" class="hover:text-secondary transition">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-secondary transition">Services</a></li>
                     <li><a href="index.html#products" class="hover:text-secondary transition">Products</a></li>
                 </ul>
             </div>
@@ -314,10 +460,10 @@
             <div>
                 <h4 class="text-white text-lg font-bold mb-4">Follow Us</h4>
                 <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Follow us on Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow us on LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow us on Instagram" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Follow us on YouTube" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -348,7 +494,7 @@
     <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
         <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
             <img id="modal-image" src="" alt="Enlarged Product View" class="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl">
-            <button onclick="closeImageModal()" class="absolute -top-2 -right-2 text-white bg-red-600 rounded-full h-8 w-8 flex items-center justify-center text-xl hover:bg-red-700 focus:outline-none">&times;</button>
+            <button onclick="closeImageModal()" aria-label="Close image viewer" class="absolute -top-2 -right-2 text-white bg-red-600 rounded-full h-8 w-8 flex items-center justify-center text-xl hover:bg-red-700 focus:outline-none">&times;</button>
         </div>
     </div>
 
@@ -378,6 +524,62 @@
         function closeImageModal() {
             const modal = document.getElementById('image-modal');
             if (modal) modal.classList.add('hidden');
+        }
+
+        // Contact Form Submission with UI Feedback
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('inquiry-submit-btn');
+
+        if(contactForm && submitBtn) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Sending...</span>`;
+
+                // IMPORTANT: Replace with your actual Service ID and Template ID from your EmailJS account.
+                const serviceID = 'YOUR_SERVICE_ID'; 
+                const templateID = 'YOUR_TEMPLATE_ID';
+
+                if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || typeof emailjs === 'undefined') {
+                    console.warn("EmailJS is not configured. Please replace placeholder IDs in index.html script.");
+                    // Simulate a delay for demo purposes if EmailJS isn't set up
+                    setTimeout(() => {
+                        submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-check mr-2"></i> Sent!</span>`;
+                        submitBtn.classList.remove('bg-primary');
+                        submitBtn.classList.add('bg-green-600');
+                        
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.classList.remove('bg-green-600');
+                            submitBtn.classList.add('bg-primary');
+                            contactForm.reset();
+                        }, 3000);
+
+                    }, 1500);
+                    return;
+                }
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-check mr-2"></i> Sent Successfully!</span>`;
+                        submitBtn.classList.remove('bg-primary');
+                        submitBtn.classList.add('bg-green-600');
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.classList.remove('bg-green-600');
+                            submitBtn.classList.add('bg-primary');
+                            contactForm.reset();
+                        }, 4000);
+                    }, (err) => {
+                        submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-xmark mr-2"></i> Failed. Try again.</span>`;
+                        submitBtn.classList.add('bg-red-600');
+                        console.error('EmailJS Error:', JSON.stringify(err));
+                    });
+            });
         }
 
     </script>

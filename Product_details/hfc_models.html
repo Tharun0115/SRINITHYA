@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Frequency Converter Models | SEPL</title>
-    
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,6 +15,9 @@
                         primary: '#1e3a8a',
                         secondary: '#d97706',
                         dark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
                     }
                 }
             }
@@ -47,23 +51,33 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="text-gray-800 font-sans">
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
 
             <div class="mb-4">
-                <a href="../index.html#products" class="text-primary hover:text-secondary font-semibold inline-flex items-center">
-                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Products
-                </a>
+                <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <li class="inline-flex items-center">
+                            <a href="../index.html" class="inline-flex items-center hover:text-primary"><i class="fa-solid fa-house mr-2"></i>Home</a>
+                        </li>
+                        <li>
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><a href="../index.html#products" class="hover:text-primary">Products</a></div>
+                        </li>
+                        <li aria-current="page">
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><span class="text-gray-800 font-medium">High Frequency Converter</span></div>
+                        </li>
+                    </ol>
+                </nav>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-3">High Frequency Converter Models</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">High Frequency Converter Models</h1>
             <p class="text-xl text-gray-600 mb-12">Essential power sources for high-frequency concrete vibrators and other construction tools.</p>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
                 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition lg:col-start-2 flex flex-col" data-model="HFC-3P" data-input="415V, 50Hz" data-output="42V, 200Hz" data-feature="Thermal & Overload">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 lg:col-start-2 flex flex-col" data-model="HFC-3P" data-input="415V, 50Hz" data-output="42V, 200Hz" data-feature="Thermal & Overload">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=HFC-1P+Converter" alt="HFC-1P Single Phase Converter" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                     </div>
@@ -88,7 +102,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition flex flex-col" data-model="HFC-1P" data-input="230V, 50Hz" data-output="42V, 200Hz" data-feature="Lightweight Model">
+                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="HFC-1P" data-input="230V, 50Hz" data-output="42V, 200Hz" data-feature="Lightweight Model">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=HFC-1P+Converter" alt="HFC-1P Single Phase Converter" loading="lazy" decoding="async" class="w-full h-full object-cover">
                     </div>
