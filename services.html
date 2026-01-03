@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | SEPL</title>
     <!-- Modern Font: Outfit -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind-config.js"></script>
@@ -17,7 +17,7 @@
 </head>
 <body class="text-gray-800 font-sans">
 
-    <section class="py-16">
+    <section class="pb-16 pt-32 md:pt-48">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-8">
                 <nav class="flex text-sm text-gray-500" aria-label="Breadcrumb">
@@ -61,6 +61,38 @@
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Equipment Rental</h3>
                     <p class="text-gray-600">Flexible rental options for a wide range of machinery. Get reliable tools for a day, a week, or a month at competitive rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gradient-primary mb-4">Client Appreciation</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We are honored to be recognized by our valued partners for our commitment to quality and service.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- DEC APC -->
+                <div class="group text-center">
+                    <div class="bg-white p-3 rounded-xl shadow-lg border border-gray-100 overflow-hidden relative h-80 flex items-center justify-center">
+                        <img src="Assets/DEC APC.png" alt="DEC Appreciation Certificate" onclick="openImageModal(this.src)" class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105 cursor-pointer">
+                    </div>
+                    <h3 class="mt-4 font-bold text-gray-800 text-lg">DEC Infrastructure</h3>
+                </div>
+                <!-- KMV APC -->
+                <div class="group text-center">
+                    <div class="bg-white p-3 rounded-xl shadow-lg border border-gray-100 overflow-hidden relative h-80 flex items-center justify-center">
+                        <img src="Assets/KMV APC.png" alt="KMV Appreciation Certificate" onclick="openImageModal(this.src)" class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105 cursor-pointer">
+                    </div>
+                    <h3 class="mt-4 font-bold text-gray-800 text-lg">KMV Projects</h3>
+                </div>
+                <!-- MEIL APC -->
+                <div class="group text-center">
+                    <div class="bg-white p-3 rounded-xl shadow-lg border border-gray-100 overflow-hidden relative h-80 flex items-center justify-center">
+                        <img src="Assets/MEIL APC.png" alt="MEIL Appreciation Certificate" onclick="openImageModal(this.src)" class="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105 cursor-pointer">
+                    </div>
+                    <h3 class="mt-4 font-bold text-gray-800 text-lg">Megha Engineering (MEIL)</h3>
                 </div>
             </div>
         </div>
@@ -115,6 +147,42 @@
         </div>
     </footer>
 
+    <!-- Image Viewer Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
+            <img id="modal-image" src="" alt="Enlarged View" class="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl">
+            <button onclick="closeImageModal()" class="absolute -top-2 -right-2 text-white bg-red-600 rounded-full h-8 w-8 flex items-center justify-center text-xl hover:bg-red-700 focus:outline-none">&times;</button>
+        </div>
+    </div>
+
     <script src="search.js" defer></script>
+
+    <script>
+        // --- Image Modal Logic ---
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+
+        function openImageModal(src) {
+            if (imageModal && modalImage) {
+                modalImage.src = src;
+                imageModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeImageModal() {
+            if (imageModal) {
+                imageModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
+    </script>
 </body>
 </html>

@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link: "Product_details/road_roller_models.html", 
             image: "Assets/road_roller.png",
             category: "Heavy Machinery",
-            specs: "SRR30 Ride on SWR30 SH Walk behind SWR30 FH Diesel Engine"
+            specs: "SRR30 Ride on SWR 30 Walk behind 10 HP Diesel Engine 600mm Drum"
         },
         { 
             name: "Suspended Rope Platform", 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link: "Product_details/high_frequency_converter_models.html", 
             image: "Assets/logo.png",
             category: "Light Equipment",
-            specs: "SHFC35T 2 Outlet SHFC90P 4 Outlet 415V 50Hz 42V 200Hz"
+            specs: "SHFC 35 2 Outlet SHFC 90 4 Outlet 415V 50Hz 42V 200Hz"
         },
         { 
             name: "High Frequency Poker", 
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link: "Product_details/high_frequency_poker_models.html", 
             image: "Assets/electrical_vibrator.png",
             category: "Light Equipment",
-            specs: "60MM 40MM 5Mtr 10Mtr 12Mtr Hose"
+            specs: "SHFN 60 58mm 42V 200Hz 12000 RPM 40MM 5Mtr 10Mtr 12Mtr Hose"
         },
         { 
             name: "Earth Compactor", 
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link: "Product_details/portable_bar_processing_models.html", 
             image: "Assets/bar_bender.png",
             category: "Light Equipment",
-            specs: "SPB25 SPB32 SPS32 SPC25 SPC32 Portable Bender Cutter Straightener"
+            specs: "SPB25 SPB32 SPS 32 SPC25 SPC 32 Portable Bender Cutter Straightener"
         }
     ];
 
