@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Power Trowels", 
             desc: "Professional concrete finishing.",
             link: "Product_details/power_trowel_models.html", 
-            image: "Assets/logo.png", // Using logo as placeholder if specific image not available in root assets list provided
+            image: "Assets/Others/logo.png", // Using logo as placeholder if specific image not available in root assets list provided
             category: "Light Equipment",
             specs: "1000 mm 4 Blades 2Hp 70Kg Honda Engine 3Hp 68Kg Crompton motor"
         },
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Concrete Mixers", 
             desc: "Portable 1-bag / 2-bag mixers.",
             link: "Product_details/concrete_mixer_models.html", 
-            image: "Assets/logo.png",
+            image: "Assets/Others/logo.png",
             category: "Light Equipment",
             specs: "220 Litres 3 HP Electric Motor Towable 5 HP Diesel Engine 350 Litres 9 HP Diesel Engine Heavy Duty Chassis"
         },
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "High Frequency Converter", 
             desc: "High performance frequency generators.",
             link: "Product_details/high_frequency_converter_models.html", 
-            image: "Assets/logo.png",
+            image: "Assets/Others/logo.png",
             category: "Light Equipment",
             specs: "SHFC 35 2 Outlet SHFC 90 4 Outlet 415V 50Hz 42V 200Hz"
         },
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Earth Compactor", 
             desc: "Heavy duty surface compaction.",
             link: "Product_details/earth_compactor_models.html", 
-            image: "Assets/logo.png",
+            image: "Assets/Others/logo.png",
             category: "Light Equipment",
             specs: "650mm 10 kN Diesel 8HP 850mm 20 kN Remote Wired"
         },

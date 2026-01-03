@@ -8,21 +8,8 @@
 })();
 
 function getRootPath() {
-    if (document.currentScript) {
-        const t = document.currentScript.getAttribute("src");
-        if (t) {
-            const e = Math.max(t.lastIndexOf("/"), t.lastIndexOf("\\"));
-            return -1 !== e ? t.substring(0, e + 1) : "./"
-        }
-    }
-    const t = document.getElementsByTagName("script");
-    for (let e of t)
-        if (e.src && e.src.includes("navbar.js")) {
-            const t = e.getAttribute("src"),
-                a = Math.max(t.lastIndexOf("/"), t.lastIndexOf("\\"));
-            return -1 !== a ? t.substring(0, a + 1) : "./"
-        }
-    return "./"
+    // A simpler, more direct approach based on the URL path. If the path contains '/Product_details/', we are in a subdirectory.
+    return window.location.pathname.includes('/Product_details/') ? '../' : './';
 }
 const rootPath = getRootPath(),
     navbarHTML = `
@@ -31,7 +18,7 @@ const rootPath = getRootPath(),
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
                 <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer" id="brand-wrapper">
-                    <img src="${rootPath}Assets/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
+                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden px-2 py-1 flex-grow text-center transition-all duration-300 ease-in-out" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
                         <span class="font-black text-2xl md:text-4xl text-primary relative z-10 transition-all duration-300 ease-in-out md:whitespace-nowrap tracking-tight drop-shadow-sm block" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
@@ -39,7 +26,7 @@ const rootPath = getRootPath(),
                         <!-- Construction Animations Layer -->
                         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
                             <!-- 3D Road Surface -->
-                            <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-20 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
+                            <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-40 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
                                 <div class="absolute top-1/2 left-0 w-full border-t border-dashed border-white opacity-70"></div>
                             </div>
 
@@ -59,22 +46,17 @@ const rootPath = getRootPath(),
                                 <i class="fa-solid fa-plane text-xs transform rotate-6"></i>
                             </div>
                             
-                            <!-- City Flyover -->
-                            <div class="absolute bottom-0 left-0 w-full h-full pointer-events-none opacity-20 z-0">
-                                <div class="absolute bottom-2 left-[-10%] w-[120%] h-24 border-t-8 border-gray-400 rounded-[50%]"></div>
-                            </div>
+                            
 
-                            <!-- Singapore Towers & Skyscrapers -->
-                            <div class="absolute bottom-1 left-1 md:left-4 flex items-end space-x-1 opacity-30 text-gray-500 z-10">
-                                <!-- Singapore MBS Style -->
-                                <div class="relative flex items-end mx-2">
-                                    <div class="absolute -top-1 left-[-10%] w-[120%] h-1.5 bg-gray-500 rounded-full"></div>
-                                    <i class="fa-solid fa-building text-3xl transform scale-y-125 mx-[1px]"></i>
-                                    <i class="fa-solid fa-building text-3xl transform scale-y-125 mx-[1px]"></i>
-                                    <i class="fa-solid fa-building text-3xl transform scale-y-125 mx-[1px]"></i>
+                            <!-- Building Construction -->
+                            <div class="absolute bottom-2 left-1 md:left-6 flex items-end z-20">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction" class="h-10 opacity-40">
+                                <div class="animate-bounce-subtle -ml-2">
+                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-5 opacity-60">
                                 </div>
-                                <i class="fa-solid fa-building text-4xl"></i>
-                                <i class="fa-solid fa-hotel text-3xl"></i>
+                                <div class="animate-bounce-subtle" style="animation-delay: 1s;">
+                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-5 opacity-60 transform scale-x-[-1]">
+                                </div>
                             </div>
 
                             <!-- High Tech City Skyline -->
@@ -95,15 +77,15 @@ const rootPath = getRootPath(),
                                 <i class="fa-solid fa-city text-3xl"></i>
                             </div>
 
-                            <!-- Car 1 with Smoke -->
-                            <div class="animate-roll bottom-1 text-red-600 opacity-50 flex items-center" style="animation-duration: 10s;">
-                                <div class="w-24 h-2 bg-gradient-to-r from-transparent to-gray-400 opacity-60 mr-1 rounded-l-full"></div>
-                                <i class="fa-solid fa-car-side text-lg"></i>
+                            <!-- Crane Truck with Smoke -->
+                            <div class="animate-roll bottom-1 opacity-90 flex items-end z-30" style="animation-duration: 38s;">
+                                <div class="w-16 h-2 bg-gradient-to-r from-transparent to-gray-400 opacity-50 mb-2 rounded-l-full"></div>
+                                <img src="${rootPath}Assets/Custom%20Icons/crane-truck.png" alt="Crane Truck" class="h-10 w-auto transform scale-x-[-1]">
                             </div>
-                           
-                            <!-- Scrap Straightener (Gears) -->
-                            <div class="absolute -top-2 -right-2 text-gray-300 opacity-30 animate-spin">
-                                <i class="fa-solid fa-gear text-xl"></i>
+
+                            <!-- Road Roller (Opposite Direction) -->
+                            <div class="animate-roll bottom-1 opacity-90 flex items-end z-20" style="animation-duration: 45s; animation-direction: reverse;">
+                                <img src="${rootPath}Assets/Custom%20Icons/RR-Icon.png" alt="Road Roller" class="h-10 w-auto transform scale-x-[-1]">
                             </div>
                             
                             <!-- Building Construction (Bars rising) -->
