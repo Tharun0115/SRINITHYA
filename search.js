@@ -38,12 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
             specs: "SRR30 Ride on SWR 30 Walk behind 10 HP Diesel Engine 600mm Drum"
         },
         { 
-            name: "Suspended Rope Platform", 
-            desc: "High-safety suspended platform (ZLP800).",
-            link: "index.html#contact", 
+            name: "Suspended Scaffold Solution", 
+            desc: "Customizable high-safety suspended platforms (ZLP800) for facade work.",
+            link: "Product_details/suspended_rope_platform.html", 
             image: "Assets/srp.png",
             category: "Heavy Machinery",
-            specs: "ZLP800 Load Calibration cell Length upto 100Mtr Weight upto 1000Kgs"
+            specs: "ZLP800 Load Calibration cell Customizable Length upto 100Mtr Weight upto 1000Kgs scaffold"
         },
         { 
             name: "Plate Compactors", 
@@ -56,10 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
         { 
             name: "Power Trowels", 
             desc: "Professional concrete finishing.",
-            link: "Product_details/power_trowel_models.html", 
+            link: "Product_details/surface_smootheners.html", 
             image: "Assets/Others/logo.png", // Using logo as placeholder if specific image not available in root assets list provided
             category: "Light Equipment",
-            specs: "1000 mm 4 Blades 2Hp 70Kg Honda Engine 3Hp 68Kg Crompton motor"
+            specs: "1000 mm 4 Blades 2Hp 70Kg Honda Engine 3Hp 68Kg Crompton motor SPTE SPTP"
+        },
+        { 
+            name: "Surface Smootheners", 
+            desc: "Screed vibrators and power trowels for a perfect finish.",
+            link: "Product_details/surface_smootheners.html", 
+            image: "Assets/Others/logo.png",
+            category: "Light Equipment",
+            specs: "Screed Vibrator Power Trowel SPTE SPTP SSVE-2"
+        },
+        { 
+            name: "Screed Vibrator SSVE-2", 
+            desc: "Electric screed vibrator for leveling concrete surfaces.",
+            link: "Product_details/surface_smootheners.html", 
+            image: "Assets/Others/logo.png",
+            category: "Light Equipment",
+            specs: "2000rpm electric motor screed blade"
+        },
+        { 
+            name: "Power Trowel SPTE Electric", 
+            desc: "Electric powered trowel for concrete finishing.",
+            link: "Product_details/surface_smootheners.html", 
+            image: "Assets/Others/logo.png",
+            category: "Light Equipment",
+            specs: "3Hp 68Kg Crompton motor"
         },
         { 
             name: "Concrete Mixers", 
@@ -196,6 +220,54 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "Assets/electrical_vibrator.png",
             category: "Light Equipment",
             specs: "25mm 40mm 60mm"
+        },
+        { 
+            name: "Shutter Vibrators", 
+            desc: "External vibrators for formwork, ensuring void-free concrete.",
+            link: "Product_details/shutter_vibrator_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "SHFS-4215 SHFS-4210 SSV-320 SSV-310 SSV-305"
+        },
+        { 
+            name: "Shutter Vibrator SHFS-4215", 
+            desc: "High frequency shutter vibrator, 1.5 HP.",
+            link: "Product_details/shutter_vibrator_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "1.5 HP 25A 42V 200Hz 6000 RPM"
+        },
+        { 
+            name: "Shutter Vibrator SHFS-4210", 
+            desc: "High frequency shutter vibrator, 1 HP.",
+            link: "Product_details/shutter_vibrator_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "1 HP 12A 42V 200Hz 3000 RPM"
+        },
+        { 
+            name: "Shutter Vibrator SSV-320", 
+            desc: "3-phase shutter vibrator, 2 HP.",
+            link: "Product_details/shutter_vibrator_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "2 HP 3.5A 415V 50Hz 3000 RPM"
+        },
+        { 
+            name: "Shutter Vibrator SSV-310", 
+            desc: "3-phase shutter vibrator, 1 HP.",
+            link: "Product_details/shutter_vibrator_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "1 HP 1.45A 415V 50Hz 3000 RPM"
+        },
+        { 
+            name: "Shutter Vibrator SSV-305", 
+            desc: "3-phase shutter vibrator, 0.5 HP.",
+            link: "Product_details/shutter_vibrator_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "0.5 HP 0.7A 415V 50Hz 3000 RPM"
         }
     ];
 

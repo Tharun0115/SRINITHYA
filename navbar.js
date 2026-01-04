@@ -126,16 +126,17 @@ const rootPath = getRootPath(),
                                         <a href="${rootPath}Product_details/bar_bending_models.html" class="megamenu-link"><i class="fa-solid fa-rotate-left w-6 text-secondary"></i> Bar Bending Machines</a>
                                         <a href="${rootPath}Product_details/scrap_straightener_models.html" class="megamenu-link"><i class="fa-solid fa-recycle w-6 text-secondary"></i> Scrap Straighteners</a>
                                         <a href="${rootPath}Product_details/road_roller_models.html" class="megamenu-link"><i class="fa-solid fa-road w-6 text-secondary"></i> Road Rollers</a>
-                                        <a href="${rootPath}index.html#contact" class="megamenu-link"><i class="fa-solid fa-elevator w-6 text-secondary"></i> Suspended Platforms</a>
+                                        <a href="${rootPath}Product_details/suspended_rope_platform.html" class="megamenu-link"><i class="fa-solid fa-elevator w-6 text-secondary"></i> Suspended Platforms</a>
                                     </div>
                                     
                                     <div class="md:col-span-2">
                                         <h3 class="text-sm font-bold text-primary uppercase tracking-wider border-b pb-2 mb-3">Light Equipment</h3>
                                         <div class="grid grid-cols-2 gap-x-8 gap-y-3">
                                             <a href="${rootPath}Product_details/plate_compactor_models.html" class="megamenu-link"><img src="https://cdn-icons-png.flaticon.com/512/2362/2362238.png" class="w-6 h-6 object-contain" alt="Plate Compactor"> Plate Compactors</a>
-                                            <a href="${rootPath}Product_details/power_trowel_models.html" class="megamenu-link"><i class="fa-solid fa-fan w-6 text-secondary"></i> Power Trowels</a>
+                                            <a href="${rootPath}Product_details/surface_smootheners.html" class="megamenu-link"><i class="fa-solid fa-ruler-horizontal w-6 text-secondary"></i> Surface Smootheners</a>
                                             <a href="${rootPath}Product_details/concrete_mixer_models.html" class="megamenu-link"><i class="fa-solid fa-blender w-6 text-secondary"></i> Concrete Mixers</a>
                                             <a href="${rootPath}Product_details/vibrators.html" class="megamenu-link"><i class="fa-solid fa-vibrator w-6 text-secondary"></i> Vibrators</a>
+                                            <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="megamenu-link"><i class="fa-solid fa-industry w-6 text-secondary"></i> Shutter Vibrators</a>
                                             <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="megamenu-link"><i class="fa-solid fa-wave-square w-6 text-secondary"></i> HF Converters</a>
                                             <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="megamenu-link"><i class="fa-solid fa-plug-circle-bolt w-6 text-secondary"></i> HF Pokers</a>
                                             <a href="${rootPath}Product_details/handy_vibration_models.html" class="megamenu-link"><i class="fa-solid fa-hand-fist w-6 text-secondary"></i> Handy Vibrators</a>
@@ -179,12 +180,13 @@ const rootPath = getRootPath(),
                         <a href="${rootPath}Product_details/bar_bending_models.html" class="mobile-submenu-link">Bar Bending</a>
                         <a href="${rootPath}Product_details/scrap_straightener_models.html" class="mobile-submenu-link">Scrap Straighteners</a>
                         <a href="${rootPath}Product_details/road_roller_models.html" class="mobile-submenu-link">Road Rollers</a>
-                        <a href="${rootPath}index.html#contact" class="mobile-submenu-link">Suspended Platforms</a>
+                        <a href="${rootPath}Product_details/suspended_rope_platform.html" class="mobile-submenu-link">Suspended Platforms</a>
                         <h4 class="font-semibold text-gray-500 pt-2 text-sm">Light Equipment</h4>
                         <a href="${rootPath}Product_details/plate_compactor_models.html" class="mobile-submenu-link">Plate Compactors</a>
-                        <a href="${rootPath}Product_details/power_trowel_models.html" class="mobile-submenu-link">Power Trowels</a>
+                        <a href="${rootPath}Product_details/surface_smootheners.html" class="mobile-submenu-link">Surface Smootheners</a>
                         <a href="${rootPath}Product_details/concrete_mixer_models.html" class="mobile-submenu-link">Concrete Mixers</a>
                         <a href="${rootPath}Product_details/vibrators.html" class="mobile-submenu-link">Vibrators</a>
+                        <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="mobile-submenu-link">Shutter Vibrators</a>
                         <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="mobile-submenu-link">HF Converters</a>
                         <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="mobile-submenu-link">HF Pokers</a>
                         <a href="${rootPath}Product_details/handy_vibration_models.html" class="mobile-submenu-link">Handy Vibrators</a>
