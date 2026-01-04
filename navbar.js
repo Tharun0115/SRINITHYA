@@ -139,6 +139,7 @@ const rootPath = getRootPath(),
                                             <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="megamenu-link"><i class="fa-solid fa-wave-square w-6 text-secondary"></i> HF Converters</a>
                                             <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="megamenu-link"><i class="fa-solid fa-plug-circle-bolt w-6 text-secondary"></i> HF Pokers</a>
                                             <a href="${rootPath}Product_details/handy_vibration_models.html" class="megamenu-link"><i class="fa-solid fa-hand-fist w-6 text-secondary"></i> Handy Vibrators</a>
+                                            <a href="${rootPath}Product_details/mechanical_poker_models.html" class="megamenu-link"><i class="fa-solid fa-gears w-6 text-secondary"></i> Mechanical Pokers</a>
                                             <a href="${rootPath}Product_details/earth_compactor_models.html" class="megamenu-link"><i class="fa-solid fa-mound w-6 text-secondary"></i> Earth Compactors</a>
                                             <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="megamenu-link"><i class="fa-solid fa-toolbox w-6 text-secondary"></i> Portable Bar Tools</a>
                                         </div>
@@ -187,6 +188,7 @@ const rootPath = getRootPath(),
                         <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="mobile-submenu-link">HF Converters</a>
                         <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="mobile-submenu-link">HF Pokers</a>
                         <a href="${rootPath}Product_details/handy_vibration_models.html" class="mobile-submenu-link">Handy Vibrators</a>
+                        <a href="${rootPath}Product_details/mechanical_poker_models.html" class="mobile-submenu-link">Mechanical Pokers</a>
                         <a href="${rootPath}Product_details/earth_compactor_models.html" class="mobile-submenu-link">Earth Compactors</a>
                         <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="mobile-submenu-link">Portable Equipment</a>
                     </div>

@@ -108,6 +108,94 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "Assets/bar_bender.png",
             category: "Light Equipment",
             specs: "SPB25 SPB32 SPS 32 SPC25 SPC 32 Portable Bender Cutter Straightener"
+        },
+        { 
+            name: "High Frequency Hand Held Motor", 
+            desc: "Powerful hand-held motor for high frequency applications.",
+            link: "Product_details/handy_vibration_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "SHHM 2300W 16000 rpm 5.8kg"
+        },
+        { 
+            name: "Handy Vibrator Motor 800W", 
+            desc: "Compact 800W motor for light duty tasks.",
+            link: "Product_details/handy_vibration_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "SHM 800 800W 4200 rpm"
+        },
+        { 
+            name: "Handy Vibrator Motor 1200W", 
+            desc: "Versatile 1200W motor for general concrete vibration.",
+            link: "Product_details/handy_vibration_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "SHM 1200 1200W 4300 rpm"
+        },
+        { 
+            name: "Handy Vibrator Motor 1600W", 
+            desc: "High-performance 1600W motor for demanding tasks.",
+            link: "Product_details/handy_vibration_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "SHM 1600 1600W 4600 rpm"
+        },
+        { 
+            name: "40IV High Frequency Poker", 
+            desc: "Standalone poker with inbuilt frequency converter.",
+            link: "Product_details/high_frequency_poker_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "40IV 40mm Inbuilt Converter 220V"
+        },
+        { 
+            name: "60IV High Frequency Poker", 
+            desc: "High performance 60mm poker with inbuilt converter.",
+            link: "Product_details/high_frequency_poker_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "60IV 60mm Inbuilt Converter 220V"
+        },
+        { 
+            name: "Diesel Vibrator", 
+            desc: "Robust diesel-powered vibrator for heavy-duty site applications.",
+            link: "Product_details/vibrators.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "5 HP Diesel 3000 RPM Heavy Duty Frame"
+        },
+        { 
+            name: "Petrol Vibrator", 
+            desc: "Versatile petrol-powered vibrator for sites without electricity.",
+            link: "Product_details/vibrators.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "5.5 HP Petrol 3000 RPM Heavy Duty Frame"
+        },
+        { 
+            name: "Handy Needles", 
+            desc: "Compact needles compatible with Handy Vibrators.",
+            link: "Product_details/mechanical_poker_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "25mm 40mm 60mm 3Mtr 6Mtr"
+        },
+        { 
+            name: "Hand-Held Needles", 
+            desc: "Precision needles compatible with High Frequency Hand-Held Motor.",
+            link: "Product_details/mechanical_poker_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "25mm 40mm 60mm"
+        },
+        { 
+            name: "Mechanical Needles", 
+            desc: "Robust needles compatible with Petrol, Diesel and Electrical Vibrators.",
+            link: "Product_details/mechanical_poker_models.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "25mm 40mm 60mm"
         }
     ];
 
