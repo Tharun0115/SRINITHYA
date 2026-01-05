@@ -26,11 +26,7 @@ const rootPath = getRootPath(),
                         <!-- Construction Animations Layer -->
                         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
                             <!-- 3D Road Surface -->
-<<<<<<< HEAD
                             <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-60 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
-=======
-                            <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-6 0 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
->>>>>>> f55f0e61e5fb7cc75cb95619b2b9d35542879d12
                                 <div class="absolute top-1/2 left-0 w-full border-t border-dashed border-white opacity-70"></div>
                             </div>
 
@@ -109,11 +105,7 @@ const rootPath = getRootPath(),
                                             <a href="${rootPath}Product_details/plate_compactor_models.html" class="megamenu-link"><i class="fa-solid fa-compress w-6 text-secondary"></i> Plate Compactors</a>
                                             <a href="${rootPath}Product_details/surface_smootheners.html" class="megamenu-link"><i class="fa-solid fa-ruler-horizontal w-6 text-secondary"></i> Surface Smootheners</a>
                                             <a href="${rootPath}Product_details/concrete_mixer_models.html" class="megamenu-link"><i class="fa-solid fa-blender w-6 text-secondary"></i> Concrete Mixers</a>
-<<<<<<< HEAD
-                                            <a href="${rootPath}Product_details/vibrators.html" class="megamenu-link"><i class="fa-solid fa-bolt w-6 text-secondary"></i> Vibrators</a>
-=======
                                             <a href="${rootPath}Product_details/Vibrators.html" class="megamenu-link"><i class="fa-solid fa-bolt w-6 text-secondary"></i> Vibrators</a>
->>>>>>> f55f0e61e5fb7cc75cb95619b2b9d35542879d12
                                             <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="megamenu-link"><i class="fa-solid fa-industry w-6 text-secondary"></i> Shutter Vibrators</a>
                                             <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="megamenu-link"><i class="fa-solid fa-wave-square w-6 text-secondary"></i> HF Converters</a>
                                             <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="megamenu-link"><i class="fa-solid fa-plug-circle-bolt w-6 text-secondary"></i> HF Pokers</a>
