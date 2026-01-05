@@ -46,6 +46,94 @@ document.addEventListener('DOMContentLoaded', () => {
             specs: "ZLP800 Load Calibration cell Customizable Length upto 100Mtr Weight upto 1000Kgs scaffold"
         },
         { 
+            name: "Mini Lift / Crane 300Kg", 
+            desc: "Compact mini crane for lifting materials up to 30m.",
+            link: "Product_details/mini_lift_models.html", 
+            image: "Assets/srp.png",
+            category: "Heavy Machinery",
+            specs: "300Kg Capacity 30Mtr Height 360 degree rotation"
+        },
+        { 
+            name: "Mini Lift / Crane 500Kg", 
+            desc: "Heavy-duty mini crane for lifting materials up to 30m.",
+            link: "Product_details/mini_lift_models.html", 
+            image: "Assets/srp.png",
+            category: "Heavy Machinery",
+            specs: "500Kg Capacity 30Mtr Height 360 degree rotation"
+        },
+        { 
+            name: "Industrial Cutting Tools", 
+            desc: "Precision tools for groove and core cutting applications.",
+            link: "Product_details/industrial_cutting_tools.html", 
+            image: "Assets/bar_cutter.png",
+            category: "Heavy Machinery",
+            specs: "Groove Cutter Core Cutter SCC-90 SCC-160 SCC-200 125mm 150mm 180mm 400mm"
+        },
+        { 
+            name: "Groove Cutter 125mm", 
+            desc: "Groove cutter with 125mm cutting depth and 5 HP power.",
+            link: "Product_details/industrial_cutting_tools.html", 
+            image: "Assets/bar_cutter.png",
+            category: "Heavy Machinery",
+            specs: "125mm depth 5 HP"
+        },
+        { 
+            name: "Groove Cutter 150mm", 
+            desc: "Groove cutter with 150mm cutting depth and 5/9 HP power.",
+            link: "Product_details/industrial_cutting_tools.html", 
+            image: "Assets/bar_cutter.png",
+            category: "Heavy Machinery",
+            specs: "150mm depth 5/9 HP"
+        },
+        { 
+            name: "Groove Cutter 180mm", 
+            desc: "Groove cutter with 180mm cutting depth and 9/13 HP power.",
+            link: "Product_details/industrial_cutting_tools.html", 
+            image: "Assets/bar_cutter.png",
+            category: "Heavy Machinery",
+            specs: "180mm depth 9/13 HP"
+        },
+        { 
+            name: "Groove Cutter 400mm", 
+            desc: "Groove cutter with 400mm cutting depth and 15/20/25 HP power.",
+            link: "Product_details/industrial_cutting_tools.html", 
+            image: "Assets/bar_cutter.png",
+            category: "Heavy Machinery",
+            specs: "400mm depth 15/20/25 HP"
+        },
+        { 
+            name: "Core Cutter SCC-90", 
+            desc: "Core cutter with 90mm diameter.",
+            link: "Product_details/industrial_cutting_tools.html", 
+            image: "Assets/bar_cutter.png",
+            category: "Heavy Machinery",
+            specs: "SCC-90 90mm 1350W 1500 RPM"
+        },
+        { 
+            name: "Dewatering Pumps", 
+            desc: "Submersible flexible shaft pumps for efficient water removal.",
+            link: "Product_details/dewatering_pump.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "2 inch 3 inch pump water petrol diesel electric motor"
+        },
+        { 
+            name: "2 Inch Dewatering Pump", 
+            desc: "Versatile pump for general dewatering tasks.",
+            link: "Product_details/dewatering_pump.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "2 inch 600 ltr/min 12m lift"
+        },
+        { 
+            name: "3 Inch Dewatering Pump", 
+            desc: "Higher capacity pump for faster water removal.",
+            link: "Product_details/dewatering_pump.html", 
+            image: "Assets/electrical_vibrator.png",
+            category: "Light Equipment",
+            specs: "3 inch 800 ltr/min 12m lift"
+        },
+        { 
             name: "Plate Compactors", 
             desc: "For soil and asphalt compaction.",
             link: "Product_details/plate_compactor_models.html", 

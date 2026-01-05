@@ -26,45 +26,20 @@ const rootPath = getRootPath(),
                         <!-- Construction Animations Layer -->
                         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
                             <!-- 3D Road Surface -->
-                            <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-40 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
+                            <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-6 0 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
                                 <div class="absolute top-1/2 left-0 w-full border-t border-dashed border-white opacity-70"></div>
                             </div>
 
-                            <!-- Flights -->
-                            <div class="animate-fly top-2 opacity-30 text-blue-500 flex items-center" style="animation-delay: 2s;">
-                                <div class="flex flex-col space-y-1 mr-0.5 transform -rotate-12 origin-right opacity-60 blur-[0.5px]">
-                                    <div class="w-32 h-0.5 bg-gradient-to-r from-transparent to-gray-400"></div>
-                                    <div class="w-32 h-0.5 bg-gradient-to-r from-transparent to-gray-400"></div>
-                                </div>
-                                <i class="fa-solid fa-plane text-xs transform -rotate-12"></i>
-                            </div>
-                            <div class="animate-fly top-4 opacity-20 text-gray-500 flex items-center" style="animation-delay: 15s; animation-duration: 30s;">
-                                <div class="flex flex-col space-y-1 mr-0.5 transform rotate-6 origin-right opacity-60 blur-[0.5px]">
-                                    <div class="w-40 h-0.5 bg-gradient-to-r from-transparent to-gray-500"></div>
-                                    <div class="w-40 h-0.5 bg-gradient-to-r from-transparent to-gray-500"></div>
-                                </div>
-                                <i class="fa-solid fa-plane text-xs transform rotate-6"></i>
-                            </div>
-                            
-                            
-
                             <!-- Building Construction -->
                             <div class="absolute bottom-2 left-1 md:left-6 flex items-end z-20">
-                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction" class="h-10 opacity-40">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction1" class="h-8 opacity-40">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction2.png" alt="Building Construction2" class="h-10 opacity-40 transform scale-x-[-1]">
                                 <div class="animate-bounce-subtle -ml-2">
                                     <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-5 opacity-60">
                                 </div>
                                 <div class="animate-bounce-subtle" style="animation-delay: 1s;">
                                     <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-5 opacity-60 transform scale-x-[-1]">
                                 </div>
-                            </div>
-
-                            <!-- High Tech City Skyline -->
-                            <div class="hidden md:flex absolute bottom-1 right-1/4 items-end space-x-0.5 opacity-20 text-gray-400">
-                                <i class="fa-solid fa-building text-2xl"></i>
-                                <i class="fa-solid fa-hotel text-3xl"></i>
-                                <i class="fa-solid fa-gopuram text-2xl"></i>
-                                <i class="fa-solid fa-landmark text-xl"></i>
                             </div>
 
                             <!-- Twin Towers & Skyscrapers -->
@@ -80,19 +55,12 @@ const rootPath = getRootPath(),
                             <!-- Crane Truck with Smoke -->
                             <div class="animate-roll bottom-1 opacity-90 flex items-end z-30" style="animation-duration: 38s;">
                                 <div class="w-16 h-2 bg-gradient-to-r from-transparent to-gray-400 opacity-50 mb-2 rounded-l-full"></div>
-                                <img src="${rootPath}Assets/Custom%20Icons/crane-truck.png" alt="Crane Truck" class="h-10 w-auto transform scale-x-[-1]">
+                                <img src="${rootPath}Assets/Custom%20Icons/crane-truck.png" alt="Crane Truck" class="h-6 w-auto transform scale-x-[-1]">
                             </div>
 
                             <!-- Road Roller (Opposite Direction) -->
                             <div class="animate-roll bottom-1 opacity-90 flex items-end z-20" style="animation-duration: 45s; animation-direction: reverse;">
-                                <img src="${rootPath}Assets/Custom%20Icons/RR-Icon.png" alt="Road Roller" class="h-10 w-auto transform scale-x-[-1]">
-                            </div>
-                            
-                            <!-- Building Construction (Bars rising) -->
-                            <div class="hidden md:flex absolute bottom-1 right-1/4 space-x-1 opacity-30">
-                                <div class="w-1 bg-gray-300 h-2 animate-pulse"></div>
-                                <div class="w-1 bg-gray-300 h-4 animate-pulse delay-75"></div>
-                                <div class="w-1 bg-gray-300 h-3 animate-pulse delay-150"></div>
+                                <img src="${rootPath}Assets/Custom%20Icons/RR-Icon.png" alt="Road Roller" class="h-6 w-auto transform scale-x-[-1]">
                             </div>
                         </div>
                     </div>
@@ -127,21 +95,24 @@ const rootPath = getRootPath(),
                                         <a href="${rootPath}Product_details/scrap_straightener_models.html" class="megamenu-link"><i class="fa-solid fa-recycle w-6 text-secondary"></i> Scrap Straighteners</a>
                                         <a href="${rootPath}Product_details/road_roller_models.html" class="megamenu-link"><i class="fa-solid fa-road w-6 text-secondary"></i> Road Rollers</a>
                                         <a href="${rootPath}Product_details/suspended_rope_platform.html" class="megamenu-link"><i class="fa-solid fa-elevator w-6 text-secondary"></i> Suspended Platforms</a>
+                                        <a href="${rootPath}Product_details/mini_lift_models.html" class="megamenu-link"><i class="fa-solid fa-dolly w-6 text-secondary"></i> Mini Lifts / Cranes</a>
+                                        <a href="${rootPath}Product_details/industrial_cutting_tools.html" class="megamenu-link"><i class="fa-solid fa-crosshairs w-6 text-secondary"></i> Industrial Cutters</a>
                                     </div>
                                     
                                     <div class="md:col-span-2">
                                         <h3 class="text-sm font-bold text-primary uppercase tracking-wider border-b pb-2 mb-3">Light Equipment</h3>
                                         <div class="grid grid-cols-2 gap-x-8 gap-y-3">
-                                            <a href="${rootPath}Product_details/plate_compactor_models.html" class="megamenu-link"><img src="https://cdn-icons-png.flaticon.com/512/2362/2362238.png" class="w-6 h-6 object-contain" alt="Plate Compactor"> Plate Compactors</a>
+                                            <a href="${rootPath}Product_details/plate_compactor_models.html" class="megamenu-link"><i class="fa-solid fa-compress w-6 text-secondary"></i> Plate Compactors</a>
                                             <a href="${rootPath}Product_details/surface_smootheners.html" class="megamenu-link"><i class="fa-solid fa-ruler-horizontal w-6 text-secondary"></i> Surface Smootheners</a>
                                             <a href="${rootPath}Product_details/concrete_mixer_models.html" class="megamenu-link"><i class="fa-solid fa-blender w-6 text-secondary"></i> Concrete Mixers</a>
-                                            <a href="${rootPath}Product_details/vibrators.html" class="megamenu-link"><i class="fa-solid fa-vibrator w-6 text-secondary"></i> Vibrators</a>
+                                            <a href="${rootPath}Product_details/vibrators.html" class="megamenu-link"><i class="fa-solid fa-bolt w-6 text-secondary"></i> Vibrators</a>
                                             <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="megamenu-link"><i class="fa-solid fa-industry w-6 text-secondary"></i> Shutter Vibrators</a>
                                             <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="megamenu-link"><i class="fa-solid fa-wave-square w-6 text-secondary"></i> HF Converters</a>
                                             <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="megamenu-link"><i class="fa-solid fa-plug-circle-bolt w-6 text-secondary"></i> HF Pokers</a>
                                             <a href="${rootPath}Product_details/handy_vibration_models.html" class="megamenu-link"><i class="fa-solid fa-hand-fist w-6 text-secondary"></i> Handy Vibrators</a>
                                             <a href="${rootPath}Product_details/mechanical_poker_models.html" class="megamenu-link"><i class="fa-solid fa-gears w-6 text-secondary"></i> Mechanical Pokers</a>
                                             <a href="${rootPath}Product_details/earth_compactor_models.html" class="megamenu-link"><i class="fa-solid fa-mound w-6 text-secondary"></i> Earth Compactors</a>
+                                            <a href="${rootPath}Product_details/dewatering_pump.html" class="megamenu-link"><i class="fa-solid fa-droplet w-6 text-secondary"></i> Dewatering Pumps</a>
                                             <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="megamenu-link"><i class="fa-solid fa-toolbox w-6 text-secondary"></i> Portable Bar Tools</a>
                                         </div>
                                     </div>
@@ -181,6 +152,8 @@ const rootPath = getRootPath(),
                         <a href="${rootPath}Product_details/scrap_straightener_models.html" class="mobile-submenu-link">Scrap Straighteners</a>
                         <a href="${rootPath}Product_details/road_roller_models.html" class="mobile-submenu-link">Road Rollers</a>
                         <a href="${rootPath}Product_details/suspended_rope_platform.html" class="mobile-submenu-link">Suspended Platforms</a>
+                        <a href="${rootPath}Product_details/mini_lift_models.html" class="mobile-submenu-link">Mini Lifts / Cranes</a>
+                        <a href="${rootPath}Product_details/industrial_cutting_tools.html" class="mobile-submenu-link">Industrial Cutters</a>
                         <h4 class="font-semibold text-gray-500 pt-2 text-sm">Light Equipment</h4>
                         <a href="${rootPath}Product_details/plate_compactor_models.html" class="mobile-submenu-link">Plate Compactors</a>
                         <a href="${rootPath}Product_details/surface_smootheners.html" class="mobile-submenu-link">Surface Smootheners</a>
@@ -192,6 +165,7 @@ const rootPath = getRootPath(),
                         <a href="${rootPath}Product_details/handy_vibration_models.html" class="mobile-submenu-link">Handy Vibrators</a>
                         <a href="${rootPath}Product_details/mechanical_poker_models.html" class="mobile-submenu-link">Mechanical Pokers</a>
                         <a href="${rootPath}Product_details/earth_compactor_models.html" class="mobile-submenu-link">Earth Compactors</a>
+                        <a href="${rootPath}Product_details/dewatering_pump.html" class="mobile-submenu-link">Dewatering Pumps</a>
                         <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="mobile-submenu-link">Portable Equipment</a>
                     </div>
                 </div>
