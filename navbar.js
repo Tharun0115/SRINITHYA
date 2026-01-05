@@ -105,7 +105,7 @@ const rootPath = getRootPath(),
                                             <a href="${rootPath}Product_details/plate_compactor_models.html" class="megamenu-link"><i class="fa-solid fa-compress w-6 text-secondary"></i> Plate Compactors</a>
                                             <a href="${rootPath}Product_details/surface_smootheners.html" class="megamenu-link"><i class="fa-solid fa-ruler-horizontal w-6 text-secondary"></i> Surface Smootheners</a>
                                             <a href="${rootPath}Product_details/concrete_mixer_models.html" class="megamenu-link"><i class="fa-solid fa-blender w-6 text-secondary"></i> Concrete Mixers</a>
-                                            <a href="${rootPath}Product_details/vibrators.html" class="megamenu-link"><i class="fa-solid fa-bolt w-6 text-secondary"></i> Vibrators</a>
+                                            <a href="${rootPath}Product_details/Vibrators.html" class="megamenu-link"><i class="fa-solid fa-bolt w-6 text-secondary"></i> Vibrators</a>
                                             <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="megamenu-link"><i class="fa-solid fa-industry w-6 text-secondary"></i> Shutter Vibrators</a>
                                             <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="megamenu-link"><i class="fa-solid fa-wave-square w-6 text-secondary"></i> HF Converters</a>
                                             <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="megamenu-link"><i class="fa-solid fa-plug-circle-bolt w-6 text-secondary"></i> HF Pokers</a>
@@ -158,7 +158,7 @@ const rootPath = getRootPath(),
                         <a href="${rootPath}Product_details/plate_compactor_models.html" class="mobile-submenu-link">Plate Compactors</a>
                         <a href="${rootPath}Product_details/surface_smootheners.html" class="mobile-submenu-link">Surface Smootheners</a>
                         <a href="${rootPath}Product_details/concrete_mixer_models.html" class="mobile-submenu-link">Concrete Mixers</a>
-                        <a href="${rootPath}Product_details/vibrators.html" class="mobile-submenu-link">Vibrators</a>
+                        <a href="${rootPath}Product_details/Vibrators.html" class="mobile-submenu-link">Vibrators</a>
                         <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="mobile-submenu-link">Shutter Vibrators</a>
                         <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="mobile-submenu-link">HF Converters</a>
                         <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="mobile-submenu-link">HF Pokers</a>

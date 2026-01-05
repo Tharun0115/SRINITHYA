@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { 
             name: "Vibrators", 
             desc: "Electric and petrol vibrators.",
-            link: "Product_details/vibrators.html", 
+            "link": "Product_details/Vibrators.html", 
             image: "Assets/electrical_vibrator.png",
             category: "Light Equipment",
             specs: "3 HP 220V 240V 12 15 A 2800 3000 RPM 380V 415V 4.5 6 A 2 HP 8 10 A"
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { 
             name: "Diesel Vibrator", 
             desc: "Robust diesel-powered vibrator for heavy-duty site applications.",
-            link: "Product_details/vibrators.html", 
+            "link": "Product_details/Vibrators.html", 
             image: "Assets/electrical_vibrator.png",
             category: "Light Equipment",
             specs: "5 HP Diesel 3000 RPM Heavy Duty Frame"
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { 
             name: "Petrol Vibrator", 
             desc: "Versatile petrol-powered vibrator for sites without electricity.",
-            link: "Product_details/vibrators.html", 
+            "link": "Product_details/Vibrators.html", 
             image: "Assets/electrical_vibrator.png",
             category: "Light Equipment",
             specs: "5.5 HP Petrol 3000 RPM Heavy Duty Frame"
