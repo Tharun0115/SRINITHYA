@@ -21,24 +21,24 @@ const rootPath = getRootPath(),
                     <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-8 md:h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden px-2 py-1 flex-grow text-center transition-all duration-300 ease-in-out" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
-                        <span class="font-black text-[10px] sm:text-sm md:text-4xl text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap tracking-tight drop-shadow-sm block" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="font-black text-[11px] sm:text-sm md:text-4xl text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap tracking-tight drop-shadow-sm block" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
                         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
                             <!-- 3D Road Surface -->
-                            <div class="absolute bottom-0 left-0 w-full h-2 md:h-4 bg-gray-600 opacity-60 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
+                            <div class="absolute bottom-0 left-0 w-full h-2.5 md:h-4 bg-gray-600 opacity-60 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
                                 <div class="absolute top-1/2 left-0 w-full border-t border-dashed border-white opacity-70"></div>
                             </div>
 
                             <!-- Building Construction -->
                             <div class="absolute bottom-2 left-1 md:left-6 flex items-end z-20">
-                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction1" class="h-4 md:h-8 opacity-40">
-                                <img src="${rootPath}Assets/Custom%20Icons/building-construction2.png" alt="Building Construction2" class="h-5 md:h-10 opacity-40 transform scale-x-[-1]">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction1" class="h-5 md:h-8 opacity-40">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction2.png" alt="Building Construction2" class="h-6 md:h-10 opacity-40 transform scale-x-[-1]">
                                 <div class="animate-bounce-subtle -ml-2">
-                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-2.5 md:h-5 opacity-60">
+                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-3 md:h-5 opacity-60">
                                 </div>
                                 <div class="animate-bounce-subtle" style="animation-delay: 1s;">
-                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-2.5 md:h-5 opacity-60 transform scale-x-[-1]">
+                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-3 md:h-5 opacity-60 transform scale-x-[-1]">
                                 </div>
                             </div>
 
@@ -55,12 +55,12 @@ const rootPath = getRootPath(),
                             <!-- Crane Truck with Smoke -->
                             <div class="animate-roll bottom-1 opacity-90 flex items-end z-30" style="animation-duration: 38s;">
                                 <div class="w-16 h-2 bg-gradient-to-r from-transparent to-gray-400 opacity-50 mb-2 rounded-l-full"></div>
-                                <img src="${rootPath}Assets/Custom%20Icons/crane-truck.png" alt="Crane Truck" class="h-3 md:h-6 w-auto transform scale-x-[-1]">
+                                <img src="${rootPath}Assets/Custom%20Icons/crane-truck.png" alt="Crane Truck" class="h-3.5 md:h-6 w-auto transform scale-x-[-1]">
                             </div>
 
                             <!-- Road Roller (Opposite Direction) -->
                             <div class="animate-roll bottom-1 opacity-90 flex items-end z-20" style="animation-duration: 45s; animation-direction: reverse;">
-                                <img src="${rootPath}Assets/Custom%20Icons/RR-Icon.png" alt="Road Roller" class="h-3 md:h-6 w-auto transform scale-x-[-1]">
+                                <img src="${rootPath}Assets/Custom%20Icons/RR-Icon.png" alt="Road Roller" class="h-3.5 md:h-6 w-auto transform scale-x-[-1]">
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@ const rootPath = getRootPath(),
         </div>
         <div id="scroll-progress" class="h-1 bg-secondary w-0 transition-all duration-100 ease-out"></div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg absolute left-0 top-full">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg absolute left-0 top-full max-h-[80vh] overflow-y-auto">
             <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
                 <a href="${rootPath}index.html#home" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Home</a>
                 <a href="${rootPath}about.html" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">About Us</a>
@@ -271,7 +271,7 @@ function initNavbar() {
         m = document.getElementById("nav-links"),
         u = document.getElementById("scroll-progress");
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 50 ? (o.classList.add("shadow-md"), n.classList.remove("md:grid", "md:grid-cols-1"), n.classList.add("md:flex", "md:flex-row", "md:items-center"), i.classList.remove("md:py-2"), i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.remove("h-8", "md:h-16"), r.classList.add("h-6"), l.classList.remove("flex-grow", "text-center", "px-2", "py-1"), l.classList.add("ml-2", "text-left"), c.classList.add("opacity-0"), d.classList.remove("text-[10px]", "sm:text-sm", "md:text-4xl"), d.classList.add("text-[9px]", "md:text-base"), m.classList.remove("w-full", "border-t", "justify-center", "py-2"), m.classList.add("justify-start", "pl-8", "py-1", "flex-shrink-0")) : (o.classList.remove("shadow-md"), n.classList.add("md:grid", "md:grid-cols-1"), n.classList.remove("md:flex", "md:flex-row", "md:items-center"), i.classList.add("md:py-2"), i.classList.remove("md:w-auto", "flex-shrink", "min-w-0"), r.classList.add("h-8", "md:h-16"), r.classList.remove("h-6"), l.classList.add("flex-grow", "text-center", "px-2", "py-1"), l.classList.remove("ml-2", "text-left"), c.classList.remove("opacity-0"), d.classList.add("text-[10px]", "sm:text-sm", "md:text-4xl"), d.classList.remove("text-[9px]", "md:text-base"), m.classList.add("w-full", "border-t", "justify-center", "py-2"), m.classList.remove("justify-start", "pl-8", "py-1", "flex-shrink-0")), u) {
+        if (window.scrollY > 50 ? (o.classList.add("shadow-md"), n.classList.remove("md:grid", "md:grid-cols-1"), n.classList.add("md:flex", "md:flex-row", "md:items-center"), i.classList.remove("md:py-2"), i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.remove("h-8", "md:h-16"), r.classList.add("h-6"), l.classList.remove("flex-grow", "text-center", "px-2", "py-1"), l.classList.add("ml-2", "text-left"), c.classList.add("opacity-0"), d.classList.remove("text-[11px]", "sm:text-sm", "md:text-4xl"), d.classList.add("text-[10px]", "md:text-base"), m.classList.remove("w-full", "border-t", "justify-center", "py-2"), m.classList.add("justify-start", "pl-8", "py-1", "flex-shrink-0")) : (o.classList.remove("shadow-md"), n.classList.add("md:grid", "md:grid-cols-1"), n.classList.remove("md:flex", "md:flex-row", "md:items-center"), i.classList.add("md:py-2"), i.classList.remove("md:w-auto", "flex-shrink", "min-w-0"), r.classList.add("h-8", "md:h-16"), r.classList.remove("h-6"), l.classList.add("flex-grow", "text-center", "px-2", "py-1"), l.classList.remove("ml-2", "text-left"), c.classList.remove("opacity-0"), d.classList.add("text-[11px]", "sm:text-sm", "md:text-4xl"), d.classList.remove("text-[10px]", "md:text-base"), m.classList.add("w-full", "border-t", "justify-center", "py-2"), m.classList.remove("justify-start", "pl-8", "py-1", "flex-shrink-0")), u) {
             const t = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
             u.style.width = t + "%"
         }
