@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4 class="text-white text-lg font-bold mb-4">Contact</h4>
                 <ul class="space-y-2 text-sm text-gray-400">
                     <li><i class="fa-solid fa-phone mr-2 text-secondary"></i> +91 9059239819</li>
-                    <li><i class="fa-solid fa-envelope mr-2 text-secondary"></i> sales@srinithyaepl.in</li>
+                    <li><i class="fa-solid fa-envelope mr-2 text-secondary"></i> <a href="mailto:sales@srinithyaepl.in" class="text-secondary hover:text-white transition">sales@srinithyaepl.in</a></li>
                     <li><i class="fa-solid fa-location-dot mr-2 text-secondary"></i> Hyderabad, Telangana <a href="https://maps.app.goo.gl/DXrXoucK7vEquaW98" target="_blank" class="ml-1 text-secondary hover:text-white transition" title="View on Map"><i class="fa-solid fa-map-location-dot"></i></a></li>
                     <li><i class="fa-solid fa-id-card mr-2 text-secondary"></i> CIN: U51909TG2020PTC139942</li>
                     <li><i class="fa-solid fa-receipt mr-2 text-secondary"></i> GSTIN: 36ABDCS5864M1ZP</li>
@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <div>
                 <h4 class="text-white text-lg font-bold mb-4">Follow Us</h4>
                 <div class="flex space-x-4">
-                    <a href="#" aria-label="Follow us on Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Follow us on LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Follow us on Instagram" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Follow us on YouTube" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/SRINITHYAEPL/" target="_blank" aria-label="Follow us on Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/company/srinithyaepl/" target="_blank" aria-label="Follow us on LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/srinithyaepl/" target="_blank" aria-label="Follow us on Instagram" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/@srinithyaengineering" target="_blank" aria-label="Follow us on YouTube" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>

@@ -303,6 +303,19 @@
             updateCartBadge();
             renderCart();
             
+            if (typeof showToast === 'function') {
+                showToast(`${name} added to estimate`, () => {
+                    const idx = cart.findIndex(i => i.name === name);
+                    if (idx !== -1) {
+                        if (cart[idx].qty > 1) cart[idx].qty--;
+                        else cart.splice(idx, 1);
+                        saveCart();
+                        updateCartBadge();
+                        renderCart();
+                    }
+                });
+            }
+            
             const btn = event.currentTarget;
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fa-solid fa-check"></i> Added';

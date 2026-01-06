@@ -31,14 +31,14 @@ const rootPath = getRootPath(),
                             </div>
 
                             <!-- Building Construction -->
-                            <div class="absolute bottom-2 left-1 md:left-6 flex items-end z-20">
-                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction1" class="h-5 md:h-8 opacity-40">
-                                <img src="${rootPath}Assets/Custom%20Icons/building-construction2.png" alt="Building Construction2" class="h-6 md:h-10 opacity-40 transform scale-x-[-1]">
+                            <div class="absolute bottom-0.5 md:bottom-2 left-1 md:left-6 flex items-end z-20">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction1" class="h-4 md:h-8 opacity-40">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction2.png" alt="Building Construction2" class="h-5 md:h-10 opacity-40 transform scale-x-[-1]">
                                 <div class="animate-bounce-subtle -ml-2">
-                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-3 md:h-5 opacity-60">
+                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-2.5 md:h-5 opacity-60">
                                 </div>
                                 <div class="animate-bounce-subtle" style="animation-delay: 1s;">
-                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-3 md:h-5 opacity-60 transform scale-x-[-1]">
+                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-2.5 md:h-5 opacity-60 transform scale-x-[-1]">
                                 </div>
                             </div>
 
@@ -126,7 +126,7 @@ const rootPath = getRootPath(),
 
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
                     <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
-                        <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
+                        <i class="fa-solid fa-cart-shopping text-2xl"></i>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </button>
                 </div>
@@ -147,26 +147,26 @@ const rootPath = getRootPath(),
                     <div id="mobile-products-menu" class="hidden pl-4 pt-2 pb-2 border-l-2 border-gray-200 ml-3 space-y-1">
                         <a href="${rootPath}index.html#products" class="mobile-submenu-link font-bold text-primary">View All Products</a>
                         <h4 class="font-semibold text-gray-500 pt-2 text-sm">Heavy Machinery</h4>
-                        <a href="${rootPath}Product_details/bar_cutting_models.html" class="mobile-submenu-link">Bar Cutting</a>
-                        <a href="${rootPath}Product_details/bar_bending_models.html" class="mobile-submenu-link">Bar Bending</a>
-                        <a href="${rootPath}Product_details/scrap_straightener_models.html" class="mobile-submenu-link">Scrap Straighteners</a>
-                        <a href="${rootPath}Product_details/road_roller_models.html" class="mobile-submenu-link">Road Rollers</a>
-                        <a href="${rootPath}Product_details/suspended_rope_platform.html" class="mobile-submenu-link">Suspended Platforms</a>
-                        <a href="${rootPath}Product_details/mini_lift_models.html" class="mobile-submenu-link">Mini Lifts / Cranes</a>
-                        <a href="${rootPath}Product_details/industrial_cutting_tools.html" class="mobile-submenu-link">Industrial Cutters</a>
+                        <a href="${rootPath}Product_details/bar_cutting_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-scissors fa-fw text-secondary text-lg"></i> Bar Cutting</a>
+                        <a href="${rootPath}Product_details/bar_bending_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-rotate-left fa-fw text-secondary text-lg"></i> Bar Bending</a>
+                        <a href="${rootPath}Product_details/scrap_straightener_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-recycle fa-fw text-secondary text-lg"></i> Scrap Straighteners</a>
+                        <a href="${rootPath}Product_details/road_roller_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-road fa-fw text-secondary text-lg"></i> Road Rollers</a>
+                        <a href="${rootPath}Product_details/suspended_rope_platform.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-elevator fa-fw text-secondary text-lg"></i> Suspended Platforms</a>
+                        <a href="${rootPath}Product_details/mini_lift_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-dolly fa-fw text-secondary text-lg"></i> Mini Lifts / Cranes</a>
+                        <a href="${rootPath}Product_details/industrial_cutting_tools.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-crosshairs fa-fw text-secondary text-lg"></i> Industrial Cutters</a>
                         <h4 class="font-semibold text-gray-500 pt-2 text-sm">Light Equipment</h4>
-                        <a href="${rootPath}Product_details/plate_compactor_models.html" class="mobile-submenu-link">Plate Compactors</a>
-                        <a href="${rootPath}Product_details/surface_smootheners.html" class="mobile-submenu-link">Surface Smootheners</a>
-                        <a href="${rootPath}Product_details/concrete_mixer_models.html" class="mobile-submenu-link">Concrete Mixers</a>
-                        <a href="${rootPath}Product_details/Vibrators.html" class="mobile-submenu-link">Vibrators</a>
-                        <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="mobile-submenu-link">Shutter Vibrators</a>
-                        <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="mobile-submenu-link">HF Converters</a>
-                        <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="mobile-submenu-link">HF Pokers</a>
-                        <a href="${rootPath}Product_details/handy_vibration_models.html" class="mobile-submenu-link">Handy Vibrators</a>
-                        <a href="${rootPath}Product_details/mechanical_poker_models.html" class="mobile-submenu-link">Mechanical Pokers</a>
-                        <a href="${rootPath}Product_details/earth_compactor_models.html" class="mobile-submenu-link">Earth Compactors</a>
-                        <a href="${rootPath}Product_details/dewatering_pump.html" class="mobile-submenu-link">Dewatering Pumps</a>
-                        <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="mobile-submenu-link">Portable Equipment</a>
+                        <a href="${rootPath}Product_details/plate_compactor_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-compress fa-fw text-secondary text-lg"></i> Plate Compactors</a>
+                        <a href="${rootPath}Product_details/surface_smootheners.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-ruler-horizontal fa-fw text-secondary text-lg"></i> Surface Smootheners</a>
+                        <a href="${rootPath}Product_details/concrete_mixer_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-blender fa-fw text-secondary text-lg"></i> Concrete Mixers</a>
+                        <a href="${rootPath}Product_details/Vibrators.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-bolt fa-fw text-secondary text-lg"></i> Vibrators</a>
+                        <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-industry fa-fw text-secondary text-lg"></i> Shutter Vibrators</a>
+                        <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-wave-square fa-fw text-secondary text-lg"></i> HF Converters</a>
+                        <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-plug-circle-bolt fa-fw text-secondary text-lg"></i> HF Pokers</a>
+                        <a href="${rootPath}Product_details/handy_vibration_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-hand-fist fa-fw text-secondary text-lg"></i> Handy Vibrators</a>
+                        <a href="${rootPath}Product_details/mechanical_poker_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-gears fa-fw text-secondary text-lg"></i> Mechanical Pokers</a>
+                        <a href="${rootPath}Product_details/earth_compactor_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-mound fa-fw text-secondary text-lg"></i> Earth Compactors</a>
+                        <a href="${rootPath}Product_details/dewatering_pump.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-droplet fa-fw text-secondary text-lg"></i> Dewatering Pumps</a>
+                        <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="mobile-submenu-link flex items-center gap-3"><i class="fa-solid fa-toolbox fa-fw text-secondary text-lg"></i> Portable Equipment</a>
                     </div>
                 </div>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
@@ -205,7 +205,7 @@ const rootPath = getRootPath(),
     </div>
 `,
     scrollButtonsHTML = `
-    <div class="fixed bottom-24 right-7 z-40 hidden md:flex flex-col gap-3">
+    <div id="scroll-buttons" class="fixed bottom-24 right-7 z-40 hidden md:flex flex-col gap-3">
         <div class="relative group">
             <button id="scroll-up-btn" class="bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center opacity-90 hover:opacity-100 border-2 border-white">
                 <i class="fa-solid fa-arrow-up"></i>
@@ -219,6 +219,9 @@ const rootPath = getRootPath(),
             <span class="absolute right-full top-1/2 transform -translate-y-1/2 mr-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">Scroll Down</span>
         </div>
     </div>
+`,
+    toastContainerHTML = `
+    <div id="toast-container" class="fixed top-24 right-4 z-[100] flex flex-col gap-2 pointer-events-none max-w-[calc(100vw-2rem)] w-auto items-end"></div>
 `;
 
 function toggleCart() {
@@ -241,6 +244,167 @@ function initScrollButtons() {
             behavior: "smooth"
         })
     })
+}
+
+function initCartAnimation() {
+    const badge = document.getElementById("cart-badge");
+    if (badge) {
+        const observer = new MutationObserver(() => {
+            const btn = badge.parentElement;
+            if (btn) {
+                btn.classList.remove("animate-bounce");
+                void btn.offsetWidth; // Trigger reflow
+                btn.classList.add("animate-bounce");
+                setTimeout(() => btn.classList.remove("animate-bounce"), 1000);
+            }
+        });
+        observer.observe(badge, { childList: true, characterData: true, subtree: true, attributes: true, attributeFilter: ["class"] });
+    }
+}
+
+window.showToast = function(message, undoCallback) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = "bg-gray-900 text-white px-4 py-3 rounded-lg shadow-xl flex items-center gap-3 transition-all duration-300 transform translate-x-full opacity-0 pointer-events-auto border-l-4 border-secondary min-w-[280px]";
+    
+    toast.innerHTML = `
+        <div class="bg-green-500 rounded-full p-1 flex-shrink-0">
+            <i class="fa-solid fa-check text-white text-[10px]"></i>
+        </div>
+        <span class="font-medium text-sm flex-grow leading-tight">${message}</span>
+    `;
+
+    if (undoCallback && typeof undoCallback === 'function') {
+        const undoBtn = document.createElement('button');
+        undoBtn.className = "ml-2 text-secondary hover:text-yellow-400 font-bold text-xs uppercase tracking-wide border-l border-gray-600 pl-3 whitespace-nowrap transition-colors";
+        undoBtn.textContent = "Undo";
+        undoBtn.onclick = () => {
+            undoCallback();
+            dismissToast(toast);
+        };
+        toast.appendChild(undoBtn);
+    }
+
+    container.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        setTimeout(() => {
+            toast.classList.remove('translate-x-full', 'opacity-0');
+        }, 10);
+    });
+
+    setTimeout(() => {
+        dismissToast(toast);
+    }, 4000);
+};
+
+function dismissToast(toast) {
+    toast.classList.add('translate-x-full', 'opacity-0');
+    setTimeout(() => {
+        if (toast.parentElement) {
+            toast.parentElement.removeChild(toast);
+        }
+    }, 300);
+};
+
+function makeNavbarLinksAbsolute() {
+    const links = document.querySelectorAll('#navbar a, #mobile-menu a');
+    links.forEach(link => {
+        if (link.getAttribute('href') && !link.getAttribute('href').startsWith('#') && !link.getAttribute('href').startsWith('javascript')) {
+            link.href = link.href; // Forces browser to resolve relative path to absolute
+        }
+    });
+}
+
+async function navigateTo(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const text = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+
+        // Update History and Title
+        window.history.pushState({}, '', url);
+        document.title = doc.title;
+
+        // Persistent Elements to Keep
+        const persistentIds = ['navbar', 'cart-modal', 'scroll-buttons', 'toast-container', 'mobile-menu'];
+
+        // Remove non-persistent elements from current body
+        Array.from(document.body.children).forEach(child => {
+            if (!persistentIds.includes(child.id) && child.tagName !== 'SCRIPT') {
+                // Remove everything except persistent UI and scripts
+                // We keep scripts generally, but specifically we want to remove page-specific content
+                // Actually, we should remove old page scripts if possible, but usually they are just definitions.
+                // We definitely skip removing navbar.js script tag if it exists in body
+                if (child.tagName === 'SCRIPT' && child.src.includes('navbar.js')) return;
+                child.remove();
+            }
+        });
+
+        // Inject new content
+        Array.from(doc.body.children).forEach(child => {
+            // Skip navbar.js in new content to prevent re-initialization
+            if (child.tagName === 'SCRIPT' && child.src.includes('navbar.js')) return;
+            
+            // Import and append new node
+            const importedNode = document.importNode(child, true);
+            document.body.appendChild(importedNode);
+
+            // Manually execute scripts
+            if (importedNode.tagName === 'SCRIPT') {
+                const newScript = document.createElement('script');
+                if (importedNode.src) {
+                    newScript.src = importedNode.src;
+                    newScript.defer = importedNode.defer;
+                    newScript.async = importedNode.async;
+                } else {
+                    newScript.textContent = importedNode.textContent;
+                }
+                importedNode.remove();
+                document.body.appendChild(newScript);
+            }
+        });
+
+        // Scroll to top
+        window.scrollTo(0, 0);
+
+        // Re-check brand link state
+        const brandWrapper = document.getElementById("brand-wrapper");
+        if (brandWrapper) {
+            const currentPath = window.location.pathname;
+            const pageName = currentPath.split("/").pop();
+            if (pageName === "index.html" || pageName === "") {
+                brandWrapper.removeAttribute("href");
+                brandWrapper.style.cursor = "default";
+                brandWrapper.setAttribute("aria-current", "page");
+            } else {
+                brandWrapper.href = new URL("index.html", document.baseURI).href;
+                brandWrapper.style.cursor = "pointer";
+                brandWrapper.removeAttribute("aria-current");
+            }
+        }
+
+    } catch (error) {
+        console.error("Navigation failed:", error);
+        window.location.href = url; // Fallback to full reload
+    }
+}
+
+function initRouter() {
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('javascript:') && link.hostname === window.location.hostname && !link.hasAttribute('download')) {
+            e.preventDefault();
+            navigateTo(link.href);
+        }
+    });
+    window.addEventListener('popstate', () => window.location.reload());
 }
 
 function initNavbar() {
@@ -278,7 +442,7 @@ function initNavbar() {
     })
 }
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons();
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), document.body.insertAdjacentHTML("beforeend", toastContainerHTML), initNavbar(), initScrollButtons(), initCartAnimation(), makeNavbarLinksAbsolute(), initRouter();
     const t = document.getElementById("brand-wrapper");
     if (t) {
         const e = window.location.pathname,
