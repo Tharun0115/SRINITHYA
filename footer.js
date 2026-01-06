@@ -1,10 +1,8 @@
 // c:\Users\HASHWANTH\Desktop\SRINITHYA\footer.js
-document.addEventListener('DOMContentLoaded', () => {
-    // Determine path prefix based on current location
-    const isProductPage = window.location.pathname.includes('/Product_details/');
-    const rootPath = isProductPage ? '../' : './';
-
-    const footerHTML = `
+// Determine path prefix based on current location
+const isProductPage = window.location.pathname.includes('/Product_details/');
+const rootPath = isProductPage ? '../' : './';
+const footerHTML = `
     <footer class="bg-dark text-gray-300 py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -44,13 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>&copy; 2025 SRINITHYA ENGINEERING PRIVATE LIMITED. All rights reserved.</p>
         </div>
     </footer>
-    `;
+`;
 
-    // Insert before the WhatsApp button if it exists, otherwise at the end of body
-    const whatsappBtn = document.getElementById('whatsapp-btn');
-    if (whatsappBtn) {
-        whatsappBtn.insertAdjacentHTML('beforebegin', footerHTML);
-    } else {
-        document.body.insertAdjacentHTML('beforeend', footerHTML);
-    }
-});
+// Insert before the WhatsApp button if it exists, otherwise at the end of body
+const whatsappBtn = document.getElementById('whatsapp-btn');
+if (whatsappBtn) {
+    whatsappBtn.insertAdjacentHTML('beforebegin', footerHTML);
+} else {
+    document.body.insertAdjacentHTML('beforeend', footerHTML);
+}

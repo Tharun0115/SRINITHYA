@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imageWebp: "./Assets/electrical_vibrator.webp",
             description: "A wide range of concrete vibrators for perfect consolidation.",
             features: ["High Frequency Pokers", "Electric & Petrol Motors"],
-            link: "Product_details/vibrators.html"
+            link: "Product_details/Vibrators.html"
         },
         {
             title: "Mini Lift / Crane",
@@ -148,8 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    function createProductCard(product, delay) {
-        const pictureTag = product.imageWebp 
+    function createProductCard(product) {
+        const pictureTag = product.imageWebp
             ? `<picture>
                     <source srcset="${product.imageWebp}" type="image/webp">
                     <img onclick="openImageModal(this.src)" src="${product.image}" alt="${product.title}" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="300">
@@ -176,16 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const heavyContainer = document.getElementById('heavy-machinery-grid');
     const lightContainer = document.getElementById('light-machinery-grid');
 
-    if (heavyContainer) {
-        heavyContainer.innerHTML = heavyMachinery.map((product, index) => createProductCard(product, (index + 1) * 100)).join('');
-    }
+    if (heavyContainer) heavyContainer.innerHTML = heavyMachinery.map(product => createProductCard(product)).join('');
+    if (lightContainer) lightContainer.innerHTML = lightEquipment.map(product => createProductCard(product)).join('');
 
-    if (lightContainer) {
-        lightContainer.innerHTML = lightEquipment.map((product, index) => createProductCard(product, (index + 1) * 100)).join('');
-    }
-
-    // Set up the Intersection Observer for fade-in animations
-    // This needs to run *after* the cards are injected into the DOM.
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -194,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    // Observe all elements with the .fade-in-section class, both static and dynamic.
     document.querySelectorAll('.fade-in-section').forEach(section => {
         observer.observe(section);
     });

@@ -68,7 +68,7 @@ const productData = {
                 { icon: "fa-solid fa-bolt-lightning", text: "Power: 3 HP Electric Motor" },
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Towable on site" }
             ],
-            compare: { model: "CM-220L Electric", capacity: "220 Litres", power: "3 HP Electric Motor", mobility: "Towable on site" },
+            compare: { model: "CM-220L Electric", category: "concrete-mixers", capacity: "220 Litres", power: "3 HP Electric Motor", mobility: "Towable on site" },
             actions: [{ type: 'cart', name: 'CM-220L Electric', price: 1000, hsn: '8474', gst: 18 }]
         },
         {
@@ -81,7 +81,7 @@ const productData = {
                 { icon: "fa-solid fa-gas-pump", text: "Power: 5 HP Diesel Engine" },
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Towable on site" }
             ],
-            compare: { model: "CM-220L Engine", capacity: "220 Litres", power: "5 HP Diesel Engine", mobility: "Towable on site" },
+            compare: { model: "CM-220L Engine", category: "concrete-mixers", capacity: "220 Litres", power: "5 HP Diesel Engine", mobility: "Towable on site" },
             actions: [{ type: 'cart', name: 'CM-220L Engine', price: 2000, hsn: '8474', gst: 18 }]
         },
         {
@@ -94,7 +94,7 @@ const productData = {
                 { icon: "fa-solid fa-bolt-lightning", text: "Power: 5 HP Electric Motor" },
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Heavy Duty Chassis" }
             ],
-            compare: { model: "CM-350L Electric", capacity: "350 Litres", power: "5 HP Electric Motor", mobility: "Heavy Duty Chassis" },
+            compare: { model: "CM-350L Electric", category: "concrete-mixers", capacity: "350 Litres", power: "5 HP Electric Motor", mobility: "Heavy Duty Chassis" },
             actions: [{ type: 'cart', name: 'CM-350L Electric', price: 3000, hsn: '8474', gst: 18 }]
         },
         {
@@ -107,7 +107,7 @@ const productData = {
                 { icon: "fa-solid fa-gas-pump", text: "Power: 9 HP Diesel Engine" },
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Heavy Duty Chassis" }
             ],
-            compare: { model: "CM-350L Engine", capacity: "350 Litres", power: "9 HP Diesel Engine", mobility: "Heavy Duty Chassis" },
+            compare: { model: "CM-350L Engine", category: "concrete-mixers", capacity: "350 Litres", power: "9 HP Diesel Engine", mobility: "Heavy Duty Chassis" },
             actions: [{ type: 'cart', name: 'CM-350L Engine', price: 1000, hsn: '8474', gst: 18 }]
         }
     ],
@@ -152,7 +152,7 @@ const productData = {
                 { icon: "fa-solid fa-gauge-high", text: "Force: 10 kN" },
                 { icon: "fa-solid fa-engine", text: "Engine: Diesel 8HP" }
             ],
-            compare: { model: "EC-500", "drum-width": "650mm", force: "10 kN", "engine-control": "Diesel 8HP" },
+            compare: { model: "EC-500", category: "earth-compactors", "drum-width": "650mm", force: "10 kN", "engine-control": "Diesel 8HP" },
             actions: [{ type: 'cart', name: 'EC-500', price: 3000, hsn: '8429', gst: 18 }]
         },
         {
@@ -165,7 +165,7 @@ const productData = {
                 { icon: "fa-solid fa-gauge-high", text: "Force: 20 kN" },
                 { icon: "fa-solid fa-engine", text: "Control: Remote/Wired" }
             ],
-            compare: { model: "EC-1500", "drum-width": "850mm", force: "20 kN", "engine-control": "Remote/Wired" },
+            compare: { model: "EC-1500", category: "earth-compactors", "drum-width": "850mm", force: "20 kN", "engine-control": "Remote/Wired" },
             actions: [{ type: 'cart', name: 'EC-1500', price: 3000, hsn: '8429', gst: 18 }]
         }
     ],
@@ -266,7 +266,7 @@ const productData = {
                 { icon: "fa-solid fa-plug", text: "Output: 42V, 200Hz" },
                 { icon: "fa-solid fa-fan", text: "Protection: Thermal & Overload" }
             ],
-            compare: { model: "HFC-3P", input: "415V, 50Hz", output: "42V, 200Hz", feature: "Thermal & Overload" },
+            compare: { model: "HFC-3P", category: "hfc-models", input: "415V, 50Hz", output: "42V, 200Hz", feature: "Thermal & Overload" },
             actions: [{ type: 'cart', name: 'HFC-3P', price: 1000, hsn: '8502', gst: 18 }]
         },
         {
@@ -279,7 +279,7 @@ const productData = {
                 { icon: "fa-solid fa-plug", text: "Output: 42V, 200Hz" },
                 { icon: "fa-solid fa-fan", text: "Weight: Lightweight Model" }
             ],
-            compare: { model: "HFC-1P", input: "230V, 50Hz", output: "42V, 200Hz", feature: "Lightweight Model" },
+            compare: { model: "HFC-1P", category: "hfc-models", input: "230V, 50Hz", output: "42V, 200Hz", feature: "Lightweight Model" },
             actions: [{ type: 'cart', name: 'HFC-1P', price: 1000, hsn: '8502', gst: 18 }]
         }
     ],
@@ -740,7 +740,7 @@ const productData = {
                 { icon: "fa-solid fa-gauge", text: "Speed: 25 meters/min" },
                 { icon: "fa-solid fa-recycle", text: "Usage: Coil & Light Scrap" }
             ],
-            compare: { model: "SS-12 Eco Model", range: "4mm - 12mm", "speed-feature": "25 meters/min", "usage-accuracy": "Coil & Light Scrap" },
+            compare: { model: "SS-12 Eco Model", category: "scrap-straightener-models", range: "4mm - 12mm", "speed-feature": "25 meters/min", "usage-accuracy": "Coil & Light Scrap" },
             actions: [{ type: 'cart', name: 'SS-12 Eco Model', price: 1000, hsn: '8462', gst: 18 }]
         },
         {
@@ -753,7 +753,7 @@ const productData = {
                 { icon: "fa-solid fa-scissors", text: "Feature: Auto-Cut Function" },
                 { icon: "fa-solid fa-arrows-left-right", text: "Accuracy: High Precision" }
             ],
-            compare: { model: "SSC-16 Pro", range: "6mm - 16mm", "speed-feature": "Auto-Cut Function", "usage-accuracy": "High Precision" },
+            compare: { model: "SSC-16 Pro", category: "scrap-straightener-models", range: "6mm - 16mm", "speed-feature": "Auto-Cut Function", "usage-accuracy": "High Precision" },
             actions: [{ type: 'cart', name: 'SSC-16 Pro', price: 2000, hsn: '8462', gst: 18 }]
         }
     ],
@@ -916,7 +916,7 @@ const productData = {
                 { icon: "fa-solid fa-shield-halved", text: "Insulation Class: Class F (155°C)" },
                 { icon: "fa-solid fa-tachometer-alt", text: "Speed (RPM): 2800 – 3000 RPM" }
             ],
-            compare: { model: "3HP 1PH Vibrator", power: "3 HP", voltage: "220V-240V", current: "12-15 A", speed: "2800-3000 RPM" },
+            compare: { model: "3HP 1PH Vibrator", category: "vibrators", power: "3 HP", voltage: "220V-240V", current: "12-15 A", speed: "2800-3000 RPM" },
             actions: [
                 { type: 'enquire' },
                 { type: 'cart', name: '3HP 1PH Vibrator', price: 1000, hsn: '8467', gst: 18 }
@@ -936,7 +936,7 @@ const productData = {
                 { icon: "fa-solid fa-shield-halved", text: "Insulation Class: Class F (155°C)" },
                 { icon: "fa-solid fa-tachometer-alt", text: "Speed (RPM): 2850 – 3000 RPM" }
             ],
-            compare: { model: "3HP 3PH Vibrator", power: "3 HP", voltage: "380V-415V", current: "4.5-6 A", speed: "2850-3000 RPM" },
+            compare: { model: "3HP 3PH Vibrator", category: "vibrators", power: "3 HP", voltage: "380V-415V", current: "4.5-6 A", speed: "2850-3000 RPM" },
             actions: [
                 { type: 'enquire' },
                 { type: 'cart', name: '3HP 3PH Vibrator', price: 1000, hsn: '8467', gst: 18 }
@@ -956,7 +956,7 @@ const productData = {
                 { icon: "fa-solid fa-shield-halved", text: "Insulation Class: Class F (155°C)" },
                 { icon: "fa-solid fa-tachometer-alt", text: "Speed (RPM): 2800 – 3000 RPM" }
             ],
-            compare: { model: "2HP Vibrator", power: "2 HP", voltage: "220V-240V", current: "8-10 A", speed: "2800-3000 RPM" },
+            compare: { model: "2HP Vibrator", category: "vibrators", power: "2 HP", voltage: "220V-240V", current: "8-10 A", speed: "2800-3000 RPM" },
             actions: [
                 { type: 'enquire' },
                 { type: 'cart', name: '2HP Vibrator', price: 1000, hsn: '8467', gst: 18 }
@@ -974,7 +974,7 @@ const productData = {
                 { icon: "fa-solid fa-tachometer-alt", text: "Speed (RPM): 3000 RPM" },
                 { icon: "fa-solid fa-cogs", text: "Mount: Heavy Duty Frame" }
             ],
-            compare: { model: "Diesel Vibrator", power: "5 HP", fuel: "Diesel", speed: "3000 RPM" },
+            compare: { model: "Diesel Vibrator", category: "vibrators", power: "5 HP", fuel: "Diesel", speed: "3000 RPM" },
             actions: [
                 { type: 'enquire' },
                 { type: 'cart', name: 'Diesel Vibrator', price: 12000, hsn: '8467', gst: 18 }
@@ -992,7 +992,7 @@ const productData = {
                 { icon: "fa-solid fa-tachometer-alt", text: "Speed (RPM): 3000 RPM" },
                 { icon: "fa-solid fa-cogs", text: "Mount: Heavy Duty Frame" }
             ],
-            compare: { model: "Petrol Vibrator", power: "5.5 HP", fuel: "Petrol", speed: "3000 RPM" },
+            compare: { model: "Petrol Vibrator", category: "vibrators", power: "5.5 HP", fuel: "Petrol", speed: "3000 RPM" },
             actions: [
                 { type: 'enquire' },
                 { type: 'cart', name: 'Petrol Vibrator', price: 11000, hsn: '8467', gst: 18 }

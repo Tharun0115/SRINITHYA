@@ -6,9 +6,9 @@
 const COMPARE_STORAGE_KEY = 'srinithya_compare_storage';
 
 document.addEventListener('DOMContentLoaded', () => {
-    updateCompareBar();
+   updateCompareBar();
 });
-
+ 
 function getStorageData() {
     try {
         const data = JSON.parse(localStorage.getItem(COMPARE_STORAGE_KEY));

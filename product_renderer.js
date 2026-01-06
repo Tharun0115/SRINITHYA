@@ -82,5 +82,9 @@ function renderProductCards(containerId, products) {
     const container = document.getElementById(containerId);
     if (container && products && Array.isArray(products)) {
         container.innerHTML = products.map(createProductCard).join('');
+        // After rendering cards, update the compare bar to find the new checkboxes and category.
+        if (typeof window.updateCompareBar === 'function') {
+            window.updateCompareBar();
+        }
     }
 }

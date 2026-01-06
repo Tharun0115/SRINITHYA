@@ -309,104 +309,6 @@ function dismissToast(toast) {
     }, 300);
 };
 
-function makeNavbarLinksAbsolute() {
-    const links = document.querySelectorAll('#navbar a, #mobile-menu a');
-    links.forEach(link => {
-        if (link.getAttribute('href') && !link.getAttribute('href').startsWith('#') && !link.getAttribute('href').startsWith('javascript')) {
-            link.href = link.href; // Forces browser to resolve relative path to absolute
-        }
-    });
-}
-
-async function navigateTo(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const text = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-
-        // Update History and Title
-        window.history.pushState({}, '', url);
-        document.title = doc.title;
-
-        // Persistent Elements to Keep
-        const persistentIds = ['navbar', 'cart-modal', 'scroll-buttons', 'toast-container', 'mobile-menu'];
-
-        // Remove non-persistent elements from current body
-        Array.from(document.body.children).forEach(child => {
-            if (!persistentIds.includes(child.id) && child.tagName !== 'SCRIPT') {
-                // Remove everything except persistent UI and scripts
-                // We keep scripts generally, but specifically we want to remove page-specific content
-                // Actually, we should remove old page scripts if possible, but usually they are just definitions.
-                // We definitely skip removing navbar.js script tag if it exists in body
-                if (child.tagName === 'SCRIPT' && child.src.includes('navbar.js')) return;
-                child.remove();
-            }
-        });
-
-        // Inject new content
-        Array.from(doc.body.children).forEach(child => {
-            // Skip navbar.js in new content to prevent re-initialization
-            if (child.tagName === 'SCRIPT' && child.src.includes('navbar.js')) return;
-            
-            // Import and append new node
-            const importedNode = document.importNode(child, true);
-            document.body.appendChild(importedNode);
-
-            // Manually execute scripts
-            if (importedNode.tagName === 'SCRIPT') {
-                const newScript = document.createElement('script');
-                if (importedNode.src) {
-                    newScript.src = importedNode.src;
-                    newScript.defer = importedNode.defer;
-                    newScript.async = importedNode.async;
-                } else {
-                    newScript.textContent = importedNode.textContent;
-                }
-                importedNode.remove();
-                document.body.appendChild(newScript);
-            }
-        });
-
-        // Scroll to top
-        window.scrollTo(0, 0);
-
-        // Re-check brand link state
-        const brandWrapper = document.getElementById("brand-wrapper");
-        if (brandWrapper) {
-            const currentPath = window.location.pathname;
-            const pageName = currentPath.split("/").pop();
-            if (pageName === "index.html" || pageName === "") {
-                brandWrapper.removeAttribute("href");
-                brandWrapper.style.cursor = "default";
-                brandWrapper.setAttribute("aria-current", "page");
-            } else {
-                brandWrapper.href = new URL("index.html", document.baseURI).href;
-                brandWrapper.style.cursor = "pointer";
-                brandWrapper.removeAttribute("aria-current");
-            }
-        }
-
-    } catch (error) {
-        console.error("Navigation failed:", error);
-        window.location.href = url; // Fallback to full reload
-    }
-}
-
-function initRouter() {
-    document.addEventListener('click', (e) => {
-        const link = e.target.closest('a');
-        if (!link) return;
-        const href = link.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('javascript:') && link.hostname === window.location.hostname && !link.hasAttribute('download')) {
-            e.preventDefault();
-            navigateTo(link.href);
-        }
-    });
-    window.addEventListener('popstate', () => window.location.reload());
-}
-
 function initNavbar() {
     const t = document.getElementById("mobile-menu-button"),
         e = document.getElementById("mobile-menu");
@@ -442,7 +344,7 @@ function initNavbar() {
     })
 }
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), document.body.insertAdjacentHTML("beforeend", toastContainerHTML), initNavbar(), initScrollButtons(), initCartAnimation(), makeNavbarLinksAbsolute(), initRouter();
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), document.body.insertAdjacentHTML("beforeend", toastContainerHTML), initNavbar(), initScrollButtons(), initCartAnimation();
     const t = document.getElementById("brand-wrapper");
     if (t) {
         const e = window.location.pathname,

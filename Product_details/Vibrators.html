@@ -363,16 +363,16 @@
     window.addEventListener('DOMContentLoaded', () => {
         setTimeout(updateCartBadge, 500);
     });
-
-    // Dynamic Card Rendering
+  </script>
+  <script src="../product_data.js" defer></script>
+  <script src="../product_renderer.js" defer></script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const pageKey = window.location.pathname.split('/').pop().replace('.html', '');
-        if (productData && productData[pageKey]) {
+        const pageKey = 'vibrators';
+        if (typeof productData !== 'undefined' && productData[pageKey]) {
             renderProductCards('product-cards-container', productData[pageKey]);
         }
     });
   </script>
-  <script src="../product_data.js" defer></script>
-  <script src="../product_renderer.js" defer></script>
 </body>
 </html>
