@@ -383,17 +383,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inject Modal HTML Structure
     const modalHTML = `
-        <div id="global-search-modal" class="fixed inset-0 z-[100] hidden search-backdrop flex items-start justify-center pt-16 px-4 transition-opacity duration-300">
+        <div id="global-search-modal" class="fixed inset-0 z-[100] hidden search-backdrop flex items-start justify-center pt-16 px-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Search Products">
             <div class="bg-white/95 w-full max-w-[80vw] rounded-2xl shadow-2xl overflow-hidden search-modal-anim flex flex-col max-h-[80vh] border border-white/20 ring-1 ring-black/5">
                 
                 <!-- Search Bar Row -->
                 <div class="p-5 border-b border-gray-100 flex items-center gap-4 bg-white sticky top-0 z-10">
-                    <div class="bg-secondary/10 p-3 rounded-full text-secondary">
+                    <div class="bg-secondary/10 p-3 rounded-full text-secondary" aria-hidden="true">
                         <i class="fa-solid fa-magnifying-glass text-xl"></i>
                     </div>
-                    <input type="text" id="global-search-input" class="w-full bg-transparent text-2xl outline-none text-gray-800 placeholder-gray-400 font-medium h-12" placeholder="Search products..." autocomplete="off">
-                    <button id="close-search-modal" class="p-2 text-gray-400 hover:text-red-500 transition rounded-full hover:bg-red-50">
-                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    <input type="text" id="global-search-input" class="w-full bg-transparent text-2xl outline-none text-gray-800 placeholder-gray-400 font-medium h-12" placeholder="Search products..." autocomplete="off" aria-label="Search query">
+                    <button id="close-search-modal" class="p-4 text-gray-400 hover:text-red-500 transition rounded-full hover:bg-red-50" aria-label="Close Search">
+                        <i class="fa-solid fa-xmark text-2xl" aria-hidden="true"></i>
                     </button>
                 </div>
 

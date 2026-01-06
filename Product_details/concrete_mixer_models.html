@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concrete Mixer Models | SEPL</title>
     <!-- Modern Font: Outfit -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"></noscript>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,8 +26,8 @@
             }
         }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js"></script>
@@ -75,100 +78,100 @@
             <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Concrete Mixer Models</h1>
             <p class="text-xl text-gray-600 mb-12">Portable mixers ranging from 220L (1 bag) to 350L (2 bag) capacity.</p>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 gap-3 md:gap-6">
                 
                 <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="CM-220L Electric" data-capacity="220 Litres" data-power="3 HP Electric Motor" data-mobility="Towable on site">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
+                    <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=CM-350L+Engine" alt="350L Engine Concrete Mixer" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                     </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
+                    <div class="p-2 md:p-4 text-center flex flex-col flex-grow">
                         <div class="flex justify-end -mt-2 -mr-2">
                             <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
                                 <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
                                 <span>Compare</span>
                             </label>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">CM-220L (Electric)</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Standard 1-bag mixer ideal for small jobs and indoor sites with electrical access.</p>
+                        <h3 class="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-2">CM-220L (Electric)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-3 flex-grow line-clamp-2">Standard 1-bag mixer ideal for small jobs and indoor sites with electrical access.</p>
                         <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
                             <li><i class="fa-solid fa-water-ladder text-primary mr-2"></i> Capacity: 220 Litres</li>
                             <li><i class="fa-solid fa-bolt-lightning text-primary mr-2"></i> Power: 3 HP Electric Motor</li>
                             <li><i class="fa-solid fa-truck-fast text-primary mr-2"></i> Mobility: Towable on site</li>
                         </ul>
                         <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('CM-220L Electric', 1000, '8474', 18)" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Estimate</button>
+                            <button onclick="addToCart('CM-220L Electric', 1000, '8474', 18)" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded text-xs md:text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="CM-220L Engine" data-capacity="220 Litres" data-power="5 HP Diesel Engine" data-mobility="Towable on site">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
+                    <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=CM-220L+Engine" alt="220L Engine Concrete Mixer" loading="lazy" decoding="async" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
+                    <div class="p-2 md:p-4 text-center flex flex-col flex-grow">
                         <div class="flex justify-end -mt-2 -mr-2">
                             <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
                                 <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
                                 <span>Compare</span>
                             </label>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">CM-220L (Engine Powered)</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Heavy-duty mixer for remote construction sites without reliable electricity.</p>
+                        <h3 class="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-2">CM-220L (Engine Powered)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-3 flex-grow line-clamp-2">Heavy-duty mixer for remote construction sites without reliable electricity.</p>
                         <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
                             <li><i class="fa-solid fa-water-ladder text-primary mr-2"></i> Capacity: 220 Litres</li>
                             <li><i class="fa-solid fa-gas-pump text-primary mr-2"></i> Power: 5 HP Diesel Engine</li>
                             <li><i class="fa-solid fa-truck-fast text-primary mr-2"></i> Mobility: Towable on site</li>
                         </ul>
                         <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('CM-220L Engine', 2000, '8474', 18)" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Estimate</button>
+                            <button onclick="addToCart('CM-220L Engine', 2000, '8474', 18)" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded text-xs md:text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="CM-350L Electric" data-capacity="350 Litres" data-power="5 HP Electric Motor" data-mobility="Heavy Duty Chassis">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
+                    <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/1E3A8A/FFFFFF?text=CM-350L+Electric" alt="350L Electric Concrete Mixer" loading="lazy" decoding="async" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
+                    <div class="p-2 md:p-4 text-center flex flex-col flex-grow">
                         <div class="flex justify-end -mt-2 -mr-2">
                             <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
                                 <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
                                 <span>Compare</span>
                             </label>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">CM-350L (Electric)</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">High-capacity 2-bag mixer for medium-sized projects requiring higher output.</p>
+                        <h3 class="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-2">CM-350L (Electric)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-3 flex-grow line-clamp-2">High-capacity 2-bag mixer for medium-sized projects requiring higher output.</p>
                         <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
                             <li><i class="fa-solid fa-water-ladder text-primary mr-2"></i> Capacity: 350 Litres</li>
                             <li><i class="fa-solid fa-bolt-lightning text-primary mr-2"></i> Power: 5 HP Electric Motor</li>
                             <li><i class="fa-solid fa-truck-fast text-primary mr-2"></i> Mobility: Heavy Duty Chassis</li>
                         </ul>
                         <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('CM-350L Electric', 3000, '8474', 18)" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Estimate</button>
+                            <button onclick="addToCart('CM-350L Electric', 3000, '8474', 18)" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded text-xs md:text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="CM-350L Engine" data-capacity="350 Litres" data-power="9 HP Diesel Engine" data-mobility="Heavy Duty Chassis">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
+                    <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center">
                         <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=CM-350L+Engine" alt="350L Engine Concrete Mixer" loading="lazy" decoding="async" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
+                    <div class="p-2 md:p-4 text-center flex flex-col flex-grow">
                         <div class="flex justify-end -mt-2 -mr-2">
                             <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
                                 <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
                                 <span>Compare</span>
                             </label>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">CM-350L (Engine Powered)</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Maximum capacity mixer with powerful engine for continuous, high-volume outdoor work.</p>
+                        <h3 class="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-2">CM-350L (Engine Powered)</h3>
+                        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-3 flex-grow line-clamp-2">Maximum capacity mixer with powerful engine for continuous, high-volume outdoor work.</p>
                         <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
                             <li><i class="fa-solid fa-water-ladder text-primary mr-2"></i> Capacity: 350 Litres</li>
                             <li><i class="fa-solid fa-gas-pump text-primary mr-2"></i> Power: 9 HP Diesel Engine</li>
                             <li><i class="fa-solid fa-truck-fast text-primary mr-2"></i> Mobility: Heavy Duty Chassis</li>
                         </ul>
                         <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('CM-350L Engine', 1000, '8474', 18)" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Estimate</button>
+                            <button onclick="addToCart('CM-350L Engine', 1000, '8474', 18)" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded text-xs md:text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add</button>
                         </div>
                     </div>
                 </div>

@@ -16,29 +16,29 @@ const rootPath = getRootPath(),
     <nav class="bg-white/90 backdrop-blur-md border-b border-gray-200/50 fixed w-full z-50 transition-all duration-300 ease-in-out will-change-transform transform-gpu" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out" id="nav-container">
-                <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
+                <div class="flex justify-between items-center py-1 md:py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
                 <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer" id="brand-wrapper">
-                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
+                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-8 md:h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden px-2 py-1 flex-grow text-center transition-all duration-300 ease-in-out" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
-                        <span class="font-black text-2xl md:text-4xl text-primary relative z-10 transition-all duration-300 ease-in-out md:whitespace-nowrap tracking-tight drop-shadow-sm block" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="font-black text-[10px] sm:text-sm md:text-4xl text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap tracking-tight drop-shadow-sm block" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
                         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
                             <!-- 3D Road Surface -->
-                            <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-60 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
+                            <div class="absolute bottom-0 left-0 w-full h-2 md:h-4 bg-gray-600 opacity-60 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
                                 <div class="absolute top-1/2 left-0 w-full border-t border-dashed border-white opacity-70"></div>
                             </div>
 
                             <!-- Building Construction -->
                             <div class="absolute bottom-2 left-1 md:left-6 flex items-end z-20">
-                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction1" class="h-8 opacity-40">
-                                <img src="${rootPath}Assets/Custom%20Icons/building-construction2.png" alt="Building Construction2" class="h-10 opacity-40 transform scale-x-[-1]">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction1.png" alt="Building Construction1" class="h-4 md:h-8 opacity-40">
+                                <img src="${rootPath}Assets/Custom%20Icons/building-construction2.png" alt="Building Construction2" class="h-5 md:h-10 opacity-40 transform scale-x-[-1]">
                                 <div class="animate-bounce-subtle -ml-2">
-                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-5 opacity-60">
+                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-2.5 md:h-5 opacity-60">
                                 </div>
                                 <div class="animate-bounce-subtle" style="animation-delay: 1s;">
-                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-5 opacity-60 transform scale-x-[-1]">
+                                    <img src="${rootPath}Assets/Custom%20Icons/worker.png" alt="Worker" class="h-2.5 md:h-5 opacity-60 transform scale-x-[-1]">
                                 </div>
                             </div>
 
@@ -55,12 +55,12 @@ const rootPath = getRootPath(),
                             <!-- Crane Truck with Smoke -->
                             <div class="animate-roll bottom-1 opacity-90 flex items-end z-30" style="animation-duration: 38s;">
                                 <div class="w-16 h-2 bg-gradient-to-r from-transparent to-gray-400 opacity-50 mb-2 rounded-l-full"></div>
-                                <img src="${rootPath}Assets/Custom%20Icons/crane-truck.png" alt="Crane Truck" class="h-6 w-auto transform scale-x-[-1]">
+                                <img src="${rootPath}Assets/Custom%20Icons/crane-truck.png" alt="Crane Truck" class="h-3 md:h-6 w-auto transform scale-x-[-1]">
                             </div>
 
                             <!-- Road Roller (Opposite Direction) -->
                             <div class="animate-roll bottom-1 opacity-90 flex items-end z-20" style="animation-duration: 45s; animation-direction: reverse;">
-                                <img src="${rootPath}Assets/Custom%20Icons/RR-Icon.png" alt="Road Roller" class="h-6 w-auto transform scale-x-[-1]">
+                                <img src="${rootPath}Assets/Custom%20Icons/RR-Icon.png" alt="Road Roller" class="h-3 md:h-6 w-auto transform scale-x-[-1]">
                             </div>
                         </div>
                     </div>
@@ -249,6 +249,13 @@ function initNavbar() {
     t && e && t.addEventListener("click", () => {
         e.classList.toggle("hidden")
     });
+    if (e) {
+        e.querySelectorAll(".mobile-link, .mobile-submenu-link").forEach(l => {
+            l.addEventListener("click", () => {
+                e.classList.add("hidden")
+            })
+        })
+    }
     const a = document.getElementById("mobile-products-trigger"),
         s = document.getElementById("mobile-products-menu");
     a && s && a.addEventListener("click", t => {
@@ -264,7 +271,7 @@ function initNavbar() {
         m = document.getElementById("nav-links"),
         u = document.getElementById("scroll-progress");
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 50 ? (o.classList.add("shadow-md"), n.classList.remove("md:grid", "md:grid-cols-1"), n.classList.add("md:flex", "md:flex-row", "md:items-center"), i.classList.remove("py-2"), i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.remove("h-16"), r.classList.add("h-10"), l.classList.remove("flex-grow", "text-center", "px-2", "py-1"), l.classList.add("ml-2", "text-left"), c.classList.add("opacity-0"), d.classList.remove("text-2xl", "md:text-4xl"), d.classList.add("text-xs", "md:text-base"), m.classList.remove("w-full", "border-t", "justify-center", "py-2"), m.classList.add("justify-start", "pl-8", "py-1", "flex-shrink-0")) : (o.classList.remove("shadow-md"), n.classList.add("md:grid", "md:grid-cols-1"), n.classList.remove("md:flex", "md:flex-row", "md:items-center"), i.classList.add("py-2"), i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.add("h-16"), r.classList.remove("h-10"), l.classList.add("flex-grow", "text-center", "px-2", "py-1"), l.classList.remove("ml-2", "text-left"), c.classList.remove("opacity-0"), d.classList.add("text-2xl", "md:text-4xl"), d.classList.remove("text-xs", "md:text-base"), m.classList.add("w-full", "border-t", "justify-center", "py-2"), m.classList.remove("justify-start", "pl-8", "py-1", "flex-shrink-0")), u) {
+        if (window.scrollY > 50 ? (o.classList.add("shadow-md"), n.classList.remove("md:grid", "md:grid-cols-1"), n.classList.add("md:flex", "md:flex-row", "md:items-center"), i.classList.remove("md:py-2"), i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.remove("h-8", "md:h-16"), r.classList.add("h-6"), l.classList.remove("flex-grow", "text-center", "px-2", "py-1"), l.classList.add("ml-2", "text-left"), c.classList.add("opacity-0"), d.classList.remove("text-[10px]", "sm:text-sm", "md:text-4xl"), d.classList.add("text-[9px]", "md:text-base"), m.classList.remove("w-full", "border-t", "justify-center", "py-2"), m.classList.add("justify-start", "pl-8", "py-1", "flex-shrink-0")) : (o.classList.remove("shadow-md"), n.classList.add("md:grid", "md:grid-cols-1"), n.classList.remove("md:flex", "md:flex-row", "md:items-center"), i.classList.add("md:py-2"), i.classList.remove("md:w-auto", "flex-shrink", "min-w-0"), r.classList.add("h-8", "md:h-16"), r.classList.remove("h-6"), l.classList.add("flex-grow", "text-center", "px-2", "py-1"), l.classList.remove("ml-2", "text-left"), c.classList.remove("opacity-0"), d.classList.add("text-[10px]", "sm:text-sm", "md:text-4xl"), d.classList.remove("text-[9px]", "md:text-base"), m.classList.add("w-full", "border-t", "justify-center", "py-2"), m.classList.remove("justify-start", "pl-8", "py-1", "flex-shrink-0")), u) {
             const t = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
             u.style.width = t + "%"
         }

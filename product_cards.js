@@ -158,16 +158,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return `
         <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group bg-white">
-            <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+            <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
                 ${pictureTag}
             </div>
-            <div class="p-6 flex flex-col flex-grow">
-                <h3 class="text-xl font-bold mb-2 text-gray-900">${product.title}</h3>
-                <p class="text-gray-600 text-sm mb-4">${product.description}</p>
-                <ul class="text-sm text-gray-600 mb-4 space-y-1 flex-grow">
-                    ${product.features.map(feature => `<li><i class="fa-solid fa-check text-green-600 mr-2"></i> ${feature}</li>`).join('')}
+            <div class="p-3 md:p-6 flex flex-col flex-grow">
+                <h3 class="text-base md:text-xl font-bold mb-2 text-gray-900">${product.title}</h3>
+                <p class="text-gray-600 text-xs md:text-sm mb-4">${product.description}</p>
+                <ul class="text-xs md:text-sm text-gray-600 mb-4 space-y-1 flex-grow">
+                    ${product.features.map(feature => `<li><i class="fa-solid fa-check text-green-600 mr-2" aria-hidden="true"></i> ${feature}</li>`).join('')}
                 </ul>
-                <a href="${product.link}" class="block text-center w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition mt-auto">Details</a>
+                <a href="${product.link}" class="block text-center w-full border border-primary text-primary py-1.5 md:py-2 rounded hover:bg-primary hover:text-white transition mt-auto text-sm md:text-base" aria-label="View details for ${product.title}">Details</a>
             </div>
         </div>
         `;
