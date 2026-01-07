@@ -343,8 +343,150 @@ function initNavbar() {
         }
     })
 }
+
+// --- SPA Router Logic ---
+function initRouter() {
+    document.addEventListener('click', async (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        // Ignore external links, anchors, mailto, tel, or downloads
+        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || link.hasAttribute('download') || link.getAttribute('target') === '_blank') return;
+
+        e.preventDefault();
+        
+        const targetUrl = new URL(href, window.location.href);
+        
+        try {
+            const response = await fetch(targetUrl.href);
+            if (!response.ok) throw new Error('Page not found');
+            
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            // Update URL
+            window.history.pushState({}, '', targetUrl.href);
+            
+            // --- Content Replacement Strategy ---
+            const body = document.body;
+            const nav = document.getElementById('navbar');
+            const footer = document.querySelector('footer');
+            const cartModal = document.getElementById('cart-modal');
+            const scrollButtons = document.getElementById('scroll-buttons');
+            const toastContainer = document.getElementById('toast-container');
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+            const searchModal = document.getElementById('global-search-modal');
+            const imageModal = document.getElementById('image-modal');
+
+            // 1. Identify nodes to keep
+            const keepNodes = new Set([nav, footer, cartModal, scrollButtons, toastContainer, whatsappBtn, searchModal, imageModal].filter(n => n));
+            
+            // 2. Remove old content
+            Array.from(body.children).forEach(child => {
+                if (!keepNodes.has(child) && child.tagName !== 'SCRIPT') {
+                    child.remove();
+                }
+            });
+
+            // 3. Extract new content from fetched document
+            const newNodes = Array.from(doc.body.children).filter(node => {
+                const tag = node.tagName;
+                const id = node.id;
+                if (tag === 'SCRIPT') return false; 
+                if (tag === 'NAV' || id === 'navbar') return false;
+                if (tag === 'FOOTER') return false;
+                if (['cart-modal', 'scroll-buttons', 'toast-container', 'whatsapp-btn', 'global-search-modal', 'image-modal'].includes(id)) return false;
+                return true;
+            });
+
+            // 4. Insert new content before the Footer
+            const insertPoint = footer || whatsappBtn || null;
+            newNodes.forEach(node => {
+                if (insertPoint) {
+                    body.insertBefore(node, insertPoint);
+                } else {
+                    body.appendChild(node);
+                }
+            });
+
+            // 5. Update Document Title
+            document.title = doc.title;
+
+            // 6. Fix Relative Links in Navbar and Footer
+            updateRelativeLinks();
+
+            // 7. Re-initialize Global Scripts
+            if (window.initProductCards) window.initProductCards();
+            if (window.initSearch) window.initSearch();
+            if (window.updateCompareBar) window.updateCompareBar();
+            if (typeof updateCartBadge === 'function') updateCartBadge();
+            
+            // 8. Scroll to top or hash
+            if (targetUrl.hash) {
+                const elem = document.getElementById(targetUrl.hash.substring(1));
+                if (elem) elem.scrollIntoView();
+            } else {
+                window.scrollTo(0, 0);
+            }
+
+        } catch (err) {
+            console.error('Navigation failed:', err);
+            window.location.href = href; // Fallback to normal navigation
+        }
+    });
+
+    // Handle Back/Forward buttons
+    window.addEventListener('popstate', () => {
+        window.location.reload(); // Simple fallback to ensure correct state
+    });
+}
+
+// Helper to fix links in Navbar/Footer after navigation
+function updateRelativeLinks() {
+    const isProductPage = window.location.pathname.includes('/Product_details/');
+    const rootPath = isProductPage ? '../' : './';
+    
+    // Update Navbar Logo
+    const navLogo = document.getElementById('nav-logo');
+    if (navLogo) navLogo.src = rootPath + 'Assets/Others/logo.png';
+    
+    // Helper to update a list of links
+    const updateLinks = (selector) => {
+        document.querySelectorAll(selector).forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                let filename = href.split('/').pop();
+                
+                // Handle anchors in filename (e.g. index.html#products)
+                const parts = filename.split('#');
+                const fileOnly = parts[0];
+                const hash = parts[1] ? '#' + parts[1] : '';
+
+                // Determine if this file belongs in root or Product_details
+                const rootFiles = ['index.html', 'about.html', 'services.html'];
+                const isRootFile = rootFiles.includes(fileOnly) || fileOnly === ''; 
+                
+                let newPath;
+                if (isRootFile) {
+                    newPath = rootPath + fileOnly + hash;
+                } else {
+                    newPath = rootPath + 'Product_details/' + fileOnly + hash;
+                }
+                
+                link.setAttribute('href', newPath);
+            }
+        });
+    };
+
+    updateLinks('#navbar a');
+    updateLinks('footer a');
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), document.body.insertAdjacentHTML("beforeend", toastContainerHTML), initNavbar(), initScrollButtons(), initCartAnimation();
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), document.body.insertAdjacentHTML("beforeend", toastContainerHTML), initNavbar(), initScrollButtons(), initCartAnimation(), initRouter();
     const t = document.getElementById("brand-wrapper");
     if (t) {
         const e = window.location.pathname,

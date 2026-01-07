@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-
+window.initProductCards = function() {
     const heavyMachinery = [
         {
             title: "Bar Cutting Machine",
@@ -149,12 +148,28 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     function createProductCard(product) {
-        const pictureTag = product.imageWebp
+        // Determine root path based on current location to fix image paths
+        const isProductPage = window.location.pathname.includes('/Product_details/');
+        const rootPath = isProductPage ? '../' : './';
+        
+        // Fix image path if it starts with ./
+        let imgSrc = product.image;
+        if (imgSrc.startsWith('./')) {
+            imgSrc = rootPath + imgSrc.substring(2);
+        }
+        
+        // Fix webp path if exists
+        let webpSrc = product.imageWebp;
+        if (webpSrc && webpSrc.startsWith('./')) {
+            webpSrc = rootPath + webpSrc.substring(2);
+        }
+
+        const pictureTag = webpSrc
             ? `<picture>
-                    <source srcset="${product.imageWebp}" type="image/webp">
-                    <img onclick="openImageModal(this.src)" src="${product.image}" alt="${product.title}" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="300">
+                    <source srcset="${webpSrc}" type="image/webp">
+                    <img onclick="openImageModal(this.src)" src="${imgSrc}" alt="${product.title}" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="300">
                 </picture>`
-            : `<img onclick="openImageModal(this.src)" src="${product.image}" alt="${product.title}" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">`;
+            : `<img onclick="openImageModal(this.src)" src="${imgSrc}" alt="${product.title}" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">`;
 
         return `
         <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group bg-white">
@@ -190,4 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-in-section').forEach(section => {
         observer.observe(section);
     });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.initProductCards();
 });

@@ -1,3 +1,4 @@
+window.initSearch = function() {
     // Determine path prefix based on current location to ensure links/images work from subdirectories
     const isProductPage = window.location.pathname.includes('Product_details');
     const pathPrefix = isProductPage ? '../' : './';
@@ -516,3 +517,8 @@
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeSearch();
     });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.initSearch();
+});

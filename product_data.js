@@ -1,4 +1,4 @@
-const productData = {
+window.productData = {
     'bar-bending-models': [
         {
             model: "SBB42",
