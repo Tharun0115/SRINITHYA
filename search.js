@@ -1,4 +1,4 @@
-window.initSearch = function() {
+document.addEventListener('DOMContentLoaded', () => {
     // Determine path prefix based on current location to ensure links/images work from subdirectories
     const isProductPage = window.location.pathname.includes('Product_details');
     const pathPrefix = isProductPage ? '../' : './';
@@ -41,7 +41,7 @@ window.initSearch = function() {
             name: "Suspended Scaffold Solution", 
             desc: "Customizable high-safety suspended platforms (ZLP800) for facade work.",
             link: "Product_details/suspended_rope_platform.html", 
-            image: "Assets/srp.png",
+            image: "Assets/Product Images/srp.png",
             category: "Heavy Machinery",
             specs: "ZLP800 Load Calibration cell Customizable Length upto 100Mtr Weight upto 1000Kgs scaffold"
         },
@@ -49,7 +49,7 @@ window.initSearch = function() {
             name: "Mini Lift / Crane 300Kg", 
             desc: "Compact mini crane for lifting materials up to 30m.",
             link: "Product_details/mini_lift_models.html", 
-            image: "Assets/srp.png",
+            image: "Assets/Product Images/sml.png",
             category: "Heavy Machinery",
             specs: "300Kg Capacity 30Mtr Height 360 degree rotation"
         },
@@ -57,7 +57,7 @@ window.initSearch = function() {
             name: "Mini Lift / Crane 500Kg", 
             desc: "Heavy-duty mini crane for lifting materials up to 30m.",
             link: "Product_details/mini_lift_models.html", 
-            image: "Assets/srp.png",
+            image: "Assets/Product Images/sml.png",
             category: "Heavy Machinery",
             specs: "500Kg Capacity 30Mtr Height 360 degree rotation"
         },
@@ -174,10 +174,10 @@ window.initSearch = function() {
             specs: "3Hp 68Kg Crompton motor"
         },
         { 
-            name: "Concrete Mixers", 
+            name: "Concrete Handling Equipment", 
             desc: "Portable 1-bag / 2-bag mixers.",
             link: "Product_details/concrete_mixer_models.html", 
-            image: "Assets/Others/logo.png",
+            image: "Assets/Product Images/scme.png",
             category: "Light Equipment",
             specs: "220 Litres 3 HP Electric Motor Towable 5 HP Diesel Engine 350 Litres 9 HP Diesel Engine Heavy Duty Chassis"
         },
@@ -196,14 +196,6 @@ window.initSearch = function() {
             image: "Assets/electrical_vibrator.png",
             category: "Light Equipment",
             specs: "SHFN 60 58mm 42V 200Hz 12000 RPM 40MM 5Mtr 10Mtr 12Mtr Hose"
-        },
-        { 
-            name: "Earth Compactor", 
-            desc: "Heavy duty surface compaction.",
-            link: "Product_details/earth_compactor_models.html", 
-            image: "Assets/Others/logo.png",
-            category: "Light Equipment",
-            specs: "650mm 10 kN Diesel 8HP 850mm 20 kN Remote Wired"
         },
         { 
             name: "Vibrators", 
@@ -225,7 +217,7 @@ window.initSearch = function() {
             name: "High Frequency Hand Held Motor", 
             desc: "Powerful hand-held motor for high frequency applications.",
             link: "Product_details/handy_vibration_models.html", 
-            image: "Assets/electrical_vibrator.png",
+            image: "Assets/Product Images/shm800.png",
             category: "Light Equipment",
             specs: "SHHM 2300W 16000 rpm 5.8kg"
         },
@@ -233,7 +225,7 @@ window.initSearch = function() {
             name: "Handy Vibrator Motor 800W", 
             desc: "Compact 800W motor for light duty tasks.",
             link: "Product_details/handy_vibration_models.html", 
-            image: "Assets/electrical_vibrator.png",
+            image: "Assets/Product Images/shm800.png",
             category: "Light Equipment",
             specs: "SHM 800 800W 4200 rpm"
         },
@@ -241,7 +233,7 @@ window.initSearch = function() {
             name: "Handy Vibrator Motor 1200W", 
             desc: "Versatile 1200W motor for general concrete vibration.",
             link: "Product_details/handy_vibration_models.html", 
-            image: "Assets/electrical_vibrator.png",
+            image: "Assets/Product Images/shm800.png",
             category: "Light Equipment",
             specs: "SHM 1200 1200W 4300 rpm"
         },
@@ -249,7 +241,7 @@ window.initSearch = function() {
             name: "Handy Vibrator Motor 1600W", 
             desc: "High-performance 1600W motor for demanding tasks.",
             link: "Product_details/handy_vibration_models.html", 
-            image: "Assets/electrical_vibrator.png",
+            image: "Assets/Product Images/shm800.png",
             category: "Light Equipment",
             specs: "SHM 1600 1600W 4600 rpm"
         },
@@ -289,7 +281,7 @@ window.initSearch = function() {
             name: "Handy Needles", 
             desc: "Compact needles compatible with Handy Vibrators.",
             link: "Product_details/mechanical_poker_models.html", 
-            image: "Assets/electrical_vibrator.png",
+            image: "Assets/Product Images/smp.png",
             category: "Light Equipment",
             specs: "25mm 40mm 60mm 3Mtr 6Mtr"
         },
@@ -297,7 +289,7 @@ window.initSearch = function() {
             name: "Hand-Held Needles", 
             desc: "Precision needles compatible with High Frequency Hand-Held Motor.",
             link: "Product_details/mechanical_poker_models.html", 
-            image: "Assets/electrical_vibrator.png",
+            image: "Assets/Product Images/smp.png",
             category: "Light Equipment",
             specs: "25mm 40mm 60mm"
         },
@@ -305,7 +297,7 @@ window.initSearch = function() {
             name: "Mechanical Needles", 
             desc: "Robust needles compatible with Petrol, Diesel and Electrical Vibrators.",
             link: "Product_details/mechanical_poker_models.html", 
-            image: "Assets/electrical_vibrator.png",
+            image: "Assets/Product Images/smp.png",
             category: "Light Equipment",
             specs: "25mm 40mm 60mm"
         },
@@ -383,17 +375,17 @@ window.initSearch = function() {
 
     // Inject Modal HTML Structure
     const modalHTML = `
-        <div id="global-search-modal" class="fixed inset-0 z-[100] hidden search-backdrop flex items-start justify-center pt-16 px-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Search Products">
+        <div id="global-search-modal" class="fixed inset-0 z-[100] hidden search-backdrop flex items-start justify-center pt-16 px-4 transition-opacity duration-300">
             <div class="bg-white/95 w-full max-w-[80vw] rounded-2xl shadow-2xl overflow-hidden search-modal-anim flex flex-col max-h-[80vh] border border-white/20 ring-1 ring-black/5">
                 
                 <!-- Search Bar Row -->
                 <div class="p-5 border-b border-gray-100 flex items-center gap-4 bg-white sticky top-0 z-10">
-                    <div class="bg-secondary/10 p-3 rounded-full text-secondary" aria-hidden="true">
+                    <div class="bg-secondary/10 p-3 rounded-full text-secondary">
                         <i class="fa-solid fa-magnifying-glass text-xl"></i>
                     </div>
-                    <input type="text" id="global-search-input" class="w-full bg-transparent text-2xl outline-none text-gray-800 placeholder-gray-400 font-medium h-12" placeholder="Search products..." autocomplete="off" aria-label="Search query">
-                    <button id="close-search-modal" class="p-4 text-gray-400 hover:text-red-500 transition rounded-full hover:bg-red-50" aria-label="Close Search">
-                        <i class="fa-solid fa-xmark text-2xl" aria-hidden="true"></i>
+                    <input type="text" id="global-search-input" class="w-full bg-transparent text-2xl outline-none text-gray-800 placeholder-gray-400 font-medium h-12" placeholder="Search products..." autocomplete="off">
+                    <button id="close-search-modal" class="p-2 text-gray-400 hover:text-red-500 transition rounded-full hover:bg-red-50">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
                     </button>
                 </div>
 
@@ -517,8 +509,4 @@ window.initSearch = function() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeSearch();
     });
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    window.initSearch();
 });
