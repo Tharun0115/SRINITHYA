@@ -26,7 +26,7 @@ function createProductCard(product) {
     const actionsHTML = (product.actions || []).map(action => {
         if (action.type === 'cart') {
             const params = `'${action.name}'`;
-            return `<button onclick="addToCart(${params})" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm" aria-label="Add ${action.name} to Estimate"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add</button>`;
+            return `<button onclick="addToCart(${params})" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm" aria-label="Add ${action.name} to Tray"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add to Tray</button>`;
         }
         if (action.type === 'enquire') {
             return `<button class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Enquire about ${product.name}">Enquire</button>`;

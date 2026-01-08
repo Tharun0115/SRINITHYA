@@ -150,7 +150,7 @@ function renderCart() {
     if (!container) return;
     
     if (cart.length === 0) {
-        container.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-gray-400"><i class="fa-solid fa-cart-arrow-down text-6xl mb-4"></i><p>Your estimate list is empty.</p></div>';
+        container.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-gray-400"><i class="fa-solid fa-basket-shopping text-6xl mb-4"></i><p>Your selection tray is empty.</p></div>';
         return;
     }
     
@@ -239,18 +239,62 @@ async function generatePDF() {
 
 function sendRequirementToWhatsapp() {
     if (cart.length === 0) {
-        alert("Please add items to the estimate first.");
+        if (typeof openEmptyCartModal === 'function') {
+            openEmptyCartModal();
+        } else {
+            alert("Please add items to the estimate first.");
+        }
         return;
     }
-    
-    let message = "";
-    cart.forEach((item, index) => {
-        message += `${index + 1} ${item.name} ${item.qty}\n`;
-    });
+    const modal = document.getElementById('name-input-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        const input = document.getElementById('whatsapp-name-input');
+        if (input) {
+            input.focus();
+            validateNameInput(); // Validate on open to ensure button is disabled
+        }
+    }
+}
 
-    const phoneNumber = "919032069819";
+window.validateNameInput = function() {
+    const input = document.getElementById('whatsapp-name-input');
+    const sendBtn = document.getElementById('confirm-whatsapp-btn');
+    if (input && sendBtn) {
+        sendBtn.disabled = input.value.trim() === '';
+    }
+}
+
+window.closeNameInputModal = function() {
+    const modal = document.getElementById('name-input-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        const input = document.getElementById('whatsapp-name-input');
+        if (input) input.value = ''; // Clear input
+        validateNameInput(); // Re-disable button
+    }
+}
+
+window.confirmSendWhatsapp = function() {
+    const input = document.getElementById('whatsapp-name-input');
+    let userName = input ? input.value.trim() : "";
+    if (userName === "") {
+        // This should not happen if the button is disabled, but it's a good fallback.
+        alert("Please enter your name.");
+        return;
+    }
+
+    let message = `Hi Srinithya! I am ${userName}, we have requirement for the items below:\n`;
+    cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name} - ${item.qty}Nos\n`;
+    });
+    message += "\nSent from website";
+
+    const phoneNumber = "919059239819";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
+    
+    closeNameInputModal();
 }
 
 // --- Initialization ---

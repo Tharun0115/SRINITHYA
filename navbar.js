@@ -42,16 +42,6 @@ const rootPath = getRootPath(),
                                 </div>
                             </div>
 
-                            <!-- Twin Towers & Skyscrapers -->
-                            <div class="hidden md:flex absolute bottom-1 left-1/3 items-end space-x-1 opacity-30 text-gray-500">
-                                <div class="flex flex-col items-center">
-                                    <i class="fa-solid fa-satellite-dish text-xs mb-1"></i>
-                                    <i class="fa-solid fa-building text-4xl transform scale-y-150 origin-bottom"></i>
-                                </div>
-                                <i class="fa-solid fa-building text-4xl transform scale-y-150 origin-bottom"></i>
-                                <i class="fa-solid fa-city text-3xl"></i>
-                            </div>
-
                             <!-- Crane Truck with Smoke -->
                             <div class="animate-roll bottom-1 opacity-90 flex items-end z-30" style="animation-duration: 38s;">
                                 <div class="w-16 h-2 bg-gradient-to-r from-transparent to-gray-400 opacity-50 mb-2 rounded-l-full"></div>
@@ -179,7 +169,7 @@ const rootPath = getRootPath(),
         <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
         <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
             <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice-dollar mr-2"></i>Estimate Builder</h2>
+                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice-dollar mr-2"></i>Selection Tray</h2>
                 <div>
                     <button onclick="openClearCartModal()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Estimate">
                         <i class="fa-solid fa-trash-can"></i> Clear
@@ -211,6 +201,38 @@ const rootPath = getRootPath(),
                     <button onclick="closeClearCartModal()" class="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition focus:outline-none">Cancel</button>
                     <button onclick="confirmClearCartAction()" class="px-5 py-2.5 rounded-lg bg-red-600 text-white font-bold hover:bg-red-700 transition shadow-lg focus:outline-none">Yes, Clear It</button>
                 </div>
+            </div>
+        </div>
+    </div>
+`,
+    nameInputModalHTML = `
+    <div id="name-input-modal" class="fixed inset-0 z-[90] hidden flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform scale-100 transition-transform duration-300">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-brands fa-whatsapp text-3xl text-green-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Enter Your Name</h3>
+                <p class="text-gray-600 mb-4 text-sm">Please enter your name to personalize the requirement message.</p>
+                <input type="text" id="whatsapp-name-input" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary" placeholder="Your Name" oninput="validateNameInput()" onkeydown="if(event.key === 'Enter' && !document.getElementById('confirm-whatsapp-btn').disabled) confirmSendWhatsapp()">
+                <div class="flex gap-3 justify-center">
+                    <button onclick="closeNameInputModal()" class="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition focus:outline-none w-1/2">Cancel</button>
+                    <button id="confirm-whatsapp-btn" onclick="confirmSendWhatsapp()" class="px-5 py-2.5 rounded-lg bg-green-600 text-white font-bold hover:bg-green-700 transition shadow-lg focus:outline-none w-1/2 disabled:bg-green-300 disabled:cursor-not-allowed" disabled>Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+`,
+    emptyCartModalHTML = `
+    <div id="empty-cart-modal" class="fixed inset-0 z-[90] hidden flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform scale-100 transition-transform duration-300">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-basket-shopping text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Selection Tray is Empty</h3>
+                <p class="text-gray-600 mb-6">Please add items to your selection tray before sending a requirement.</p>
+                <button onclick="closeEmptyCartModal()" class="px-6 py-2.5 rounded-lg bg-primary text-white font-bold hover:bg-blue-800 transition shadow-lg focus:outline-none w-full">Okay, Got it</button>
             </div>
         </div>
     </div>
@@ -252,6 +274,16 @@ window.confirmClearCartAction = function() {
     } finally {
         window.confirm = originalConfirm;
     }
+}
+
+window.openEmptyCartModal = function() {
+    const modal = document.getElementById('empty-cart-modal');
+    if (modal) modal.classList.remove('hidden');
+}
+
+window.closeEmptyCartModal = function() {
+    const modal = document.getElementById('empty-cart-modal');
+    if (modal) modal.classList.add('hidden');
 }
 
 function toggleCart() {
@@ -392,7 +424,7 @@ function initNavbar() {
     })
 }
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation();
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", emptyCartModalHTML), document.body.insertAdjacentHTML("beforeend", nameInputModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation();
     const t = document.getElementById("brand-wrapper");
     if (t) {
         const e = window.location.pathname,
