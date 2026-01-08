@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Suspended Scaffold Solution", 
             desc: "Customizable high-safety suspended platforms (ZLP800) for facade work.",
             link: "Product_details/suspended_rope_platform.html", 
-            image: "Assets/Product Images/srp.png",
+            image: "Assets/Product Images/srp.jpg",
             category: "Heavy Machinery",
             specs: "ZLP800 Load Calibration cell Customizable Length upto 100Mtr Weight upto 1000Kgs scaffold"
         },

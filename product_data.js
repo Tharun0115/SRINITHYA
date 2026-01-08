@@ -141,34 +141,6 @@ window.productData = {
             actions: [{ type: 'cart', name: '3 Inch Dewatering Pump', price: 9000, hsn: '8413', gst: 18 }]
         }
     ],
-    'earth-compactor-models': [
-        {
-            model: "EC-500",
-            name: "EC-500 (Walk-Behind)",
-            image: "./Assets/Others/logo.png",
-            description: "500kg centrifugal force, double-drum vibratory action for trenches and foundations.",
-            specs: [
-                { icon: "fa-solid fa-road", text: "Drum Width: 650mm" },
-                { icon: "fa-solid fa-gauge-high", text: "Force: 10 kN" },
-                { icon: "fa-solid fa-engine", text: "Engine: Diesel 8HP" }
-            ],
-            compare: { model: "EC-500", category: "earth-compactors", "drum-width": "650mm", force: "10 kN", "engine-control": "Diesel 8HP" },
-            actions: [{ type: 'cart', name: 'EC-500', price: 3000, hsn: '8429', gst: 18 }]
-        },
-        {
-            model: "EC-1500",
-            name: "EC-1500 (Trench Roller)",
-            image: "./Assets/Others/logo.png",
-            description: "Remote control operation, ideal for confined spaces and high-density soil.",
-            specs: [
-                { icon: "fa-solid fa-road", text: "Drum Width: 850mm" },
-                { icon: "fa-solid fa-gauge-high", text: "Force: 20 kN" },
-                { icon: "fa-solid fa-engine", text: "Control: Remote/Wired" }
-            ],
-            compare: { model: "EC-1500", category: "earth-compactors", "drum-width": "850mm", force: "20 kN", "engine-control": "Remote/Wired" },
-            actions: [{ type: 'cart', name: 'EC-1500', price: 3000, hsn: '8429', gst: 18 }]
-        }
-    ],
     'handy-vibration-models': [
         {
             model: "SHHM Hand Held",
@@ -523,7 +495,7 @@ window.productData = {
         {
             model: "Mini Lift 300Kg",
             name: "300Kg Mini Lift",
-            image: "./Assets/srp.png",
+            image: "./Assets/Product Images/sml.png",
             imageClass: "object-contain p-4",
             description: "Versatile and compact, ideal for lifting materials on small to medium-sized sites.",
             specs: [
@@ -537,7 +509,7 @@ window.productData = {
         {
             model: "Mini Lift 500Kg",
             name: "500Kg Mini Lift",
-            image: "./Assets/srp.png",
+            image: "./Assets/Product Images/sml.png",
             imageClass: "object-contain p-4",
             description: "Heavy-duty lifting capacity for demanding construction environments.",
             specs: [
@@ -888,7 +860,7 @@ window.productData = {
         {
             model: "ZLP800",
             name: "ZLP800 Suspended Platform",
-            image: "./Assets/srp.png",
+            image: "./Assets/Product Images/srp.png",
             imageClass: "object-contain p-8",
             description: "The industry-standard for safety and reliability in high-rise access.",
             specs: [

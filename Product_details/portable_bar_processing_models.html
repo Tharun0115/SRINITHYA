@@ -398,15 +398,7 @@
             saveCart();
             updateCartBadge();
             renderCart();
-            
-            const btn = event.currentTarget;
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-check"></i> Added';
-            btn.classList.add('bg-green-600');
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.remove('bg-green-600');
-            }, 1000);
+            updateCardQuantities();
         }
 
         function removeFromCart(index) {
@@ -414,15 +406,15 @@
             saveCart();
             renderCart();
             updateCartBadge();
+            updateCardQuantities();
         }
 
         function clearCart() {
-            if (cart.length > 0 && confirm("Are you sure you want to clear all items from the estimate?")) {
-                cart = [];
-                saveCart();
-                renderCart();
-                updateCartBadge();
-            }
+            cart = [];
+            saveCart();
+            renderCart();
+            updateCartBadge();
+            updateCardQuantities();
         }
 
         function updateQty(index, change) {
@@ -434,6 +426,22 @@
             saveCart();
             renderCart();
             updateCartBadge();
+            updateCardQuantities();
+        }
+
+        function updateItemQty(name, change) {
+            const itemIndex = cart.findIndex(i => i.name === name);
+            if (itemIndex !== -1) {
+                if (cart[itemIndex].qty + change > 0) {
+                    cart[itemIndex].qty += change;
+                } else {
+                    cart.splice(itemIndex, 1);
+                }
+                saveCart();
+                renderCart();
+                updateCartBadge();
+                updateCardQuantities();
+            }
         }
 
         function saveCart() {

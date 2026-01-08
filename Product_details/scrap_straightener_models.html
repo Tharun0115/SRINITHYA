@@ -302,28 +302,7 @@
             saveCart();
             updateCartBadge();
             renderCart();
-            
-            if (typeof showToast === 'function') {
-                showToast(`${name} added to estimate`, () => {
-                    const idx = cart.findIndex(i => i.name === name);
-                    if (idx !== -1) {
-                        if (cart[idx].qty > 1) cart[idx].qty--;
-                        else cart.splice(idx, 1);
-                        saveCart();
-                        updateCartBadge();
-                        renderCart();
-                    }
-                });
-            }
-            
-            const btn = event.currentTarget;
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-check"></i> Added';
-            btn.classList.add('bg-green-600');
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.remove('bg-green-600');
-            }, 1000);
+            updateCardQuantities();
         }
 
         function removeFromCart(index) {
@@ -342,6 +321,22 @@
             saveCart();
             renderCart();
             updateCartBadge();
+            updateCardQuantities();
+        }
+
+        function updateItemQty(name, change) {
+            const itemIndex = cart.findIndex(i => i.name === name);
+            if (itemIndex !== -1) {
+                if (cart[itemIndex].qty + change > 0) {
+                    cart[itemIndex].qty += change;
+                } else {
+                    cart.splice(itemIndex, 1);
+                }
+                saveCart();
+                renderCart();
+                updateCartBadge();
+                updateCardQuantities();
+            }
         }
 
         function saveCart() {

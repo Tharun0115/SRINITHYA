@@ -179,9 +179,9 @@ const rootPath = getRootPath(),
         <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
         <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
             <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice mr-2"></i>Estimate Builder</h2>
+                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice-dollar mr-2"></i>Estimate Builder</h2>
                 <div>
-                    <button onclick="clearCart()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Estimate">
+                    <button onclick="openClearCartModal()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Estimate">
                         <i class="fa-solid fa-trash-can"></i> Clear
                     </button>
                     <button onclick="toggleCart()" class="text-white hover:text-gray-200 focus:outline-none"><i class="fa-solid fa-xmark text-2xl"></i></button>
@@ -202,6 +202,23 @@ const rootPath = getRootPath(),
         </div>
     </div>
 `,
+    clearCartModalHTML = `
+    <div id="clear-cart-modal" class="fixed inset-0 z-[80] hidden flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform scale-100 transition-transform duration-300">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-triangle-exclamation text-2xl text-red-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Clear Estimate?</h3>
+                <p class="text-gray-600 mb-6">Are you sure you want to remove all items from your estimate? This action cannot be undone.</p>
+                <div class="flex gap-3 justify-center">
+                    <button onclick="closeClearCartModal()" class="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition focus:outline-none">Cancel</button>
+                    <button onclick="confirmClearCartAction()" class="px-5 py-2.5 rounded-lg bg-red-600 text-white font-bold hover:bg-red-700 transition shadow-lg focus:outline-none">Yes, Clear It</button>
+                </div>
+            </div>
+        </div>
+    </div>
+`,
     scrollButtonsHTML = `
     <div class="fixed bottom-24 right-7 z-40 hidden md:flex flex-col gap-3">
         <div class="relative group">
@@ -218,6 +235,28 @@ const rootPath = getRootPath(),
         </div>
     </div>
 `;
+
+window.openClearCartModal = function() {
+    const modal = document.getElementById('clear-cart-modal');
+    if (modal) modal.classList.remove('hidden');
+}
+
+window.closeClearCartModal = function() {
+    const modal = document.getElementById('clear-cart-modal');
+    if (modal) modal.classList.add('hidden');
+}
+
+window.confirmClearCartAction = function() {
+    closeClearCartModal();
+    // Temporarily override confirm to avoid double confirmation for pages using cart.js
+    const originalConfirm = window.confirm;
+    window.confirm = () => true;
+    try {
+        if (typeof window.clearCart === 'function') window.clearCart();
+    } finally {
+        window.confirm = originalConfirm;
+    }
+}
 
 function toggleCart() {
     const t = document.getElementById("cart-modal"),
@@ -294,6 +333,41 @@ function initSmoothScroll() {
     });
 }
 
+function initCartAnimation() {
+    const badge = document.getElementById('cart-badge');
+    if (!badge) return;
+
+    // Find the icon relative to the badge
+    const cartBtn = badge.closest('button');
+    const icon = cartBtn ? cartBtn.querySelector('i') : null;
+
+    if (!icon) return;
+
+    const observer = new MutationObserver((mutations) => {
+        let triggered = false;
+        for (const m of mutations) {
+            if (m.type === 'childList' || (m.type === 'attributes' && m.attributeName === 'class')) {
+                if (!badge.classList.contains('hidden')) {
+                    triggered = true;
+                    break;
+                }
+            }
+        }
+
+        if (triggered) {
+            icon.classList.remove('cart-animate');
+            void icon.offsetWidth; // Trigger reflow to restart animation
+            icon.classList.add('cart-animate');
+        }
+    });
+
+    observer.observe(badge, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+    
+    icon.addEventListener('animationend', () => {
+        icon.classList.remove('cart-animate');
+    });
+}
+
 function initNavbar() {
     const t = document.getElementById("mobile-menu-button"),
         e = document.getElementById("mobile-menu");
@@ -322,7 +396,7 @@ function initNavbar() {
     })
 }
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll();
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation();
     const t = document.getElementById("brand-wrapper");
     if (t) {
         const e = window.location.pathname,

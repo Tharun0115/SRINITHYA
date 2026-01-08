@@ -26,8 +26,8 @@ window.initProductCards = function() {
         },
         {
             title: "Suspended Scaffold Solution",
-            image: "./Assets/Product Images/srp.png",
-            imageWebp: "./Assets/Product Images/srp.webp",
+            image: ["./Assets/Product Images/srp.jpg", "./Assets/Product Images/srp2.webp"],
+            imageWebp: ["./Assets/Product Images/srp.webp", "./Assets/Product Images/srp2.webp"],
             description: "Customizable high-safety suspended platforms for facade work.",
             features: ["Model: ZLP800", "Customizable Platform Size", "Adjustable Rope Length"],
             link: "Product_details/suspended_rope_platform.html"
@@ -108,14 +108,6 @@ window.initProductCards = function() {
             description: "Lightweight, on-site solutions for rebar cutting and bending.",
             features: ["Portable Cutters up to 32mm", "Portable Benders up to 32mm"],
             link: "Product_details/portable_bar_processing_models.html"
-        },
-        {
-            title: "Earth Compactors",
-            image: ["./Assets/Product Images/sfpc.png", "./Assets/Product Images/srpc.png"],
-            imageWebp: ["./Assets/Product Images/sfpc.webp", "./Assets/Product Images/srpc.webp"],
-            description: "Heavy-duty surface compaction for soil and sub-base layers.",
-            features: ["Walk-behind & Trench models", "Remote/Wired control options"],
-            link: "Product_details/earth_compactor_models.html"
         },
         {
             title: "Dewatering Pumps",
@@ -205,10 +197,10 @@ window.initProductCards = function() {
                 webpSrc = rootPath + webpSrc.substring(2);
             }
 
-            const singleImgTag = `<img onclick="openImageModal('${imgSrc}')" src="${imgSrc}" alt="${product.title}" loading="lazy" decoding="async" class="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">`;
+            const singleImgTag = `<img onclick="openImageModal('${imgSrc}')" src="${imgSrc}" alt="${product.title}" loading="lazy" decoding="async" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">`;
 
             imageHTML = webpSrc
-                ? `<picture>${singleImgTag.replace(imgSrc, webpSrc).replace('<img', '<source srcset="'+webpSrc+'" type="image/webp"><img')}</picture>`.replace(webpSrc, imgSrc)
+                ? `<picture class="w-full h-full block"><source srcset="${webpSrc}" type="image/webp">${singleImgTag}</picture>`
                 : singleImgTag;
         }
 
