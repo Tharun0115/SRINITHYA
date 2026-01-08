@@ -191,12 +191,8 @@ const rootPath = getRootPath(),
                 <!-- Cart Items will be injected here -->
             </div>
             <div class="p-4 border-t bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-gray-600 font-medium">Estimated Total (Excl. GST):</span>
-                    <span id="cart-total" class="text-2xl font-bold text-primary">₹0</span>
-                </div>
-                <button onclick="generatePDF()" class="w-full bg-secondary text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition shadow-md flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-download"></i> Download Quotation/Estimate
+                <button onclick="sendRequirementToWhatsapp()" class="w-full bg-secondary text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Send Requirement
                 </button>
             </div>
         </div>

@@ -25,7 +25,7 @@ function createProductCard(product) {
     // Generate action buttons
     const actionsHTML = (product.actions || []).map(action => {
         if (action.type === 'cart') {
-            const params = `'${action.name}', ${action.price}, '${action.hsn}', ${action.gst}`;
+            const params = `'${action.name}'`;
             return `<button onclick="addToCart(${params})" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm" aria-label="Add ${action.name} to Estimate"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add</button>`;
         }
         if (action.type === 'enquire') {

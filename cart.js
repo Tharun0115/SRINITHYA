@@ -22,12 +22,12 @@ function updateCartBadge() {
     }
 }
 
-function addToCart(name, price, hsn, gst) {
+function addToCart(name) {
     const existingItem = cart.find(item => item.name === name);
     if (existingItem) {
         existingItem.qty += 1;
     } else {
-        cart.push({ name, price, hsn, gst, qty: 1 });
+        cart.push({ name, qty: 1 });
     }
     saveCart();
     updateCartBadge();
@@ -151,30 +151,14 @@ function renderCart() {
     
     if (cart.length === 0) {
         container.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-gray-400"><i class="fa-solid fa-cart-arrow-down text-6xl mb-4"></i><p>Your estimate list is empty.</p></div>';
-        if(totalEl) totalEl.textContent = '₹0';
         return;
     }
     
     let html = '';
-    let total = 0;
     cart.forEach((item, index) => {
-        total += item.price * item.qty;
-        html += `<div class="bg-white p-4 rounded-lg shadow-sm mb-3 border border-gray-100"><div class="flex justify-between items-start mb-2"><h3 class="font-bold text-gray-800">${item.name}</h3><button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></div><div class="flex justify-between items-center"><div class="text-sm text-gray-500">Unit: ₹${item.price.toLocaleString('en-IN')}</div><div class="flex items-center border rounded"><button onclick="updateQty(${index}, -1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">-</button><span class="px-2 py-1 font-medium text-sm w-8 text-center">${item.qty}</span><button onclick="updateQty(${index}, 1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">+</button></div></div></div>`;
+        html += `<div class="bg-white p-4 rounded-lg shadow-sm mb-3 border border-gray-100"><div class="flex justify-between items-start mb-2"><h3 class="font-bold text-gray-800">${item.name}</h3><button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></div><div class="flex justify-between items-center"><div class="text-sm text-gray-500"></div><div class="flex items-center border rounded"><button onclick="updateQty(${index}, -1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">-</button><span class="px-2 py-1 font-medium text-sm w-8 text-center">${item.qty}</span><button onclick="updateQty(${index}, 1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">+</button></div></div></div>`;
     });
     container.innerHTML = html;
-    
-    if(totalEl) {
-        const newTotalText = '₹' + total.toLocaleString('en-IN');
-        if (totalEl.textContent !== newTotalText) {
-            totalEl.textContent = newTotalText;
-            totalEl.classList.add('flash-animation');
-            totalEl.addEventListener('animationend', () => {
-                totalEl.classList.remove('flash-animation');
-            }, { once: true });
-        } else {
-            totalEl.textContent = newTotalText;
-        }
-    }
 }
 
 // --- PDF Generation ---
@@ -239,11 +223,10 @@ async function generatePDF() {
     doc.setDrawColor(200); doc.line(14, 45, 196, 45);
     doc.setFontSize(14); doc.setTextColor(0); doc.text("ESTIMATE / QUOTATION", 14, 55);
     doc.setFontSize(10); doc.text(`Date: ${new Date().toLocaleDateString('en-IN')}`, 160, 55);
-    const tableColumn = ["S.No", "Item", "Quantity", "Taxable Value", "GST (18%)", "Amount"];
-    const tableRows = []; let grandTotal = 0;
-    cart.forEach((item, index) => { const taxable = item.price * item.qty; const gstAmt = taxable * (item.gst / 100); const total = taxable + gstAmt; grandTotal += total; tableRows.push([index + 1, item.name, item.qty, "Rs. " + taxable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), "Rs. " + gstAmt.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), "Rs. " + total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })]); });
-    tableRows.push([{ content: 'Grand Total', colSpan: 5, styles: { halign: 'right', fontStyle: 'bold' } }, { content: "Rs. " + grandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), styles: { fontStyle: 'bold' } }]);
-    doc.autoTable({ head: [tableColumn], body: tableRows, startY: 60, theme: 'grid', headStyles: { fillColor: [30, 58, 138], textColor: 255 }, footStyles: { fillColor: [217, 119, 6] }, styles: { fontSize: 9, cellPadding: 3 }, columnStyles: { 0: { cellWidth: 15 }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 20, halign: 'center' }, 3: { halign: 'right' }, 4: { halign: 'right' }, 5: { halign: 'right' } } });
+    const tableColumn = ["S.No", "Item", "Quantity"];
+    const tableRows = [];
+    cart.forEach((item, index) => { tableRows.push([index + 1, item.name, item.qty]); });
+    doc.autoTable({ head: [tableColumn], body: tableRows, startY: 60, theme: 'grid', headStyles: { fillColor: [30, 58, 138], textColor: 255 }, footStyles: { fillColor: [217, 119, 6] }, styles: { fontSize: 9, cellPadding: 3 }, columnStyles: { 0: { cellWidth: 15 }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 20, halign: 'center' } } });
     const finalY = doc.lastAutoTable.finalY + 10; doc.setFontSize(8); doc.setTextColor(100); doc.text("This is a computer generated estimate.", 14, finalY);
     
     const quoteNumber = getNextQuoteNumber();
@@ -252,6 +235,22 @@ async function generatePDF() {
 
     doc.save(newFilename);
     try { sendPdfByEmail(doc, newFilename); } catch (e) {}
+}
+
+function sendRequirementToWhatsapp() {
+    if (cart.length === 0) {
+        alert("Please add items to the estimate first.");
+        return;
+    }
+    
+    let message = "";
+    cart.forEach((item, index) => {
+        message += `${index + 1} ${item.name} ${item.qty}\n`;
+    });
+
+    const phoneNumber = "919032069819";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
 }
 
 // --- Initialization ---

@@ -11,7 +11,7 @@ window.productData = {
                 { icon: "fa-solid fa-shield-halved", text: "Features: Emergency Stop" }
             ],
             compare: { model: "SBB42", category: "bar-benders", "bend-dia": "6mm - 32mm", control: "Pin / Foot Pedal", features: "Emergency Stop" },
-            actions: [{ type: 'cart', name: 'SBB42', price: 2000, hsn: '8462', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SBB42' }]
         },
         {
             model: "SBB52",
@@ -25,7 +25,7 @@ window.productData = {
                 { icon: "fa-solid fa-memory", text: "Memory: Save Angle Presets" }
             ],
             compare: { model: "SBB52", category: "bar-benders", "bend-dia": "Up to 42mm", control: "Digital CNC Panel", features: "Save Angle Presets" },
-            actions: [{ type: 'cart', name: 'SBB52', price: 3000, hsn: '8462', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SBB52' }]
         }
     ],
     'bar-cutting-models': [
@@ -40,7 +40,7 @@ window.productData = {
                 { icon: "fa-solid fa-gear", text: "Gearbox: Reinforced Oil Bath" }
             ],
             compare: { model: "SBC52 Heavy Duty", category: "bar-cutters", capacity: "Up to 42mm TMT", power: "4 KW Motor", gearbox: "Reinforced Oil Bath" },
-            actions: [{ type: 'cart', name: 'SBC52 Heavy Duty', price: 3000, hsn: '8462', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SBC52 Heavy Duty' }]
         },
         {
             model: "SBC42 Standard",
@@ -54,7 +54,7 @@ window.productData = {
                 { icon: "fa-solid fa-gauge-high", text: "Speed: 32 times/min" }
             ],
             compare: { model: "SBC42 Standard", category: "bar-cutters", capacity: "Up to 32mm TMT", power: "3 KW Motor", gearbox: "Speed: 32 times/min" },
-            actions: [{ type: 'cart', name: 'SBC42 Standard', price: 2000, hsn: '8462', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SBC42 Standard' }]
         }
     ],
     'concrete-mixer-models': [
@@ -69,7 +69,7 @@ window.productData = {
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Towable on site" }
             ],
             compare: { model: "CM-220L Electric", category: "concrete-mixers", capacity: "220 Litres", power: "3 HP Electric Motor", mobility: "Towable on site" },
-            actions: [{ type: 'cart', name: 'CM-220L Electric', price: 1000, hsn: '8474', gst: 18 }]
+            actions: [{ type: 'cart', name: 'CM-220L Electric' }]
         },
         {
             model: "CM-220L Engine",
@@ -82,7 +82,7 @@ window.productData = {
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Towable on site" }
             ],
             compare: { model: "CM-220L Engine", category: "concrete-mixers", capacity: "220 Litres", power: "5 HP Diesel Engine", mobility: "Towable on site" },
-            actions: [{ type: 'cart', name: 'CM-220L Engine', price: 2000, hsn: '8474', gst: 18 }]
+            actions: [{ type: 'cart', name: 'CM-220L Engine' }]
         },
         {
             model: "CM-350L Electric",
@@ -95,7 +95,7 @@ window.productData = {
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Heavy Duty Chassis" }
             ],
             compare: { model: "CM-350L Electric", category: "concrete-mixers", capacity: "350 Litres", power: "5 HP Electric Motor", mobility: "Heavy Duty Chassis" },
-            actions: [{ type: 'cart', name: 'CM-350L Electric', price: 3000, hsn: '8474', gst: 18 }]
+            actions: [{ type: 'cart', name: 'CM-350L Electric' }]
         },
         {
             model: "CM-350L Engine",
@@ -108,7 +108,7 @@ window.productData = {
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Heavy Duty Chassis" }
             ],
             compare: { model: "CM-350L Engine", category: "concrete-mixers", capacity: "350 Litres", power: "9 HP Diesel Engine", mobility: "Heavy Duty Chassis" },
-            actions: [{ type: 'cart', name: 'CM-350L Engine', price: 1000, hsn: '8474', gst: 18 }]
+            actions: [{ type: 'cart', name: 'CM-350L Engine' }]
         }
     ],
     'dewatering-pump': [
@@ -124,7 +124,7 @@ window.productData = {
                 { icon: "fa-solid fa-tachometer-alt", text: "Capacity: 600 Ltr/min" }
             ],
             compare: { model: "2 Inch Dewatering Pump", category: "dewatering-pumps", "discharge-diameter": "2 Inch", "max-lift": "12 Mtr", capacity: "600 Ltr/min" },
-            actions: [{ type: 'cart', name: '2 Inch Dewatering Pump', price: 7000, hsn: '8413', gst: 18 }]
+            actions: [{ type: 'cart', name: '2 Inch Dewatering Pump' }]
         },
         {
             model: "3 Inch Dewatering Pump",
@@ -138,7 +138,7 @@ window.productData = {
                 { icon: "fa-solid fa-tachometer-alt", text: "Capacity: 800 Ltr/min" }
             ],
             compare: { model: "3 Inch Dewatering Pump", category: "dewatering-pumps", "discharge-diameter": "3 Inch", "max-lift": "12 Mtr", capacity: "800 Ltr/min" },
-            actions: [{ type: 'cart', name: '3 Inch Dewatering Pump', price: 9000, hsn: '8413', gst: 18 }]
+            actions: [{ type: 'cart', name: '3 Inch Dewatering Pump' }]
         }
     ],
     'handy-vibration-models': [
@@ -154,7 +154,7 @@ window.productData = {
                 { icon: "fa-solid fa-weight-hanging", text: "Weight: 5.8 kg" }
             ],
             compare: { model: "SHHM Hand Held", category: "handy-vibrators", power: "2300 W", speed: "16000 rpm", weight: "5.8 kg" },
-            actions: [{ type: 'cart', name: 'High Frequency Hand Held Motor', price: 8000, hsn: '8467', gst: 18 }]
+            actions: [{ type: 'cart', name: 'High Frequency Hand Held Motor' }]
         },
         {
             model: "SHM 800",
@@ -168,7 +168,7 @@ window.productData = {
                 { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
             ],
             compare: { model: "SHM 800", category: "handy-vibrators", power: "800 W", speed: "4200 rpm", voltage: "220V" },
-            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 800W', price: 4000, hsn: '8467', gst: 18 }]
+            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 800W' }]
         },
         {
             model: "SHM 1200",
@@ -182,7 +182,7 @@ window.productData = {
                 { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
             ],
             compare: { model: "SHM 1200", category: "handy-vibrators", power: "1200 W", speed: "4300 rpm", voltage: "220V" },
-            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 1200W', price: 5000, hsn: '8467', gst: 18 }]
+            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 1200W' }]
         },
         {
             model: "SHM 1600",
@@ -196,7 +196,7 @@ window.productData = {
                 { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
             ],
             compare: { model: "SHM 1600", category: "handy-vibrators", power: "1600 W", speed: "4600 rpm", voltage: "220V" },
-            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 1600W', price: 6000, hsn: '8467', gst: 18 }]
+            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 1600W' }]
         }
     ],
     'high-frequency-converter-models': [
@@ -211,7 +211,7 @@ window.productData = {
                 { icon: "fa-solid fa-bolt", text: "Type: High Frequency" }
             ],
             compare: { model: "SHFC 35", category: "high-frequency-converter", outlets: "2 Outlet", type: "Converter" },
-            actions: [{ type: 'cart', name: 'SHFC 35 Converter', price: 15000, hsn: '8502', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SHFC 35 Converter' }]
         },
         {
             model: "SHFC90P",
@@ -224,7 +224,7 @@ window.productData = {
                 { icon: "fa-solid fa-bolt", text: "Type: High Frequency" }
             ],
             compare: { model: "SHFC90P", category: "high-frequency-converter", outlets: "4 Outlet", type: "Converter" },
-            actions: [{ type: 'cart', name: 'SHFC90P Converter', price: 25000, hsn: '8502', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SHFC90P Converter' }]
         }
     ],
     'hfc-models': [
@@ -239,7 +239,7 @@ window.productData = {
                 { icon: "fa-solid fa-fan", text: "Protection: Thermal & Overload" }
             ],
             compare: { model: "HFC-3P", category: "hfc-models", input: "415V, 50Hz", output: "42V, 200Hz", feature: "Thermal & Overload" },
-            actions: [{ type: 'cart', name: 'HFC-3P', price: 1000, hsn: '8502', gst: 18 }]
+            actions: [{ type: 'cart', name: 'HFC-3P' }]
         },
         {
             model: "HFC-1P",
@@ -252,7 +252,7 @@ window.productData = {
                 { icon: "fa-solid fa-fan", text: "Weight: Lightweight Model" }
             ],
             compare: { model: "HFC-1P", category: "hfc-models", input: "230V, 50Hz", output: "42V, 200Hz", feature: "Lightweight Model" },
-            actions: [{ type: 'cart', name: 'HFC-1P', price: 1000, hsn: '8502', gst: 18 }]
+            actions: [{ type: 'cart', name: 'HFC-1P' }]
         }
     ],
     'high-frequency-poker-models': {
@@ -269,7 +269,7 @@ window.productData = {
                     { icon: "fa-solid fa-plug", text: "Voltage: 220V (Single Phase)" }
                 ],
                 compare: { model: "40IV Poker", category: "high-frequency-poker", diameter: "40mm", type: "Inbuilt Converter", voltage: "220V" },
-                actions: [{ type: 'cart', name: '40IV High Frequency Poker', price: 12000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: '40IV High Frequency Poker' }]
             },
             {
                 model: "60IV Poker",
@@ -283,7 +283,7 @@ window.productData = {
                     { icon: "fa-solid fa-plug", text: "Voltage: 220V (Single Phase)" }
                 ],
                 compare: { model: "60IV Poker", category: "high-frequency-poker", diameter: "60mm", type: "Inbuilt Converter", voltage: "220V" },
-                actions: [{ type: 'cart', name: '60IV High Frequency Poker', price: 15000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: '60IV High Frequency Poker' }]
             }
         ],
         compatible: [
@@ -300,7 +300,7 @@ window.productData = {
                     { icon: "fa-solid fa-wave-square", text: "Vibration: 12000 RPM" }
                 ],
                 compare: { model: "SHFN 60 (5Mtr)", category: "high-frequency-poker", diameter: "58mm", length: "5 Meters", voltage: "42V", frequency: "200Hz" },
-                actions: [{ type: 'cart', name: 'SHFN 60 (5Mtr)', price: 5000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SHFN 60 (5Mtr)' }]
             },
             {
                 model: "SHFN 60 (10Mtr)",
@@ -314,7 +314,7 @@ window.productData = {
                     { icon: "fa-solid fa-bolt", text: "Voltage: 42V (200Hz)" }
                 ],
                 compare: { model: "SHFN 60 (10Mtr)", category: "high-frequency-poker", diameter: "58mm", length: "10 Meters", voltage: "42V", frequency: "200Hz" },
-                actions: [{ type: 'cart', name: 'SHFN 60 (10Mtr)', price: 7000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SHFN 60 (10Mtr)' }]
             },
             {
                 model: "SHFN 60 (12Mtr)",
@@ -328,7 +328,7 @@ window.productData = {
                     { icon: "fa-solid fa-bolt", text: "Voltage: 42V (200Hz)" }
                 ],
                 compare: { model: "SHFN 60 (12Mtr)", category: "high-frequency-poker", diameter: "58mm", length: "12 Meters", voltage: "42V", frequency: "200Hz" },
-                actions: [{ type: 'cart', name: 'SHFN 60 (12Mtr)', price: 8000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SHFN 60 (12Mtr)' }]
             },
             {
                 model: "40MM Needle 5Mtr",
@@ -341,7 +341,7 @@ window.productData = {
                     { icon: "fa-solid fa-ruler-vertical", text: "Hose Length: 5 Meters" }
                 ],
                 compare: { model: "40MM Needle 5Mtr", category: "high-frequency-poker", diameter: "40mm", length: "5 Meters" },
-                actions: [{ type: 'cart', name: '40MM Needle 5Mtr', price: 4000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: '40MM Needle 5Mtr' }]
             },
             {
                 model: "40MM Needle 10Mtr",
@@ -354,7 +354,7 @@ window.productData = {
                     { icon: "fa-solid fa-ruler-vertical", text: "Hose Length: 10 Meters" }
                 ],
                 compare: { model: "40MM Needle 10Mtr", category: "high-frequency-poker", diameter: "40mm", length: "10 Meters" },
-                actions: [{ type: 'cart', name: '40MM Needle 10Mtr', price: 6000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: '40MM Needle 10Mtr' }]
             },
             {
                 model: "40MM Needle 12Mtr",
@@ -367,7 +367,7 @@ window.productData = {
                     { icon: "fa-solid fa-ruler-vertical", text: "Hose Length: 12 Meters" }
                 ],
                 compare: { model: "40MM Needle 12Mtr", category: "high-frequency-poker", diameter: "40mm", length: "12 Meters" },
-                actions: [{ type: 'cart', name: '40MM Needle 12Mtr', price: 7000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: '40MM Needle 12Mtr' }]
             }
         ]
     },
@@ -384,7 +384,7 @@ window.productData = {
                     { icon: "fa-solid fa-horse-head", text: "Power: 5 HP" }
                 ],
                 compare: { model: "Groove Cutter 125mm", category: "industrial-cutters", "cutting-depth": "125 mm", power: "5 HP" },
-                actions: [{ type: 'cart', name: 'Groove Cutter 125mm', price: 48000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Groove Cutter 125mm' }]
             },
             {
                 model: "Groove Cutter 150mm",
@@ -397,7 +397,7 @@ window.productData = {
                     { icon: "fa-solid fa-horse-head", text: "Power: 5 / 9 HP" }
                 ],
                 compare: { model: "Groove Cutter 150mm", category: "industrial-cutters", "cutting-depth": "150 mm", power: "5/9 HP" },
-                actions: [{ type: 'cart', name: 'Groove Cutter 150mm', price: 55000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Groove Cutter 150mm' }]
             },
             {
                 model: "Groove Cutter 180mm",
@@ -410,7 +410,7 @@ window.productData = {
                     { icon: "fa-solid fa-horse-head", text: "Power: 9 / 13 HP" }
                 ],
                 compare: { model: "Groove Cutter 180mm", category: "industrial-cutters", "cutting-depth": "180 mm", power: "9/13 HP" },
-                actions: [{ type: 'cart', name: 'Groove Cutter 180mm', price: 68000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Groove Cutter 180mm' }]
             },
             {
                 model: "Groove Cutter 400mm",
@@ -423,7 +423,7 @@ window.productData = {
                     { icon: "fa-solid fa-horse-head", text: "Power: 15/20/25 HP" }
                 ],
                 compare: { model: "Groove Cutter 400mm", category: "industrial-cutters", "cutting-depth": "400 mm", power: "15/20/25 HP" },
-                actions: [{ type: 'cart', name: 'Groove Cutter 400mm', price: 95000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Groove Cutter 400mm' }]
             }
         ],
         coreCutters: [
@@ -439,7 +439,7 @@ window.productData = {
                     { icon: "fa-solid fa-gauge-high", text: "Speed: 1500 RPM" }
                 ],
                 compare: { model: "Core Cutter SCC-90", category: "industrial-cutters", "core-diameter": "90 mm", power: "1350 W" },
-                actions: [{ type: 'cart', name: 'Core Cutter SCC-90', price: 18000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Core Cutter SCC-90' }]
             },
             {
                 model: "Core Cutter SCC-160",
@@ -453,7 +453,7 @@ window.productData = {
                     { icon: "fa-solid fa-gauge-high", text: "Speed: 600 RPM" }
                 ],
                 compare: { model: "Core Cutter SCC-160", category: "industrial-cutters", "core-diameter": "160 mm", power: "850 W" },
-                actions: [{ type: 'cart', name: 'Core Cutter SCC-160', price: 25000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Core Cutter SCC-160' }]
             },
             {
                 model: "Core Cutter SCC-200",
@@ -467,28 +467,28 @@ window.productData = {
                     { icon: "fa-solid fa-gauge-high", text: "Speed: 700 RPM" }
                 ],
                 compare: { model: "Core Cutter SCC-200", category: "industrial-cutters", "core-diameter": "200 mm", power: "3300 W" },
-                actions: [{ type: 'cart', name: 'Core Cutter SCC-200', price: 38000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Core Cutter SCC-200' }]
             }
         ]
     },
     'mechanical-poker-models': {
         handyNeedles: [
-            { model: "Handy Needle 25mm (3M)", name: "25MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Compact needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)', price: 2500, hsn: '8467', gst: 18 }] },
-            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)', price: 3500, hsn: '8467', gst: 18 }] },
-            { model: "Handy Needle 40mm (3M)", name: "40MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Standard size needle for general use.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)', price: 3000, hsn: '8467', gst: 18 }] },
-            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)', price: 4000, hsn: '8467', gst: 18 }] },
-            { model: "Handy Needle 60mm (3M)", name: "60MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Large diameter for heavy consolidation.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)', price: 3500, hsn: '8467', gst: 18 }] },
-            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)', price: 4500, hsn: '8467', gst: 18 }] }
+            { model: "Handy Needle 25mm (3M)", name: "25MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Compact needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] },
+            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] },
+            { model: "Handy Needle 40mm (3M)", name: "40MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Standard size needle for general use.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] },
+            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] },
+            { model: "Handy Needle 60mm (3M)", name: "60MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Large diameter for heavy consolidation.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] },
+            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] }
         ],
         handHeldNeedles: [
-            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm', price: 2800, hsn: '8467', gst: 18 }] },
-            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm', price: 3200, hsn: '8467', gst: 18 }] },
-            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm', price: 3800, hsn: '8467', gst: 18 }] }
+            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] },
+            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] },
+            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] }
         ],
         mechanicalNeedles: [
-            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm', price: 2000, hsn: '8467', gst: 18 }] },
-            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm', price: 2500, hsn: '8467', gst: 18 }] },
-            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm', price: 3000, hsn: '8467', gst: 18 }] }
+            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] },
+            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] },
+            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] }
         ]
     },
     'mini-lift-models': [
@@ -504,7 +504,7 @@ window.productData = {
                 { icon: "fa-solid fa-rotate", text: "Rotation: 360 Degrees" }
             ],
             compare: { model: "Mini Lift 300Kg", category: "mini-lifts", capacity: "300 Kg", height: "30 Mtr", rotation: "360 Degrees" },
-            actions: [{ type: 'cart', name: 'Mini Lift 300Kg', price: 45000, hsn: '8428', gst: 18 }]
+            actions: [{ type: 'cart', name: 'Mini Lift 300Kg' }]
         },
         {
             model: "Mini Lift 500Kg",
@@ -518,7 +518,7 @@ window.productData = {
                 { icon: "fa-solid fa-rotate", text: "Rotation: 360 Degrees" }
             ],
             compare: { model: "Mini Lift 500Kg", category: "mini-lifts", capacity: "500 Kg", height: "30 Mtr", rotation: "360 Degrees" },
-            actions: [{ type: 'cart', name: 'Mini Lift 500Kg', price: 65000, hsn: '8428', gst: 18 }]
+            actions: [{ type: 'cart', name: 'Mini Lift 500Kg' }]
         }
     ],
     'plate-compactor-models': [
@@ -533,7 +533,7 @@ window.productData = {
                 { icon: "fa-solid fa-gas-pump", text: "Engine: 5.5 HP Petrol" }
             ],
             compare: { model: "PC-80", category: "plate-compactors", weight: "80 kg", force: "15 kN", engine: "5.5 HP Petrol", feature: "-" },
-            actions: [{ type: 'cart', name: 'PC-80', price: 1000, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'PC-80' }]
         },
         {
             model: "PC-150",
@@ -546,7 +546,7 @@ window.productData = {
                 { icon: "fa-solid fa-engine", text: "Engine: 8 HP Diesel" }
             ],
             compare: { model: "PC-150", category: "plate-compactors", weight: "150 kg", force: "25 kN", engine: "8 HP Diesel", feature: "-" },
-            actions: [{ type: 'cart', name: 'PC-150', price: 2000, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'PC-150' }]
         },
         {
             model: "PC-250R",
@@ -559,7 +559,7 @@ window.productData = {
                 { icon: "fa-solid fa-gas-pump", text: "Engine: 10 HP Petrol/Diesel" }
             ],
             compare: { model: "PC-250R", category: "plate-compactors", weight: "250 kg", force: "35 kN", engine: "10 HP Petrol/Diesel", feature: "Reversible" },
-            actions: [{ type: 'cart', name: 'PC-250R', price: 3000, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'PC-250R' }]
         },
         {
             model: "PC-300H",
@@ -572,7 +572,7 @@ window.productData = {
                 { icon: "fa-solid fa-engine", text: "Feature: Hydraulic Reversible" }
             ],
             compare: { model: "PC-300H", category: "plate-compactors", weight: "300 kg", force: "40 kN", engine: "-", feature: "Hydraulic Reversible" },
-            actions: [{ type: 'cart', name: 'PC-300H', price: 1000, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'PC-300H' }]
         }
     ],
     'portable-bar-processing-models': {
@@ -584,7 +584,7 @@ window.productData = {
                 description: "Lightweight bender for bars up to 25mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 25mm" }, { icon: "fa-solid fa-bolt", text: "Type: Electric Portable" }],
                 compare: { model: "SPB25", category: "portable-bar-equipment", type: "Portable Bender", capacity: "25mm", voltage: "220V/110V" },
-                actions: [{ type: 'cart', name: 'SPB25 Portable Bender', price: 15000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SPB25 Portable Bender' }]
             },
             {
                 model: "SPB32",
@@ -593,7 +593,7 @@ window.productData = {
                 description: "Powerful portable unit for bending bars up to 32mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 32mm" }, { icon: "fa-solid fa-bolt", text: "Type: Electric Portable" }],
                 compare: { model: "SPB32", category: "portable-bar-equipment", type: "Portable Bender", capacity: "32mm", voltage: "220V/110V" },
-                actions: [{ type: 'cart', name: 'SPB32 Portable Bender', price: 25000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SPB32 Portable Bender' }]
             },
             {
                 model: "SPS 32",
@@ -602,7 +602,7 @@ window.productData = {
                 description: "Dual function machine: Bends and Straightens bars up to 32mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 32mm" }, { icon: "fa-solid fa-arrows-left-right", text: "Function: Bend & Straighten" }],
                 compare: { model: "SPS 32", category: "portable-bar-equipment", type: "Bender & Straightener", capacity: "32mm", voltage: "220V/110V", power: "600W" },
-                actions: [{ type: 'cart', name: 'SPS 32 Bender & Straightener', price: 30000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SPS 32 Bender & Straightener' }]
             }
         ],
         cutters: [
@@ -613,7 +613,7 @@ window.productData = {
                 description: "Fast and safe hydraulic cutting for bars up to 25mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 25mm" }, { icon: "fa-solid fa-bolt", text: "Type: Hydraulic Cutter" }],
                 compare: { model: "SPC25", category: "portable-bar-equipment", type: "Portable Cutter", capacity: "25mm", voltage: "220V/110V" },
-                actions: [{ type: 'cart', name: 'SPC25 Portable Cutter', price: 18000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SPC25 Portable Cutter' }]
             },
             {
                 model: "SPC 32",
@@ -622,7 +622,7 @@ window.productData = {
                 description: "Heavy-duty portable cutter for bars up to 32mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 32mm" }, { icon: "fa-solid fa-bolt", text: "Type: Hydraulic Cutter" }],
                 compare: { model: "SPC 32", category: "portable-bar-equipment", type: "Portable Cutter", capacity: "32mm", voltage: "220V/110V" },
-                actions: [{ type: 'cart', name: 'SPC 32 Portable Cutter', price: 28000, hsn: '8462', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SPC 32 Portable Cutter' }]
             }
         ]
     },
@@ -641,7 +641,7 @@ window.productData = {
                 { icon: "fa-solid fa-weight-scale", text: "Weight: 70Kg" }
             ],
             compare: { model: "SPTP", category: "power-trowels", diameter: "1000 mm", blades: "4", power: "2Hp", weight: "70Kg" },
-            actions: [{ type: 'cart', name: 'SPTP Petrol', price: 2000, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SPTP Petrol' }]
         },
         {
             model: "SPTE Electric",
@@ -657,7 +657,7 @@ window.productData = {
                 { icon: "fa-solid fa-weight-scale", text: "Weight: 68Kg" }
             ],
             compare: { model: "SPTE Electric", category: "power-trowels", diameter: "1000 mm", blades: "4", power: "3Hp", weight: "68Kg" },
-            actions: [{ type: 'cart', name: 'SPTE Electric', price: 2000, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SPTE Electric' }]
         }
     ],
     'road-roller-models': [
@@ -672,7 +672,7 @@ window.productData = {
                 { icon: "fa-solid fa-gas-pump", text: "Engine: Diesel Engine" }
             ],
             compare: { model: "SRR30", category: "road-rollers", type: "Ride-on Roller", weight: "3000 kg", engine: "Diesel Engine" },
-            actions: [{ type: 'cart', name: 'SRR30 Ride on Roller', price: 5000, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SRR30 Ride on Roller' }]
         },
         {
             model: "SWR 30",
@@ -685,7 +685,7 @@ window.productData = {
                 { icon: "fa-solid fa-gas-pump", text: "Engine: 10 HP Diesel" }
             ],
             compare: { model: "SWR 30", category: "road-rollers", type: "Walk-behind Roller", weight: "800 kg", engine: "Diesel Engine", power: "10 HP" },
-            actions: [{ type: 'cart', name: 'SWR 30 Walk behind', price: 3500, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SWR 30 Walk behind' }]
         },
         {
             model: "SWR30 FH",
@@ -698,7 +698,7 @@ window.productData = {
                 { icon: "fa-solid fa-gas-pump", text: "Engine: Diesel Engine" }
             ],
             compare: { model: "SWR30 FH", category: "road-rollers", type: "Walk-behind Roller", weight: "900 kg", engine: "Diesel Engine" },
-            actions: [{ type: 'cart', name: 'SWR30 FH Walk behind', price: 4000, hsn: '8429', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SWR30 FH Walk behind' }]
         }
     ],
     'scrap-straightener-models': [
@@ -713,7 +713,7 @@ window.productData = {
                 { icon: "fa-solid fa-recycle", text: "Usage: Coil & Light Scrap" }
             ],
             compare: { model: "SS-12 Eco Model", category: "scrap-straightener-models", range: "4mm - 12mm", "speed-feature": "25 meters/min", "usage-accuracy": "Coil & Light Scrap" },
-            actions: [{ type: 'cart', name: 'SS-12 Eco Model', price: 1000, hsn: '8462', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SS-12 Eco Model' }]
         },
         {
             model: "SSC-16 Pro",
@@ -726,7 +726,7 @@ window.productData = {
                 { icon: "fa-solid fa-arrows-left-right", text: "Accuracy: High Precision" }
             ],
             compare: { model: "SSC-16 Pro", category: "scrap-straightener-models", range: "6mm - 16mm", "speed-feature": "Auto-Cut Function", "usage-accuracy": "High Precision" },
-            actions: [{ type: 'cart', name: 'SSC-16 Pro', price: 2000, hsn: '8462', gst: 18 }]
+            actions: [{ type: 'cart', name: 'SSC-16 Pro' }]
         }
     ],
     'shutter-vibrator-models': {
@@ -743,7 +743,7 @@ window.productData = {
                     { icon: "fa-solid fa-plug", text: "Voltage: 42V / 200Hz" }
                 ],
                 compare: { model: "SHFS-4215", category: "shutter-vibrators", power: "1.5 HP", vibrations: "6000 RPM", voltage: "42V (200Hz)" },
-                actions: [{ type: 'cart', name: 'Shutter Vibrator SHFS-4215', price: 5000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Shutter Vibrator SHFS-4215' }]
             },
             {
                 model: "SHFS-4210",
@@ -757,7 +757,7 @@ window.productData = {
                     { icon: "fa-solid fa-plug", text: "Voltage: 42V / 200Hz" }
                 ],
                 compare: { model: "SHFS-4210", category: "shutter-vibrators", power: "1 HP", vibrations: "3000 RPM", voltage: "42V (200Hz)" },
-                actions: [{ type: 'cart', name: 'Shutter Vibrator SHFS-4210', price: 4500, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Shutter Vibrator SHFS-4210' }]
             }
         ],
         threePhase: [
@@ -773,7 +773,7 @@ window.productData = {
                     { icon: "fa-solid fa-plug", text: "Voltage: 415V / 50Hz" }
                 ],
                 compare: { model: "SSV-305", category: "shutter-vibrators", power: "0.5 HP", vibrations: "3000 RPM", voltage: "415V (50Hz)" },
-                actions: [{ type: 'cart', name: 'Shutter Vibrator SSV-305', price: 4800, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Shutter Vibrator SSV-305' }]
             },
             {
                 model: "SSV-310",
@@ -787,7 +787,7 @@ window.productData = {
                     { icon: "fa-solid fa-plug", text: "Voltage: 415V / 50Hz" }
                 ],
                 compare: { model: "SSV-310", category: "shutter-vibrators", power: "1 HP", vibrations: "3000 RPM", voltage: "415V (50Hz)" },
-                actions: [{ type: 'cart', name: 'Shutter Vibrator SSV-310', price: 5200, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Shutter Vibrator SSV-310' }]
             },
             {
                 model: "SSV-320",
@@ -801,7 +801,7 @@ window.productData = {
                     { icon: "fa-solid fa-plug", text: "Voltage: 415V / 50Hz" }
                 ],
                 compare: { model: "SSV-320", category: "shutter-vibrators", power: "2 HP", vibrations: "3000 RPM", voltage: "415V (50Hz)" },
-                actions: [{ type: 'cart', name: 'Shutter Vibrator SSV-320', price: 6000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Shutter Vibrator SSV-320' }]
             }
         ]
     },
@@ -818,7 +818,7 @@ window.productData = {
                     { icon: "fa-solid fa-gauge-high", text: "Speed: 2000 RPM" }
                 ],
                 compare: { model: "SSVE-2", category: "surface-smootheners", type: "Screed Vibrator", power: "Electric Motor", speed: "2000 RPM" },
-                actions: [{ type: 'cart', name: 'Screed Vibrator SSVE-2', price: 9000, hsn: '8467', gst: 18 }]
+                actions: [{ type: 'cart', name: 'Screed Vibrator SSVE-2' }]
             }
         ],
         powerTrowels: [
@@ -836,7 +836,7 @@ window.productData = {
                     { icon: "fa-solid fa-weight-scale", text: "Weight: 70Kg" }
                 ],
                 compare: { model: "SPTP", category: "surface-smootheners", type: "Power Trowel", diameter: "1000 mm", blades: "4", power: "2Hp", weight: "70Kg" },
-                actions: [{ type: 'cart', name: 'SPTP Petrol', price: 2000, hsn: '8429', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SPTP Petrol' }]
             },
             {
                 model: "SPTE Electric",
@@ -852,7 +852,7 @@ window.productData = {
                     { icon: "fa-solid fa-weight-scale", text: "Weight: 68Kg" }
                 ],
                 compare: { model: "SPTE Electric", category: "surface-smootheners", type: "Power Trowel", diameter: "1000 mm", blades: "4", power: "3Hp", weight: "68Kg" },
-                actions: [{ type: 'cart', name: 'SPTE Electric', price: 2000, hsn: '8429', gst: 18 }]
+                actions: [{ type: 'cart', name: 'SPTE Electric' }]
             }
         ]
     },
@@ -891,7 +891,7 @@ window.productData = {
             compare: { model: "3HP 1PH Vibrator", category: "vibrators", power: "3 HP", voltage: "220V-240V", current: "12-15 A", speed: "2800-3000 RPM" },
             actions: [
                 { type: 'enquire' },
-                { type: 'cart', name: '3HP 1PH Vibrator', price: 1000, hsn: '8467', gst: 18 }
+                { type: 'cart', name: '3HP 1PH Vibrator' }
             ]
         },
         {
@@ -911,7 +911,7 @@ window.productData = {
             compare: { model: "3HP 3PH Vibrator", category: "vibrators", power: "3 HP", voltage: "380V-415V", current: "4.5-6 A", speed: "2850-3000 RPM" },
             actions: [
                 { type: 'enquire' },
-                { type: 'cart', name: '3HP 3PH Vibrator', price: 1000, hsn: '8467', gst: 18 }
+                { type: 'cart', name: '3HP 3PH Vibrator' }
             ]
         },
         {
@@ -931,7 +931,7 @@ window.productData = {
             compare: { model: "2HP Vibrator", category: "vibrators", power: "2 HP", voltage: "220V-240V", current: "8-10 A", speed: "2800-3000 RPM" },
             actions: [
                 { type: 'enquire' },
-                { type: 'cart', name: '2HP Vibrator', price: 1000, hsn: '8467', gst: 18 }
+                { type: 'cart', name: '2HP Vibrator' }
             ]
         },
         {
@@ -949,7 +949,7 @@ window.productData = {
             compare: { model: "Diesel Vibrator", category: "vibrators", power: "5 HP", fuel: "Diesel", speed: "3000 RPM" },
             actions: [
                 { type: 'enquire' },
-                { type: 'cart', name: 'Diesel Vibrator', price: 12000, hsn: '8467', gst: 18 }
+                { type: 'cart', name: 'Diesel Vibrator' }
             ]
         },
         {
@@ -967,7 +967,7 @@ window.productData = {
             compare: { model: "Petrol Vibrator", category: "vibrators", power: "5.5 HP", fuel: "Petrol", speed: "3000 RPM" },
             actions: [
                 { type: 'enquire' },
-                { type: 'cart', name: 'Petrol Vibrator', price: 11000, hsn: '8467', gst: 18 }
+                { type: 'cart', name: 'Petrol Vibrator' }
             ]
         }
     ]
