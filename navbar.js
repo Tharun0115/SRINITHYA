@@ -114,8 +114,8 @@ const rootPath = getRootPath(),
                     </div>
 
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
-                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
-                        <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
+                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Selection Tray">
+                        <i class="fa-solid fa-basket-shopping text-2xl mr-1"></i>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </button>
                 </div>
@@ -158,7 +158,7 @@ const rootPath = getRootPath(),
                     </div>
                 </div>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
-                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Estimate Cart</button>
+                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Selection Tray</button>
             </div>
         </div>
     </nav>
@@ -169,9 +169,9 @@ const rootPath = getRootPath(),
         <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
         <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
             <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice-dollar mr-2"></i>Selection Tray</h2>
+                <h2 class="text-xl font-bold"><i class="fa-solid fa-basket-shopping text-xl mr-2"></i>Selection Tray</h2>
                 <div>
-                    <button onclick="openClearCartModal()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Estimate">
+                    <button onclick="openClearCartModal()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Tray">
                         <i class="fa-solid fa-trash-can"></i> Clear
                     </button>
                     <button onclick="toggleCart()" class="text-white hover:text-gray-200 focus:outline-none"><i class="fa-solid fa-xmark text-2xl"></i></button>
@@ -195,7 +195,7 @@ const rootPath = getRootPath(),
                 <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <i class="fa-solid fa-triangle-exclamation text-2xl text-red-600"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Clear Estimate?</h3>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Clear Tray?</h3>
                 <p class="text-gray-600 mb-6">Are you sure you want to remove all items from your estimate? This action cannot be undone.</p>
                 <div class="flex gap-3 justify-center">
                     <button onclick="closeClearCartModal()" class="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition focus:outline-none">Cancel</button>

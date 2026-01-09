@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Lift & Crane Models | SEPL</title>
-    <!-- Modern Font: Outfit -->
+    <title>Mini Lift Models | SEPL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../tailwind-config.js"></script>
@@ -12,14 +13,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+    <script src="../navbar.js"></script>
 </head>
 <body class="text-gray-800 font-sans">
 
-    <script src="../navbar.js"></script>
-
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
-            
             <div class="mb-4">
                 <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -30,108 +29,20 @@
                             <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><a href="../index.html#products" class="hover:text-primary">Products</a></div>
                         </li>
                         <li aria-current="page">
-                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><span class="text-gray-800 font-medium">Mini Lifts / Cranes</span></div>
+                            <div class="flex items-center"><i class="fa-solid fa-chevron-right text-gray-300 mx-2"></i><span class="text-gray-800 font-medium">Mini Lifts</span></div>
                         </li>
                     </ol>
                 </nav>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Mini Lift / Crane Models</h1>
-            <p class="text-xl text-gray-600 mb-12">Compact, powerful, and rotatable mini cranes for material lifting on construction sites.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Mini Lift Models</h1>
+            <p class="text-xl text-gray-600 mb-12">Compact and versatile lifting solutions for construction sites.</p>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="Mini Lift 300Kg" data-category="mini-lifts" data-capacity="300 Kg" data-height="30 Mtr" data-rotation="360 Degrees">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="../Assets/Product Images/sml.png" alt="Mini Lift 300Kg" loading="lazy" decoding="async" class="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">300Kg Mini Lift</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Versatile and compact, ideal for lifting materials on small to medium-sized sites.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6 inline-block w-full px-4">
-                            <li class="flex items-center"><i class="fa-solid fa-weight-hanging text-primary w-6"></i> <span>Capacity: 300 Kg</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-arrows-up-down text-primary w-6"></i> <span>Lifting Height: 30 Mtr</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-rotate text-primary w-6"></i> <span>Rotation: 360 Degrees</span></li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('Mini Lift 300Kg')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="Mini Lift 500Kg" data-category="mini-lifts" data-capacity="500 Kg" data-height="30 Mtr" data-rotation="360 Degrees">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="../Assets/Product Images/sml.png" alt="Mini Lift 500Kg" loading="lazy" decoding="async" class="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">500Kg Mini Lift</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Heavy-duty lifting capacity for demanding construction environments.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6 inline-block w-full px-4">
-                            <li class="flex items-center"><i class="fa-solid fa-weight-hanging text-primary w-6"></i> <span>Capacity: 500 Kg</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-arrows-up-down text-primary w-6"></i> <span>Lifting Height: 30 Mtr</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-rotate text-primary w-6"></i> <span>Rotation: 360 Degrees</span></li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('Mini Lift 500Kg')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
+            <div id="mini-lift-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
         </div>
     </section>
-    
-    <footer class="bg-dark text-gray-300 py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">Srinithya Engineering</h4>
-                <p class="text-sm text-gray-400">Manufacturer of heavy-duty Bar Processing Machinery and trader of Light Construction Equipment.</p>
-            </div>
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="../index.html" class="hover:text-secondary transition">Home</a></li>
-                    <li><a href="../about.html" class="hover:text-secondary transition">About Us</a></li>
-                    <li><a href="../index.html#products" class="hover:text-secondary transition">Products</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">Contact</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><i class="fa-solid fa-phone mr-2 text-secondary"></i> +91 9059239819</li>
-                    <li><i class="fa-solid fa-envelope mr-2 text-secondary"></i> sales@srinithyaepl.in</li>
-                    <li><i class="fa-solid fa-location-dot mr-2 text-secondary"></i> Hyderabad, Telangana <a href="https://maps.google.com" target="_blank" class="ml-1 text-secondary hover:text-white transition" title="View on Map"><i class="fa-solid fa-map-location-dot"></i></a></li>
-                    <li><i class="fa-solid fa-id-card mr-2 text-secondary"></i> CIN: U51909TG2020PTC139942</li>
-                    <li><i class="fa-solid fa-receipt mr-2 text-secondary"></i> GSTIN: 36ABDCS5864M1ZP</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white text-lg font-bold mb-4">Follow Us</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 text-center border-t border-gray-800 pt-8 text-sm text-gray-500">
-            <p>&copy; 2025 SRINITHYA ENGINEERING PRIVATE LIMITED. All rights reserved.</p>
-        </div>
-    </footer>
+
+    <script src="../footer.js" defer></script>
 
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
@@ -144,13 +55,9 @@
                     </div>
                     <button onclick="clearCompare()" class="text-gray-300 hover:text-white" title="Clear Selection">&times; Clear</button>
                 </div>
-                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>
-                    Compare Now
-                </button>
+                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>Compare Now</button>
             </div>
-            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800">
-                <!-- Preview items will be injected here -->
-            </div>
+            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800"></div>
         </div>
     </div>
 
@@ -158,78 +65,73 @@
     <div id="compare-modal" class="fixed inset-0 z-[90] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
             <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-xl font-bold">Compare Mini Lifts</h2>
+                <h2 class="text-xl font-bold">Compare Products</h2>
                 <button onclick="closeCompareModal()" class="text-white hover:text-red-200 text-3xl">&times;</button>
             </div>
-            <div id="compare-modal-body" class="p-6 overflow-y-auto">
-                <!-- Comparison table will be injected here -->
-            </div>
+            <div id="compare-modal-body" class="p-6 overflow-y-auto"></div>
         </div>
     </div>
 
-    <script src="../cart.js"></script>
+    <!-- Floating WhatsApp Button -->
+    <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Callback Success Modal -->
+    <div id="callback-modal" class="fixed inset-0 flex items-center justify-center z-[60] hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="bg-white p-6 rounded-lg shadow-2xl z-10 max-w-sm mx-4 text-center transform transition-all scale-100">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa-solid fa-check text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
+            <p class="text-gray-600 mb-6">Your callback request has been submitted.</p>
+            <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
+        </div>
+    </div>
+
+    <!-- Image Viewer Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
+            <img id="modal-image" src="" alt="Enlarged Product View" class="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl">
+            <button onclick="closeImageModal()" class="absolute -top-2 -right-2 text-white bg-red-600 rounded-full h-8 w-8 flex items-center justify-center text-xl hover:bg-red-700 focus:outline-none">&times;</button>
+        </div>
+    </div>
+
     <script src="../compare.js"></script>
+    <script src="../cart.js"></script>
     <script src="../search.js"></script>
-
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
     <script>
-        function updateCardQuantities() {
-            const cart = JSON.parse(localStorage.getItem('sepl_cart')) || [];
-            const buttons = document.querySelectorAll('button[onclick^="addToCart"]');
-            buttons.forEach(btn => {
-                const match = btn.getAttribute('onclick').match(/addToCart\(['"]([^'"]+)['"]/);
-                if (match) {
-                    const name = match[1];
-                    const item = cart.find(i => i.name === name);
-                    const qty = item ? item.qty : 0;
-                    
-                    // Find or create wrapper
-                    let wrapper = btn.closest('.action-wrapper');
-                    if (!wrapper) {
-                        wrapper = document.createElement('div');
-                        wrapper.className = 'action-wrapper w-full mt-auto';
-                        btn.parentNode.insertBefore(wrapper, btn);
-                        wrapper.appendChild(btn);
-                    }
-                    
-                    let control = wrapper.querySelector('.qty-control');
-                    
-                    if (qty > 0) {
-                        btn.classList.add('hidden');
-                        if (!control) {
-                            control = document.createElement('div');
-                            control.className = 'qty-control flex items-center justify-between w-full border border-secondary rounded overflow-hidden bg-white shadow-sm';
-                            const params = btn.getAttribute('onclick').substring(10, btn.getAttribute('onclick').length - 1);
-                            control.innerHTML = `<button onclick="updateItemQty('${name}', -1)" class="px-4 py-2 bg-gray-50 hover:bg-gray-200 text-gray-700 transition font-bold border-r border-gray-200">-</button><span class="font-bold text-primary flex-grow text-center qty-display bg-white py-2">${qty}</span><button onclick="addToCart(${params})" class="px-4 py-2 bg-secondary text-white hover:bg-yellow-600 transition font-bold border-l border-secondary">+</button>`;
-                            wrapper.appendChild(control);
-                        } else { control.querySelector('.qty-display').textContent = qty; control.classList.remove('hidden'); }
-                    } else { btn.classList.remove('hidden'); if (control) control.classList.add('hidden'); }
-                    const oldBadge = btn.parentNode.querySelector('.cart-qty-display'); if(oldBadge) oldBadge.remove();
-                }
-            });
-        }
-
-        window.addEventListener('load', () => {
-            updateCardQuantities();
-            // Hook into global cart functions if they exist
-            ['addToCart', 'removeFromCart', 'clearCart', 'updateQty'].forEach(fn => { if(typeof window[fn] === 'function') { const orig = window[fn]; window[fn] = function(...args) { orig.apply(this, args); updateCardQuantities(); }; } });
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('mini-lift-grid', window.productData['mini-lift-models']);
         });
 
-        function updateItemQty(name, change) {
-            const cart = JSON.parse(localStorage.getItem('sepl_cart')) || [];
-            const itemIndex = cart.findIndex(i => i.name === name);
-            if (itemIndex !== -1) {
-                if (cart[itemIndex].qty + change > 0) {
-                    cart[itemIndex].qty += change;
-                } else {
-                    cart.splice(itemIndex, 1);
-                }
-                localStorage.setItem('sepl_cart', JSON.stringify(cart));
-                if(typeof renderCart === 'function') renderCart();
-                if(typeof updateCartBadge === 'function') updateCartBadge();
-                updateCardQuantities();
+        // Image Modal Logic
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+
+        function openImageModal(src) {
+            if (imageModal && modalImage) {
+                modalImage.src = src;
+                imageModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
             }
         }
-    </script>
 
+        function closeImageModal() {
+            if (imageModal) {
+                imageModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+                closeImageModal();
+            }
+        });
+    </script>
 </body>
 </html>

@@ -58,25 +58,7 @@
                 </p>
             </div>
 
-            <div class="flex justify-center">
-                <div class="w-full max-w-md bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col">
-                    <div class="h-80 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/Product Images/srp.jpg" alt="Suspended Rope Platform" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">ZLP800 Suspended Platform</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">The industry-standard for safety and reliability in high-rise access.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
-                            <li><i class="fa-solid fa-tag text-primary w-6"></i> <span>Model: ZLP800</span></li>
-                            <li><i class="fa-solid fa-weight-scale text-primary w-6"></i> <span>Rated Load: Up to 1000 Kgs</span></li>
-                            <li><i class="fa-solid fa-arrows-up-down text-primary w-6"></i> <span>Max Lifting Height: Up to 100m</span></li>
-                            <li><i class="fa-solid fa-shield-halved text-primary w-6"></i> <span>Safety: Equipped with Load Calibration Cell</span></li>
-                            <li><i class="fa-solid fa-ruler-combined text-primary w-6"></i> <span>Platform Size: Customizable</span></li>
-                        </ul>
-                        <a href="../index.html#contact" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-headset"></i> Enquire Now</a>
-                    </div>
-                </div>
-            </div>
+            <div id="suspended-platform-grid" class="grid grid-cols-1 justify-items-center max-w-md mx-auto"></div>
 
         </div>
     </section>
@@ -129,6 +111,13 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load product data and renderer
+            const script1 = document.createElement('script'); script1.src = '../product_data.js'; document.head.appendChild(script1);
+            const script2 = document.createElement('script'); script2.src = '../product_renderer.js'; document.head.appendChild(script2);
+            script2.onload = () => renderProductCards('suspended-platform-grid', window.productData['suspended-rope-platform']);
+        });
+
         // --- Image Modal Logic ---
         const imageModal = document.getElementById('image-modal');
         const modalImage = document.getElementById('modal-image');

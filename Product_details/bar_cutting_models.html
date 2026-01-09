@@ -74,59 +74,8 @@
 
             <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Bar Cutting Machine Models</h1>
             <p class="text-xl text-gray-600 mb-12">Heavy-duty hydraulic cutting solutions for TMT bars ranging from 6mm to 52mm.</p>
-
-            <div class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto">
-                
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="SBC52 Heavy Duty" data-category="bar-cutters" data-capacity="Up to 42mm TMT" data-power="4 KW Motor" data-gearbox="Reinforced Oil Bath">
-                    <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/bar_cutter.png" alt="SBC52 Bar Cutting Machine" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-2 md:p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-sm md:text-2xl font-bold text-gray-900 mb-1 md:mb-2">SBC52 Heavy Duty</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 flex-grow line-clamp-2">Engineered for infrastructure projects requiring high-volume processing.</p>
-                        <ul class="text-xs md:text-sm text-left text-gray-700 space-y-1 md:space-y-2 mb-3 md:mb-6 inline-block w-full px-1 md:px-4">
-                            <li class="flex items-center"><i class="fa-solid fa-ruler-combined text-primary w-6"></i> <span>Capacity: Up to 42mm TMT</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-bolt text-primary w-6"></i> <span>Power: 4 KW Motor</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-gear text-primary w-6"></i> <span>Gearbox: Reinforced Oil Bath</span></li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SBC52 Heavy Duty')" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="SBC42 Standard" data-category="bar-cutters" data-capacity="Up to 32mm TMT" data-power="3 KW Motor" data-gearbox="Speed: 32 times/min">
-                    <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center relative">
-                        <img onclick="openImageModal(this.src)" src="../Assets/bar_cutter.png" alt="SBC42 Bar Cutting Machine" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                        <span class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-2 py-1 rounded">Best Seller</span>
-                    </div>
-                    <div class="p-2 md:p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-sm md:text-2xl font-bold text-gray-900 mb-1 md:mb-2">SBC42 Standard</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 flex-grow line-clamp-2">The industry standard for residential and commercial construction sites.</p>
-                        <ul class="text-xs md:text-sm text-left text-gray-700 space-y-1 md:space-y-2 mb-3 md:mb-6 inline-block w-full px-1 md:px-4">
-                            <li class="flex items-center"><i class="fa-solid fa-ruler-combined text-primary w-6"></i> <span>Capacity: Up to 32mm TMT</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-bolt text-primary w-6"></i> <span>Power: 3 KW Motor</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-gauge-high text-primary w-6"></i> <span>Speed: 32 times/min</span></li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SBC42 Standard')" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <div id="bar-cutting-grid" class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto"></div>
+            
             
         </div>
     </section>
@@ -203,6 +152,14 @@
     <script src="../compare.js"></script>
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('bar-cutting-grid', window.productData['bar-cutting-models']);
+        });
+    </script>
+
 
     <script>
 

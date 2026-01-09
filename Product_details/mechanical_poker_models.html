@@ -4,58 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mechanical Poker Models | SEPL</title>
-    <!-- Modern Font: Outfit -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e3a8a',
-                        secondary: '#d97706',
-                        dark: '#111827',
-                    },
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+    <script src="../tailwind-config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js"></script>
-    <style>
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-        @keyframes total-flash {
-          50% {
-            transform: scale(1.1);
-            color: #d97706; /* secondary color */
-          }
-        }
-        .flash-animation {
-          animation: total-flash 0.5s ease-in-out;
-        }
-    </style>
 </head>
 <body class="text-gray-800 font-sans">
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
-
             <div class="mb-4">
                 <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -73,243 +36,57 @@
             </div>
 
             <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Mechanical Poker Models</h1>
-            <p class="text-xl text-gray-600 mb-12">High-quality vibration needles for various construction applications.</p>
+            <p class="text-xl text-gray-600 mb-12">High-quality vibration needles for various applications.</p>
 
-            <!-- Section 1: Handy Needles -->
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2 flex items-center">
-                <i class="fa-solid fa-hand-holding-hand text-secondary mr-3"></i> Handy Needles - Compatible with <a href="handy_vibration_models.html" class="text-primary hover:text-secondary hover:underline ml-2 transition">Handy Vibrators</a>
+                <i class="fa-solid fa-hand-fist text-secondary mr-3"></i> Handy Vibrator Needles
             </h2>
+            <div id="handy-needle-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mb-16"></div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mb-16">
-                <!-- 25MM Needles -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Handy Needle 25mm (3M)" data-category="mechanical-pokers" data-diameter="25mm" data-length="3 Meters">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Handy Needle 25mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">25MM Needle (3Mtr)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Compact needle for handy vibrators.</p>
-                        <button onclick="addToCart('Handy Needle 25mm (3M)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Handy Needle 25mm (6M)" data-category="mechanical-pokers" data-diameter="25mm" data-length="6 Meters">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Handy Needle 25mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">25MM Needle (6Mtr)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Extended reach needle for handy vibrators.</p>
-                        <button onclick="addToCart('Handy Needle 25mm (6M)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <!-- 40MM Needles -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Handy Needle 40mm (3M)" data-category="mechanical-pokers" data-diameter="40mm" data-length="3 Meters">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Handy Needle 40mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">40MM Needle (3Mtr)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Standard size needle for general use.</p>
-                        <button onclick="addToCart('Handy Needle 40mm (3M)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Handy Needle 40mm (6M)" data-category="mechanical-pokers" data-diameter="40mm" data-length="6 Meters">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Handy Needle 40mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">40MM Needle (6Mtr)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Long hose needle for deep pours.</p>
-                        <button onclick="addToCart('Handy Needle 40mm (6M)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <!-- 60MM Needles -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Handy Needle 60mm (3M)" data-category="mechanical-pokers" data-diameter="60mm" data-length="3 Meters">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Handy Needle 60mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">60MM Needle (3Mtr)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Large diameter for heavy consolidation.</p>
-                        <button onclick="addToCart('Handy Needle 60mm (3M)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Handy Needle 60mm (6M)" data-category="mechanical-pokers" data-diameter="60mm" data-length="6 Meters">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Handy Needle 60mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">60MM Needle (6Mtr)</h3>
-                        <p class="text-sm text-gray-600 mb-3">Maximum reach and power.</p>
-                        <button onclick="addToCart('Handy Needle 60mm (6M)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 2: Hand-Held Needles -->
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2 flex items-center">
-                <i class="fa-solid fa-bolt text-secondary mr-3"></i> Hand-Held Needles - Compatible with <a href="handy_vibration_models.html" class="text-primary hover:text-secondary hover:underline ml-2 transition">High Frequency Hand-Held Motor</a>
+                <i class="fa-solid fa-bolt text-secondary mr-3"></i> Hand-Held Vibrator Needles
             </h2>
+            <div id="handheld-needle-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mb-16"></div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mb-16">
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Hand-Held Needle 25mm" data-category="mechanical-pokers" data-diameter="25mm">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Hand-Held Needle 25mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">25MM Needle</h3>
-                        <p class="text-sm text-gray-600 mb-3">Precision needle for high frequency motor.</p>
-                        <button onclick="addToCart('Hand-Held Needle 25mm')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Hand-Held Needle 40mm" data-category="mechanical-pokers" data-diameter="40mm">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Hand-Held Needle 40mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">40MM Needle</h3>
-                        <p class="text-sm text-gray-600 mb-3">Versatile needle for high frequency motor.</p>
-                        <button onclick="addToCart('Hand-Held Needle 40mm')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Hand-Held Needle 60mm" data-category="mechanical-pokers" data-diameter="60mm">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Hand-Held Needle 60mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">60MM Needle</h3>
-                        <p class="text-sm text-gray-600 mb-3">Heavy duty needle for high frequency motor.</p>
-                        <button onclick="addToCart('Hand-Held Needle 60mm')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 3: Mechanical Needles -->
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2 flex items-center">
-                <i class="fa-solid fa-gears text-secondary mr-3"></i> Mechanical Needles - Compatible with <a href="Vibrators.html" class="text-primary hover:text-secondary hover:underline ml-2 transition">Petrol, Diesel and Electrical Vibrators</a>
+                <i class="fa-solid fa-gears text-secondary mr-3"></i> Mechanical Vibrator Needles
             </h2>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Mechanical Needle 25mm" data-category="mechanical-pokers" data-diameter="25mm">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Mechanical Needle 25mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">25MM Needles</h3>
-                        <p class="text-sm text-gray-600 mb-3">Robust mechanical needle for standard vibrators.</p>
-                        <button onclick="addToCart('Mechanical Needle 25mm')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Mechanical Needle 40mm" data-category="mechanical-pokers" data-diameter="40mm">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Mechanical Needle 40mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">40MM Needles</h3>
-                        <p class="text-sm text-gray-600 mb-3">Standard mechanical needle for efficient compaction.</p>
-                        <button onclick="addToCart('Mechanical Needle 40mm')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="Mechanical Needle 60mm" data-category="mechanical-pokers" data-diameter="60mm">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Mechanical Needle 60mm" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">60MM Needles</h3>
-                        <p class="text-sm text-gray-600 mb-3">High capacity mechanical needle for large jobs.</p>
-                        <button onclick="addToCart('Mechanical Needle 60mm')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-            </div>
-            
+            <div id="mechanical-needle-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
         </div>
     </section>
-    
+
     <script src="../footer.js" defer></script>
 
+    <!-- Compare Bar -->
+    <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center">
+                        <span class="font-bold text-lg">Compare Models</span>
+                        <span id="compare-count" class="ml-2 bg-secondary text-white text-sm font-bold w-6 h-6 flex items-center justify-center rounded-full">0</span>
+                    </div>
+                    <button onclick="clearCompare()" class="text-gray-300 hover:text-white" title="Clear Selection">&times; Clear</button>
+                </div>
+                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>Compare Now</button>
+            </div>
+            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800"></div>
+        </div>
+    </div>
+
+    <!-- Compare Modal -->
+    <div id="compare-modal" class="fixed inset-0 z-[90] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
+            <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
+                <h2 class="text-xl font-bold">Compare Products</h2>
+                <button onclick="closeCompareModal()" class="text-white hover:text-red-200 text-3xl">&times;</button>
+            </div>
+            <div id="compare-modal-body" class="p-6 overflow-y-auto"></div>
+        </div>
+    </div>
+
     <!-- Floating WhatsApp Button -->
-    <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website.%0APlease%20call%20me%20back%20for%20a%20detailed%20description%20of%20my%20requirements." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
+    <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
@@ -321,10 +98,7 @@
                 <i class="fa-solid fa-check text-2xl text-green-600"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
-            <p class="text-gray-600 mb-6">Your callback request has been submitted.<br>Please wait for one of our representatives to call you.</p>
-            <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 overflow-hidden">
-                <div id="modal-progress-bar" class="bg-green-500 h-1.5 rounded-full w-full"></div>
-            </div>
+            <p class="text-gray-600 mb-6">Your callback request has been submitted.</p>
             <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
         </div>
     </div>
@@ -337,23 +111,19 @@
         </div>
     </div>
 
-    <!-- Link the Universal Compare Script -->
     <script src="../compare.js"></script>
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
-
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
     <script>
-        // WhatsApp Callback Modal Logic
-        const whatsappBtn = document.getElementById('whatsapp-btn');
-        const modal = document.getElementById('callback-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('handy-needle-grid', window.productData['mechanical-poker-models'].handyNeedles);
+            renderProductCards('handheld-needle-grid', window.productData['mechanical-poker-models'].handHeldNeedles);
+            renderProductCards('mechanical-needle-grid', window.productData['mechanical-poker-models'].mechanicalNeedles);
+        });
 
-        if (whatsappBtn) { whatsappBtn.addEventListener('click', () => { sessionStorage.setItem('whatsapp_clicked', 'true'); }); }
-        document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && sessionStorage.getItem('whatsapp_clicked') === 'true') { setTimeout(() => { modal.classList.remove('hidden'); playNotificationSound(); sessionStorage.removeItem('whatsapp_clicked'); const progressBar = document.getElementById('modal-progress-bar'); if (progressBar) { progressBar.style.transition = 'none'; progressBar.style.width = '100%'; void progressBar.offsetWidth; progressBar.style.transition = 'width 3s linear'; progressBar.style.width = '0%'; } setTimeout(() => { modal.classList.add('hidden'); }, 3000); }, 1000); } });
-        if (closeModalBtn) { closeModalBtn.addEventListener('click', () => { modal.classList.add('hidden'); }); }
-        function playNotificationSound() { const ctx = new (window.AudioContext || window.webkitAudioContext)(); const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.connect(gain); gain.connect(ctx.destination); osc.type = 'sine'; osc.frequency.setValueAtTime(523.25, ctx.currentTime); gain.gain.setValueAtTime(0.1, ctx.currentTime); gain.gain.exponentialRampToValueAtTime(0.00001, ctx.currentTime + 0.5); osc.start(); osc.stop(ctx.currentTime + 0.5); }
-
-        // --- Image Modal Logic ---
+        // Image Modal Logic
         const imageModal = document.getElementById('image-modal');
         const modalImage = document.getElementById('modal-image');
 

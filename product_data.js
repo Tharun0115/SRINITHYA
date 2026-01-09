@@ -32,7 +32,7 @@ window.productData = {
         {
             model: "SBC52 Heavy Duty",
             name: "SBC52 Heavy Duty",
-            image: "./Assets/bar_cutter.png",
+            image: "./Assets/Product Images/sbc.png",
             description: "Engineered for infrastructure projects requiring high-volume processing.",
             specs: [
                 { icon: "fa-solid fa-ruler-combined", text: "Capacity: Up to 42mm TMT" },
@@ -111,12 +111,39 @@ window.productData = {
             actions: [{ type: 'cart', name: 'CM-350L Engine' }]
         }
     ],
+    'concrete-pouring-buckets': [
+        {
+            model: "SCCB25",
+            name: "SCCB25",
+            image: "./Assets/Product Images/scpb.png",
+            description: "Heavy duty concrete pouring bucket for crane operation.",
+            specs: [
+                { icon: "fa-solid fa-bucket", text: "Capacity: 0.25 Cu.m" },
+                { icon: "fa-solid fa-arrow-down", text: "Type: Center Discharge" },
+                { icon: "fa-solid fa-weight-hanging", text: "Operation: Crane Lift" }
+            ],
+            compare: { model: "SCCB25", category: "concrete-buckets", capacity: "0.25 Cu.m", type: "Center Discharge", operation: "Crane Lift" },
+            actions: [{ type: 'cart', name: 'SCCB25 Bucket' }]
+        },
+        {
+            model: "SCCB50",
+            name: "SCCB50",
+            image: "./Assets/Product Images/scpb.png",
+            description: "Large capacity concrete pouring bucket for efficient placement.",
+            specs: [
+                { icon: "fa-solid fa-bucket", text: "Capacity: 0.5 Cu.m" },
+                { icon: "fa-solid fa-arrow-down", text: "Type: Center Discharge" },
+                { icon: "fa-solid fa-weight-hanging", text: "Operation: Crane Lift" }
+            ],
+            compare: { model: "SCCB50", category: "concrete-buckets", capacity: "0.5 Cu.m", type: "Center Discharge", operation: "Crane Lift" },
+            actions: [{ type: 'cart', name: 'SCCB50 Bucket' }]
+        }
+    ],
     'dewatering-pump': [
         {
             model: "2 Inch Dewatering Pump",
             name: "2 Inch Dewatering Pump",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "object-contain p-4",
             description: "Versatile pump for general dewatering tasks.",
             specs: [
                 { icon: "fa-solid fa-arrow-up-from-water-pump", text: "Discharge Diameter: 2 Inch" },
@@ -130,7 +157,6 @@ window.productData = {
             model: "3 Inch Dewatering Pump",
             name: "3 Inch Dewatering Pump",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "object-contain p-4",
             description: "Higher capacity pump for faster water removal.",
             specs: [
                 { icon: "fa-solid fa-arrow-up-from-water-pump", text: "Discharge Diameter: 3 Inch" },
@@ -146,7 +172,6 @@ window.productData = {
             model: "SHHM Hand Held",
             name: "High Frequency - Hand Held Motor",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "object-contain p-8",
             description: "Powerful hand-held motor for high frequency applications.",
             specs: [
                 { icon: "fa-solid fa-bolt", text: "Power: 2300 W" },
@@ -160,7 +185,6 @@ window.productData = {
             model: "SHM 800",
             name: "Handy Vibrator Motor 800W",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "object-contain p-8",
             description: "Compact 800W motor for light duty tasks.",
             specs: [
                 { icon: "fa-solid fa-bolt", text: "Power: 800 W" },
@@ -174,7 +198,6 @@ window.productData = {
             model: "SHM 1200",
             name: "Handy Vibrator Motor 1200W",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "object-contain p-8",
             description: "Versatile 1200W motor for general concrete vibration.",
             specs: [
                 { icon: "fa-solid fa-bolt", text: "Power: 1200 W" },
@@ -188,7 +211,6 @@ window.productData = {
             model: "SHM 1600",
             name: "Handy Vibrator Motor 1600W",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "object-contain p-8",
             description: "High-performance 1600W motor for demanding tasks.",
             specs: [
                 { icon: "fa-solid fa-bolt", text: "Power: 1600 W" },
@@ -204,7 +226,6 @@ window.productData = {
             model: "SHFC 35",
             name: "High Frequency Converter SHFC 35",
             image: "./Assets/Others/logo.png",
-            imageClass: "object-contain p-8",
             description: "Compact converter designed for efficiency.",
             specs: [
                 { icon: "fa-solid fa-plug", text: "Outlets: 2 Outlet" },
@@ -217,7 +238,6 @@ window.productData = {
             model: "SHFC90P",
             name: "High Frequency Converter SHFC90P",
             image: "./Assets/Others/logo.png",
-            imageClass: "object-contain p-8",
             description: "Heavy-duty converter for multiple connections.",
             specs: [
                 { icon: "fa-solid fa-plug", text: "Outlets: 4 Outlet" },
@@ -227,41 +247,12 @@ window.productData = {
             actions: [{ type: 'cart', name: 'SHFC90P Converter' }]
         }
     ],
-    'hfc-models': [
-        {
-            model: "HFC-3P",
-            name: "HFC-3P (3 Phase Output)",
-            image: "./Assets/Others/logo.png",
-            description: "Heavy-duty power conversion for large industrial sites requiring 3-phase power tools.",
-            specs: [
-                { icon: "fa-solid fa-bolt-lightning", text: "Input: 415V, 50Hz" },
-                { icon: "fa-solid fa-plug", text: "Output: 42V, 200Hz" },
-                { icon: "fa-solid fa-fan", text: "Protection: Thermal & Overload" }
-            ],
-            compare: { model: "HFC-3P", category: "hfc-models", input: "415V, 50Hz", output: "42V, 200Hz", feature: "Thermal & Overload" },
-            actions: [{ type: 'cart', name: 'HFC-3P' }]
-        },
-        {
-            model: "HFC-1P",
-            name: "HFC-1P (Single Phase)",
-            image: "./Assets/Others/logo.png",
-            description: "Portable and reliable single-phase converter for smaller construction jobs.",
-            specs: [
-                { icon: "fa-solid fa-bolt-lightning", text: "Input: 230V, 50Hz" },
-                { icon: "fa-solid fa-plug", text: "Output: 42V, 200Hz" },
-                { icon: "fa-solid fa-fan", text: "Weight: Lightweight Model" }
-            ],
-            compare: { model: "HFC-1P", category: "hfc-models", input: "230V, 50Hz", output: "42V, 200Hz", feature: "Lightweight Model" },
-            actions: [{ type: 'cart', name: 'HFC-1P' }]
-        }
-    ],
     'high-frequency-poker-models': {
         standalone: [
             {
                 model: "40IV Poker",
                 name: "40IV High Frequency Poker",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "Standalone poker with inbuilt frequency converter.",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
@@ -275,7 +266,6 @@ window.productData = {
                 model: "60IV Poker",
                 name: "60IV High Frequency Poker",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "High performance 60mm poker with inbuilt converter.",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 60mm" },
@@ -291,7 +281,6 @@ window.productData = {
                 model: "SHFN 60 (5Mtr)",
                 name: "SHFN 60 - 5Mtr Hose",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 58mm" },
@@ -306,7 +295,6 @@ window.productData = {
                 model: "SHFN 60 (10Mtr)",
                 name: "SHFN 60 - 10Mtr Hose",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 58mm" },
@@ -320,7 +308,6 @@ window.productData = {
                 model: "SHFN 60 (12Mtr)",
                 name: "SHFN 60 - 12Mtr Hose",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 58mm" },
@@ -334,7 +321,6 @@ window.productData = {
                 model: "40MM Needle 5Mtr",
                 name: "40MM Needle - 5Mtr Hose",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
@@ -347,7 +333,6 @@ window.productData = {
                 model: "40MM Needle 10Mtr",
                 name: "40MM Needle - 10Mtr Hose",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
@@ -360,7 +345,6 @@ window.productData = {
                 model: "40MM Needle 12Mtr",
                 name: "40MM Needle - 12Mtr Hose",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
@@ -376,8 +360,7 @@ window.productData = {
             {
                 model: "Groove Cutter 125mm",
                 name: "Groove Cutter (125mm)",
-                image: "./Assets/bar_cutter.png",
-                imageClass: "object-contain p-4",
+                image: "./Assets/Product Images/groove.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-vertical", text: "Depth: 125 mm" },
@@ -390,7 +373,6 @@ window.productData = {
                 model: "Groove Cutter 150mm",
                 name: "Groove Cutter (150mm)",
                 image: "./Assets/bar_cutter.png",
-                imageClass: "object-contain p-4",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-vertical", text: "Depth: 150 mm" },
@@ -403,7 +385,6 @@ window.productData = {
                 model: "Groove Cutter 180mm",
                 name: "Groove Cutter (180mm)",
                 image: "./Assets/bar_cutter.png",
-                imageClass: "object-contain p-4",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-vertical", text: "Depth: 180 mm" },
@@ -416,7 +397,6 @@ window.productData = {
                 model: "Groove Cutter 400mm",
                 name: "Groove Cutter (400mm)",
                 image: "./Assets/bar_cutter.png",
-                imageClass: "object-contain p-4",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-vertical", text: "Depth: 400 mm" },
@@ -430,8 +410,7 @@ window.productData = {
             {
                 model: "Core Cutter SCC-90",
                 name: "Core Cutter SCC-90",
-                image: "./Assets/bar_cutter.png",
-                imageClass: "object-contain p-4",
+                image: "./Assets/Product Images/core cutter.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-circle-dot", text: "Core Diameter: 90 mm" },
@@ -445,7 +424,6 @@ window.productData = {
                 model: "Core Cutter SCC-160",
                 name: "Core Cutter SCC-160",
                 image: "./Assets/bar_cutter.png",
-                imageClass: "object-contain p-4",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-circle-dot", text: "Core Diameter: 160 mm" },
@@ -459,7 +437,6 @@ window.productData = {
                 model: "Core Cutter SCC-200",
                 name: "Core Cutter SCC-200",
                 image: "./Assets/bar_cutter.png",
-                imageClass: "object-contain p-4",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-circle-dot", text: "Core Diameter: 200 mm" },
@@ -473,22 +450,22 @@ window.productData = {
     },
     'mechanical-poker-models': {
         handyNeedles: [
-            { model: "Handy Needle 25mm (3M)", name: "25MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Compact needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] },
-            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] },
-            { model: "Handy Needle 40mm (3M)", name: "40MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Standard size needle for general use.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] },
-            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] },
-            { model: "Handy Needle 60mm (3M)", name: "60MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Large diameter for heavy consolidation.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] },
-            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] }
+            { model: "Handy Needle 25mm (3M)", name: "25MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Compact needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] },
+            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] },
+            { model: "Handy Needle 40mm (3M)", name: "40MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Standard size needle for general use.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] },
+            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] },
+            { model: "Handy Needle 60mm (3M)", name: "60MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Large diameter for heavy consolidation.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] },
+            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] }
         ],
         handHeldNeedles: [
-            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] },
-            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] },
-            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] }
+            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/electrical_vibrator.png", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] },
+            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/electrical_vibrator.png", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] },
+            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/electrical_vibrator.png", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] }
         ],
         mechanicalNeedles: [
-            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] },
-            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] },
-            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/electrical_vibrator.png", imageClass: "object-contain p-8", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] }
+            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/electrical_vibrator.png", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] },
+            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/electrical_vibrator.png", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] },
+            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/electrical_vibrator.png", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] }
         ]
     },
     'mini-lift-models': [
@@ -496,7 +473,6 @@ window.productData = {
             model: "Mini Lift 300Kg",
             name: "300Kg Mini Lift",
             image: "./Assets/Product Images/sml.png",
-            imageClass: "object-contain p-4",
             description: "Versatile and compact, ideal for lifting materials on small to medium-sized sites.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Capacity: 300 Kg" },
@@ -510,7 +486,6 @@ window.productData = {
             model: "Mini Lift 500Kg",
             name: "500Kg Mini Lift",
             image: "./Assets/Product Images/sml.png",
-            imageClass: "object-contain p-4",
             description: "Heavy-duty lifting capacity for demanding construction environments.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Capacity: 500 Kg" },
@@ -580,7 +555,7 @@ window.productData = {
             {
                 model: "SPB25",
                 name: "Portable Bender 25 - SPB25",
-                image: "./Assets/bar_bender.png",
+                image: "./Assets/Product Images/spb.png",
                 description: "Lightweight bender for bars up to 25mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 25mm" }, { icon: "fa-solid fa-bolt", text: "Type: Electric Portable" }],
                 compare: { model: "SPB25", category: "portable-bar-equipment", type: "Portable Bender", capacity: "25mm", voltage: "220V/110V" },
@@ -589,7 +564,7 @@ window.productData = {
             {
                 model: "SPB32",
                 name: "Portable Bender 32 - SPB32",
-                image: "./Assets/bar_bender.png",
+                image: "./Assets/Product Images/spb.png",
                 description: "Powerful portable unit for bending bars up to 32mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 32mm" }, { icon: "fa-solid fa-bolt", text: "Type: Electric Portable" }],
                 compare: { model: "SPB32", category: "portable-bar-equipment", type: "Portable Bender", capacity: "32mm", voltage: "220V/110V" },
@@ -598,7 +573,7 @@ window.productData = {
             {
                 model: "SPS 32",
                 name: "Bender & Straightener - SPS 32",
-                image: "./Assets/bar_bender.png",
+                image: "./Assets/Product Images/spb.png",
                 description: "Dual function machine: Bends and Straightens bars up to 32mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 32mm" }, { icon: "fa-solid fa-arrows-left-right", text: "Function: Bend & Straighten" }],
                 compare: { model: "SPS 32", category: "portable-bar-equipment", type: "Bender & Straightener", capacity: "32mm", voltage: "220V/110V", power: "600W" },
@@ -609,7 +584,7 @@ window.productData = {
             {
                 model: "SPC25",
                 name: "Portable Cutter 25 - SPC25",
-                image: "./Assets/bar_cutter.png",
+                image: "./Assets/Product Images/spc.png",
                 description: "Fast and safe hydraulic cutting for bars up to 25mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 25mm" }, { icon: "fa-solid fa-bolt", text: "Type: Hydraulic Cutter" }],
                 compare: { model: "SPC25", category: "portable-bar-equipment", type: "Portable Cutter", capacity: "25mm", voltage: "220V/110V" },
@@ -618,7 +593,7 @@ window.productData = {
             {
                 model: "SPC 32",
                 name: "Portable Cutter 32 - SPC 32",
-                image: "./Assets/bar_cutter.png",
+                image: "./Assets/Product Images/spc.png",
                 description: "Heavy-duty portable cutter for bars up to 32mm.",
                 specs: [{ icon: "fa-solid fa-ruler-combined", text: "Capacity: 32mm" }, { icon: "fa-solid fa-bolt", text: "Type: Hydraulic Cutter" }],
                 compare: { model: "SPC 32", category: "portable-bar-equipment", type: "Portable Cutter", capacity: "32mm", voltage: "220V/110V" },
@@ -664,7 +639,7 @@ window.productData = {
         {
             model: "SRR30",
             name: "Ride on Roller - SRR30",
-            image: "./Assets/road_roller.png",
+            image: "./Assets/Product Images/srr.png",
             description: "Heavy-duty ride-on roller designed for large scale road construction projects.",
             specs: [
                 { icon: "fa-solid fa-truck-monster", text: "Type: Ride-on Roller" },
@@ -677,7 +652,7 @@ window.productData = {
         {
             model: "SWR 30",
             name: "SWR 30 Walk Behind Roller",
-            image: "./Assets/road_roller.png",
+            image: "./Assets/Product Images/swr.png",
             description: "Compact walk-behind roller ideal for tight spaces and patch work.",
             specs: [
                 { icon: "fa-solid fa-person-walking", text: "Type: Walk-behind Roller" },
@@ -690,7 +665,7 @@ window.productData = {
         {
             model: "SWR30 FH",
             name: "Walk behind roller - SWR30 FH",
-            image: "./Assets/road_roller.png",
+            image: "./Assets/Product Images/swr fh.png",
             description: "Enhanced walk-behind roller with superior compaction force.",
             specs: [
                 { icon: "fa-solid fa-person-walking", text: "Type: Walk-behind Roller" },
@@ -705,7 +680,7 @@ window.productData = {
         {
             model: "SS-12 Eco Model",
             name: "SS-12 Eco Model",
-            image: "./Assets/scrap_straightener.png",
+            image: "./Assets/Product Images/sss.png",
             description: "Cost-effective solution for straightening coils and lighter scrap.",
             specs: [
                 { icon: "fa-solid fa-arrow-right-long", text: "Range: 4mm - 12mm" },
@@ -718,7 +693,7 @@ window.productData = {
         {
             model: "SSC-16 Pro",
             name: "SSC-16 Pro (+ Cutter)",
-            image: "./Assets/scrap_straightener.png",
+            image: "./Assets/Product Images/sss.png",
             description: "Advanced straightener with integrated hydraulic cutter for precise lengths.",
             specs: [
                 { icon: "fa-solid fa-arrow-right-long", text: "Range: 6mm - 16mm" },
@@ -735,7 +710,6 @@ window.productData = {
                 model: "SHFS-4215",
                 name: "SHFS-4215",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "High-frequency model for superior performance.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 1.5 HP" },
@@ -749,7 +723,6 @@ window.productData = {
                 model: "SHFS-4210",
                 name: "SHFS-4210",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "Reliable high-frequency performance.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 1 HP" },
@@ -765,7 +738,6 @@ window.productData = {
                 model: "SSV-305",
                 name: "SSV-305",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "Compact 3-phase model for smaller precast elements.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 0.5 HP" },
@@ -779,7 +751,6 @@ window.productData = {
                 model: "SSV-310",
                 name: "SSV-310",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "Standard 3-phase model for general formwork.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 1 HP" },
@@ -793,7 +764,6 @@ window.productData = {
                 model: "SSV-320",
                 name: "SSV-320",
                 image: "./Assets/electrical_vibrator.png",
-                imageClass: "object-contain p-8",
                 description: "Powerful 3-phase motor for heavy-duty applications.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 2 HP" },
@@ -810,8 +780,7 @@ window.productData = {
             {
                 model: "SSVE-2",
                 name: "Screed Vibrator SSVE-2",
-                image: "./Assets/Others/logo.png",
-                imageClass: "object-contain p-8",
+                image: "./Assets/Product Images/screed vibrator.png",
                 description: "Electric vibrator for leveling concrete surfaces. Blades sold separately.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Drive: Electric Motor" },
@@ -825,7 +794,7 @@ window.productData = {
             {
                 model: "SPTP",
                 name: "SPTP (Petrol Powered)",
-                image: "./Assets/Others/logo.png",
+                image: "./Assets/Product Images/sptp.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-tag", text: "Model: SPTP" },
@@ -861,7 +830,6 @@ window.productData = {
             model: "ZLP800",
             name: "ZLP800 Suspended Platform",
             image: "./Assets/Product Images/srp.png",
-            imageClass: "object-contain p-8",
             description: "The industry-standard for safety and reliability in high-rise access.",
             specs: [
                 { icon: "fa-solid fa-tag", text: "Model: ZLP800" },
@@ -878,7 +846,6 @@ window.productData = {
             model: "3HP 1PH Vibrator",
             name: "3HP 1PH Electrical Vibrators",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "h-full w-auto object-contain mx-auto",
             description: "Single-phase 3HP motor with high centrifugal force for medium-sized pours.",
             specs: [
                 { icon: "fa-solid fa-bolt-lightning", text: "Power Output: 3 HP (approx. 2.2 kW)" },
@@ -898,7 +865,6 @@ window.productData = {
             model: "3HP 3PH Vibrator",
             name: "3HP 3PH Electrical Vibrators",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "h-full w-auto object-contain mx-auto",
             description: "Three-phase 3HP for continuous heavy-duty consolidation on large pours.",
             specs: [
                 { icon: "fa-solid fa-bolt-lightning", text: "Power Output: 3 HP (approx. 2.2 kW)" },
@@ -918,7 +884,6 @@ window.productData = {
             model: "2HP Vibrator",
             name: "2HP Electrical Vibrators",
             image: "./Assets/electrical_vibrator.png",
-            imageClass: "h-full w-auto object-contain mx-auto",
             description: "Compact 2HP units ideal for small pours and repair works.",
             specs: [
                 { icon: "fa-solid fa-bolt-lightning", text: "Power Output: 2 HP (approx. 1.5 kW)" },
@@ -937,8 +902,7 @@ window.productData = {
         {
             model: "Diesel Vibrator",
             name: "Diesel Vibrator",
-            image: "./Assets/electrical_vibrator.png",
-            imageClass: "h-full w-auto object-contain mx-auto",
+            image: "./Assets/Product Images/sdv.png",
             description: "Robust diesel-powered vibrator for heavy-duty site applications.",
             specs: [
                 { icon: "fa-solid fa-bolt-lightning", text: "Power Output: 5 HP" },
@@ -955,8 +919,7 @@ window.productData = {
         {
             model: "Petrol Vibrator",
             name: "Petrol Vibrator",
-            image: "./Assets/electrical_vibrator.png",
-            imageClass: "h-full w-auto object-contain mx-auto",
+            image: "./Assets/Product Images/spv.png",
             description: "Versatile petrol-powered vibrator for sites without electricity.",
             specs: [
                 { icon: "fa-solid fa-bolt-lightning", text: "Power Output: 5.5 HP" },
