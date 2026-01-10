@@ -4,7 +4,7 @@
  * @returns {string} - The HTML string for the product card.
  */
 function createProductCard(product) {
-    const rootPath = window.location.pathname.includes('/Product_details/') ? '../' : './';
+    const rootPath = (window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/')) ? '../' : './';
 
     // Generate data attributes for the compare functionality
     const compareDataAttributes = product.compare ? Object.entries(product.compare)
@@ -54,7 +54,7 @@ function createProductCard(product) {
 
     return `
         <div class="${cardWrapperClass}" ${compareDataAttributes}>
-            <div class="${imageContainerClass} bg-gray-100 flex items-center justify-center relative overflow-hidden">
+            <div class="${imageContainerClass} bg-white flex items-center justify-center relative overflow-hidden">
                 <img onclick="openImageModal('${imageSrc}')" src="${imageSrc}" alt="${product.name}" width="600" height="400" loading="lazy" decoding="async" class="w-full h-full ${imageClass} transition-transform duration-300 group-hover:scale-110 cursor-pointer">
                 ${badgeHTML}
             </div>

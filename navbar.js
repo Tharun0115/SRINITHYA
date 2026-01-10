@@ -9,7 +9,7 @@
 
 function getRootPath() {
     // A simpler, more direct approach based on the URL path. If the path contains '/Product_details/', we are in a subdirectory.
-    return window.location.pathname.includes('/Product_details/') ? '../' : './';
+    return (window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/')) ? '../' : './';
 }
 const rootPath = getRootPath(),
     navbarHTML = `
@@ -21,7 +21,7 @@ const rootPath = getRootPath(),
                     <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden px-2 py-1 flex-grow text-center transition-all duration-300 ease-in-out" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
-                        <span class="font-black text-[10px] md:text-4xl text-primary relative z-10 transition-all duration-300 ease-in-out md:whitespace-nowrap tracking-tight drop-shadow-sm block" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="text-[10px] md:text-3xl text-primary relative z-10 transition-all duration-300 ease-in-out md:whitespace-nowrap drop-shadow-sm block mb-2" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
                         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
@@ -65,17 +65,16 @@ const rootPath = getRootPath(),
                 <div class="hidden md:flex items-center justify-center w-full py-2 border-t border-gray-100 space-x-8 transition-all duration-300 ease-in-out" id="nav-links">
                     <a href="${rootPath}index.html#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
                     <a href="${rootPath}about.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">About Us</a>
-                    <a href="${rootPath}services.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Services</a>
                     
                     <!-- Megamenu Trigger -->
-                    <div class="relative group" id="products-menu-container">
+                    <div class="group" id="products-menu-container">
                         <button type="button" class="text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
                             <span>Products</span>
                             <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
                         </button>
                         
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-screen max-w-5xl hidden group-hover:block opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out z-[-1] group-hover:z-10">
-                            <div class="bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden">
+                        <div class="absolute top-full left-0 w-full flex justify-center mt-1 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-200 group-hover:delay-0 z-[-1] group-hover:z-10">
+                            <div class="w-full max-w-5xl bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden">
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 p-8">
                                     
                                     <div class="space-y-3">
@@ -113,9 +112,51 @@ const rootPath = getRootPath(),
                         </div>
                     </div>
 
+                    <!-- Services Megamenu Trigger -->
+                    <div class="group" id="services-menu-container">
+                        <button type="button" class="text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
+                            <span>Services</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <div class="absolute top-full left-0 w-full flex justify-center mt-1 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-200 group-hover:delay-0 z-[-1] group-hover:z-10">
+                            <div class="w-full max-w-3xl bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden">
+                                <div class="p-6">
+                                    <h3 class="text-sm font-bold text-primary uppercase tracking-wider border-b pb-2 mb-3">Our Services</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        <a href="${rootPath}Service_details/maintenance_services.html" class="megamenu-link flex flex-col items-start hover:bg-gray-50 p-3 rounded-lg transition">
+                                            <div class="flex items-center gap-2 mb-1">
+                                                <i class="fa-solid fa-screwdriver-wrench text-secondary"></i>
+                                                <span class="font-bold text-gray-800">Maintenance</span>
+                                            </div>
+                                            <p class="text-xs text-gray-500">Preventative maintenance for peak efficiency.</p>
+                                        </a>
+                                        <a href="${rootPath}Service_details/repair_services.html" class="megamenu-link flex flex-col items-start hover:bg-gray-50 p-3 rounded-lg transition">
+                                            <div class="flex items-center gap-2 mb-1">
+                                                <i class="fa-solid fa-gears text-secondary"></i>
+                                                <span class="font-bold text-gray-800">Repair Services</span>
+                                            </div>
+                                            <p class="text-xs text-gray-500">Expert diagnosis and repair using genuine parts.</p>
+                                        </a>
+                                        <a href="${rootPath}Service_details/rental_equipment.html" class="megamenu-link flex flex-col items-start hover:bg-gray-50 p-3 rounded-lg transition">
+                                            <div class="flex items-center gap-2 mb-1">
+                                                <i class="fa-solid fa-truck-ramp-box text-secondary"></i>
+                                                <span class="font-bold text-gray-800">Equipment Rental</span>
+                                            </div>
+                                            <p class="text-xs text-gray-500">Flexible rental options at competitive rates.</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 text-center border-t">
+                                    <a href="${rootPath}services.html" class="text-sm font-semibold text-primary hover:text-secondary transition-colors">View All Services <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
-                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
-                        <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
+                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Selection Tray">
+                        <i class="fa-solid fa-basket-shopping text-2xl"></i>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </button>
                 </div>
@@ -127,7 +168,6 @@ const rootPath = getRootPath(),
             <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
                 <a href="${rootPath}index.html#home" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Home</a>
                 <a href="${rootPath}about.html" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">About Us</a>
-                <a href="${rootPath}services.html" class="block text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">Services</a>
                 <div>
                     <button id="mobile-products-trigger" class="w-full flex justify-between items-center text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded">
                         <span>Products</span>
@@ -157,8 +197,20 @@ const rootPath = getRootPath(),
                         <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="mobile-submenu-link">Portable Equipment</a>
                     </div>
                 </div>
+                <div>
+                    <button id="mobile-services-trigger" class="w-full flex justify-between items-center text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded">
+                        <span>Services</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div id="mobile-services-menu" class="hidden pl-4 pt-2 pb-2 border-l-2 border-gray-200 ml-3 space-y-1">
+                        <a href="${rootPath}services.html" class="mobile-submenu-link font-bold text-primary">View All Services</a>
+                        <a href="${rootPath}Service_details/maintenance_services.html" class="mobile-submenu-link"><i class="fa-solid fa-screwdriver-wrench w-6 text-secondary"></i> Maintenance</a>
+                        <a href="${rootPath}Service_details/repair_services.html" class="mobile-submenu-link"><i class="fa-solid fa-gears w-6 text-secondary"></i> Repair Services</a>
+                        <a href="${rootPath}Service_details/rental_equipment.html" class="mobile-submenu-link"><i class="fa-solid fa-truck-ramp-box w-6 text-secondary"></i> Equipment Rental</a>
+                    </div>
+                </div>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
-                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Estimate Cart</button>
+                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Selection Trayf</button>
             </div>
         </div>
     </nav>
@@ -169,7 +221,7 @@ const rootPath = getRootPath(),
         <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
         <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
             <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice-dollar mr-2"></i>Selection Tray</h2>
+                <h2 class="text-xl font-bold"><i class="fa-solid fa-basket-shopping mr-2"></i>Selection Tray</h2>
                 <div>
                     <button onclick="openClearCartModal()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Estimate">
                         <i class="fa-solid fa-trash-can"></i> Clear
@@ -407,6 +459,11 @@ function initNavbar() {
     a && s && a.addEventListener("click", t => {
         t.preventDefault(), s.classList.toggle("hidden"), a.querySelector("i").classList.toggle("rotate-180")
     });
+    const svT = document.getElementById("mobile-services-trigger"),
+        svM = document.getElementById("mobile-services-menu");
+    svT && svM && svT.addEventListener("click", t => {
+        t.preventDefault(), svM.classList.toggle("hidden"), svT.querySelector("i").classList.toggle("rotate-180")
+    });
     const o = document.getElementById("navbar"),
         n = document.getElementById("nav-container"),
         i = document.getElementById("top-bar"),
@@ -429,6 +486,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (t) {
         const e = window.location.pathname,
             a = e.split("/").pop();
-        e.includes("Product_details") ? t.href = "../index.html" : "index.html" !== a && "" !== a && "/" !== e || "./" !== rootPath || (t.removeAttribute("href"), t.style.cursor = "default", t.setAttribute("aria-current", "page"))
+        (e.includes("Product_details") || e.includes("Service_details")) ? t.href = "../index.html" : "index.html" !== a && "" !== a && "/" !== e || "./" !== rootPath || (t.removeAttribute("href"), t.style.cursor = "default", t.setAttribute("aria-current", "page"))
     }
 });

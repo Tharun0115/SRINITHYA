@@ -28,6 +28,7 @@
 
     <script src="router.js" defer></script>
     <script src="cart.js" defer></script>
+    <script src="whatsapp.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -50,13 +51,13 @@
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 text-center sm:text-left fade-in-section">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                Precision <span class="text-secondary">Machinery</span> & <br> reliable Equipment.
+                Reliable <span class="text-secondary">Machinery</span> & <br> Expert Support.
             </h1>
-            <p class="text-xl text-gray-200 mb-8 max-w-2xl"> Direct manufacturers of heavy-duty Bar Processing Machinery and premier traders of Light Construction Equipment.
+            <p class="text-xl text-gray-200 mb-8 max-w-2xl"> Direct manufacturers of heavy-duty Bar Processing Machinery and premium Light Construction Equipment.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#products" class="bg-secondary text-white font-bold px-8 py-3 rounded text-center hover:bg-yellow-600 transition">
-                    View Our Top Selling Heavy Construction Machines     
+                    View Our Heavy Construction Machines     
                 </a>
                 <a href="#light-construction-machinery" class="border-2 border-white text-white font-bold px-8 py-3 rounded text-center hover:bg-white hover:text-dark transition">
                     View Our Light Construction Equipment
@@ -64,7 +65,7 @@
             </div>
 
             <!-- Product Search Bar -->
-            <div class="mt-8 max-w-md mx-auto sm:mx-0 relative">
+            <div class="mt-8 max-w-full mx-auto sm:mx-0 relative">
                 <label for="catalogue-search" class="sr-only">Search Products</label>
                 <input type="text" id="catalogue-search" placeholder="Search products..." class="w-full pl-10 pr-4 py-3 rounded-full border-none focus:outline-none focus:ring-2 focus:ring-secondary shadow-lg text-gray-800 bg-white/95 backdrop-blur-sm">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -77,7 +78,6 @@
     <section id="products" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12 fade-in-section">
-                <span class="text-secondary font-bold uppercase tracking-wider">Our Catalogue</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Our Products</h2>
                 <p class="text-gray-600 mt-4">Explore our range of heavy-duty machinery and light construction equipment.</p>
             </div>
@@ -151,7 +151,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-12 fade-in-section">
                 <div>
-                    <a href="./Assets/Catalogue SEPL.pdf" download class="inline-flex items-center bg-secondary text-white font-bold px-6 py-3 rounded shadow-md hover:bg-yellow-600 transition mb-8">
+                    <a href="./Assets/Others/Catalogue SEPL.pdf" download class="inline-flex items-center bg-secondary text-white font-bold px-6 py-3 rounded shadow-md hover:bg-yellow-600 transition mb-8">
                         <i class="fa-solid fa-download mr-2"></i> Download Brochure
                     </a>
                     <h2 class="text-3xl font-bold text-primary mb-6">Request a Quote</h2>
@@ -162,7 +162,7 @@
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <i class="fa-solid fa-phone text-secondary mt-1 mr-4"></i>
-                            <p>+91 9059239819</p>
+                            <p>+91 9059-23-9819</p>
                         </div>
                         <div class="flex items-start">
                             <i class="fa-solid fa-envelope text-secondary mt-1 mr-4"></i>
@@ -170,7 +170,7 @@
                         </div>
                         <div class="flex items-start">
                             <i class="fa-solid fa-location-dot text-secondary mt-1 mr-4"></i>
-                            <p>Hyderabad, Telangana <a href="https://maps.app.goo.gl/DXrXoucK7vEquaW98" target="_blank" class="ml-2 text-secondary hover:text-primary transition" title="View on Map"><i class="fa-solid fa-map-location-dot"></i></a></p>
+                            <p># 9-95/8 Jyothi Nagar Colony, Balaji Nagar,<br>Jawahar Nagar Municipality, Kapra Mandal,<br>Hyderabad, Telangana - 500087, India. <a href="https://maps.app.goo.gl/DXrXoucK7vEquaW98" target="_blank" class="ml-2 text-secondary hover:text-primary transition" title="View on Map"><i class="fa-solid fa-map-location-dot"></i></a></p>
                         </div>
                     </div>
                 </div>
@@ -190,6 +190,10 @@
                         <div class="mb-4">
                             <label for="email" class="sr-only">Contact Number</label>
                             <input id="phone" type="tel" placeholder="Contact Number" name="contact_number" required class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                        </div>
+                        <div class="mb-4">
+                            <label for="user_email" class="sr-only">Email ID</label>
+                            <input id="user_email" type="email" placeholder="Email ID" name="user_email" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                         </div>
                         <div class="mb-4">
                             <label for="product" class="sr-only">Product Interest</label>
@@ -213,24 +217,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Floating WhatsApp Button -->
-    <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website.%0APlease%20call%20me%20back%20for%20a%20detailed%20description%20of%20my%20requirements." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
-
-    <!-- Callback Success Modal -->
-    <div id="callback-modal" class="fixed inset-0 flex items-center justify-center z-[60] hidden">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="bg-white p-6 rounded-lg shadow-2xl z-10 max-w-sm mx-4 text-center transform transition-all scale-100">
-            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fa-solid fa-check text-2xl text-green-600"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
-            <p class="text-gray-600 mb-6">Your callback request has been submitted.<br>Please wait for one of our representatives to call you.</p>
-            <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
-        </div>
-    </div>
 
     <!-- Image Viewer Modal -->
     <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
@@ -263,6 +249,17 @@
             contactForm.addEventListener('submit', function(event) {
                 event.preventDefault();
 
+                // Validate Email Format if entered
+                const emailInput = document.getElementById('user_email');
+                if (emailInput && emailInput.value.trim() !== '') {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(emailInput.value.trim())) {
+                        alert('Please enter a valid Email ID format (e.g., name@example.com)');
+                        emailInput.focus();
+                        return;
+                    }
+                }
+
                 const originalBtnText = submitBtn.innerHTML;
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Sending...</span>`;
@@ -278,13 +275,13 @@
                         submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-check mr-2"></i> Sent!</span>`;
                         submitBtn.classList.remove('bg-primary');
                         submitBtn.classList.add('bg-green-600');
+                        contactForm.reset();
                         
                         setTimeout(() => {
                             submitBtn.disabled = false;
                             submitBtn.innerHTML = originalBtnText;
                             submitBtn.classList.remove('bg-green-600');
                             submitBtn.classList.add('bg-primary');
-                            contactForm.reset();
                         }, 3000);
 
                     }, 1500);
@@ -296,12 +293,12 @@
                         submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-check mr-2"></i> Sent Successfully!</span>`;
                         submitBtn.classList.remove('bg-primary');
                         submitBtn.classList.add('bg-green-600');
+                        contactForm.reset();
                         setTimeout(() => {
                             submitBtn.disabled = false;
                             submitBtn.innerHTML = originalBtnText;
                             submitBtn.classList.remove('bg-green-600');
                             submitBtn.classList.add('bg-primary');
-                            contactForm.reset();
                         }, 4000);
                     }, (err) => {
                         submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-xmark mr-2"></i> Failed. Try again.</span>`;

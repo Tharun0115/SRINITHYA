@@ -185,3 +185,17 @@ a, button, input, select, textarea {
         display: none !important; /* Hide scrolling text on mobile to prevent overlap with buttons */
     }
 }
+
+/* Company Name Font - Masque */
+@font-face {
+    font-family: 'Masque';
+    /* Ensure you have the font file in this location */
+    src: url('./Assets/Fonts/Masque.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+#company-name {
+    font-family: 'Masque', sans-serif;
+}

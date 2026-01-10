@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Determine path prefix based on current location to ensure links/images work from subdirectories
-    const isProductPage = window.location.pathname.includes('Product_details');
+    const isProductPage = window.location.pathname.includes('Product_details') || window.location.pathname.includes('Service_details');
     const pathPrefix = isProductPage ? '../' : './';
 
     // Centralized Product Database
@@ -455,6 +455,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (isProductPage) {
                     if (linkPath.startsWith('Product_details/')) {
                         linkPath = '../' + linkPath;
+                    } else if (linkPath.startsWith('Service_details/')) {
+                        linkPath = '../' + linkPath;
                     } else if (linkPath.startsWith('index.html')) {
                         linkPath = '../' + linkPath;
                     }
@@ -471,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             return `
                 <a href="${linkPath}" class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 hover:border-secondary transition-all duration-300 search-card group flex flex-col items-center text-center h-full">
-                    <div class="h-24 w-full flex items-center justify-center mb-2 overflow-hidden rounded-lg bg-gray-50 p-2">
+                    <div class="h-24 w-full flex items-center justify-center mb-2 overflow-hidden rounded-lg bg-white p-2">
                         <img src="${imgPath}" alt="${product.name}" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110">
                     </div>
                     <h4 class="font-bold text-gray-800 text-sm group-hover:text-primary transition leading-tight mb-1">${displayName}</h4>

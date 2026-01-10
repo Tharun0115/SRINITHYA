@@ -4,7 +4,7 @@
         if (document.querySelector('footer')) return;
 
         // Determine path prefix based on current location
-        const isProductPage = window.location.pathname.includes('/Product_details/');
+        const isProductPage = window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/');
         const rootPath = isProductPage ? '../' : './';
         
         // Using bg-gray-900 (standard Tailwind) instead of bg-dark to ensure visibility
@@ -13,7 +13,7 @@
             <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h4 class="text-white text-lg font-bold mb-4">Srinithya Engineering</h4>
-                    <p class="text-sm text-gray-400">Manufacturer of heavy-duty Bar Processing Machinery and trader of Light Construction Equipment.</p>
+                    <p class="text-sm text-gray-400">Manufacturer and trader of Heavy-duty Construction Machinery and Light Construction Equipment.</p>
                 </div>
                 <div>
                     <h4 class="text-white text-lg font-bold mb-4">Quick Links</h4>
@@ -27,9 +27,9 @@
                 <div>
                     <h4 class="text-white text-lg font-bold mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><i class="fa-solid fa-phone mr-2 text-secondary"></i> +91 9059239819</li>
+                        <li><i class="fa-solid fa-phone mr-2 text-secondary"></i> <a href="tel:+919059239819" class="hover:text-white transition">+91 9059-23-9819</a></li>
                         <li><i class="fa-solid fa-envelope mr-2 text-secondary"></i> <a href="mailto:sales@srinithyaepl.in" class="text-secondary hover:text-white transition">sales@srinithyaepl.in</a></li>
-                        <li><i class="fa-solid fa-location-dot mr-2 text-secondary"></i> Hyderabad, Telangana <a href="https://maps.app.goo.gl/DXrXoucK7vEquaW98" target="_blank" class="ml-1 text-secondary hover:text-white transition" title="View on Map"><i class="fa-solid fa-map-location-dot"></i></a></li>
+                        <li class="flex items-start"><i class="fa-solid fa-location-dot mr-2 text-secondary mt-1"></i> <span># 9-95/8 Jyothi Nagar Colony,Balaji Nagar,<br>Jawahar Nagar Municipality, Kapra Mandal,<br>Hyderabad, Telangana - 500087, India. <a href="https://maps.app.goo.gl/DXrXoucK7vEquaW98" target="_blank" class="ml-1 text-secondary hover:text-white transition" title="View on Map"><i class="fa-solid fa-map-location-dot"></i></a></span></li>
                         <li><i class="fa-solid fa-id-card mr-2 text-secondary"></i> CIN: U51909TG2020PTC139942</li>
                         <li><i class="fa-solid fa-receipt mr-2 text-secondary"></i> GSTIN: 36ABDCS5864M1ZP</li>
                     </ul>

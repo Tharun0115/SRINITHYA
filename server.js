@@ -27,6 +27,12 @@ app.get('/Product_details/:page', (req, res) => {
     res.sendFile(path.join(__dirname, 'Product_details', fileName));
 });
 
+app.get('/Service_details/:page', (req, res) => {
+    const page = req.params.page;
+    const fileName = page.endsWith('.html') ? page : `${page}.html`;
+    res.sendFile(path.join(__dirname, 'Service_details', fileName));
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

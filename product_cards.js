@@ -152,7 +152,7 @@ window.initProductCards = function() {
     ];
 
     function createProductCard(product) {
-        const isProductPage = window.location.pathname.includes('/Product_details/');
+        const isProductPage = window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/');
         const rootPath = isProductPage ? '../' : './';
         
         let imageHTML;
@@ -206,7 +206,7 @@ window.initProductCards = function() {
 
         return `
         <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group bg-white">
-            <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center overflow-hidden relative">
+            <div class="h-32 md:h-64 bg-white flex items-center justify-center overflow-hidden relative">
                 ${imageHTML}
             </div>
             <div class="p-3 md:p-6 flex flex-col flex-grow">
