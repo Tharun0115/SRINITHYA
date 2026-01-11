@@ -18,10 +18,10 @@ const rootPath = getRootPath(),
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
                 <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer" id="brand-wrapper">
-                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-2 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
-                    <div class="relative overflow-hidden px-2 py-1 flex-grow text-center transition-all duration-300 ease-in-out" id="name-strip">
+                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
+                    <div class="relative overflow-hidden pl-0 pr-1 py-1 flex-grow text-center transition-all duration-300 ease-in-out min-w-0" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
-                        <span class="text-[10px] md:text-3xl text-primary relative z-10 transition-all duration-300 ease-in-out md:whitespace-nowrap drop-shadow-sm block mb-2" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="text-[clamp(10px,2.7vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap drop-shadow-sm block mb-2 leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
                         <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
@@ -62,19 +62,19 @@ const rootPath = getRootPath(),
                     </button>
                 </div>
                 </div>
-                <div class="hidden md:flex items-center justify-center w-full py-2 border-t border-gray-100 space-x-8 transition-all duration-300 ease-in-out" id="nav-links">
+                <div class="hidden md:flex items-center justify-center w-full py-2 border-t border-gray-100 gap-4 lg:gap-8 transition-all duration-300 ease-in-out" id="nav-links">
                     <a href="${rootPath}index.html#home" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">Home</a>
                     <a href="${rootPath}about.html" class="text-gray-700 hover:text-secondary font-medium px-2 py-1">About Us</a>
                     
                     <!-- Megamenu Trigger -->
                     <div class="group" id="products-menu-container">
-                        <button type="button" class="text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
+                        <button type="button" class="relative text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
                             <span>Products</span>
                             <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
                         </button>
                         
-                        <div class="absolute top-full left-0 w-full flex justify-center mt-1 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-200 group-hover:delay-0 z-[-1] group-hover:z-10">
-                            <div class="w-full max-w-5xl bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden">
+                        <div class="absolute top-full left-0 w-full flex justify-center mt-1 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-200 group-hover:delay-0 z-[-1] group-hover:z-10 pointer-events-none">
+                            <div class="w-full max-w-5xl bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden pointer-events-auto">
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 p-8">
                                     
                                     <div class="space-y-3">
@@ -114,13 +114,13 @@ const rootPath = getRootPath(),
 
                     <!-- Services Megamenu Trigger -->
                     <div class="group" id="services-menu-container">
-                        <button type="button" class="text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
+                        <button type="button" class="relative text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
                             <span>Services</span>
                             <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
                         </button>
                         
-                        <div class="absolute top-full left-0 w-full flex justify-center mt-1 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-200 group-hover:delay-0 z-[-1] group-hover:z-10">
-                            <div class="w-full max-w-3xl bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden">
+                        <div class="absolute top-full left-0 w-full flex justify-center mt-1 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-200 group-hover:delay-0 z-[-1] group-hover:z-10 pointer-events-none">
+                            <div class="w-full max-w-3xl bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden pointer-events-auto">
                                 <div class="p-6">
                                     <h3 class="text-sm font-bold text-primary uppercase tracking-wider border-b pb-2 mb-3">Our Services</h3>
                                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -154,7 +154,9 @@ const rootPath = getRootPath(),
                         </div>
                     </div>
 
-                    <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
+                    <a href="${rootPath}index.html#contact" class="relative group bg-primary text-white px-3 py-1.5 lg:px-5 lg:py-2 rounded hover:bg-blue-800 transition whitespace-nowrap">
+                        Get in Touch
+                    </a>
                     <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Selection Tray">
                         <i class="fa-solid fa-basket-shopping text-2xl"></i>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
@@ -474,7 +476,7 @@ function initNavbar() {
         m = document.getElementById("nav-links"),
         u = document.getElementById("scroll-progress");
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 50 ? (o.classList.add("shadow-md"), n.classList.remove("md:grid", "md:grid-cols-1"), n.classList.add("md:flex", "md:flex-row", "md:items-center"), i.classList.remove("py-2"), i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.remove("h-16"), r.classList.add("h-10"), l.classList.remove("flex-grow", "text-center", "px-2", "py-1"), l.classList.add("ml-2", "text-left"), c.classList.add("opacity-0"), d.classList.remove("text-[10px]", "md:text-4xl"), d.classList.add("text-[8px]", "md:text-base"), m.classList.remove("w-full", "border-t", "justify-center", "py-2"), m.classList.add("justify-start", "pl-8", "py-1", "flex-shrink-0")) : (o.classList.remove("shadow-md"), n.classList.add("md:grid", "md:grid-cols-1"), n.classList.remove("md:flex", "md:flex-row", "md:items-center"), i.classList.add("py-2"), i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.add("h-16"), r.classList.remove("h-10"), l.classList.add("flex-grow", "text-center", "px-2", "py-1"), l.classList.remove("ml-2", "text-left"), c.classList.remove("opacity-0"), d.classList.add("text-[10px]", "md:text-4xl"), d.classList.remove("text-[8px]", "md:text-base"), m.classList.add("w-full", "border-t", "justify-center", "py-2"), m.classList.remove("justify-start", "pl-8", "py-1", "flex-shrink-0")), u) {
+        if (window.scrollY > 50 ? (o.classList.add("shadow-md"), n.classList.remove("md:grid", "md:grid-cols-1"), n.classList.add("md:flex", "md:flex-row", "md:items-center"), i.classList.remove("py-2"), i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.remove("h-16"), r.classList.add("h-10"), l.classList.remove("flex-grow", "text-center", "pl-0", "pr-1", "py-1"), l.classList.add("ml-2", "text-left"), c.classList.add("opacity-0"), d.classList.remove("text-[clamp(10px,2.7vw,30px)]", "mb-2", "leading-none"), d.classList.add("text-[clamp(9px,2vw,20px)]", "mb-0", "leading-tight"), m.classList.remove("w-full", "border-t", "justify-center", "py-2", "lg:gap-8"), m.classList.add("justify-start", "pl-6", "py-1", "flex-shrink-0", "text-sm")) : (o.classList.remove("shadow-md"), n.classList.add("md:grid", "md:grid-cols-1"), n.classList.remove("md:flex", "md:flex-row", "md:items-center"), i.classList.add("py-2"), i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.add("h-16"), r.classList.remove("h-10"), l.classList.add("flex-grow", "text-center", "pl-0", "pr-1", "py-1"), l.classList.remove("ml-2", "text-left"), c.classList.remove("opacity-0"), d.classList.add("text-[clamp(10px,2.7vw,30px)]", "mb-2", "leading-none"), d.classList.remove("text-[clamp(9px,2vw,20px)]", "mb-0", "leading-tight"), m.classList.add("w-full", "border-t", "justify-center", "py-2", "lg:gap-8"), m.classList.remove("justify-start", "pl-6", "py-1", "flex-shrink-0", "text-sm")), u) {
             const t = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
             u.style.width = t + "%"
         }

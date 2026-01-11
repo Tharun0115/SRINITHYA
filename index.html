@@ -15,12 +15,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind-config.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js" defer></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
-            emailjs.init("YOUR_PUBLIC_KEY");
+            // Replace "YOUR_PUBLIC_KEY" with your actual Public Key from EmailJS Dashboard
+            emailjs.init("8YNpz_CM8ReLnSLKy");
         })();
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -154,10 +153,10 @@
                     <a href="./Assets/Others/Catalogue SEPL.pdf" download class="inline-flex items-center bg-secondary text-white font-bold px-6 py-3 rounded shadow-md hover:bg-yellow-600 transition mb-8">
                         <i class="fa-solid fa-download mr-2"></i> Download Brochure
                     </a>
-                    <h2 class="text-3xl font-bold text-primary mb-6">Request a Quote</h2>
+                    <h2 class="text-3xl font-bold text-primary mb-6">Request a Quote/Support</h2>
                     <p class="text-gray-600 mb-8">
-                        Interested in our Bar Processing machines or need Light Equipment? 
-                        Fill out the form, and our team will provide a technical proposal.
+                        Interested in our Products or need Service Support? 
+                        <br>Fill out the form, and our team will reach out to you.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-start">
@@ -177,32 +176,34 @@
 
                 <div class="bg-gray-50 p-8 rounded-lg shadow-inner">
                     <form id="contact-form">
+                        <input type="hidden" name="to_email" value="sales@srinithyaepl.in">
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div>
                                 <label for="name" class="sr-only">Your Name</label>
-                                <input id="name" type="text" placeholder="Your Name" name="from_name" required class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                                <input id="name" type="text" placeholder="Your Name" name="name" required class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                             </div>
                             <div>
                                 <label for="company" class="sr-only">Company Name</label>
-                                <input id="company" type="text" placeholder="Company Name" name="company_name" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                                <input id="company" type="text" placeholder="Company Name" name="company name" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                             </div>
                         </div>
                         <div class="mb-4">
                             <label for="email" class="sr-only">Contact Number</label>
-                            <input id="phone" type="tel" placeholder="Contact Number" name="contact_number" required class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                            <input id="phone" type="tel" placeholder="Contact Number" name="mobile" required class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                         </div>
                         <div class="mb-4">
                             <label for="user_email" class="sr-only">Email ID</label>
-                            <input id="user_email" type="email" placeholder="Email ID" name="user_email" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                            <input id="user_email" type="email" placeholder="Email ID" name="useremailID" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                         </div>
                         <div class="mb-4">
-                            <label for="product" class="sr-only">Product Interest</label>
-                            <select id="product" name="product_interest" class="p-3 border rounded w-full bg-white text-gray-700 focus:outline-none focus:border-secondary">
-                                <option value="">Select Product Interest</option>
-                                <option>Bar Cutting Machine</option>
-                                <option>Bar Bending Machine</option>
-                                <option>Plate Compactor</option>
-                                <option>Other Light Equipment</option>
+                            <label for="product" class="sr-only">Reason for Contacting</label>
+                            <select id="product" name="title" class="p-3 border rounded w-full bg-white text-gray-700 focus:outline-none focus:border-secondary">
+                                <option value="">Select Reason for Contacting</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Product Support">Product Support / Service</option>
+                                <option value="Quotation">Request for Quotation</option>
+                                <option value="Partnership">Partnership / Dealership</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <div class="mb-4">
@@ -265,8 +266,9 @@
                 submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-spinner fa-spin mr-2"></i> Sending...</span>`;
 
                 // IMPORTANT: Replace with your actual Service ID and Template ID from your EmailJS account.
-                const serviceID = 'YOUR_SERVICE_ID'; 
-                const templateID = 'YOUR_TEMPLATE_ID';
+                const serviceID = 'service_nd0rboa'; 
+                const templateID = 'template_rk2m9n7'; // Main Admin Email (Contains your custom placeholders)
+                const autoReplyTemplateID = 'template_ffhfx9g'; // Auto-Reply to Customer
 
                 if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || typeof emailjs === 'undefined') {
                     console.warn("EmailJS is not configured. Please replace placeholder IDs in index.html script.");
@@ -290,6 +292,11 @@
 
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
+                        // Send Auto-Reply if ID is configured
+                        if (autoReplyTemplateID && autoReplyTemplateID !== 'YOUR_AUTOREPLY_TEMPLATE_ID') {
+                            emailjs.sendForm(serviceID, autoReplyTemplateID, this);
+                        }
+
                         submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-check mr-2"></i> Sent Successfully!</span>`;
                         submitBtn.classList.remove('bg-primary');
                         submitBtn.classList.add('bg-green-600');
