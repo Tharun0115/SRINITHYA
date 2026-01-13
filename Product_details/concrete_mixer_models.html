@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js"></script>
+    <script src="../router.js" defer></script>
     <style>
         .sr-only {
             position: absolute;
@@ -78,6 +79,7 @@
         </div>
     </div>
 
+    <main id="main-content">
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
             
@@ -106,7 +108,7 @@
                 <div class="flex-grow h-px bg-gray-300"></div>
             </div>
 
-            <div id="concrete-mixer-grid" class="grid grid-cols-2 gap-3 md:gap-6"></div>
+            <div id="concrete-mixer-grid" data-product-key="concrete-mixer-models" class="grid grid-cols-2 gap-3 md:gap-6"></div>
             
             <div class="flex items-center my-8 md:my-12">
                 <div class="flex-grow h-px bg-gray-300"></div>
@@ -114,9 +116,10 @@
                 <div class="flex-grow h-px bg-gray-300"></div>
             </div>
 
-            <div id="concrete-buckets-grid" class="grid grid-cols-2 gap-3 md:gap-6"></div>
+            <div id="concrete-buckets-grid" data-product-key="concrete-pouring-buckets" class="grid grid-cols-2 gap-3 md:gap-6"></div>
             </div>
     </section>
+    </main>
     
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
@@ -164,12 +167,6 @@
     <script src="../whatsapp.js" defer></script>
     <script src="../product_data.js"></script>
     <script src="../product_renderer.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProductCards('concrete-mixer-grid', window.productData['concrete-mixer-models']);
-            renderProductCards('concrete-buckets-grid', window.productData['concrete-pouring-buckets']);
-        });
-    </script>
 
     <script>
         // --- Image Modal Logic ---

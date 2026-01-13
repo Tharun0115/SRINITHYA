@@ -11,6 +11,45 @@ function getRootPath() {
     // A simpler, more direct approach based on the URL path. If the path contains '/Product_details/', we are in a subdirectory.
     return (window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/')) ? '../' : './';
 }
+
+window.updateNavbarLinks = function() {
+    const newRootPath = getRootPath();
+    const navLinks = document.getElementById('nav-links');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const brandWrapper = document.getElementById('brand-wrapper');
+    const logo = document.getElementById('nav-logo');
+
+    // Helper to update a single link
+    const updateLink = (anchor) => {
+        const href = anchor.getAttribute('href');
+        if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        
+        // Strip existing prefix (./ or ../)
+        const cleanHref = href.replace(/^(\.\/|\.\.\/)/, '');
+        anchor.setAttribute('href', newRootPath + cleanHref);
+    };
+
+    // Update Logo Link
+    if (brandWrapper) updateLink(brandWrapper);
+    
+    // Update Logo Image Src
+    if (logo) {
+        const src = logo.getAttribute('src');
+        const cleanSrc = src.replace(/^(\.\/|\.\.\/)/, '');
+        logo.setAttribute('src', newRootPath + cleanSrc);
+    }
+
+    // Update Desktop Links
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(updateLink);
+    }
+
+    // Update Mobile Links
+    if (mobileMenu) {
+        mobileMenu.querySelectorAll('a').forEach(updateLink);
+    }
+};
+
 const rootPath = getRootPath(),
     navbarHTML = `
     <nav class="bg-white/90 backdrop-blur-md border-b border-gray-200/50 fixed w-full z-50 transition-all duration-300 ease-in-out will-change-transform transform-gpu" id="navbar">
@@ -102,6 +141,7 @@ const rootPath = getRootPath(),
                                             <a href="${rootPath}Product_details/mechanical_poker_models.html" class="megamenu-link"><i class="fa-solid fa-gears w-6 text-secondary"></i> Mechanical Pokers</a>
                                             <a href="${rootPath}Product_details/dewatering_pump.html" class="megamenu-link"><i class="fa-solid fa-droplet w-6 text-secondary"></i> Dewatering Pumps</a>
                                             <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="megamenu-link"><i class="fa-solid fa-toolbox w-6 text-secondary"></i> Portable Bar Tools</a>
+                                            <a href="${rootPath}Product_details/scissorlift_models.html" class="megamenu-link"><i class="fa-solid fa-arrows-up-down w-6 text-secondary"></i> Scissor Lifts</a>
                                         </div>
                                     </div>
                                 </div>
@@ -190,6 +230,7 @@ const rootPath = getRootPath(),
                         <a href="${rootPath}Product_details/mechanical_poker_models.html" class="mobile-submenu-link">Mechanical Pokers</a>
                         <a href="${rootPath}Product_details/dewatering_pump.html" class="mobile-submenu-link">Dewatering Pumps</a>
                         <a href="${rootPath}Product_details/portable_bar_processing_models.html" class="mobile-submenu-link">Portable Equipment</a>
+                        <a href="${rootPath}Product_details/scissorlift_models.html" class="mobile-submenu-link">Scissor Lifts</a>
                     </div>
                 </div>
                 <div>
@@ -285,12 +326,12 @@ const rootPath = getRootPath(),
     </div>
 `,
     scrollButtonsHTML = `
-    <div class="fixed bottom-24 right-7 z-40 hidden md:flex flex-col gap-3">
+    <div id="back-to-top-container" class="fixed bottom-24 right-7 z-40 hidden md:flex flex-col gap-3 transition-opacity duration-300 opacity-0 pointer-events-none">
         <div class="relative group">
             <button id="scroll-up-btn" class="bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center opacity-90 hover:opacity-100 border-2 border-white">
                 <i class="fa-solid fa-arrow-up"></i>
             </button>
-            <span class="absolute right-full top-1/2 transform -translate-y-1/2 mr-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">Scroll Up</span>
+            <span class="absolute right-full top-1/2 transform -translate-y-1/2 mr-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md">Back to Top</span>
         </div>
         <div class="relative group">
             <button id="scroll-down-btn" class="bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center opacity-90 hover:opacity-100 border-2 border-white">
@@ -334,11 +375,23 @@ window.closeEmptyCartModal = function() {
 }
 
 function initScrollButtons() {
+    const container = document.getElementById("back-to-top-container");
     const t = document.getElementById("scroll-up-btn"),
         e = document.getElementById("scroll-down-btn");
+
+    if (container) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                container.classList.remove("opacity-0", "pointer-events-none");
+            } else {
+                container.classList.add("opacity-0", "pointer-events-none");
+            }
+        });
+    }
+
     t && t.addEventListener("click", () => {
-        window.scrollBy({
-            top: -window.innerHeight / 2,
+        window.scrollTo({
+            top: 0,
             behavior: "smooth"
         })
     }), e && e.addEventListener("click", () => {

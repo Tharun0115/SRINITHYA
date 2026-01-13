@@ -933,5 +933,20 @@ window.productData = {
                 { type: 'cart', name: 'Petrol Vibrator' }
             ]
         }
+    ],
+    'scissor-lift-models': [
+        {
+            model: "Hydraulic Scissor Lift",
+            name: "Hydraulic Scissor Lift",
+            image: "./Assets/Products/scissor_lift.png",
+            description: "Self-propelled and stationary scissor lifts for working at heights.",
+            specs: [
+                { icon: "fa-solid fa-ruler-vertical", text: "Max Height: 6m - 14m" },
+                { icon: "fa-solid fa-weight-hanging", text: "Load Capacity: 300kg - 500kg" },
+                { icon: "fa-solid fa-bolt", text: "Operation: Battery / Electric" }
+            ],
+            compare: { model: "Hydraulic Scissor Lift", category: "scissor-lifts", height: "6m - 14m", capacity: "300kg - 500kg", operation: "Battery / Electric" },
+            actions: [{ type: 'enquire', name: 'Scissor Lift' }]
+        }
     ]
 };

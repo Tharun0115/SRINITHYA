@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js"></script>
+    <script src="../router.js" defer></script>
 </head>
 <body class="text-gray-800 font-sans">
     <script>
@@ -39,6 +40,7 @@
         </div>
     </div>
 
+    <main id="main-content">
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-4">
@@ -63,14 +65,15 @@
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2 flex items-center">
                 <i class="fa-solid fa-ruler-vertical text-secondary mr-3"></i> Groove Cutters
             </h2>
-            <div id="groove-cutter-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mb-16"></div>
+            <div id="groove-cutter-grid" data-product-key="industrial-cutting-tools.grooveCutters" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mb-16"></div>
 
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2 flex items-center">
                 <i class="fa-solid fa-circle-dot text-secondary mr-3"></i> Core Cutters
             </h2>
-            <div id="core-cutter-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
+            <div id="core-cutter-grid" data-product-key="industrial-cutting-tools.coreCutters" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
         </div>
     </section>
+    </main>
     
 
     <script src="../footer.js" defer></script>
@@ -103,24 +106,6 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Button -->
-    <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
-
-    <!-- Callback Success Modal -->
-    <div id="callback-modal" class="fixed inset-0 flex items-center justify-center z-[60] hidden">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="bg-white p-6 rounded-lg shadow-2xl z-10 max-w-sm mx-4 text-center transform transition-all scale-100">
-            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fa-solid fa-check text-2xl text-green-600"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
-            <p class="text-gray-600 mb-6">Your callback request has been submitted.</p>
-            <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
-        </div>
-    </div>
-
     <!-- Image Viewer Modal -->
     <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
         <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
@@ -139,11 +124,6 @@
 
     <script src="../product_data.js"></script>
     <script src="../product_renderer.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProductCards('groove-cutter-grid', window.productData['industrial-cutting-tools'].grooveCutters);
-            renderProductCards('core-cutter-grid', window.productData['industrial-cutting-tools'].coreCutters);
-        });
 
         // Image Modal Logic
         const imageModal = document.getElementById('image-modal');

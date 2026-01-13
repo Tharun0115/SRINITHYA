@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js" defer></script>
+    <script src="../router.js" defer></script>
     <style>
         @keyframes total-flash {
           50% {
@@ -64,6 +65,7 @@
         </div>
     </div>
 
+    <main id="main-content">
     <section class="py-12 pt-32 md:py-20 md:pt-48">
         <div class="max-w-7xl mx-auto px-4">
 
@@ -94,7 +96,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 items-start">
-                <div id="screed-vibrator-container" class="md:col-span-1 h-full"></div>
+                <div id="screed-vibrator-container" data-product-key="surface-smootheners.screedVibrators" class="md:col-span-1 h-full"></div>
 
                 <div class="md:col-span-2">
                     <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Compatible Accessories - Screed Blades</h3>
@@ -126,10 +128,11 @@
                 <div class="flex-grow h-px bg-gray-300"></div>
             </div>
 
-            <div id="power-trowel-grid" class="flex flex-wrap justify-center gap-6 md:gap-8"></div>
+            <div id="power-trowel-grid" data-product-key="surface-smootheners.powerTrowels" class="flex flex-wrap justify-center gap-6 md:gap-8"></div>
 
         </div>
     </section>
+    </main>
     
     <footer class="bg-dark text-gray-300 py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
@@ -220,15 +223,8 @@
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
     <script src="../footer.js" defer></script>
-    <script src="../whatsapp.js" defer></script>
     <script src="../product_data.js"></script>
     <script src="../product_renderer.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProductCards('screed-vibrator-container', window.productData['surface-smootheners'].screedVibrators);
-            renderProductCards('power-trowel-grid', window.productData['surface-smootheners'].powerTrowels);
-        });
-    </script>
 
     <script>
         // --- Image Modal Logic ---

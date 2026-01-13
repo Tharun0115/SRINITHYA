@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js"></script>
+    <script src="../router.js" defer></script>
     <style>
         .sr-only {
             position: absolute;
@@ -75,6 +76,7 @@
         </div>
     </div>
 
+    <main id="main-content">
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
 
@@ -105,10 +107,11 @@
                 </p>
             </div>
 
-            <div id="handy-vibration-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center"></div>
+            <div id="handy-vibration-grid" data-product-key="handy-vibration-models" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center"></div>
             
         </div>
     </section>
+    </main>
     
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
@@ -147,57 +150,8 @@
     <!-- Link the Universal Compare Script -->
     <script src="../compare.js"></script>
     <script src="../footer.js"></script>
-
-
-    <!-- Image Viewer Modal -->
-    <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
-        <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
-            <img id="modal-image" src="" alt="Enlarged Product View" class="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl">
-            <button onclick="closeImageModal()" class="absolute -top-2 -right-2 text-white bg-red-600 rounded-full h-8 w-8 flex items-center justify-center text-xl hover:bg-red-700 focus:outline-none">&times;</button>
-        </div>
-    </div>
-
-    
-        <!-- Link the Universal Compare Script -->
-    <script src="../compare.js"></script>
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
-    <script src="../footer.js" defer></script>
     <script src="../whatsapp.js" defer></script>
     <script src="../product_data.js"></script>
     <script src="../product_renderer.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProductCards('handy-vibration-grid', window.productData['handy-vibration-models']);
-        });
-    </script>
-
-    <script>
-        // --- Image Modal Logic ---
-        const imageModal = document.getElementById('image-modal');
-        const modalImage = document.getElementById('modal-image');
-
-        function openImageModal(src) {
-            if (imageModal && modalImage) {
-                modalImage.src = src;
-                imageModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
-        }
-
-        function closeImageModal() {
-            if (imageModal) {
-                imageModal.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scrolling
-            }
-        }
-
-        // Close modal on escape key press
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
-                closeImageModal();
-            }
-        });
-    </script>
-</body>
-</html>

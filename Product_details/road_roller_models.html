@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js"></script>
+    <script src="../router.js" defer></script>
     <style>
         .sr-only {
             position: absolute;
@@ -75,6 +76,7 @@
         </div>
     </div>
 
+    <main id="main-content">
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
 
@@ -97,10 +99,11 @@
             <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Road Roller Models</h1>
             <p class="text-xl text-gray-600 mb-12">High-performance rollers for superior soil and asphalt compaction.</p>
 
-            <div id="road-roller-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
+            <div id="road-roller-grid" data-product-key="road-roller-models" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
             
         </div>
     </section>
+    </main>
     
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
@@ -141,15 +144,9 @@
     <script src="../footer.js"></script>
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
+    <script src="../whatsapp.js" defer></script>
     <script src="../product_data.js"></script>
     <script src="../product_renderer.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProductCards('road-roller-grid', window.productData['road-roller-models']);
-        });
-    </script>
 
-
-    <script src="../whatsapp.js" defer></script>
 </body>
 </html>

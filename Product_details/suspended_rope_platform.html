@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js" defer></script>
+    <script src="../router.js" defer></script>
 </head>
 <body class="text-gray-800 font-sans">
     <script>
@@ -51,6 +52,7 @@
         </div>
     </div>
 
+    <main id="main-content">
     <section class="py-12 pt-32 md:py-20 md:pt-48">
         <div class="max-w-7xl mx-auto px-4">
 
@@ -80,10 +82,11 @@
                 </p>
             </div>
 
-            <div id="suspended-platform-grid" class="grid grid-cols-1 justify-items-center max-w-md mx-auto"></div>
+            <div id="suspended-platform-grid" data-product-key="suspended-rope-platform" class="grid grid-cols-1 justify-items-center max-w-md mx-auto"></div>
 
         </div>
     </section>
+    </main>
     
     <footer class="bg-dark text-gray-300 py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
@@ -135,12 +138,7 @@
     <script src="../footer.js" defer></script>
     <script src="../whatsapp.js" defer></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load product data and renderer
-            const script1 = document.createElement('script'); script1.src = '../product_data.js'; document.head.appendChild(script1);
-            const script2 = document.createElement('script'); script2.src = '../product_renderer.js'; document.head.appendChild(script2);
-            script2.onload = () => renderProductCards('suspended-platform-grid', window.productData['suspended-rope-platform']);
-        });
+        // No inline script needed for rendering anymore
 
         // --- Image Modal Logic ---
         const imageModal = document.getElementById('image-modal');

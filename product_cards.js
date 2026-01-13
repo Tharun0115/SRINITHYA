@@ -63,6 +63,15 @@ window.initProductCards = function() {
             link: "Product_details/mini_lift_models.html"
         },
         {
+            title: "Scissor Lifts",
+            image: "./Assets/Products/scissor_lift_card.png",
+            imageWebp: "./Assets/Products/scissor_lift_card.webp",
+            description: "Safe and stable platforms for elevated work.",
+            features: ["Max Height: 14m", "Battery / Electric"],
+            link: "Product_details/scissorlift_models.html"
+        },
+
+        {
             title: "Industrial Cutting Tools",
             image: ["./Assets/Product Images/core cutter.png", "./Assets/Product Images/groove.png"],
             imageWebp: ["./Assets/Product Images/core cutter.webp", "./Assets/Product Images/groove.webp"],
@@ -173,7 +182,7 @@ window.initProductCards = function() {
                 const srcAttr = isFirst ? `src="${imgSrc}"` : `src="${placeholder}" data-src="${imgSrc}"`;
                 const srcsetAttr = isFirst ? `srcset="${webpSrc}"` : `data-srcset="${webpSrc}"`;
 
-                const singleImgTag = `<img ${srcAttr} alt="${product.title}" class="w-full h-full object-contain" loading="lazy" decoding="async">`;
+                const singleImgTag = `<img ${srcAttr} alt="${product.title}" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">`;
 
                 if (webpSrc) {
                     return `<picture class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${isFirst ? 'opacity-100' : 'opacity-0'}">

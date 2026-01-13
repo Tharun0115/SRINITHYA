@@ -41,7 +41,9 @@
     </div>
 
     <script src="../navbar.js"></script>
+    <script src="../router.js" defer></script>
 
+    <main id="main-content">
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
             
@@ -71,10 +73,11 @@
                 </p>
             </div>
 
-            <div id="dewatering-pump-grid" class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto"></div>
+            <div id="dewatering-pump-grid" data-product-key="dewatering-pump" class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto"></div>
             
         </div>
     </section>
+    </main>
     
     <!-- Link the Universal Compare Script -->
     <script src="../cart.js"></script>
@@ -84,11 +87,6 @@
     <script src="../whatsapp.js" defer></script>
     <script src="../product_data.js"></script>
     <script src="../product_renderer.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProductCards('dewatering-pump-grid', window.productData['dewatering-pump']);
-        });
-    </script>
 
 </body>
 </html>

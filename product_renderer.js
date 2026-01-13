@@ -3,7 +3,7 @@
  * @param {object} product - The product data object.
  * @returns {string} - The HTML string for the product card.
  */
-function createProductCard(product) {
+window.createProductCard = function(product) {
     const rootPath = (window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/')) ? '../' : './';
 
     // Generate data attributes for the compare functionality
@@ -71,14 +71,14 @@ function createProductCard(product) {
             </div>
         </div>
     `;
-}
+};
 
 /**
  * Renders product cards into a specified container.
  * @param {string} containerId - The ID of the element to render cards into.
  * @param {Array<object>} products - An array of product data objects.
  */
-function renderProductCards(containerId, products) {
+window.renderProductCards = function(containerId, products) {
     const container = document.getElementById(containerId);
     if (container && products && Array.isArray(products)) {
         container.innerHTML = products.map(createProductCard).join('');
@@ -87,7 +87,34 @@ function renderProductCards(containerId, products) {
             window.updateCompareBar();
         }
     }
-}
+};
+
+// --- Auto-Render Logic (MutationObserver) ---
+window.autoRenderProducts = function() {
+    // Find all containers that have a key but haven't been rendered yet
+    const containers = document.querySelectorAll('[data-product-key]:not([data-rendered])');
+    
+    containers.forEach(container => {
+        if (!window.productData) return; // Data not ready yet
+
+        const keyPath = container.getAttribute('data-product-key');
+        // Resolve nested keys (e.g., "industrial-cutting-tools.grooveCutters")
+        const data = keyPath.split('.').reduce((acc, part) => acc && acc[part], window.productData);
+
+        if (data && container.id) {
+            window.renderProductCards(container.id, data);
+            container.setAttribute('data-rendered', 'true'); // Mark as done to prevent re-rendering
+        }
+    });
+};
+
+// Watch for DOM changes (Router navigation)
+const observer = new MutationObserver((mutations) => {
+    // If nodes were added, try to render
+    if (mutations.some(m => m.addedNodes.length > 0)) {
+        window.autoRenderProducts();
+    }
+});
 
 // --- Image Modal Logic ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -103,6 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
+
+    // Start observing and run initial render
+    window.autoRenderProducts();
+    observer.observe(document.body, { childList: true, subtree: true });
 });
 
 window.openImageModal = function(src) {

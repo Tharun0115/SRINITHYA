@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js"></script>
+    <script src="../router.js" defer></script>
     <style>
         @keyframes total-flash {
           50% {
@@ -75,6 +76,7 @@
         </div>
     </div>
 
+    <main id="main-content">
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
             
@@ -96,11 +98,12 @@
 
             <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Bar Cutting Machine Models</h1>
             <p class="text-xl text-gray-600 mb-12">Heavy-duty hydraulic cutting solutions for TMT bars ranging from 6mm to 52mm.</p>
-            <div id="bar-cutting-grid" class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto"></div>
+            <div id="bar-cutting-grid" data-product-key="bar-cutting-models" class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto"></div>
             
             
         </div>
     </section>
+    </main>
     
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
@@ -157,11 +160,6 @@
     <script src="../whatsapp.js" defer></script>
     <script src="../product_data.js"></script>
     <script src="../product_renderer.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProductCards('bar-cutting-grid', window.productData['bar-cutting-models']);
-        });
-    </script>
 
 
     <script>
