@@ -137,33 +137,5 @@
 
     <script src="../footer.js" defer></script>
     <script src="../whatsapp.js" defer></script>
-    <script>
-        // No inline script needed for rendering anymore
-
-        // --- Image Modal Logic ---
-        const imageModal = document.getElementById('image-modal');
-        const modalImage = document.getElementById('modal-image');
-
-        function openImageModal(src) {
-            if (imageModal && modalImage) {
-                modalImage.src = src;
-                imageModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeImageModal() {
-            if (imageModal) {
-                imageModal.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        }
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
-                closeImageModal();
-            }
-        });
-    </script>
 </body>
 </html>
