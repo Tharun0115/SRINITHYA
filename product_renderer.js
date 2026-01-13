@@ -25,8 +25,8 @@ function createProductCard(product) {
     // Generate action buttons
     const actionsHTML = (product.actions || []).map(action => {
         if (action.type === 'cart') {
-            const params = `'${action.name}'`;
-            return `<button onclick="addToCart(${params})" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm" aria-label="Add ${action.name} to Tray"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add to Tray</button>`;
+            const params = `'${action.name}', ${action.price}, '${action.hsn}', ${action.gst}`;
+            return `<button onclick="addToCart(${params})" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm" aria-label="Add ${action.name} to Estimate"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add</button>`;
         }
         if (action.type === 'enquire') {
             return `<button class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Enquire about ${product.name}">Enquire</button>`;
@@ -48,7 +48,7 @@ function createProductCard(product) {
 
     // Card classes and structure
     const imageSrc = product.image.startsWith('http') ? product.image : rootPath + product.image.replace('./', '');
-    const imageClass = product.imageClass || 'object-cover';
+    const imageClass = product.imageClass || 'object-contain';
     const imageContainerClass = product.imageContainerClass || 'h-32 md:h-64';
     const cardWrapperClass = product.cardWrapperClass || 'bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col';
 

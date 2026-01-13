@@ -72,26 +72,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 items-start">
-                <div class="md:col-span-1 bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="SSVE-2" data-category="surface-smootheners" data-type="Screed Vibrator" data-power="Electric Motor" data-speed="2000 RPM">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/Others/logo.png" alt="Screed Vibrator" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Screed Vibrator SSVE-2</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Electric vibrator for leveling concrete surfaces. Blades sold separately.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
-                            <li><i class="fa-solid fa-bolt text-primary w-6"></i> <span>Drive: Electric Motor</span></li>
-                            <li><i class="fa-solid fa-gauge-high text-primary w-6"></i> <span>Speed: 2000 RPM</span></li>
-                        </ul>
-                        <button onclick="addToCart('Screed Vibrator SSVE-2')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
+                <div id="screed-vibrator-container" class="md:col-span-1 h-full"></div>
 
                 <div class="md:col-span-2">
                     <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Compatible Accessories - Screed Blades</h3>
@@ -123,59 +104,7 @@
                 <div class="flex-grow h-px bg-gray-300"></div>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 w-full max-w-sm flex flex-col" data-model="SPTP" data-category="surface-smootheners" data-type="Power Trowel" data-diameter="1000 mm" data-blades="4" data-power="2Hp" data-weight="70Kg">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/D97706/FFFFFF?text=SPTP+Petrol" alt="SPTP Power Trowel" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">SPTP (Petrol Powered)</h3>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4 flex-grow">
-                            <li><i class="fa-solid fa-tag text-primary mr-2"></i> Model: SPTP</li>
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Roller Diameter: 1000 mm</li>
-                            <li><i class="fa-solid fa-gears text-primary mr-2"></i> Drive System: Honda Engine / Equivalent</li>
-                            <li><i class="fa-solid fa-fan text-primary mr-2"></i> No Of Blades: 4</li>
-                            <li><i class="fa-solid fa-horse-head text-primary mr-2"></i> Engine Power: 2Hp</li>
-                            <li><i class="fa-solid fa-weight-scale text-primary mr-2"></i> Weight: 70Kg</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SPTP Petrol')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 w-full max-w-sm flex flex-col" data-model="SPTE Electric" data-category="surface-smootheners" data-type="Power Trowel" data-diameter="1000 mm" data-blades="4" data-power="3Hp" data-weight="68Kg">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="https://via.placeholder.com/600x400/1E3A8A/FFFFFF?text=SPTE+Electric" alt="SPTE Power Trowel" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">SPTE (Electric Powered)</h3>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4 flex-grow">
-                            <li><i class="fa-solid fa-tag text-primary mr-2"></i> Model: SPTE</li>
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Roller Diameter: 1000 mm</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Drive System: Crompton motor / Equivalent</li>
-                            <li><i class="fa-solid fa-fan text-primary mr-2"></i> No Of Blades: 4</li>
-                            <li><i class="fa-solid fa-horse-head text-primary mr-2"></i> Motor Power: 3Hp</li>
-                            <li><i class="fa-solid fa-weight-scale text-primary mr-2"></i> Weight: 68Kg</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SPTE Electric')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="power-trowel-grid" class="flex flex-wrap justify-center gap-6 md:gap-8"></div>
 
         </div>
     </section>
@@ -268,8 +197,19 @@
     <script src="../compare.js"></script>
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
+<<<<<<< HEAD
     <script src="../footer.js" defer></script>
     <script src="../whatsapp.js" defer></script>
+=======
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('screed-vibrator-container', window.productData['surface-smootheners'].screedVibrators);
+            renderProductCards('power-trowel-grid', window.productData['surface-smootheners'].powerTrowels);
+        });
+    </script>
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
 
     <script>
         // --- Image Modal Logic ---

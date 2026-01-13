@@ -69,6 +69,7 @@
         </p>
       </div>
 
+<<<<<<< HEAD
       <div class="grid md:grid-cols-3 gap-6">
         <!-- 3HP 1PH Electrical Vibrators (Single Phase specs) -->
         <div class="bg-white p-4 rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col group" data-model="3HP 1PH Vibrator" data-power="3 HP" data-voltage="220V-240V" data-current="12-15 A" data-speed="2800-3000 RPM">
@@ -211,6 +212,9 @@
           </div>
         </div>
       </div>
+=======
+      <div id="vibrators-grid" class="grid md:grid-cols-3 gap-6"></div>
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
 
     </div>
   </section>
@@ -256,9 +260,19 @@
     <script src="../compare.js"></script>
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
+<<<<<<< HEAD
     <script src="../whatsapp.js" defer></script>
     <script src="../footer.js"></script>
 
+=======
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('vibrators-grid', window.productData['vibrators']);
+        });
+    </script>
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
 
     <script>
         // --- Image Modal Logic ---

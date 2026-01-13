@@ -48,7 +48,7 @@ The website is a static HTML/CSS/JavaScript application designed to showcase pro
     ├── concrete_mixer_models.html
     ├── plate_compactor_models.html
     ├── power_trowel_models.html
-    ├── hfc_models.html
+    ├── high_frequency_converter_models.html
     ├── safety_equipment_models.html
     └── Vibrators.html
 ```

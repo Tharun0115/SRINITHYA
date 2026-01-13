@@ -76,51 +76,7 @@
                 <div class="flex-grow h-px bg-gray-300"></div>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-8 justify-center max-w-4xl mx-auto">
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="SHFS-4215" data-category="shutter-vibrators" data-power="1.5 HP" data-vibrations="6000 RPM" data-voltage="42V (200Hz)">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Shutter Vibrator" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SHFS-4215</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">High-frequency model for superior performance.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
-                            <li><i class="fa-solid fa-bolt text-primary w-6"></i> <span>Power: 1.5 HP</span></li>
-                            <li><i class="fa-solid fa-wave-square text-primary w-6"></i> <span>Vibrations: 6000 RPM</span></li>
-                            <li><i class="fa-solid fa-plug text-primary w-6"></i> <span>Voltage: 42V / 200Hz</span></li>
-                        </ul>
-                        <button onclick="addToCart('Shutter Vibrator SHFS-4215')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="SHFS-4210" data-category="shutter-vibrators" data-power="1 HP" data-vibrations="3000 RPM" data-voltage="42V (200Hz)">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Shutter Vibrator" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SHFS-4210</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Reliable high-frequency performance.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
-                            <li><i class="fa-solid fa-bolt text-primary w-6"></i> <span>Power: 1 HP</span></li>
-                            <li><i class="fa-solid fa-wave-square text-primary w-6"></i> <span>Vibrations: 3000 RPM</span></li>
-                            <li><i class="fa-solid fa-plug text-primary w-6"></i> <span>Voltage: 42V / 200Hz</span></li>
-                        </ul>
-                        <button onclick="addToCart('Shutter Vibrator SHFS-4210')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-            </div>
+            <div id="high-frequency-shutter-grid" class="grid sm:grid-cols-2 gap-8 justify-center max-w-4xl mx-auto"></div>
 
             <!-- Section 2: Standalone Three-Phase Shutter Vibrators -->
             <div class="flex items-center my-12 md:my-16">
@@ -129,6 +85,7 @@
                 <div class="flex-grow h-px bg-gray-300"></div>
             </div>
 
+<<<<<<< HEAD
             <div class="flex flex-wrap justify-center gap-8">
                 <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col w-full max-w-sm" data-model="SSV-305" data-category="shutter-vibrators" data-power="0.5 HP" data-vibrations="3000 RPM" data-voltage="415V (50Hz)">
                     <div class="h-64 bg-gray-100 flex items-center justify-center">
@@ -196,6 +153,9 @@
                     </div>
                 </div>
             </div>
+=======
+            <div id="three-phase-shutter-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
             
         </div>
     </section>
@@ -289,8 +249,19 @@
     <script src="../compare.js"></script>
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
+<<<<<<< HEAD
     <script src="../footer.js" defer></script>
     <script src="../whatsapp.js" defer></script>
+=======
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('high-frequency-shutter-grid', window.productData['shutter-vibrator-models'].highFrequency);
+            renderProductCards('three-phase-shutter-grid', window.productData['shutter-vibrator-models'].threePhase);
+        });
+    </script>
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
 
     <script>
         // --- Image Modal Logic ---

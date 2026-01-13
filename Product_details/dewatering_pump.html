@@ -49,57 +49,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto">
-                
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="2 Inch Dewatering Pump" data-category="dewatering-pumps" data-discharge-diameter="2 Inch" data-max-lift="12 Mtr" data-capacity="600 Ltr/min">
-                    <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="2 Inch Dewatering Pump" loading="lazy" decoding="async" class="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-2 md:p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-sm md:text-2xl font-bold text-gray-900 mb-1 md:mb-2">2 Inch Dewatering Pump</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 flex-grow line-clamp-2">Versatile pump for general dewatering tasks.</p>
-                        <ul class="text-xs md:text-sm text-left text-gray-700 space-y-1 md:space-y-2 mb-3 md:mb-6 inline-block w-full px-1 md:px-4">
-                            <li class="flex items-center"><i class="fa-solid fa-arrow-up-from-water-pump text-primary w-6"></i> <span>Discharge Diameter: 2 Inch</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-arrows-up-down text-primary w-6"></i> <span>Max Lift: 12 Mtr</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-tachometer-alt text-primary w-6"></i> <span>Capacity: 600 Ltr/min</span></li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('2 Inch Dewatering Pump')" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col" data-model="3 Inch Dewatering Pump" data-category="dewatering-pumps" data-discharge-diameter="3 Inch" data-max-lift="12 Mtr" data-capacity="800 Ltr/min">
-                    <div class="h-32 md:h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="3 Inch Dewatering Pump" loading="lazy" decoding="async" class="w-full h-full object-contain p-4 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-2 md:p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-sm md:text-2xl font-bold text-gray-900 mb-1 md:mb-2">3 Inch Dewatering Pump</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 flex-grow line-clamp-2">Higher capacity pump for faster water removal.</p>
-                        <ul class="text-xs md:text-sm text-left text-gray-700 space-y-1 md:space-y-2 mb-3 md:mb-6 inline-block w-full px-1 md:px-4">
-                            <li class="flex items-center"><i class="fa-solid fa-arrow-up-from-water-pump text-primary w-6"></i> <span>Discharge Diameter: 3 Inch</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-arrows-up-down text-primary w-6"></i> <span>Max Lift: 12 Mtr</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-tachometer-alt text-primary w-6"></i> <span>Capacity: 800 Ltr/min</span></li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('3 Inch Dewatering Pump')" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <div id="dewatering-pump-grid" class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto"></div>
             
         </div>
     </section>
@@ -108,8 +58,18 @@
     <script src="../cart.js"></script>
     <script src="../compare.js"></script>
     <script src="../search.js"></script>
+<<<<<<< HEAD
     <script src="../footer.js" defer></script>
     <script src="../whatsapp.js" defer></script>
+=======
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('dewatering-pump-grid', window.productData['dewatering-pump']);
+        });
+    </script>
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
 
 </body>
 </html>

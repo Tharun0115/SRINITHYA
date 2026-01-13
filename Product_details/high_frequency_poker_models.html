@@ -4,58 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Frequency Poker Models | SEPL</title>
-    <!-- Modern Font: Outfit -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e3a8a',
-                        secondary: '#d97706',
-                        dark: '#111827',
-                    },
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+    <script src="../tailwind-config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../navbar.js"></script>
-    <style>
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-        @keyframes total-flash {
-          50% {
-            transform: scale(1.1);
-            color: #d97706; /* secondary color */
-          }
-        }
-        .flash-animation {
-          animation: total-flash 0.5s ease-in-out;
-        }
-    </style>
 </head>
 <body class="text-gray-800 font-sans">
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
-
             <div class="mb-4">
                 <nav class="flex text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -73,221 +36,26 @@
             </div>
 
             <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">High Frequency Poker Models</h1>
-            <p class="text-xl text-gray-600 mb-12">Durable high-frequency needles for efficient concrete consolidation.</p>
+            <p class="text-xl text-gray-600 mb-12">Internal concrete vibration needles for superior consolidation.</p>
 
-            <!-- New Section: Standalone/Inbuilt -->
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2 flex items-center">
-                <i class="fa-solid fa-plug-circle-bolt text-secondary mr-3"></i> Standalone/Inbuilt High Frequency Poker
+                <i class="fa-solid fa-plug-circle-bolt text-secondary mr-3"></i> Standalone Pokers (Inbuilt Converter)
             </h2>
+            <div id="standalone-poker-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mb-16"></div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mb-16">
-                
-                <!-- 40IV High Frequency Poker -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="40IV Poker" data-category="high-frequency-poker" data-diameter="40mm" data-type="Inbuilt Converter" data-voltage="220V">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="40IV High Frequency Poker" loading="lazy" decoding="async" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">40IV High Frequency Poker</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Standalone poker with inbuilt frequency converter.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Diameter: 40mm</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Type: Inbuilt Converter</li>
-                            <li><i class="fa-solid fa-plug text-primary mr-2"></i> Voltage: 220V (Single Phase)</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('40IV High Frequency Poker')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 60IV High Frequency Poker -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="60IV Poker" data-category="high-frequency-poker" data-diameter="60mm" data-type="Inbuilt Converter" data-voltage="220V">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="60IV High Frequency Poker" loading="lazy" decoding="async" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">60IV High Frequency Poker</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">High performance 60mm poker with inbuilt converter.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Diameter: 60mm</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Type: Inbuilt Converter</li>
-                            <li><i class="fa-solid fa-plug text-primary mr-2"></i> Voltage: 220V (Single Phase)</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('60IV High Frequency Poker')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Existing Section: Compatible with Converter -->
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2 flex items-center">
-                <i class="fa-solid fa-wave-square text-secondary mr-3"></i> Compatible with <a href="high_frequency_converter_models.html" class="text-primary hover:text-secondary hover:underline ml-2 transition">High Frequency Converters</a>
+                <i class="fa-solid fa-link text-secondary mr-3"></i> Compatible Pokers (Requires Converter)
             </h2>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-                
-                <!-- 60MM Needle 5Mtr -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="SHFN 60 (5Mtr)" data-category="high-frequency-poker" data-diameter="58mm" data-length="5 Meters" data-voltage="42V" data-frequency="200Hz">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/electrical_vibrator.png" alt="60MM Needle 5Mtr" loading="lazy" decoding="async" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">SHFN 60 - 5Mtr Hose</h3>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Diameter: 58mm</li>
-                            <li><i class="fa-solid fa-ruler-vertical text-primary mr-2"></i> Hose Length: 5 Meters</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Voltage: 42V (200Hz)</li>
-                            <li><i class="fa-solid fa-wave-square text-primary mr-2"></i> Vibration: 12000 RPM</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SHFN 60 (5Mtr)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 60MM Needle 10Mtr -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="SHFN 60 (10Mtr)" data-category="high-frequency-poker" data-diameter="58mm" data-length="10 Meters" data-voltage="42V" data-frequency="200Hz">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/electrical_vibrator.png" alt="60MM Needle 10Mtr" loading="lazy" decoding="async" class="w-full h-full object-contain p-8">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">SHFN 60 - 10Mtr Hose</h3>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Diameter: 58mm</li>
-                            <li><i class="fa-solid fa-ruler-vertical text-primary mr-2"></i> Hose Length: 10 Meters</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Voltage: 42V (200Hz)</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SHFN 60 (10Mtr)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 60MM Needle 12Mtr -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="SHFN 60 (12Mtr)" data-category="high-frequency-poker" data-diameter="58mm" data-length="12 Meters" data-voltage="42V" data-frequency="200Hz">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/electrical_vibrator.png" alt="60MM Needle 12Mtr" loading="lazy" decoding="async" class="w-full h-full object-contain p-8">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">SHFN 60 - 12Mtr Hose</h3>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Diameter: 58mm</li>
-                            <li><i class="fa-solid fa-ruler-vertical text-primary mr-2"></i> Hose Length: 12 Meters</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Voltage: 42V (200Hz)</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SHFN 60 (12Mtr)')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 40MM Needle 5Mtr -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="40MM Needle 5Mtr" data-category="high-frequency-poker" data-diameter="40mm" data-length="5 Meters">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/electrical_vibrator.png" alt="40MM Needle 5Mtr" loading="lazy" decoding="async" class="w-full h-full object-contain p-8">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">40MM Needle - 5Mtr Hose</h3>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Diameter: 40mm</li>
-                            <li><i class="fa-solid fa-ruler-vertical text-primary mr-2"></i> Hose Length: 5 Meters</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('40MM Needle 5Mtr')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 40MM Needle 10Mtr -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="40MM Needle 10Mtr" data-category="high-frequency-poker" data-diameter="40mm" data-length="10 Meters">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/electrical_vibrator.png" alt="40MM Needle 10Mtr" loading="lazy" decoding="async" class="w-full h-full object-contain p-8">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">40MM Needle - 10Mtr Hose</h3>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Diameter: 40mm</li>
-                            <li><i class="fa-solid fa-ruler-vertical text-primary mr-2"></i> Hose Length: 10 Meters</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('40MM Needle 10Mtr')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 40MM Needle 12Mtr -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="40MM Needle 12Mtr" data-category="high-frequency-poker" data-diameter="40mm" data-length="12 Meters">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/electrical_vibrator.png" alt="40MM Needle 12Mtr" loading="lazy" decoding="async" class="w-full h-full object-contain p-8">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">40MM Needle - 12Mtr Hose</h3>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-horizontal text-primary mr-2"></i> Diameter: 40mm</li>
-                            <li><i class="fa-solid fa-ruler-vertical text-primary mr-2"></i> Hose Length: 12 Meters</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('40MM Needle 12Mtr')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
+            <div id="compatible-poker-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
         </div>
     </section>
+<<<<<<< HEAD
     
+=======
+
+    <script src="../footer.js" defer></script>
+
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
         <div class="max-w-7xl mx-auto">
@@ -299,29 +67,24 @@
                     </div>
                     <button onclick="clearCompare()" class="text-gray-300 hover:text-white" title="Clear Selection">&times; Clear</button>
                 </div>
-                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>
-                    Compare Now
-                </button>
+                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>Compare Now</button>
             </div>
-            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800">
-                <!-- Preview items will be injected here -->
-            </div>
+            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800"></div>
         </div>
     </div>
 
     <!-- Compare Modal -->
-    <div id="compare-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
+    <div id="compare-modal" class="fixed inset-0 z-[90] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
             <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-2xl font-bold">Compare Pokers</h2>
+                <h2 class="text-xl font-bold">Compare Products</h2>
                 <button onclick="closeCompareModal()" class="text-white hover:text-red-200 text-3xl">&times;</button>
             </div>
-            <div id="compare-modal-body" class="p-6 overflow-y-auto">
-                <!-- Comparison table will be injected here -->
-            </div>
+            <div id="compare-modal-body" class="p-6 overflow-y-auto"></div>
         </div>
     </div>
 
+<<<<<<< HEAD
     <!-- Link the Universal Compare Script -->
     <script src="../compare.js"></script>
 
@@ -332,8 +95,46 @@
     <script src="../footer.js" defer></script>
     <script src="../whatsapp.js" defer></script>
 
+=======
+    <!-- Floating WhatsApp Button -->
+    <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Callback Success Modal -->
+    <div id="callback-modal" class="fixed inset-0 flex items-center justify-center z-[60] hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="bg-white p-6 rounded-lg shadow-2xl z-10 max-w-sm mx-4 text-center transform transition-all scale-100">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa-solid fa-check text-2xl text-green-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
+            <p class="text-gray-600 mb-6">Your callback request has been submitted.</p>
+            <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
+        </div>
+    </div>
+
+    <!-- Image Viewer Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
+        <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
+            <img id="modal-image" src="" alt="Enlarged Product View" class="w-auto h-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl">
+            <button onclick="closeImageModal()" class="absolute -top-2 -right-2 text-white bg-red-600 rounded-full h-8 w-8 flex items-center justify-center text-xl hover:bg-red-700 focus:outline-none">&times;</button>
+        </div>
+    </div>
+
+    <script src="../compare.js"></script>
+    <script src="../cart.js"></script>
+    <script src="../search.js"></script>
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
     <script>
-        // --- Image Modal Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('standalone-poker-grid', window.productData['high-frequency-poker-models'].standalone);
+            renderProductCards('compatible-poker-grid', window.productData['high-frequency-poker-models'].compatible);
+        });
+
+        // Image Modal Logic
         const imageModal = document.getElementById('image-modal');
         const modalImage = document.getElementById('modal-image');
 
@@ -341,18 +142,17 @@
             if (imageModal && modalImage) {
                 modalImage.src = src;
                 imageModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                document.body.style.overflow = 'hidden';
             }
         }
 
         function closeImageModal() {
             if (imageModal) {
                 imageModal.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scrolling
+                document.body.style.overflow = '';
             }
         }
 
-        // Close modal on escape key press
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
                 closeImageModal();

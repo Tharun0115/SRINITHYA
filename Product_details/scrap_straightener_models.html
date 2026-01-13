@@ -53,57 +53,7 @@
             <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">Scrap Straightener Models</h1>
             <p class="text-xl text-gray-600 mb-12">Convert coiled or scrap steel into usable straight bars efficiently.</p>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="SS-12 Eco Model" data-category="scrap-straightener-models" data-range="4mm - 12mm" data-speed-feature="25 meters/min" data-usage-accuracy="Coil & Light Scrap">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/scrap_straightener.png" alt="SSC-16 Straightener with Cutter" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SS-12 Eco Model</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Cost-effective solution for straightening coils and lighter scrap.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6 inline-block w-full px-4">
-                            <li class="flex items-center"><i class="fa-solid fa-arrow-right-long text-primary w-6"></i> <span>Range: 4mm - 12mm</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-gauge text-primary w-6"></i> <span>Speed: 25 meters/min</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-recycle text-primary w-6"></i> <span>Usage: Coil & Light Scrap</span></li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SS-12 Eco Model')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col" data-model="SSC-16 Pro" data-category="scrap-straightener-models" data-range="6mm - 16mm" data-speed-feature="Auto-Cut Function" data-usage-accuracy="High Precision">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/scrap_straightener.png" alt="SSC-16 Straightener with Cutter" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SSC-16 Pro (+ Cutter)</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Advanced straightener with integrated hydraulic cutter for precise lengths.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6 inline-block w-full px-4">
-                            <li class="flex items-center"><i class="fa-solid fa-arrow-right-long text-primary w-6"></i> <span>Range: 6mm - 16mm</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-scissors text-primary w-6"></i> <span>Feature: Auto-Cut Function</span></li>
-                            <li class="flex items-center"><i class="fa-solid fa-arrows-left-right text-primary w-6"></i> <span>Accuracy: High Precision</span></li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SSC-16 Pro')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <div id="scrap-straightener-grid" class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto"></div>
             
         </div>
     </section>
@@ -146,7 +96,17 @@
     <script src="../compare.js"></script>
     <script src="../cart.js"></script>
     <script src="../search.js"></script>
+<<<<<<< HEAD
     <script src="../footer.js"></script>
+=======
+    <script src="../product_data.js"></script>
+    <script src="../product_renderer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductCards('scrap-straightener-grid', window.productData['scrap-straightener-models']);
+        });
+    </script>
+>>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
 
     <script src="../whatsapp.js" defer></script>
     <script>
