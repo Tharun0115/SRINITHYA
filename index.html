@@ -268,7 +268,6 @@
                 // IMPORTANT: Replace with your actual Service ID and Template ID from your EmailJS account.
                 const serviceID = 'service_nd0rboa'; 
                 const templateID = 'template_rk2m9n7'; // Main Admin Email (Contains your custom placeholders)
-                const autoReplyTemplateID = 'template_ffhfx9g'; // Auto-Reply to Customer
 
                 if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || typeof emailjs === 'undefined') {
                     console.warn("EmailJS is not configured. Please replace placeholder IDs in index.html script.");
@@ -292,11 +291,6 @@
 
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
-                        // Send Auto-Reply if ID is configured
-                        if (autoReplyTemplateID && autoReplyTemplateID !== 'YOUR_AUTOREPLY_TEMPLATE_ID') {
-                            emailjs.sendForm(serviceID, autoReplyTemplateID, this);
-                        }
-
                         submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-check mr-2"></i> Sent Successfully!</span>`;
                         submitBtn.classList.remove('bg-primary');
                         submitBtn.classList.add('bg-green-600');

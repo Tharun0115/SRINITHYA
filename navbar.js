@@ -124,13 +124,6 @@ const rootPath = getRootPath(),
                                 <div class="p-6">
                                     <h3 class="text-sm font-bold text-primary uppercase tracking-wider border-b pb-2 mb-3">Our Services</h3>
                                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                        <a href="${rootPath}Service_details/maintenance_services.html" class="megamenu-link flex flex-col items-start hover:bg-gray-50 p-3 rounded-lg transition">
-                                            <div class="flex items-center gap-2 mb-1">
-                                                <i class="fa-solid fa-screwdriver-wrench text-secondary"></i>
-                                                <span class="font-bold text-gray-800">Maintenance</span>
-                                            </div>
-                                            <p class="text-xs text-gray-500">Preventative maintenance for peak efficiency.</p>
-                                        </a>
                                         <a href="${rootPath}Service_details/repair_services.html" class="megamenu-link flex flex-col items-start hover:bg-gray-50 p-3 rounded-lg transition">
                                             <div class="flex items-center gap-2 mb-1">
                                                 <i class="fa-solid fa-gears text-secondary"></i>
@@ -144,6 +137,13 @@ const rootPath = getRootPath(),
                                                 <span class="font-bold text-gray-800">Equipment Rental</span>
                                             </div>
                                             <p class="text-xs text-gray-500">Flexible rental options at competitive rates.</p>
+                                        </a>
+                                        <a href="${rootPath}Service_details/maintenance_services.html" class="megamenu-link flex flex-col items-start hover:bg-gray-50 p-3 rounded-lg transition">
+                                            <div class="flex items-center gap-2 mb-1">
+                                                <i class="fa-solid fa-screwdriver-wrench text-secondary"></i>
+                                                <span class="font-bold text-gray-800">Maintenance</span>
+                                            </div>
+                                            <p class="text-xs text-gray-500">Preventative maintenance for peak efficiency.</p>
                                         </a>
                                     </div>
                                 </div>
@@ -206,9 +206,9 @@ const rootPath = getRootPath(),
                     </button>
                     <div id="mobile-services-menu" class="hidden pl-4 pt-2 pb-2 border-l-2 border-gray-200 ml-3 space-y-1">
                         <a href="${rootPath}services.html" class="mobile-submenu-link font-bold text-primary">View All Services</a>
-                        <a href="${rootPath}Service_details/maintenance_services.html" class="mobile-submenu-link"><i class="fa-solid fa-screwdriver-wrench w-6 text-secondary"></i> Maintenance</a>
                         <a href="${rootPath}Service_details/repair_services.html" class="mobile-submenu-link"><i class="fa-solid fa-gears w-6 text-secondary"></i> Repair Services</a>
                         <a href="${rootPath}Service_details/rental_equipment.html" class="mobile-submenu-link"><i class="fa-solid fa-truck-ramp-box w-6 text-secondary"></i> Equipment Rental</a>
+                        <a href="${rootPath}Service_details/maintenance_services.html" class="mobile-submenu-link"><i class="fa-solid fa-screwdriver-wrench w-6 text-secondary"></i> Maintenance</a>
                     </div>
                 </div>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
@@ -217,7 +217,7 @@ const rootPath = getRootPath(),
         </div>
     </nav>
 `,
-    cartModalHTML = `
+    cart HTML = `
     <!-- Cart/Estimate Modal -->
     <div id="cart-modal" class="fixed inset-0 z-[70] hidden">
         <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
