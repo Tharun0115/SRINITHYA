@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Masque';
     /* Ensure the file name matches exactly (case-sensitive on some servers) */
-    src: url('Assets/Fonts/Masque.ttf') format('truetype');
+    src: url('Assets/Fonts/masque.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
