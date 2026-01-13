@@ -31,6 +31,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
+    <script>
+        // Check session storage immediately to prevent loader flash on navigation
+        if (sessionStorage.getItem('sepl_intro_shown')) {
+            document.documentElement.classList.add('hide-loader');
+            document.addEventListener('DOMContentLoaded', function() { document.body.classList.add('loaded'); });
+        }
+    </script>
+    <style>
+        .hide-loader #loader-wrapper { display: none !important; }
+    </style>
+
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+        <div id="loader-logo-container">
+            <div class="relative">
+                <div class="logo-light-container">
+                    <div class="logo-light-spinner"></div>
+                </div>
+                <img src="Assets/Others/logo.png" alt="Loading..." class="relative z-20 w-full h-auto drop-shadow-2xl">
+            </div>
+        </div>
+    </div>
 
     <section id="home" class="relative bg-dark min-h-screen flex items-center pt-24 md:pt-40">
         <div class="absolute inset-0 z-0 opacity-30">

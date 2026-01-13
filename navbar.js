@@ -151,7 +151,7 @@ const rootPath = getRootPath(),
 
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
                     <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Selection Tray">
-                        <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
+                        <i class="fa-solid fa-shopping-cart text-2xl"></i>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </button>
                 </div>
@@ -216,9 +216,9 @@ const rootPath = getRootPath(),
         <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
         <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
             <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-xl font-bold"><i class="fa-solid fa-file-invoice-dollar mr-2"></i>Selection Tray</h2>
+                <h2 class="text-xl font-bold"><i class="fa-solid fa-shopping-cart mr-2"></i>Selection Tray</h2>
                 <div>
-                    <button onclick="openClearCartModal()" class="text-white hover:text-red-400 focus:outline-none mr-4" title="Clear Tray">
+                    <button id="clear-cart-btn" onclick="openClearCartModal()" class="text-white hover:text-red-400 focus:outline-none mr-4 disabled:opacity-50 disabled:cursor-not-allowed" title="Clear Tray">
                         <i class="fa-solid fa-trash-can"></i> Clear
                     </button>
                     <button onclick="toggleCart()" class="text-white hover:text-gray-200 focus:outline-none"><i class="fa-solid fa-xmark text-2xl"></i></button>
@@ -515,3 +515,29 @@ document.addEventListener("DOMContentLoaded", () => {
         (e.includes("Product_details") || e.includes("Service_details")) ? t.href = "../index.html" : "index.html" !== a && "" !== a && "/" !== e || "./" !== rootPath || (t.removeAttribute("href"), t.style.cursor = "default", t.setAttribute("aria-current", "page"))
     }
 });
+
+// Loader Logic
+
+(function() {
+    const loader = document.getElementById('loader-wrapper');
+
+    if (loader) {
+        // Use sessionStorage so the intro plays once per tab/session
+        const hasSeenIntro = sessionStorage.getItem('sepl_intro_shown');
+
+        if (hasSeenIntro) {
+            // SUBSEQUENT VISITS: Hide immediately (don't wait for load)
+            loader.style.display = 'none';
+            document.body.classList.add('loaded');
+        } else {
+            // FIRST VISIT: Wait for load, then play animation
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.body.classList.add('loaded'); // Triggers CSS 3D Lid transform
+                    setTimeout(() => { loader.style.display = 'none'; }, 1000);
+                    sessionStorage.setItem('sepl_intro_shown', 'true');
+                }, 500);
+            });
+        }
+    }
+})();

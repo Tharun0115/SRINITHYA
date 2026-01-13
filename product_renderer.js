@@ -50,7 +50,7 @@ function createProductCard(product) {
     const imageSrc = product.image.startsWith('http') ? product.image : rootPath + product.image.replace('./', '');
     const imageClass = product.imageClass || 'object-contain';
     const imageContainerClass = product.imageContainerClass || 'h-32 md:h-64';
-    const cardWrapperClass = product.cardWrapperClass || 'bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col';
+    const cardWrapperClass = product.cardWrapperClass || 'bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.6)] transition-all duration-300 group flex flex-col';
 
     return `
         <div class="${cardWrapperClass}" ${compareDataAttributes}>

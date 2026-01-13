@@ -166,15 +166,22 @@ window.initProductCards = function() {
                 let imgSrc = img.startsWith('./') ? rootPath + img.substring(2) : img;
                 let webpSrc = webpImages[index] ? (webpImages[index].startsWith('./') ? rootPath + webpImages[index].substring(2) : webpImages[index]) : null;
                 
-                const singleImgTag = `<img src="${imgSrc}" alt="${product.title}" class="w-full h-full object-contain" loading="lazy" decoding="async">`;
+                const isFirst = index === 0;
+                // Use a transparent pixel as placeholder for hidden images to prevent immediate loading
+                const placeholder = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+                
+                const srcAttr = isFirst ? `src="${imgSrc}"` : `src="${placeholder}" data-src="${imgSrc}"`;
+                const srcsetAttr = isFirst ? `srcset="${webpSrc}"` : `data-srcset="${webpSrc}"`;
+
+                const singleImgTag = `<img ${srcAttr} alt="${product.title}" class="w-full h-full object-contain" loading="lazy" decoding="async">`;
 
                 if (webpSrc) {
-                    return `<picture class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}">
-                                <source srcset="${webpSrc}" type="image/webp">
+                    return `<picture class="absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${isFirst ? 'opacity-100' : 'opacity-0'}">
+                                <source ${srcsetAttr} type="image/webp">
                                 ${singleImgTag}
                             </picture>`;
                 }
-                return singleImgTag.replace('class="', `class="absolute inset-0 transition-opacity duration-700 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'} `);
+                return singleImgTag.replace('class="', `class="absolute inset-0 transition-opacity duration-700 ease-in-out ${isFirst ? 'opacity-100' : 'opacity-0'} `);
             }).join('');
 
             const dotsTags = images.map((_, index) => 
@@ -206,7 +213,7 @@ window.initProductCards = function() {
         }
 
         return `
-        <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col h-full group bg-white">
+        <div class="border border-gray-200 rounded-xl overflow-hidden hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.6)] transition-all duration-300 flex flex-col h-full group bg-white">
             <div class="h-32 md:h-64 bg-white flex items-center justify-center overflow-hidden relative">
                 ${imageHTML}
             </div>
@@ -342,12 +349,33 @@ const CarouselManager = {
         // Calculate next
         let nextIndex = (currentIndex + direction + imageCount) % imageCount;
 
+        // Preload next image
+        this.preloadImage(images[nextIndex]);
+
         // Show next
         images[nextIndex].classList.remove('opacity-0');
         images[nextIndex].classList.add('opacity-100');
         if (dots[nextIndex]) {
             dots[nextIndex].classList.remove('opacity-40');
             dots[nextIndex].classList.add('opacity-100', 'w-3');
+        }
+    },
+
+    preloadImage: function(element) {
+        // Handle <picture> source tags
+        const sources = element.querySelectorAll('source');
+        sources.forEach(source => {
+            if (source.dataset.srcset) {
+                source.srcset = source.dataset.srcset;
+                delete source.dataset.srcset;
+            }
+        });
+        
+        // Handle <img> tag
+        const img = element.tagName === 'IMG' ? element : element.querySelector('img');
+        if (img && img.dataset.src) {
+            img.src = img.dataset.src;
+            delete img.dataset.src;
         }
     }
 };

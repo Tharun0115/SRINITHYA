@@ -16,6 +16,28 @@
     <script src="../navbar.js"></script>
 </head>
 <body class="text-gray-800 font-sans">
+    <script>
+        // Check session storage immediately to prevent loader flash on navigation
+        if (sessionStorage.getItem('sepl_intro_shown')) {
+            document.documentElement.classList.add('hide-loader');
+            document.addEventListener('DOMContentLoaded', function() { document.body.classList.add('loaded'); });
+        }
+    </script>
+    <style>
+        .hide-loader #loader-wrapper { display: none !important; }
+    </style>
+
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+        <div id="loader-logo-container">
+            <div class="relative">
+                <div class="logo-light-container"><div class="logo-light-spinner"></div></div>
+                <img src="../Assets/Others/logo.png" alt="Loading..." class="relative z-20 w-full h-auto drop-shadow-2xl">
+            </div>
+        </div>
+    </div>
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
@@ -38,7 +60,6 @@
             <h1 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-3">High Frequency Converter Models</h1>
             <p class="text-xl text-gray-600 mb-12">Reliable power conversion for high-frequency concrete vibrators.</p>
 
-<<<<<<< HEAD
             <div class="my-8 bg-blue-50 border-l-4 border-primary text-gray-800 p-4 rounded-r-lg" role="alert">
                 <p class="font-bold text-primary">Compatibility Note</p>
                 <p class="text-sm md:text-base">
@@ -48,69 +69,12 @@
                 </p>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-6">
-                
-                <!-- SHFC35T -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col w-full max-w-sm" data-model="SHFC 35" data-category="high-frequency-converter" data-outlets="2 Outlet" data-type="Converter">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/Others/logo.png" alt="SHFC35T Converter" loading="lazy" decoding="async" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">High Frequency Converter SHFC 35</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Compact converter designed for efficiency.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-plug text-primary mr-2"></i> Outlets: 2 Outlet</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Type: High Frequency</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SHFC 35 Converter')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SHFC90P -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col w-full max-w-sm" data-model="SHFC90P" data-category="high-frequency-converter" data-outlets="4 Outlet" data-type="Converter">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/Others/logo.png" alt="SHFC90P Converter" loading="lazy" decoding="async" class="w-full h-full object-contain p-8">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">High Frequency Converter SHFC90P</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Heavy-duty converter for multiple connections.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-plug text-primary mr-2"></i> Outlets: 4 Outlet</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Type: High Frequency</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SHFC90P Converter')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
-        </div>
-    </section>
-    
-=======
             <div id="converter-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
         </div>
     </section>
 
     <script src="../footer.js" defer></script>
 
->>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
         <div class="max-w-7xl mx-auto">

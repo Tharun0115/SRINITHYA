@@ -149,6 +149,12 @@ function renderCart() {
     const totalEl = document.getElementById('cart-total');
     if (!container) return;
     
+    // Update Clear Button State
+    const clearBtn = document.getElementById('clear-cart-btn');
+    if (clearBtn) {
+        clearBtn.disabled = cart.length === 0;
+    }
+    
     if (cart.length === 0) {
         container.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-gray-400"><i class="fa-solid fa-basket-shopping text-6xl mb-4"></i><p>Your selection tray is empty.</p></div>';
         return;

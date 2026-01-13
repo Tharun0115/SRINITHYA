@@ -52,6 +52,28 @@
     </style>
 </head>
 <body class="text-gray-800 font-sans">
+    <script>
+        // Check session storage immediately to prevent loader flash on navigation
+        if (sessionStorage.getItem('sepl_intro_shown')) {
+            document.documentElement.classList.add('hide-loader');
+            document.addEventListener('DOMContentLoaded', function() { document.body.classList.add('loaded'); });
+        }
+    </script>
+    <style>
+        .hide-loader #loader-wrapper { display: none !important; }
+    </style>
+
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+        <div id="loader-logo-container">
+            <div class="relative">
+                <div class="logo-light-container"><div class="logo-light-spinner"></div></div>
+                <img src="../Assets/Others/logo.png" alt="Loading..." class="relative z-20 w-full h-auto drop-shadow-2xl">
+            </div>
+        </div>
+    </div>
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
@@ -80,146 +102,14 @@
                 <i class="fa-solid fa-rotate-left text-secondary mr-3"></i> Portable Bar Benders
             </h2>
             
-<<<<<<< HEAD
-            <div class="flex flex-wrap justify-center gap-6 mb-16">
-                
-                <!-- SPB25 -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col w-full max-w-sm" data-model="SPB25" data-category="portable-bar-equipment" data-type="Portable Bender" data-capacity="25mm" data-voltage="220V/110V">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/bar_bender.png" alt="SPB25 Portable Bender" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Portable Bender 25 - SPB25</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Lightweight bender for bars up to 25mm.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-combined text-primary mr-2"></i> Capacity: 25mm</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Type: Electric Portable</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SPB25 Portable Bender')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SPB32 -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col w-full max-w-sm" data-model="SPB32" data-category="portable-bar-equipment" data-type="Portable Bender" data-capacity="32mm" data-voltage="220V/110V">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/bar_bender.png" alt="SPB32 Portable Bender" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Portable Bender 32 - SPB32</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Powerful portable unit for bending bars up to 32mm.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-combined text-primary mr-2"></i> Capacity: 32mm</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Type: Electric Portable</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SPB32 Portable Bender')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SPS32 -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col w-full max-w-sm" data-model="SPS 32" data-category="portable-bar-equipment" data-type="Bender & Straightener" data-capacity="32mm" data-voltage="220V/110V" data-power="600W">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/bar_bender.png" alt="SPS32 Bender & Straightener" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Bender & Straightener - SPS 32</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Dual function machine: Bends and Straightens bars up to 32mm.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-combined text-primary mr-2"></i> Capacity: 32mm</li>
-                            <li><i class="fa-solid fa-arrows-left-right text-primary mr-2"></i> Function: Bend & Straighten</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SPS 32 Bender & Straightener')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-=======
             <div id="portable-benders-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mb-16"></div>
->>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
 
             <!-- Sub section - Bar Cutter -->
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2 flex items-center">
                 <i class="fa-solid fa-scissors text-secondary mr-3"></i> Portable Bar Cutters
             </h2>
 
-<<<<<<< HEAD
-            <div class="flex flex-wrap justify-center gap-6">
-                
-                <!-- SPC25 -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col w-full max-w-sm" data-model="SPC25" data-category="portable-bar-equipment" data-type="Portable Cutter" data-capacity="25mm" data-voltage="220V/110V">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/bar_cutter.png" alt="SPC25 Portable Cutter" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Portable Cutter 25 - SPC25</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Fast and safe hydraulic cutting for bars up to 25mm.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-combined text-primary mr-2"></i> Capacity: 25mm</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Type: Hydraulic Cutter</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SPC25 Portable Cutter')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SPC32 -->
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 flex flex-col w-full max-w-sm" data-model="SPC 32" data-category="portable-bar-equipment" data-type="Portable Cutter" data-capacity="32mm" data-voltage="220V/110V">
-                    <div class="h-56 bg-gray-100 flex items-center justify-center">
-                        <img src="../Assets/bar_cutter.png" alt="SPC32 Portable Cutter" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Portable Cutter 32 - SPC 32</h3>
-                        <p class="text-sm text-gray-600 mb-3 flex-grow">Heavy-duty portable cutter for bars up to 32mm.</p>
-                        <ul class="text-xs text-left text-gray-700 space-y-1 mb-4">
-                            <li><i class="fa-solid fa-ruler-combined text-primary mr-2"></i> Capacity: 32mm</li>
-                            <li><i class="fa-solid fa-bolt text-primary mr-2"></i> Type: Hydraulic Cutter</li>
-                        </ul>
-                        <div class="flex flex-col gap-2 mt-auto">
-                            <button onclick="addToCart('SPC 32 Portable Cutter')" class="w-full bg-secondary text-white py-2 rounded text-sm hover:bg-yellow-600 transition"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-=======
             <div id="portable-cutters-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"></div>
->>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
             
         </div>
     </section>
@@ -294,7 +184,5 @@
         </div>
     </div>
 
-    <script>
-    </script>
 </body>
 </html>

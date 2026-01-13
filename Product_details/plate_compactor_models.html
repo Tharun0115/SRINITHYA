@@ -16,6 +16,28 @@
     <script src="../navbar.js"></script>
 </head>
 <body class="text-gray-800 font-sans">
+    <script>
+        // Check session storage immediately to prevent loader flash on navigation
+        if (sessionStorage.getItem('sepl_intro_shown')) {
+            document.documentElement.classList.add('hide-loader');
+            document.addEventListener('DOMContentLoaded', function() { document.body.classList.add('loaded'); });
+        }
+    </script>
+    <style>
+        .hide-loader #loader-wrapper { display: none !important; }
+    </style>
+
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+        <div id="loader-logo-container">
+            <div class="relative">
+                <div class="logo-light-container"><div class="logo-light-spinner"></div></div>
+                <img src="../Assets/Others/logo.png" alt="Loading..." class="relative z-20 w-full h-auto drop-shadow-2xl">
+            </div>
+        </div>
+    </div>
 
     <section class="py-20 pt-48">
         <div class="max-w-7xl mx-auto px-4">
@@ -41,13 +63,10 @@
             <div id="plate-compactor-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center"></div>
         </div>
     </section>
-<<<<<<< HEAD
     
-=======
 
     <script src="../footer.js" defer></script>
 
->>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
         <div class="max-w-7xl mx-auto">
@@ -76,10 +95,8 @@
         </div>
     </div>
 
-<<<<<<< HEAD
     <!-- Link the Universal Compare Script -->
     <script src="../compare.js"></script>
-=======
     <!-- Floating WhatsApp Button -->
     <a id="whatsapp-btn" href="https://wa.me/919032069819?text=Hi%20there%2C%20I%20have%20requirement%20of%20equipment%20listed%20in%20your%20website." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 z-50 hover:scale-110 flex items-center justify-center" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
@@ -97,7 +114,6 @@
             <button id="close-modal-btn" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-800 transition w-full">Okay</button>
         </div>
     </div>
->>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
 
     <!-- Image Viewer Modal -->
     <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">

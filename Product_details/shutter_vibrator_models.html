@@ -41,6 +41,28 @@
     </style>
 </head>
 <body class="text-gray-800 font-sans">
+    <script>
+        // Check session storage immediately to prevent loader flash on navigation
+        if (sessionStorage.getItem('sepl_intro_shown')) {
+            document.documentElement.classList.add('hide-loader');
+            document.addEventListener('DOMContentLoaded', function() { document.body.classList.add('loaded'); });
+        }
+    </script>
+    <style>
+        .hide-loader #loader-wrapper { display: none !important; }
+    </style>
+
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+        <div id="loader-logo-container">
+            <div class="relative">
+                <div class="logo-light-container"><div class="logo-light-spinner"></div></div>
+                <img src="../Assets/Others/logo.png" alt="Loading..." class="relative z-20 w-full h-auto drop-shadow-2xl">
+            </div>
+        </div>
+    </div>
 
     <section class="py-20 pt-32 md:pt-48">
         <div class="max-w-7xl mx-auto px-4">
@@ -85,77 +107,7 @@
                 <div class="flex-grow h-px bg-gray-300"></div>
             </div>
 
-<<<<<<< HEAD
-            <div class="flex flex-wrap justify-center gap-8">
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col w-full max-w-sm" data-model="SSV-305" data-category="shutter-vibrators" data-power="0.5 HP" data-vibrations="3000 RPM" data-voltage="415V (50Hz)">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Shutter Vibrator" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SSV-305</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Compact 3-phase model for smaller precast elements.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
-                            <li><i class="fa-solid fa-bolt text-primary w-6"></i> <span>Power: 0.5 HP</span></li>
-                            <li><i class="fa-solid fa-wave-square text-primary w-6"></i> <span>Vibrations: 3000 RPM</span></li>
-                            <li><i class="fa-solid fa-plug text-primary w-6"></i> <span>Voltage: 415V / 50Hz</span></li>
-                        </ul>
-                        <button onclick="addToCart('Shutter Vibrator SSV-305')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col w-full max-w-sm" data-model="SSV-310" data-category="shutter-vibrators" data-power="1 HP" data-vibrations="3000 RPM" data-voltage="415V (50Hz)">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Shutter Vibrator" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SSV-310</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Standard 3-phase model for general formwork.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
-                            <li><i class="fa-solid fa-bolt text-primary w-6"></i> <span>Power: 1 HP</span></li>
-                            <li><i class="fa-solid fa-wave-square text-primary w-6"></i> <span>Vibrations: 3000 RPM</span></li>
-                            <li><i class="fa-solid fa-plug text-primary w-6"></i> <span>Voltage: 415V / 50Hz</span></li>
-                        </ul>
-                        <button onclick="addToCart('Shutter Vibrator SSV-310')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.15)] transition-all duration-300 group flex flex-col w-full max-w-sm" data-model="SSV-320" data-category="shutter-vibrators" data-power="2 HP" data-vibrations="3000 RPM" data-voltage="415V (50Hz)">
-                    <div class="h-64 bg-gray-100 flex items-center justify-center">
-                        <img onclick="openImageModal(this.src)" src="../Assets/electrical_vibrator.png" alt="Shutter Vibrator" class="w-full h-full object-contain p-8 transition-transform duration-300 group-hover:scale-110 cursor-pointer">
-                    </div>
-                    <div class="p-6 text-center flex flex-col flex-grow">
-                        <div class="flex justify-end -mt-2 -mr-2">
-                            <label class="flex items-center space-x-2 text-sm font-medium text-gray-600 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
-                                <input type="checkbox" class="compare-checkbox h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" onchange="toggleCompare(this)">
-                                <span>Compare</span>
-                            </label>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">SSV-320</h3>
-                        <p class="text-sm text-gray-600 mb-4 flex-grow">Powerful 3-phase motor for heavy-duty applications.</p>
-                        <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
-                            <li><i class="fa-solid fa-bolt text-primary w-6"></i> <span>Power: 2 HP</span></li>
-                            <li><i class="fa-solid fa-wave-square text-primary w-6"></i> <span>Vibrations: 3000 RPM</span></li>
-                            <li><i class="fa-solid fa-plug text-primary w-6"></i> <span>Voltage: 415V / 50Hz</span></li>
-                        </ul>
-                        <button onclick="addToCart('Shutter Vibrator SSV-320')" class="w-full bg-secondary text-white py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto"><i class="fa-solid fa-plus"></i> Add to Tray</button>
-                    </div>
-                </div>
-            </div>
-=======
             <div id="three-phase-shutter-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
->>>>>>> ade1336b14f273c83a37f361ff7f0278af00ab5a
             
         </div>
     </section>
