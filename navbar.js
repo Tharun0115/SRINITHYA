@@ -173,7 +173,7 @@ const rootPath = getRootPath(),
         </div>
     </nav>
 `,
-    cart HTML = `
+    cartHTML = `
     <!-- Cart/Estimate Modal -->
     <div id="cart-modal" class="fixed inset-0 z-[70] hidden">
         <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
