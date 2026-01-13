@@ -208,13 +208,12 @@ window.confirmSendWhatsapp = function() {
         return;
     }
 
-    let message = `Hi Srinithya! I am ${userName}, we have requirement for the items below:\n`;
+    let message = `Hi Srinithya! I am ${userName} and I am sending this message from your website, we have requirement for the items below:\n`;
     cart.forEach((item, index) => {
         message += `${index + 1}. ${item.name} - ${item.qty}Nos\n`;
     });
-    message += "\nSent from website";
 
-    const phoneNumber = "919059239819";
+    const phoneNumber = "91903069819";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     
