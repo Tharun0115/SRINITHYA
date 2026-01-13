@@ -88,3 +88,44 @@ function renderProductCards(containerId, products) {
         }
     }
 }
+
+// --- Image Modal Logic ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Inject Modal HTML if not present
+    if (!document.getElementById('image-modal')) {
+        const modalHTML = `
+            <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300" onclick="if(event.target === this) closeImageModal()">
+                <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white/70 hover:text-white focus:outline-none z-50 transition-colors">
+                    <i class="fa-solid fa-xmark text-4xl"></i>
+                </button>
+                <img id="modal-image" src="" alt="Product Preview" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl">
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+    }
+});
+
+window.openImageModal = function(src) {
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    if (modal && modalImage) {
+        modalImage.src = src;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeImageModal = function() {
+    const modal = document.getElementById('image-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+};
+
+document.addEventListener('keydown', function (event) {
+    const modal = document.getElementById('image-modal');
+    if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        closeImageModal();
+    }
+});

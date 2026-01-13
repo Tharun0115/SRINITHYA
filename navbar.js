@@ -112,6 +112,43 @@ const rootPath = getRootPath(),
                         </div>
                     </div>
 
+                    <!-- Services Dropdown -->
+                    <div class="group relative">
+                        <button type="button" class="text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
+                            <span>Services</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 invisible group-hover:visible opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-200 group-hover:delay-0 z-50 w-[500px]">
+                            <div class="bg-white shadow-2xl rounded-lg border border-gray-200/50 overflow-hidden">
+                                <div class="grid grid-cols-3 p-4 gap-2">
+                                    <a href="${rootPath}Service_details/repair_services.html" class="flex flex-col items-center text-center p-3 hover:bg-gray-50 rounded-lg transition group/item">
+                                        <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-2 group-hover/item:bg-secondary group-hover/item:text-white transition text-secondary">
+                                            <i class="fa-solid fa-gears text-lg"></i>
+                                        </div>
+                                        <span class="font-bold text-gray-800 text-sm">Repair Services</span>
+                                    </a>
+                                    <a href="${rootPath}Service_details/rental_equipment.html" class="flex flex-col items-center text-center p-3 hover:bg-gray-50 rounded-lg transition group/item">
+                                        <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-2 group-hover/item:bg-secondary group-hover/item:text-white transition text-secondary">
+                                            <i class="fa-solid fa-truck-ramp-box text-lg"></i>
+                                        </div>
+                                        <span class="font-bold text-gray-800 text-sm">Equipment Rental</span>
+                                    </a>
+                                    <a href="${rootPath}Service_details/maintenance_services.html" class="flex flex-col items-center text-center p-3 hover:bg-gray-50 rounded-lg transition group/item">
+                                        <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-2 group-hover/item:bg-secondary group-hover/item:text-white transition text-secondary">
+                                            <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+                                        </div>
+                                        <span class="font-bold text-gray-800 text-sm">Maintenance</span>
+                                    </a>
+                                </div>
+                                <div class="bg-gray-50 p-3 text-center border-t border-gray-100">
+                                    <a href="${rootPath}services.html" class="text-sm font-bold text-primary hover:text-secondary transition flex items-center justify-center gap-2">
+                                        View All Services <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
                     <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
                         <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
@@ -296,12 +333,6 @@ window.closeEmptyCartModal = function() {
     if (modal) modal.classList.add('hidden');
 }
 
-function toggleCart() {
-    const t = document.getElementById("cart-modal"),
-        e = document.getElementById("cart-panel");
-    t.classList.contains("hidden") ? (t.classList.remove("hidden"), setTimeout(() => e.classList.remove("translate-x-full"), 10)) : (e.classList.add("translate-x-full"), setTimeout(() => t.classList.add("hidden"), 300))
-}
-
 function initScrollButtons() {
     const t = document.getElementById("scroll-up-btn"),
         e = document.getElementById("scroll-down-btn");
@@ -431,15 +462,52 @@ function initNavbar() {
         c = document.getElementById("animation-layer"),
         m = document.getElementById("nav-links"),
         u = document.getElementById("scroll-progress");
+
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 50 ? (o.classList.add("shadow-md"), n.classList.remove("md:grid", "md:grid-cols-1"), n.classList.add("md:flex", "md:flex-row", "md:items-center"), i.classList.remove("py-2"), i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.remove("h-16"), r.classList.add("h-10"), l.classList.remove("flex-grow", "text-center", "pl-0", "pr-1", "py-1"), l.classList.add("ml-2", "text-left"), c.classList.add("opacity-0"), d.classList.remove("text-[clamp(10px,2.7vw,30px)]", "mb-2", "leading-none"), d.classList.add("text-[clamp(9px,2vw,20px)]", "mb-0", "leading-tight"), m.classList.remove("w-full", "border-t", "justify-center", "py-2", "lg:gap-8"), m.classList.add("justify-start", "pl-6", "py-1", "flex-shrink-0", "text-sm")) : (o.classList.remove("shadow-md"), n.classList.add("md:grid", "md:grid-cols-1"), n.classList.remove("md:flex", "md:flex-row", "md:items-center"), i.classList.add("py-2"), i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0"), r.classList.add("h-16"), r.classList.remove("h-10"), l.classList.add("flex-grow", "text-center", "pl-0", "pr-1", "py-1"), l.classList.remove("ml-2", "text-left"), c.classList.remove("opacity-0"), d.classList.add("text-[clamp(10px,2.7vw,30px)]", "mb-2", "leading-none"), d.classList.remove("text-[clamp(9px,2vw,20px)]", "mb-0", "leading-tight"), m.classList.add("w-full", "border-t", "justify-center", "py-2", "lg:gap-8"), m.classList.remove("justify-start", "pl-6", "py-1", "flex-shrink-0", "text-sm")), u) {
-            const t = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-            u.style.width = t + "%"
+        const isScrolled = window.scrollY > 50;
+
+        if (isScrolled) {
+            // Scrolled State
+            o.classList.add("shadow-md");
+            n.classList.remove("md:grid", "md:grid-cols-1");
+            n.classList.add("md:flex", "md:flex-row", "md:items-center", "md:justify-between");
+            i.classList.remove("py-2");
+            i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0");
+            r.classList.remove("h-16");
+            r.classList.add("h-10");
+            l.classList.remove("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
+            l.classList.add("ml-2", "text-left");
+            c.classList.add("opacity-0");
+            d.classList.remove("text-[clamp(10px,2.7vw,30px)]", "mb-2", "leading-none");
+            d.classList.add("text-[clamp(9px,2vw,20px)]", "mb-0", "leading-tight");
+            m.classList.remove("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
+            m.classList.add("py-1", "flex-shrink-0", "text-sm");
+        } else {
+            // Top State
+            o.classList.remove("shadow-md");
+            n.classList.add("md:grid", "md:grid-cols-1");
+            n.classList.remove("md:flex", "md:flex-row", "md:items-center", "md:justify-between");
+            i.classList.add("py-2");
+            i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0");
+            r.classList.add("h-16");
+            r.classList.remove("h-10");
+            l.classList.add("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
+            l.classList.remove("ml-2", "text-left");
+            c.classList.remove("opacity-0");
+            d.classList.add("text-[clamp(10px,2.7vw,30px)]", "mb-2", "leading-none");
+            d.classList.remove("text-[clamp(9px,2vw,20px)]", "mb-0", "leading-tight");
+            m.classList.add("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
+            m.classList.remove("py-1", "flex-shrink-0", "text-sm");
+        }
+
+        if (u) {
+            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+            u.style.width = scrollPercent + "%";
         }
     })
 }
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartModalHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", emptyCartModalHTML), document.body.insertAdjacentHTML("beforeend", nameInputModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation();
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", emptyCartModalHTML), document.body.insertAdjacentHTML("beforeend", nameInputModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation();
     const t = document.getElementById("brand-wrapper");
     if (t) {
         const e = window.location.pathname,
