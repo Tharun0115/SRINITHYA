@@ -199,3 +199,12 @@ a, button, input, select, textarea {
 #company-name {
     font-family: 'Masque', sans-serif;
 }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    /* Fix for Hero Banner Text being too large on mobile */
+    h1 {
+        font-size: 1.75rem !important; /* Approx 28px */
+        line-height: 1.2 !important;
+    }
+}

@@ -17,14 +17,14 @@ const rootPath = getRootPath(),
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
-                <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer" id="brand-wrapper">
-                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
+                <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer min-w-0" id="brand-wrapper">
+                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-9 md:h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden pl-0 pr-1 py-1 flex-grow text-center transition-all duration-300 ease-in-out min-w-0" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
-                        <span class="text-[clamp(10px,2.7vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap drop-shadow-sm block mb-2 leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="text-[clamp(8px,2.5vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap drop-shadow-sm block mb-0 md:mb-2 leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
-                        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
+                        <div class="hidden md:block absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
                             <!-- 3D Road Surface -->
                             <div class="absolute bottom-0 left-0 w-full h-4 bg-gray-600 opacity-60 transform origin-bottom" style="transform: perspective(100px) rotateX(30deg);">
                                 <div class="absolute top-1/2 left-0 w-full border-t border-dashed border-white opacity-70"></div>
@@ -56,9 +56,9 @@ const rootPath = getRootPath(),
                     </div>
                 </a>
                 
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                <div class="md:hidden flex items-center flex-shrink-0 ml-2">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none p-1">
+                        <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
                 </div>
@@ -150,7 +150,7 @@ const rootPath = getRootPath(),
                     </div>
 
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
-                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Estimate Cart">
+                    <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Selection Tray">
                         <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
                     </button>
@@ -205,13 +205,13 @@ const rootPath = getRootPath(),
                     </div>
                 </div>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
-                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Estimate Cart</button>
+                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Selection Tray</button>
             </div>
         </div>
     </nav>
 `,
     cartHTML = `
-    <!-- Cart/Estimate Modal -->
+    <!-- Cart/Selection Tray Modal -->
     <div id="cart-modal" class="fixed inset-0 z-[70] hidden">
         <div class="absolute inset-0 bg-black opacity-50 transition-opacity" onclick="toggleCart()"></div>
         <div class="absolute right-0 top-0 h-full w-full md:w-[500px] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full flex flex-col" id="cart-panel">
@@ -243,7 +243,7 @@ const rootPath = getRootPath(),
                     <i class="fa-solid fa-triangle-exclamation text-2xl text-red-600"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Clear Tray?</h3>
-                <p class="text-gray-600 mb-6">Are you sure you want to remove all items from your estimate? This action cannot be undone.</p>
+                <p class="text-gray-600 mb-6">Are you sure you want to remove all items from your Tray? This action cannot be undone.</p>
                 <div class="flex gap-3 justify-center">
                     <button onclick="closeClearCartModal()" class="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition focus:outline-none">Cancel</button>
                     <button onclick="confirmClearCartAction()" class="px-5 py-2.5 rounded-lg bg-red-600 text-white font-bold hover:bg-red-700 transition shadow-lg focus:outline-none">Yes, Clear It</button>
@@ -473,13 +473,13 @@ function initNavbar() {
             n.classList.add("md:flex", "md:flex-row", "md:items-center", "md:justify-between");
             i.classList.remove("py-2");
             i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0");
-            r.classList.remove("h-16");
-            r.classList.add("h-10");
+            r.classList.remove("h-9", "md:h-16");
+            r.classList.add("h-8");
             l.classList.remove("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
             l.classList.add("ml-2", "text-left");
             c.classList.add("opacity-0");
-            d.classList.remove("text-[clamp(10px,2.7vw,30px)]", "mb-2", "leading-none");
-            d.classList.add("text-[clamp(9px,2vw,20px)]", "mb-0", "leading-tight");
+            d.classList.remove("text-[clamp(8px,2.5vw,30px)]", "md:mb-2", "leading-none");
+            d.classList.add("text-[clamp(8px,2.3vw,24px)]", "leading-tight");
             m.classList.remove("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.add("py-1", "flex-shrink-0", "text-sm");
         } else {
@@ -489,13 +489,13 @@ function initNavbar() {
             n.classList.remove("md:flex", "md:flex-row", "md:items-center", "md:justify-between");
             i.classList.add("py-2");
             i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0");
-            r.classList.add("h-16");
-            r.classList.remove("h-10");
+            r.classList.add("h-9", "md:h-16");
+            r.classList.remove("h-8");
             l.classList.add("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
             l.classList.remove("ml-2", "text-left");
             c.classList.remove("opacity-0");
-            d.classList.add("text-[clamp(10px,2.7vw,30px)]", "mb-2", "leading-none");
-            d.classList.remove("text-[clamp(9px,2vw,20px)]", "mb-0", "leading-tight");
+            d.classList.add("text-[clamp(8px,2.5vw,30px)]", "md:mb-2", "leading-none");
+            d.classList.remove("text-[clamp(8px,2.3vw,24px)]", "leading-tight");
             m.classList.add("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.remove("py-1", "flex-shrink-0", "text-sm");
         }
