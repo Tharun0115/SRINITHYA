@@ -490,6 +490,91 @@ function initCartAnimation() {
     });
 }
 
+// --- Toast Notification System ---
+window.showToast = function(message, type = 'success') {
+    let container = document.getElementById('toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    let icon = 'fa-check-circle';
+    if (type === 'error') icon = 'fa-circle-xmark';
+    if (type === 'info') icon = 'fa-circle-info';
+
+    toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${message}</span>`;
+    container.appendChild(toast);
+
+    // Trigger animation
+    requestAnimationFrame(() => {
+        toast.classList.add('show');
+    });
+
+    // Remove after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        toast.addEventListener('transitionend', () => {
+            toast.remove();
+            if (container.children.length === 0) {
+                container.remove();
+            }
+        });
+    }, 3000);
+};
+
+// --- Active Scroll Spy (Highlight Navbar Links) ---
+function initScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#nav-links a');
+
+    if (sections.length === 0) return;
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            // Reset classes
+            link.classList.remove('text-secondary', 'font-bold');
+            link.classList.add('text-gray-700', 'font-medium');
+            
+            // Check if link href contains the current section ID
+            if (current && link.getAttribute('href').includes(`#${current}`)) {
+                link.classList.remove('text-gray-700', 'font-medium');
+                link.classList.add('text-secondary', 'font-bold');
+            }
+        });
+    });
+}
+
+// --- FAQ Accordion Logic ---
+window.toggleFaq = function(button) {
+    const item = button.closest('.faq-item');
+    if (!item) return;
+    
+    // Optional: Close other open items in the same container (True Accordion behavior)
+    const container = item.parentElement;
+    if (container) {
+        container.querySelectorAll('.faq-item').forEach(other => {
+            if (other !== item && other.classList.contains('active')) {
+                other.classList.remove('active');
+            }
+        });
+    }
+    
+    item.classList.toggle('active');
+};
+
 function initNavbar() {
     const t = document.getElementById("mobile-menu-button"),
         e = document.getElementById("mobile-menu");
@@ -577,7 +662,7 @@ function initNavbar() {
     })
 }
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", emptyCartModalHTML), document.body.insertAdjacentHTML("beforeend", nameInputModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation();
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", emptyCartModalHTML), document.body.insertAdjacentHTML("beforeend", nameInputModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation(), initScrollSpy();
     const t = document.getElementById("brand-wrapper");
     if (t) {
         const e = window.location.pathname,

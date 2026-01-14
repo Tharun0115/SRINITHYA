@@ -63,8 +63,8 @@ const lightEquipment = [
         },
         {
             title: "Scissor Lifts",
-            image: "./Assets/Products/scissor_lift_card.png",
-            imageWebp: "./Assets/Products/scissor_lift_card.webp",
+            image: "./Assets/Product Images/scissorlift.png",
+            imageWebp: "./Assets/Product Images/scissorlift.webp",
             description: "Safe and stable platforms for elevated work.",
             features: ["Max Height: 14m", "Battery / Electric"],
             link: "Product_details/scissorlift_models.html"

@@ -25,7 +25,8 @@ window.createProductCard = function(product) {
     // Generate action buttons
     const actionsHTML = (product.actions || []).map(action => {
         if (action.type === 'cart') {
-            const params = `'${action.name}', ${action.price}, '${action.hsn}', ${action.gst}`;
+            const safeName = action.name.replace(/'/g, "\\'");
+            const params = `'${safeName}', ${action.price}, '${action.hsn}', ${action.gst}`;
             return `<button onclick="addToCart(${params})" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm" aria-label="Add ${action.name} to Estimate"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add</button>`;
         }
         if (action.type === 'enquire') {
@@ -65,7 +66,7 @@ window.createProductCard = function(product) {
                 <ul class="text-xs md:text-sm text-left text-gray-700 space-y-1 md:space-y-2 mb-3 md:mb-6 inline-block w-full px-1 md:px-4">
                     ${specsHTML}
                 </ul>
-                <div class="flex flex-col gap-2 mt-auto">
+                <div class="flex flex-col gap-2 mt-auto product-actions-container">
                     ${actionsHTML}
                 </div>
             </div>

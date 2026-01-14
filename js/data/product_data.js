@@ -938,7 +938,7 @@ window.productData = {
         {
             model: "Hydraulic Scissor Lift",
             name: "Hydraulic Scissor Lift",
-            image: "./Assets/Products/scissor_lift.png",
+            image: "./Assets/Product Images/scissorlift.png",
             description: "Self-propelled and stationary scissor lifts for working at heights.",
             specs: [
                 { icon: "fa-solid fa-ruler-vertical", text: "Max Height: 6m - 14m" },
@@ -946,7 +946,7 @@ window.productData = {
                 { icon: "fa-solid fa-bolt", text: "Operation: Battery / Electric" }
             ],
             compare: { model: "Hydraulic Scissor Lift", category: "scissor-lifts", height: "6m - 14m", capacity: "300kg - 500kg", operation: "Battery / Electric" },
-            actions: [{ type: 'enquire', name: 'Scissor Lift' }]
+            actions: [{ type: 'cart', name: 'Hydraulic Scissor Lift' }]
         }
     ]
 };

@@ -91,6 +91,8 @@ function updateCardQuantities() {
         const match = btn.getAttribute('onclick').match(/addToCart\(['"]([^'"]+)['"]/);
         if (match) {
             const name = match[1];
+            // Escape single quotes for the inline onclick handler to prevent syntax errors
+            const safeName = name.replace(/'/g, "\\'");
             const item = cart.find(i => i.name === name);
             const qty = item ? item.qty : 0;
             
@@ -110,9 +112,8 @@ function updateCardQuantities() {
                 if (!control) {
                     control = document.createElement('div');
                     control.className = 'qty-control flex items-center justify-between w-full border border-secondary rounded overflow-hidden bg-white shadow-sm';
-                    // Extract params from the original button's onclick
-                    const params = btn.getAttribute('onclick').substring(10, btn.getAttribute('onclick').length - 1);
-                    control.innerHTML = `<button onclick="updateItemQty('${name}', -1)" class="px-4 py-2 bg-gray-50 hover:bg-gray-200 text-gray-700 transition font-bold border-r border-gray-200">-</button><span class="font-bold text-primary flex-grow text-center qty-display bg-white py-2">${qty}</span><button onclick="addToCart(${params})" class="px-4 py-2 bg-secondary text-white hover:bg-yellow-600 transition font-bold border-l border-secondary">+</button>`;
+                    // Use updateItemQty for both + and - to ensure consistent behavior and no limits
+                    control.innerHTML = `<button onclick="updateItemQty('${safeName}', -1)" class="px-4 py-2 bg-gray-50 hover:bg-gray-200 text-gray-700 transition font-bold border-r border-gray-200">-</button><span class="font-bold text-primary flex-grow text-center qty-display bg-white py-2">${qty}</span><button onclick="updateItemQty('${safeName}', 1)" class="px-4 py-2 bg-secondary text-white hover:bg-yellow-600 transition font-bold border-l border-secondary">+</button>`;
                     wrapper.appendChild(control);
                 } else { 
                     control.querySelector('.qty-display').textContent = qty; 
@@ -172,7 +173,7 @@ function sendRequirementToWhatsapp() {
         if (typeof openEmptyCartModal === 'function') {
             openEmptyCartModal();
         } else {
-            alert("Please add items to the estimate first.");
+            if(typeof showToast === 'function') showToast("Please add items to the estimate first.", "error");
         }
         return;
     }
@@ -210,7 +211,7 @@ window.confirmSendWhatsapp = function() {
     let userName = input ? input.value.trim() : "";
     if (userName === "") {
         // This should not happen if the button is disabled, but it's a good fallback.
-        alert("Please enter your name.");
+        if(typeof showToast === 'function') showToast("Please enter your name.", "error");
         return;
     }
 
@@ -219,7 +220,7 @@ window.confirmSendWhatsapp = function() {
         message += `${index + 1}. ${item.name} - ${item.qty}Nos\n`;
     });
 
-    const phoneNumber = "91903069819";
+    const phoneNumber = "919032069819";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     
