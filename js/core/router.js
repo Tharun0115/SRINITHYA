@@ -79,6 +79,23 @@ async function loadPage(url, scroll = true) {
             document.body.removeChild(newScript);
         });
 
+        // 3a. Re-initialize Page Components (Critical for Homepage Cards)
+        // Explicitly trigger product rendering for the new page content
+        if (window.autoRenderProducts) {
+            window.autoRenderProducts();
+        }
+        
+        // Re-initialize other components (Carousel, Home cards)
+        setTimeout(() => {
+            // initProductCards is the function exposed by the homepage script
+            if (typeof window.initProductCards === 'function') {
+                window.initProductCards();
+            }
+            if (window.CarouselManager && typeof window.CarouselManager.start === 'function') {
+                window.CarouselManager.start();
+            }
+        }, 50);
+
         // 4. Update Navbar Links (Fix relative paths)
         if (window.updateNavbarLinks) {
             window.updateNavbarLinks();

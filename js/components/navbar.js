@@ -136,7 +136,7 @@ const rootPath = getRootPath(),
                                             <a href="${rootPath}Product_details/Vibrators.html" class="megamenu-link"><i class="fa-solid fa-bolt w-6 text-secondary"></i> Vibrators</a>
                                             <a href="${rootPath}Product_details/shutter_vibrator_models.html" class="megamenu-link"><i class="fa-solid fa-industry w-6 text-secondary"></i> Shutter Vibrators</a>
                                             <a href="${rootPath}Product_details/high_frequency_converter_models.html" class="megamenu-link"><i class="fa-solid fa-wave-square w-6 text-secondary"></i> HF Converters</a>
-                                            <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="megamenu-link"><i class="fa-solid fa-plug-circle-bolt w-6 text-secondary"></i> HF Pokers</a>
+                                            <a href="${rootPath}Product_details/high_frequency_poker_models.html" class="megamenu-link"><i class="fa-solid fa-plug w-6 text-secondary"></i> HF Pokers</a>
                                             <a href="${rootPath}Product_details/handy_vibration_models.html" class="megamenu-link"><i class="fa-solid fa-hand-fist w-6 text-secondary"></i> Handy Vibrators</a>
                                             <a href="${rootPath}Product_details/mechanical_poker_models.html" class="megamenu-link"><i class="fa-solid fa-gears w-6 text-secondary"></i> Mechanical Pokers</a>
                                             <a href="${rootPath}Product_details/dewatering_pump.html" class="megamenu-link"><i class="fa-solid fa-droplet w-6 text-secondary"></i> Dewatering Pumps</a>
@@ -153,7 +153,7 @@ const rootPath = getRootPath(),
                     </div>
 
                     <!-- Services Dropdown -->
-                    <div class="group relative">
+                    <div class="group relative" id="services-menu-container">
                         <button type="button" class="text-gray-700 group-hover:text-secondary font-medium px-2 py-1 flex items-center gap-1 outline-none focus:outline-none">
                             <span>Services</span>
                             <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
@@ -506,6 +506,23 @@ function initNavbar() {
     svT && svM && svT.addEventListener("click", t => {
         t.preventDefault(), svM.classList.toggle("hidden"), svT.querySelector("i").classList.toggle("rotate-180")
     });
+
+    // Close Megamenus on Click (Desktop)
+    ['products-menu-container', 'services-menu-container'].forEach(id => {
+        const container = document.getElementById(id);
+        if (container) {
+            const dropdown = container.querySelector('.absolute');
+            if (dropdown) {
+                container.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        dropdown.style.display = 'none';
+                        setTimeout(() => dropdown.style.display = '', 100);
+                    });
+                });
+            }
+        }
+    });
+
     const o = document.getElementById("navbar"),
         n = document.getElementById("nav-container"),
         i = document.getElementById("top-bar"),

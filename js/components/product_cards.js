@@ -1,3 +1,4 @@
+
 const heavyMachinery = [
         {
             title: "Bar Cutting Machine",

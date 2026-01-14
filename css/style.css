@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Masque';
     /* Ensure the file name matches exactly (case-sensitive on some servers) */
-    src: url('Assets/Fonts/masque.ttf') format('truetype');
+    src: url('../Assets/Fonts/masque.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -288,8 +288,8 @@ a, button, input, select, textarea {
     transform: scale(1.05); /* Slightly larger to create border effect */
     
     /* Mask to the logo shape */
-    -webkit-mask-image: url('Assets/Others/logo.png');
-    mask-image: url('Assets/Others/logo.png');
+    -webkit-mask-image: url('../Assets/Others/logo.png');
+    mask-image: url('../Assets/Others/logo.png');
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-repeat: no-repeat;

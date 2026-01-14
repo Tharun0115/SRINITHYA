@@ -33,14 +33,18 @@ The website is a static HTML/CSS/JavaScript application designed to showcase pro
 /
 ├── index.html                  # Homepage (Landing page)
 ├── about.html                  # About Us page
+├── css/                        # Stylesheets
+│   └── style.css
+├── js/                         # JavaScript Logic & Components
+│   ├── navbar.js
+│   ├── footer.js
+│   ├── product_renderer.js
+│   └── ... (other scripts)
+├── scripts/                    # Utility/Build scripts
+│   └── convert_images.js
 ├── Assets/                     # Images and icons
 │   ├── logo.png
-│   ├── bar_cutter.png
-│   ├── bar_bender.png
-│   ├── scrap_straightener.png
-│   ├── srp.png
-│   ├── electrical_vibrator.png
-│   └── md.png
+│   └── ...
 └── Product_details/            # Individual product category pages
     ├── bar_cutting_models.html
     ├── bar_bending_models.html

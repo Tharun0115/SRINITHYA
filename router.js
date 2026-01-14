@@ -77,7 +77,10 @@ async function loadPage(url, scroll = true) {
         }
         
         // Re-initialize other components (Carousel, Home cards)
-        reinitPageComponents();
+        // Use setTimeout to ensure DOM is fully updated before querying elements
+        setTimeout(() => {
+            reinitPageComponents();
+        }, 200);
 
         // 4. Update Navbar Links (Fix relative paths)
         if (window.updateNavbarLinks) {

@@ -12,7 +12,7 @@ try {
     process.exit(1);
 }
 
-const assetsDir = path.join(__dirname, 'Assets');
+const assetsDir = path.join(__dirname, '../Assets');
 
 console.log(`Scanning directory: ${assetsDir}...`);
 

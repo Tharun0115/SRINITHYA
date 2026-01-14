@@ -11,16 +11,16 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet"></noscript>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind-config.js"></script>
+    <script src="js/config/tailwind-config.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
-    <link rel="stylesheet" href="style.css">
-    <script src="navbar.js" defer></script>
-    <script src="router.js" defer></script>
-    <script src="whatsapp.js" defer></script>
-    <script src="product_data.js" defer></script>
-    <script src="product_renderer.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/components/navbar.js" defer></script>
+    <script src="js/core/router.js" defer></script>
+    <script src="js/components/whatsapp.js" defer></script>
+    <script src="js/data/product_data.js" defer></script>
+    <script src="js/components/product_renderer.js" defer></script>
 </head>
 <body class="text-gray-800 font-sans">
 
@@ -117,7 +117,7 @@
     </section>
     </main>
 
-    <script src="footer.js" defer></script>
+    <script src="js/components/footer.js" defer></script>
 
     <!-- Image Viewer Modal -->
     <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()" role="dialog" aria-modal="true" aria-label="Image Viewer">
@@ -127,7 +127,7 @@
         </div>
     </div>
 
-    <script src="search.js" defer></script>
+    <script src="js/core/search.js" defer></script>
 
     <script>
         // --- Image Modal Logic ---
