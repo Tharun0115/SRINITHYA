@@ -211,7 +211,7 @@
                             </div>
                             <div>
                                 <label for="company" class="sr-only">Company Name</label>
-                                <input id="company" type="text" placeholder="Company Name" name="company name" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
+                                <input id="company" type="text" placeholder="Company Name" name="company_name" class="p-3 border rounded w-full focus:outline-none focus:border-secondary placeholder-gray-500 text-gray-800">
                             </div>
                         </div>
                         <div class="mb-4">
@@ -271,12 +271,14 @@
         }
 
         // Contact Form Submission with UI Feedback
-        const contactForm = document.getElementById('contact-form');
-        const submitBtn = document.getElementById('inquiry-submit-btn');
-
-        if(contactForm && submitBtn) {
-            contactForm.addEventListener('submit', function(event) {
+        // Use event delegation to handle form submission even after SPA navigation
+        document.addEventListener('submit', function(event) {
+            if (event.target && event.target.id === 'contact-form') {
                 event.preventDefault();
+                
+                const contactForm = event.target;
+                const submitBtn = document.getElementById('inquiry-submit-btn');
+                if (!submitBtn) return;
 
                 // Validate Email Format if entered
                 const emailInput = document.getElementById('user_email');
@@ -317,7 +319,7 @@
                     return;
                 }
 
-                emailjs.sendForm(serviceID, templateID, this)
+                emailjs.sendForm(serviceID, templateID, contactForm)
                     .then(() => {
                         submitBtn.innerHTML = `<span class="flex items-center justify-center"><i class="fa-solid fa-check mr-2"></i> Sent Successfully!</span>`;
                         submitBtn.classList.remove('bg-primary');
@@ -334,8 +336,8 @@
                         submitBtn.classList.add('bg-red-600');
                         console.error('EmailJS Error:', JSON.stringify(err));
                     });
-            });
-        }
+            }
+        });
 
     </script>
     <script src="js/components/navbar.js"></script>

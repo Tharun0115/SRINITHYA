@@ -40,7 +40,15 @@ async function loadPage(url, scroll = true) {
     if (loader) loader.style.display = 'flex'; // Show loader briefly
 
     try {
-        const response = await fetch(url);
+        let fetchUrl = url;
+        let targetId = '';
+        if (url.indexOf('#') !== -1) {
+            const parts = url.split('#');
+            fetchUrl = parts[0];
+            targetId = parts[1];
+        }
+
+        const response = await fetch(fetchUrl);
         const html = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
@@ -110,7 +118,21 @@ async function loadPage(url, scroll = true) {
         }
 
         if (scroll) {
-            window.scrollTo(0, 0);
+            if (targetId) {
+                setTimeout(() => {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    } else {
+                        window.scrollTo(0, 0);
+                    }
+                }, 100);
+            } else {
+                window.scrollTo(0, 0);
+            }
         }
 
     } catch (error) {

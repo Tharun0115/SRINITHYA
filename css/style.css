@@ -350,29 +350,6 @@ a, button, input, select, textarea {
 .toast.error { border-left: 4px solid #ef4444; background: rgba(17, 24, 39, 0.95); }
 .toast.info { border-left: 4px solid #d97706; }
 
-/* --- FAQ Accordion --- */
-.faq-content-wrapper {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease-out;
-}
-
-.faq-item.active .faq-content-wrapper {
-    grid-template-rows: 1fr;
-}
-
-.faq-content {
-    overflow: hidden;
-}
-
-.faq-icon {
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-icon {
-    transform: rotate(180deg);
-}
-
 /* Ensure product card action buttons are always visible */
 .product-actions-container {
     opacity: 1 !important;

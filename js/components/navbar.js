@@ -557,24 +557,6 @@ function initScrollSpy() {
     });
 }
 
-// --- FAQ Accordion Logic ---
-window.toggleFaq = function(button) {
-    const item = button.closest('.faq-item');
-    if (!item) return;
-    
-    // Optional: Close other open items in the same container (True Accordion behavior)
-    const container = item.parentElement;
-    if (container) {
-        container.querySelectorAll('.faq-item').forEach(other => {
-            if (other !== item && other.classList.contains('active')) {
-                other.classList.remove('active');
-            }
-        });
-    }
-    
-    item.classList.toggle('active');
-};
-
 function initNavbar() {
     const t = document.getElementById("mobile-menu-button"),
         e = document.getElementById("mobile-menu");
