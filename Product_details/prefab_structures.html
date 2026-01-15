@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prefabricated Structures - Portable Office Cabins, Shipping Containers, and FRP Toilets by Srinithya Engineering.">
+    <title>Prefab Structures | SEPL</title>
+    <link rel="icon" type="image/png" href="../Assets/Others/logo.png">
+    
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/config/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="../js/core/router.js" defer></script>
+    <script src="../js/core/cart.js" defer></script>
+    <script src="../js/components/whatsapp.js" defer></script>
+    <script src="../js/components/product_renderer.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+        <div id="loader-logo-container">
+            <div class="relative">
+                <div class="logo-light-container"><div class="logo-light-spinner"></div></div>
+                <img src="../Assets/Others/logo.png" alt="Loading..." class="relative z-20 w-full h-auto drop-shadow-2xl">
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <section class="pt-28 md:pt-40 pb-8 bg-primary text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-tech-grid opacity-20"></div>
+            <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">Prefabricated Structures</h1>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">High-quality, durable, and completely customizable solutions for your site needs.</p>
+                <div class="mt-4 inline-block bg-secondary/20 border border-secondary/50 rounded-lg px-6 py-2 backdrop-blur-sm">
+                    <p class="text-secondary font-semibold"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Note: All structures are completely customizable according to your needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <div id="prefab-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Products will be rendered here via JS -->
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Define data locally for this specific page
+            const prefabProducts = [
+                {
+                    name: "Portable Office Cabins",
+                    image: "../Assets/Product Images/prefab_office.png", // Ensure this image exists or use placeholder
+                    description: "Ready-to-use site offices with insulation, electrical fittings, and durable build.",
+                    specs: [
+                        { text: "Custom Dimensions" },
+                        { text: "Insulated Walls" },
+                        { text: "Electrical Ready" }
+                    ],
+                    actions: [{ type: 'enquire' }]
+                },
+                {
+                    name: "New/Used Shipping Containers",
+                    image: "../Assets/Product Images/shipping_container.png",
+                    description: "Heavy-duty containers suitable for storage, site offices, or modification.",
+                    specs: [
+                        { text: "20ft & 40ft Options" },
+                        { text: "Weather Resistant" },
+                        { text: "Secure Locking" }
+                    ],
+                    actions: [{ type: 'enquire' }]
+                },
+                {
+                    name: "Portable Toilet (FRP)",
+                    image: "../Assets/Product Images/frp_toilet.png",
+                    description: "Hygienic, lightweight, and easy-to-clean FRP toilets for construction sites.",
+                    specs: [
+                        { text: "FRP Material" },
+                        { text: "Easy Maintenance" },
+                        { text: "Water Tank Option" }
+                    ],
+                    actions: [{ type: 'enquire' }]
+                }
+            ];
+
+            // Render the cards
+            document.addEventListener('DOMContentLoaded', () => {
+                if (window.renderProductCards) {
+                    window.renderProductCards('prefab-grid', prefabProducts);
+                }
+            });
+        </script>
+    </main>
+
+    <script src="../js/components/navbar.js"></script>
+    <script src="../js/core/search.js"></script>
+    <script src="../js/components/footer.js"></script>
+</body>
+</html>

@@ -511,9 +511,9 @@ window.showToast = function(message, type = 'success') {
     container.appendChild(toast);
 
     // Trigger animation
-    requestAnimationFrame(() => {
+    setTimeout(() => {
         toast.classList.add('show');
-    });
+    }, 10);
 
     // Remove after 3 seconds
     setTimeout(() => {
@@ -645,12 +645,6 @@ function initNavbar() {
 }
 document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", emptyCartModalHTML), document.body.insertAdjacentHTML("beforeend", nameInputModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation(), initScrollSpy();
-    const t = document.getElementById("brand-wrapper");
-    if (t) {
-        const e = window.location.pathname,
-            a = e.split("/").pop();
-        (e.includes("Product_details") || e.includes("Service_details")) ? t.href = "../index.html" : "index.html" !== a && "" !== a && "/" !== e || "./" !== rootPath || (t.removeAttribute("href"), t.style.cursor = "default", t.setAttribute("aria-current", "page"))
-    }
 });
 
 // Loader Logic

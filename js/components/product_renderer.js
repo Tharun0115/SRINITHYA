@@ -30,7 +30,8 @@ window.createProductCard = function(product) {
             return `<button onclick="addToCart(${params})" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm" aria-label="Add ${action.name} to Estimate"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add</button>`;
         }
         if (action.type === 'enquire') {
-            return `<button class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Enquire about ${product.name}">Enquire</button>`;
+            const safeName = product.name.replace(/'/g, "\\'");
+            return `<button onclick="initiateSingleProductEnquiry('${safeName}')" class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Enquire about ${product.name}">Enquire</button>`;
         }
         if (action.type === 'enquire-link') {
             return `<a href="${rootPath}${action.href}" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto text-xs md:text-sm" aria-label="Enquire now about ${product.name}"><i class="fa-solid fa-headset" aria-hidden="true"></i> Enquire</a>`;

@@ -168,7 +168,23 @@ function renderCart() {
     container.innerHTML = html;
 }
 
+let pendingEnquiryProduct = null;
+
+window.initiateSingleProductEnquiry = function(productName) {
+    pendingEnquiryProduct = productName;
+    const modal = document.getElementById('name-input-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        const input = document.getElementById('whatsapp-name-input');
+        if (input) {
+            input.focus();
+            validateNameInput(); // Validate on open to ensure button is disabled
+        }
+    }
+}
+
 function sendRequirementToWhatsapp() {
+    pendingEnquiryProduct = null; // Reset to ensure we are sending cart
     if (cart.length === 0) {
         if (typeof openEmptyCartModal === 'function') {
             openEmptyCartModal();
@@ -215,15 +231,23 @@ window.confirmSendWhatsapp = function() {
         return;
     }
 
-    let message = `Hi Srinithya! I am ${userName} and I am sending this message from your website, we have requirement for the items below:\n`;
-    cart.forEach((item, index) => {
-        message += `${index + 1}. ${item.name} - ${item.qty}Nos\n`;
-    });
+    let message = "";
+    if (pendingEnquiryProduct) {
+        // Single Product Enquiry
+        message = `Hi There, I am "${userName}" we have requirement of ${pendingEnquiryProduct}.`;
+    } else {
+        // Cart Enquiry
+        message = `Hi Srinithya! I am ${userName} and I am sending this message from your website, we have requirement for the items below:\n`;
+        cart.forEach((item, index) => {
+            message += `${index + 1}. ${item.name} - ${item.qty}Nos\n`;
+        });
+    }
 
     const phoneNumber = "919032069819";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     
+    pendingEnquiryProduct = null; // Reset
     closeNameInputModal();
 }
 

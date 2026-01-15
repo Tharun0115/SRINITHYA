@@ -157,6 +157,14 @@ const lightEquipment = [
             description: "High-quality vibration needles for various applications.",
             features: ["Handy & Hand-Held Needles", "Mechanical Needles"],
             link: "Product_details/mechanical_poker_models.html"
+        },
+        {
+            title: "Prefab. Structures",
+            image: "./Assets/Product Images/prefab_structure.png",
+            imageWebp: "./Assets/Product Images/prefab_structure.webp",
+            description: "Customizable portable cabins, containers, and toilets.",
+            features: ["Portable Office Cabins", "Shipping Containers", "FRP Toilets"],
+            link: "Product_details/prefab_structures.html"
         }
     ];
 
@@ -240,6 +248,10 @@ function createHomeProductCard(product) {
 function renderHomeCards() {
     const heavyContainer = document.getElementById('heavy-machinery-grid');
     const lightContainer = document.getElementById('light-machinery-grid');
+    
+    if (!heavyContainer && !lightContainer) return;
+
+    let contentUpdated = false;
 
     const processContainer = (container, data) => {
         if (container && !container.hasAttribute('data-rendered')) {
@@ -250,14 +262,15 @@ function renderHomeCards() {
             container.style.opacity = '1';
             container.style.transform = 'none';
             container.classList.add('is-visible');
+            contentUpdated = true;
         }
     };
 
     processContainer(heavyContainer, heavyMachinery);
     processContainer(lightContainer, lightEquipment);
 
-    // Re-attach observers for animations if needed
-    if (!heavyContainer && !lightContainer) return;
+    // Only setup animations if content was actually updated (prevents double-reset glitch)
+    if (!contentUpdated) return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

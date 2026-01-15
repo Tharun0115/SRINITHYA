@@ -320,11 +320,13 @@ a, button, input, select, textarea {
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10000;
+    z-index: 100000;
     display: flex;
     flex-direction: column;
     gap: 10px;
     pointer-events: none;
+    max-width: 90vw;
+    align-items: center;
 }
 
 .toast {
@@ -343,6 +345,19 @@ a, button, input, select, textarea {
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     pointer-events: auto;
     backdrop-filter: blur(4px);
+}
+
+@media (max-width: 640px) {
+    .toast-container {
+        bottom: 16px;
+        max-width: 80vw;
+    }
+    .toast {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        gap: 5px;
+        width: fit-content;
+    }
 }
 
 .toast.show { opacity: 1; transform: translateY(0); }
