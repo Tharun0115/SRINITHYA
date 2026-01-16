@@ -1,5 +1,5 @@
-
-const heavyMachinery = [
+(function() {
+    const heavyMachinery = [
         {
             title: "Bar Cutting Machine",
             image: "./Assets/Product Images/sbc.png",
@@ -168,7 +168,7 @@ const lightEquipment = [
         }
     ];
 
-function createHomeProductCard(product) {
+    function createHomeProductCard(product) {
         const isProductPage = window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/');
         const rootPath = isProductPage ? '../' : './';
         
@@ -245,7 +245,7 @@ function createHomeProductCard(product) {
         `;
     }
 
-function renderHomeCards() {
+    window.renderHomeCards = function() {
     const heavyContainer = document.getElementById('heavy-machinery-grid');
     const lightContainer = document.getElementById('light-machinery-grid');
     
@@ -262,6 +262,10 @@ function renderHomeCards() {
             container.style.opacity = '1';
             container.style.transform = 'none';
             container.classList.add('is-visible');
+            
+            // Remove fade-in class from children to prevent double animation issues
+            container.classList.remove('fade-in-section');
+            
             contentUpdated = true;
         }
     };
@@ -288,30 +292,18 @@ function renderHomeCards() {
     
     // Force check immediately in case elements are already in view
     setTimeout(() => {
-        window.dispatchEvent(new Event('scroll'));
         // Fallback: Force visibility if observer fails to trigger
-        setTimeout(() => {
-            document.querySelectorAll('.fade-in-section:not(.is-visible)').forEach(el => el.classList.add('is-visible'));
-        }, 300);
+        document.querySelectorAll('.fade-in-section:not(.is-visible)').forEach(el => {
+            el.classList.add('is-visible');
+            el.style.opacity = '1'; // Hard fallback
+        });
     }, 100);
 }
 
-// 1. Run immediately on load
-document.addEventListener('DOMContentLoaded', renderHomeCards);
+    // Expose for manual calls if needed (Router compatibility)
+    window.initProductCards = window.renderHomeCards;
 
-// 2. Run automatically whenever the DOM changes (e.g., Router navigation)
-const homeCardObserver = new MutationObserver((mutations) => {
-    // If we find the containers, try to render
-    if (document.getElementById('heavy-machinery-grid') || document.getElementById('light-machinery-grid')) {
-        renderHomeCards();
-    }
-});
-homeCardObserver.observe(document.body, { childList: true, subtree: true });
-
-// 3. Expose for manual calls if needed (Router compatibility)
-window.initProductCards = renderHomeCards;
-
-const CarouselManager = {
+    const CarouselManager = {
     isRunning: false,
     animationFrameId: null,
 
@@ -443,20 +435,23 @@ const CarouselManager = {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderHomeCards();
-    CarouselManager.start();
-});
+    // Expose CarouselManager globally
+    window.CarouselManager = CarouselManager;
 
-window.addEventListener('pageshow', () => {
-    // Ensure loop is running when page is shown (handles back/forward cache)
-    CarouselManager.start();
-});
-
-document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') {
+    // Initialization Logic
+    function init() {
+        window.renderHomeCards();
         CarouselManager.start();
-    } else {
-        CarouselManager.stop();
     }
-});
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    window.addEventListener('pageshow', () => CarouselManager.start());
+    document.addEventListener('visibilitychange', () => {
+        document.visibilityState === 'visible' ? CarouselManager.start() : CarouselManager.stop();
+    });
+})();

@@ -3,11 +3,23 @@
  * Save this file as compare.js in your root folder.
  */
 
-const COMPARE_STORAGE_KEY = 'srinithya_compare_storage';
+// Prevent redeclaration error if script is loaded multiple times by router
+if (window.COMPARE_SCRIPT_LOADED) {
+    // If already loaded, just update the bar for the new page content
+    if (typeof window.updateCompareBar === 'function') {
+        window.updateCompareBar();
+    }
+} else {
+    window.COMPARE_SCRIPT_LOADED = true;
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-   updateCompareBar();
-});
+var COMPARE_STORAGE_KEY = 'srinithya_compare_storage';
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => updateCompareBar());
+} else {
+    updateCompareBar();
+}
  
 function getStorageData() {
     try {

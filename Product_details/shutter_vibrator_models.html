@@ -113,6 +113,43 @@
             
         </div>
     </section>
+
+    <!-- Compare Bar -->
+    <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center">
+                        <span class="font-bold text-lg">Compare Models</span>
+                        <span id="compare-count" class="ml-2 bg-secondary text-white text-sm font-bold w-6 h-6 flex items-center justify-center rounded-full">0</span>
+                    </div>
+                    <button onclick="clearCompare()" class="text-gray-300 hover:text-white" title="Clear Selection">&times; Clear</button>
+                </div>
+                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>
+                    Compare Now
+                </button>
+            </div>
+            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800">
+                <!-- Preview items will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Compare Modal -->
+    <div id="compare-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
+            <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
+                <h2 class="text-2xl font-bold">Compare Shutter Vibrators</h2>
+                <button onclick="closeCompareModal()" aria-label="Close comparison modal" class="text-white hover:text-red-200 text-3xl">&times;</button>
+            </div>
+            <div id="compare-modal-body" class="p-6 overflow-y-auto">
+                <!-- Comparison table will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Link the Universal Compare Script -->
+    <script src="../js/core/compare.js"></script>
     </main>
     
     <footer class="bg-dark text-gray-300 py-12 border-t border-gray-800">
@@ -154,43 +191,6 @@
         </div>
     </footer>
 
-    <!-- Compare Bar -->
-    <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-center mb-3">
-                <div class="flex items-center gap-4">
-                    <div class="flex items-center">
-                        <span class="font-bold text-lg">Compare Models</span>
-                        <span id="compare-count" class="ml-2 bg-secondary text-white text-sm font-bold w-6 h-6 flex items-center justify-center rounded-full">0</span>
-                    </div>
-                    <button onclick="clearCompare()" class="text-gray-300 hover:text-white" title="Clear Selection">&times; Clear</button>
-                </div>
-                <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>
-                    Compare Now
-                </button>
-            </div>
-            <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800">
-                <!-- Preview items will be injected here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Compare Modal -->
-    <div id="compare-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
-            <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
-                <h2 class="text-2xl font-bold">Compare Shutter Vibrators</h2>
-                <button onclick="closeCompareModal()" aria-label="Close comparison modal" class="text-white hover:text-red-200 text-3xl">&times;</button>
-            </div>
-            <div id="compare-modal-body" class="p-6 overflow-y-auto">
-                <!-- Comparison table will be injected here -->
-            </div>
-        </div>
-    </div>
-
-    <script src="../js/core/compare.js"></script>
-    <script src="../js/core/search.js" defer></script>
-
     <!-- Image Viewer Modal -->
     <div id="image-modal" class="fixed inset-0 z-[80] hidden bg-black bg-opacity-80 flex items-center justify-center p-4" onclick="closeImageModal()">
         <div class="relative max-w-4xl max-h-full" onclick="event.stopPropagation()">
@@ -199,9 +199,6 @@
         </div>
     </div>
 
-    
-        <!-- Link the Universal Compare Script -->
-    <script src="../js/core/compare.js"></script>
     <script src="../js/core/cart.js"></script>
     <script src="../js/core/search.js"></script>
     <script src="../js/components/footer.js" defer></script>

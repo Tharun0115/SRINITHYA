@@ -83,38 +83,39 @@ async function loadPage(url, scroll = true) {
             // or ensure dependencies are ready.
             // Since product_data.js and renderer are likely in head or cached, it should be fine.
             document.body.appendChild(newScript);
-            // Remove immediately after execution to keep DOM clean
-            document.body.removeChild(newScript);
+            
+            // Only remove inline scripts immediately. External scripts need time to load.
+            if (!newScript.src) {
+                newScript.remove();
+            } else {
+                // Optional: Remove after load to keep DOM clean, or just leave it.
+                newScript.addEventListener('load', () => newScript.remove());
+                newScript.addEventListener('error', () => newScript.remove());
+            }
         });
 
-        // 3a. Re-initialize Page Components (Critical for Homepage Cards)
-        // Explicitly trigger product rendering for the new page content
-        if (window.autoRenderProducts) {
-            window.autoRenderProducts();
-        }
-        
-        // Re-initialize other components (Carousel, Home cards)
+        // The MutationObservers in product_renderer.js and product_cards.js will handle re-rendering.
+        // We only need to manually re-initialize components that don't use an observer.
         setTimeout(() => {
-            // initProductCards is the function exposed by the homepage script
-            if (typeof window.initProductCards === 'function') {
-                window.initProductCards();
-            }
+            // Explicitly trigger home page card rendering if the function exists
+            if (window.initProductCards) window.initProductCards();
+
             if (window.CarouselManager && typeof window.CarouselManager.start === 'function') {
                 window.CarouselManager.start();
             }
         }, 50);
 
-        // 4. Update Navbar Links (Fix relative paths)
+        // 4. Update Navbar & Footer (which are outside the main content)
         if (window.updateNavbarLinks) {
             window.updateNavbarLinks();
         }
-
-        // 5. Re-initialize specific UI components if needed
-        if (window.initFooter) window.initFooter(); // Ensure footer events are attached if any
-        
-        // Re-attach compare bar logic if it exists in new content
-        if (typeof window.updateCompareBar === 'function') {
-            window.updateCompareBar();
+        // Remove old footer if it exists, then re-initialize
+        const existingFooter = document.querySelector('footer');
+        if (existingFooter) {
+            existingFooter.remove();
+        }
+        if (window.initFooter) {
+            window.initFooter();
         }
 
         if (scroll) {

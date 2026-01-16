@@ -119,8 +119,6 @@
             <div id="concrete-buckets-grid" data-product-key="concrete-pouring-buckets" class="grid grid-cols-2 gap-3 md:gap-6"></div>
             </div>
     </section>
-    </main>
-    
     <!-- Compare Bar -->
     <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
         <div class="max-w-7xl mx-auto">
@@ -157,6 +155,8 @@
 
     <!-- Link the Universal Compare Script -->
     <script src="../js/core/compare.js"></script>
+    </main>
+
     <script src="../js/components/footer.js"></script>
     <script src="../js/core/cart.js"></script>
     <script src="../js/core/search.js"></script>
@@ -164,32 +164,5 @@
     <script src="../js/data/product_data.js"></script>
     <script src="../js/components/product_renderer.js"></script>
 
-    <script>
-        // --- Image Modal Logic ---
-        const imageModal = document.getElementById('image-modal');
-        const modalImage = document.getElementById('modal-image');
-
-        function openImageModal(src) {
-            if (imageModal && modalImage) {
-                modalImage.src = src;
-                imageModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
-        }
-
-        function closeImageModal() {
-            if (imageModal) {
-                imageModal.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scrolling
-            }
-        }
-
-        // Close modal on escape key press
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && !imageModal.classList.contains('hidden')) {
-                closeImageModal();
-            }
-        });
-    </script>
 </body>
 </html>

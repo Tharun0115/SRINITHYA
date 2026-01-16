@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet"></noscript>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../tailwind-config.js"></script>
+    <script src="../js/config/tailwind-config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -75,12 +75,40 @@
             <div id="dewatering-pump-grid" data-product-key="dewatering-pump" class="grid grid-cols-2 gap-3 md:gap-8 max-w-5xl mx-auto"></div>
             
         </div>
+
+        <!-- Compare Bar -->
+        <div id="compare-bar" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 shadow-lg transform translate-y-full transition-transform duration-300 z-50 hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center">
+                            <span class="font-bold text-lg">Compare Models</span>
+                            <span id="compare-count" class="ml-2 bg-secondary text-white text-sm font-bold w-6 h-6 flex items-center justify-center rounded-full">0</span>
+                        </div>
+                        <button onclick="clearCompare()" class="text-gray-300 hover:text-white" title="Clear Selection">&times; Clear</button>
+                    </div>
+                    <button id="compare-now-btn" onclick="showCompareModal()" class="bg-white text-primary hover:bg-gray-100 font-bold py-2 px-6 rounded transition disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed" disabled>Compare Now</button>
+                </div>
+                <div id="compare-items-preview" class="flex flex-wrap items-center gap-2 pt-3 border-t border-blue-800"></div>
+            </div>
+        </div>
+
+        <!-- Compare Modal -->
+        <div id="compare-modal" class="fixed inset-0 z-[90] hidden bg-black bg-opacity-70 flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col">
+                <div class="p-4 border-b flex justify-between items-center bg-primary text-white">
+                    <h2 class="text-xl font-bold">Compare Products</h2>
+                    <button onclick="closeCompareModal()" class="text-white hover:text-red-200 text-3xl">&times;</button>
+                </div>
+                <div id="compare-modal-body" class="p-6 overflow-y-auto"></div>
+            </div>
+        </div>
     </section>
+    <!-- Link the Universal Compare Script -->
+    <script src="../js/core/compare.js"></script>
     </main>
     
-    <!-- Link the Universal Compare Script -->
     <script src="../js/core/cart.js"></script>
-    <script src="../js/core/compare.js"></script>
     <script src="../js/core/search.js"></script>
     <script src="../js/components/footer.js" defer></script>
     <script src="../js/components/whatsapp.js" defer></script>

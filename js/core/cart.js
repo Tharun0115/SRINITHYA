@@ -10,16 +10,19 @@ function saveCart() {
 }
 
 function updateCartBadge() {
-    const badge = document.getElementById('cart-badge');
-    if (badge) {
-        const count = cart.reduce((acc, item) => acc + item.qty, 0);
-        if (count > 0) {
-            badge.textContent = count;
-            badge.classList.remove('hidden');
-        } else {
-            badge.classList.add('hidden');
+    const count = cart.reduce((acc, item) => acc + item.qty, 0);
+    
+    ['cart-badge', 'mobile-cart-badge'].forEach(id => {
+        const badge = document.getElementById(id);
+        if (badge) {
+            if (count > 0) {
+                badge.textContent = count;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
         }
-    }
+    });
 }
 
 function addToCart(name) {

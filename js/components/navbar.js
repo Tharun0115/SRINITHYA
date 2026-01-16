@@ -246,7 +246,13 @@ const rootPath = getRootPath(),
                     </div>
                 </div>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
-                <button onclick="toggleCart()" class="block w-full text-left text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">View Selection Tray</button>
+                <button onclick="toggleCart()" class="w-full flex items-center justify-between text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">
+                    <span>View Selection Tray</span>
+                    <div class="relative mr-2">
+                        <i class="fa-solid fa-shopping-cart text-xl"></i>
+                        <span id="mobile-cart-badge" class="absolute -top-2 -right-2 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </div>
+                </button>
             </div>
         </div>
     </nav>
@@ -456,37 +462,41 @@ function initSmoothScroll() {
 }
 
 function initCartAnimation() {
-    const badge = document.getElementById('cart-badge');
-    if (!badge) return;
+    const badges = ['cart-badge', 'mobile-cart-badge'];
+    
+    badges.forEach(id => {
+        const badge = document.getElementById(id);
+        if (!badge) return;
 
-    // Find the icon relative to the badge
-    const cartBtn = badge.closest('button');
-    const icon = cartBtn ? cartBtn.querySelector('i') : null;
+        // Find the icon relative to the badge (works for both desktop button and mobile div wrapper)
+        const wrapper = badge.parentElement.closest('button') || badge.parentElement;
+        const icon = wrapper ? wrapper.querySelector('i') : null;
 
-    if (!icon) return;
+        if (!icon) return;
 
-    const observer = new MutationObserver((mutations) => {
-        let triggered = false;
-        for (const m of mutations) {
-            if (m.type === 'childList' || (m.type === 'attributes' && m.attributeName === 'class')) {
-                if (!badge.classList.contains('hidden')) {
-                    triggered = true;
-                    break;
+        const observer = new MutationObserver((mutations) => {
+            let triggered = false;
+            for (const m of mutations) {
+                if (m.type === 'childList' || (m.type === 'attributes' && m.attributeName === 'class')) {
+                    if (!badge.classList.contains('hidden')) {
+                        triggered = true;
+                        break;
+                    }
                 }
             }
-        }
 
-        if (triggered) {
+            if (triggered) {
+                icon.classList.remove('cart-animate');
+                void icon.offsetWidth; // Trigger reflow to restart animation
+                icon.classList.add('cart-animate');
+            }
+        });
+
+        observer.observe(badge, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+        
+        icon.addEventListener('animationend', () => {
             icon.classList.remove('cart-animate');
-            void icon.offsetWidth; // Trigger reflow to restart animation
-            icon.classList.add('cart-animate');
-        }
-    });
-
-    observer.observe(badge, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
-    
-    icon.addEventListener('animationend', () => {
-        icon.classList.remove('cart-animate');
+        });
     });
 }
 

@@ -55,11 +55,12 @@
         </section>
 
         <script>
+            (function() {
             // Define data locally for this specific page
             const prefabProducts = [
                 {
                     name: "Portable Office Cabins",
-                    image: "../Assets/Product Images/prefab_office.png", // Ensure this image exists or use placeholder
+                    image: "./Assets/Product Images/prefab_office.png", // Ensure this image exists or use placeholder
                     description: "Ready-to-use site offices with insulation, electrical fittings, and durable build.",
                     specs: [
                         { text: "Custom Dimensions" },
@@ -70,7 +71,7 @@
                 },
                 {
                     name: "New/Used Shipping Containers",
-                    image: "../Assets/Product Images/shipping_container.png",
+                    image: "./Assets/Product Images/shipping_container.png",
                     description: "Heavy-duty containers suitable for storage, site offices, or modification.",
                     specs: [
                         { text: "20ft & 40ft Options" },
@@ -81,7 +82,7 @@
                 },
                 {
                     name: "Portable Toilet (FRP)",
-                    image: "../Assets/Product Images/frp_toilet.png",
+                    image: "./Assets/Product Images/frp_toilet.png",
                     description: "Hygienic, lightweight, and easy-to-clean FRP toilets for construction sites.",
                     specs: [
                         { text: "FRP Material" },
@@ -93,11 +94,18 @@
             ];
 
             // Render the cards
-            document.addEventListener('DOMContentLoaded', () => {
+            function render() {
                 if (window.renderProductCards) {
                     window.renderProductCards('prefab-grid', prefabProducts);
                 }
-            });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', render);
+            } else {
+                render();
+            }
+            })();
         </script>
     </main>
 
