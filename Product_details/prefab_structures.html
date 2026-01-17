@@ -18,6 +18,7 @@
     <script src="../js/core/router.js" defer></script>
     <script src="../js/core/cart.js" defer></script>
     <script src="../js/components/whatsapp.js" defer></script>
+    <script src="../js/data/product_data.js"></script>
     <script src="../js/components/product_renderer.js" defer></script>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -48,65 +49,11 @@
 
         <section class="py-16">
             <div class="max-w-7xl mx-auto px-4">
-                <div id="prefab-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div id="prefab-grid" data-product-key="prefabStructures" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Products will be rendered here via JS -->
                 </div>
             </div>
         </section>
-
-        <script>
-            (function() {
-            // Define data locally for this specific page
-            const prefabProducts = [
-                {
-                    name: "Portable Office Cabins",
-                    image: "./Assets/Product Images/prefab_office.png", // Ensure this image exists or use placeholder
-                    description: "Ready-to-use site offices with insulation, electrical fittings, and durable build.",
-                    specs: [
-                        { text: "Custom Dimensions" },
-                        { text: "Insulated Walls" },
-                        { text: "Electrical Ready" }
-                    ],
-                    actions: [{ type: 'enquire' }]
-                },
-                {
-                    name: "New/Used Shipping Containers",
-                    image: "./Assets/Product Images/shipping_container.png",
-                    description: "Heavy-duty containers suitable for storage, site offices, or modification.",
-                    specs: [
-                        { text: "20ft & 40ft Options" },
-                        { text: "Weather Resistant" },
-                        { text: "Secure Locking" }
-                    ],
-                    actions: [{ type: 'enquire' }]
-                },
-                {
-                    name: "Portable Toilet (FRP)",
-                    image: "./Assets/Product Images/frp_toilet.png",
-                    description: "Hygienic, lightweight, and easy-to-clean FRP toilets for construction sites.",
-                    specs: [
-                        { text: "FRP Material" },
-                        { text: "Easy Maintenance" },
-                        { text: "Water Tank Option" }
-                    ],
-                    actions: [{ type: 'enquire' }]
-                }
-            ];
-
-            // Render the cards
-            function render() {
-                if (window.renderProductCards) {
-                    window.renderProductCards('prefab-grid', prefabProducts);
-                }
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', render);
-            } else {
-                render();
-            }
-            })();
-        </script>
     </main>
 
     <script src="../js/components/navbar.js"></script>

@@ -948,5 +948,40 @@ window.productData = {
             compare: { model: "Hydraulic Scissor Lift", category: "scissor-lifts", height: "6m - 14m", capacity: "300kg - 500kg", operation: "Battery / Electric" },
             actions: [{ type: 'cart', name: 'Hydraulic Scissor Lift' }]
         }
+    ],
+    'prefabStructures': [
+        {
+            name: "Portable Office Cabins",
+            image: "./Assets/Product Images/cabin.png",
+            description: "Ready-to-use site offices with insulation, electrical fittings, and durable build.",
+            specs: [
+                { text: "Custom Dimensions" },
+                { text: "Insulated Walls" },
+                { text: "Electrical Ready" }
+            ],
+            actions: [{ type: 'enquire' }]
+        },
+        {
+            name: "New/Used Shipping Containers",
+            image: "./Assets/Product Images/container.png",
+            description: "Heavy-duty containers suitable for storage, site offices, or modification.",
+            specs: [
+                { text: "20ft & 40ft Options" },
+                { text: "Weather Resistant" },
+                { text: "Secure Locking" }
+            ],
+            actions: [{ type: 'enquire' }]
+        },
+        {
+            name: "Portable Toilet (FRP)",
+            image: "./Assets/Product Images/toilet.png",
+            description: "Hygienic, lightweight, and easy-to-clean FRP toilets for construction sites.",
+            specs: [
+                { text: "FRP Material" },
+                { text: "Easy Maintenance" },
+                { text: "Water Tank Option" }
+            ],
+            actions: [{ type: 'enquire' }]
+        }
     ]
 };

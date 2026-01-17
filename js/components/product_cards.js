@@ -160,8 +160,8 @@ const lightEquipment = [
         },
         {
             title: "Prefab. Structures",
-            image: "./Assets/Product Images/prefab_structure.png",
-            imageWebp: "./Assets/Product Images/prefab_structure.webp",
+            image: ["./Assets/Product Images/cabin.png", "./Assets/Product Images/container.png", "./Assets/Product Images/toilet.png"],
+            imageWebp: ["./Assets/Product Images/cabin.webp", "./Assets/Product Images/container.webp", "./Assets/Product Images/toilet.webp"],
             description: "Customizable portable cabins, containers, and toilets.",
             features: ["Portable Office Cabins", "Shipping Containers", "FRP Toilets"],
             link: "Product_details/prefab_structures.html"
