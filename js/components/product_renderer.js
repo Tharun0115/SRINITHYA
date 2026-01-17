@@ -7,9 +7,14 @@ window.createProductCard = function(product) {
     const rootPath = (window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/')) ? '../' : './';
 
     // Generate data attributes for the compare functionality
-    const compareDataAttributes = product.compare ? Object.entries(product.compare)
+    let compareDataAttributes = product.compare ? Object.entries(product.compare)
         .map(([key, value]) => `data-${key.replace(/([A-Z])/g, '-$1').toLowerCase()}="${value}"`)
         .join(' ') : '';
+
+    // Ensure category is present for compare logic
+    if (product.category && (!product.compare || !product.compare.category)) {
+        compareDataAttributes += ` data-category="${product.category}"`;
+    }
 
     // Generate badge if it exists
     const badgeHTML = product.badge ? `<span class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-2 py-1 rounded">${product.badge}</span>` : '';
@@ -84,10 +89,32 @@ window.renderProductCards = function(containerId, products) {
     const container = document.getElementById(containerId);
     if (container && products && Array.isArray(products)) {
         container.innerHTML = products.map(createProductCard).join('');
-        // After rendering cards, update the compare bar to find the new checkboxes and category.
-        if (typeof window.updateCompareBar === 'function') {
-            window.updateCompareBar();
+        
+        // Check if any product has compare data
+        const hasCompare = products.some(p => p.compare);
+
+        if (hasCompare) {
+            // After rendering cards, update the compare bar to find the new checkboxes and category.
+            if (typeof window.updateCompareBar === 'function') {
+                window.updateCompareBar();
+            } else {
+                // Dynamically load compare.js if it's missing (Router navigation case)
+                const rootPath = (window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/')) ? '../' : './';
+                const script = document.createElement('script');
+                script.src = `${rootPath}js/core/compare.js`;
+                script.onload = () => {
+                    if (typeof window.updateCompareBar === 'function') {
+                        window.updateCompareBar();
+                        // Also dispatch event after script load to be sure
+                        window.dispatchEvent(new Event('products-rendered'));
+                    }
+                };
+                document.body.appendChild(script);
+            }
         }
+
+        // Announce that products have been rendered so other components (like Compare Bar) can sync
+        window.dispatchEvent(new Event('products-rendered'));
     }
 };
 

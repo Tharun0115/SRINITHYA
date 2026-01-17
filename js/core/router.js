@@ -100,10 +100,23 @@ async function loadPage(url, scroll = true) {
             // Explicitly trigger home page card rendering if the function exists
             if (window.initProductCards) window.initProductCards();
 
+            // Ensure dynamic product cards are rendered (in case data loaded after DOM swap)
+            if (window.autoRenderProducts) window.autoRenderProducts();
+
             if (window.CarouselManager && typeof window.CarouselManager.start === 'function') {
                 window.CarouselManager.start();
             }
-        }, 50);
+
+            // Notify components that navigation and rendering are complete
+            window.dispatchEvent(new Event('router:navigation-complete'));
+
+            // Explicitly re-initialize Compare Logic
+            if (typeof window.initCompare === 'function') {
+                window.initCompare();
+            } else if (typeof window.updateCompareBar === 'function') {
+                window.updateCompareBar();
+            }
+        }, 300);
 
         // 4. Update Navbar & Footer (which are outside the main content)
         if (window.updateNavbarLinks) {
