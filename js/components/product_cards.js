@@ -26,7 +26,7 @@
         },
         {
             title: "Suspended Scaffold Solution",
-            image: ["./Assets/Product Images/srp.jpg", "./Assets/Product Images/srp2.webp"],
+            image: ["./Assets/Product Images/srp.png", "./Assets/Product Images/srp2.webp"],
             imageWebp: ["./Assets/Product Images/srp.webp", "./Assets/Product Images/srp2.webp"],
             description: "Customizable high-safety suspended platforms for facade work.",
             features: ["Model: ZLP800", "Customizable Platform Size", "Adjustable Rope Length"],
@@ -34,8 +34,8 @@
         },
         {
             title: "Road Rollers",
-            image: ["./Assets/Product Images/srr.png", "./Assets/Product Images/swr.png"],
-            imageWebp: ["./Assets/Product Images/srr.webp", "./Assets/Product Images/swr.webp"],
+            image: ["./Assets/Product Images/srr.png", "./Assets/Product Images/swr.png", "./Assets/Product Images/swr fh.png"],
+            imageWebp: ["./Assets/Product Images/srr.webp", "./Assets/Product Images/swr.webp", "./Assets/Product Images/swr fh.webp"],
             description: "Ride-on and Walk-behind rollers for road construction.",
             features: ["Ride-on & Walk-behind", "Heavy Duty Compaction"],
             link: "Product_details/road_roller_models.html"
