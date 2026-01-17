@@ -185,7 +185,7 @@ window.productData = {
             {
                 model: "SHM 1200",
                 name: "Handy Vibrator Motor 1200W",
-                image: "./Assets/Product Images/shm800.png",
+                image: "./Assets/Product Images/shm1200.png",
                 description: "Versatile 1200W motor for general concrete vibration.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 1200 W" },
@@ -198,7 +198,7 @@ window.productData = {
             {
                 model: "SHM 1600",
                 name: "Handy Vibrator Motor 1600W",
-                image: "./Assets/Product Images/shm800.png",
+                image: "./Assets/Product Images/shm1600.png",
                 description: "High-performance 1600W motor for demanding tasks.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 1600 W" },

@@ -144,8 +144,8 @@ const lightEquipment = [
         },
         {
             title: "Handy Vibrator Solution",
-            image: "./Assets/Product Images/shm800.png",
-            imageWebp: "./Assets/Product Images/shm800.webp",
+            image: ["./Assets/Product Images/shm800.png", "./Assets/Product Images/shm1200.png", "./Assets/Product Images/shm1600.png"],
+            imageWebp: ["./Assets/Product Images/shm800.webp", "./Assets/Product Images/shm1200.webp", "./Assets/Product Images/shm1600.webp"],
             description: "Portable and efficient vibration solutions.",
             features: ["Hand Held Motors", "800W - 1600W Options"],
             link: "Product_details/handy_vibration_models.html"
