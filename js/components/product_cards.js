@@ -301,7 +301,9 @@ const lightEquipment = [
 }
 
     // Expose for manual calls if needed (Router compatibility)
-    window.initProductCards = window.renderHomeCards;
+    window.initProductCards = function() {
+        window.renderHomeCards();
+    };
 
     const CarouselManager = {
     isRunning: false,
@@ -440,7 +442,7 @@ const lightEquipment = [
 
     // Initialization Logic
     function init() {
-        window.renderHomeCards();
+        window.initProductCards();
         CarouselManager.start();
     }
 

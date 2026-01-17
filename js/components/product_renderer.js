@@ -189,3 +189,53 @@ document.addEventListener('keydown', function (event) {
         closeImageModal();
     }
 });
+
+// --- Page Specific Logic: Handy Vibrators ---
+// This ensures the layout is injected and data is pulled from product_data.js
+(function() {
+    window.initHandyVibratorPage = function() {
+        if (window.location.pathname.includes('handy_vibration_models.html')) {
+            const mainContainer = document.querySelector('main .max-w-7xl') || document.querySelector('.max-w-7xl.mx-auto.px-4.py-12');
+            
+            if (mainContainer && !document.getElementById('hv-standard')) {
+                // Hide any existing static grids to avoid duplication
+                const existingGrids = mainContainer.querySelectorAll('.grid');
+                existingGrids.forEach(g => g.style.display = 'none');
+
+                const html = `
+                    <div class="animate-fade-in-up">
+                        <div class="mb-12">
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 flex items-center gap-3 border-b pb-2 border-gray-200">
+                                <i class="fa-solid fa-bolt text-secondary"></i> Standard Handy Vibrators
+                            </h2>
+                            <div id="hv-standard" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-product-key="handy-vibration-models.standard"></div>
+                        </div>
+                        
+                        <div class="mb-12">
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 flex items-center gap-3 border-b pb-2 border-gray-200">
+                                <i class="fa-solid fa-wave-square text-secondary"></i> High Frequency Hand-Held Vibrator
+                            </h2>
+                            <div id="hv-hf" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-product-key="handy-vibration-models.highFrequency"></div>
+                        </div>
+                    </div>
+                `;
+                mainContainer.insertAdjacentHTML('beforeend', html);
+                
+                // Trigger auto-render to fill the new containers using data from product_data.js
+                if (typeof window.autoRenderProducts === 'function') {
+                    window.autoRenderProducts();
+                }
+            }
+        }
+    };
+
+    // Initialize on load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', window.initHandyVibratorPage);
+    } else {
+        window.initHandyVibratorPage();
+    }
+
+    // Initialize on Router navigation
+    window.addEventListener('router:navigation-complete', window.initHandyVibratorPage);
+})();

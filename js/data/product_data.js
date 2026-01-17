@@ -167,60 +167,64 @@ window.productData = {
             actions: [{ type: 'cart', name: '3 Inch Dewatering Pump' }]
         }
     ],
-    'handy-vibration-models': [
-        {
-            model: "SHHM Hand Held",
-            name: "High Frequency - Hand Held Motor",
-            image: "./Assets/electrical_vibrator.png",
-            description: "Powerful hand-held motor for high frequency applications.",
-            specs: [
-                { icon: "fa-solid fa-bolt", text: "Power: 2300 W" },
-                { icon: "fa-solid fa-gauge-high", text: "Speed: 16000 rpm" },
-                { icon: "fa-solid fa-weight-hanging", text: "Weight: 5.8 kg" }
-            ],
-            compare: { model: "SHHM Hand Held", category: "handy-vibrators", power: "2300 W", speed: "16000 rpm", weight: "5.8 kg" },
-            actions: [{ type: 'cart', name: 'High Frequency Hand Held Motor' }]
-        },
-        {
-            model: "SHM 800",
-            name: "Handy Vibrator Motor 800W",
-            image: "./Assets/electrical_vibrator.png",
-            description: "Compact 800W motor for light duty tasks.",
-            specs: [
-                { icon: "fa-solid fa-bolt", text: "Power: 800 W" },
-                { icon: "fa-solid fa-gauge-high", text: "Speed: 4200 rpm" },
-                { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
-            ],
-            compare: { model: "SHM 800", category: "handy-vibrators", power: "800 W", speed: "4200 rpm", voltage: "220V" },
-            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 800W' }]
-        },
-        {
-            model: "SHM 1200",
-            name: "Handy Vibrator Motor 1200W",
-            image: "./Assets/electrical_vibrator.png",
-            description: "Versatile 1200W motor for general concrete vibration.",
-            specs: [
-                { icon: "fa-solid fa-bolt", text: "Power: 1200 W" },
-                { icon: "fa-solid fa-gauge-high", text: "Speed: 4300 rpm" },
-                { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
-            ],
-            compare: { model: "SHM 1200", category: "handy-vibrators", power: "1200 W", speed: "4300 rpm", voltage: "220V" },
-            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 1200W' }]
-        },
-        {
-            model: "SHM 1600",
-            name: "Handy Vibrator Motor 1600W",
-            image: "./Assets/electrical_vibrator.png",
-            description: "High-performance 1600W motor for demanding tasks.",
-            specs: [
-                { icon: "fa-solid fa-bolt", text: "Power: 1600 W" },
-                { icon: "fa-solid fa-gauge-high", text: "Speed: 4600 rpm" },
-                { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
-            ],
-            compare: { model: "SHM 1600", category: "handy-vibrators", power: "1600 W", speed: "4600 rpm", voltage: "220V" },
-            actions: [{ type: 'cart', name: 'Handy Vibrator Motor 1600W' }]
-        }
-    ],
+    'handy-vibration-models': {
+        standard: [
+            {
+                model: "SHM 800",
+                name: "Handy Vibrator Motor 800W",
+                image: "./Assets/Product Images/shm800.png",
+                description: "Compact 800W motor for light duty tasks.",
+                specs: [
+                    { icon: "fa-solid fa-bolt", text: "Power: 800 W" },
+                    { icon: "fa-solid fa-gauge-high", text: "Speed: 4200 rpm" },
+                    { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
+                ],
+                compare: { model: "SHM 800", category: "handy-vibrators", power: "800 W", speed: "4200 rpm", voltage: "220V" },
+                actions: [{ type: 'cart', name: 'Handy Vibrator Motor 800W' }]
+            },
+            {
+                model: "SHM 1200",
+                name: "Handy Vibrator Motor 1200W",
+                image: "./Assets/Product Images/shm800.png",
+                description: "Versatile 1200W motor for general concrete vibration.",
+                specs: [
+                    { icon: "fa-solid fa-bolt", text: "Power: 1200 W" },
+                    { icon: "fa-solid fa-gauge-high", text: "Speed: 4300 rpm" },
+                    { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
+                ],
+                compare: { model: "SHM 1200", category: "handy-vibrators", power: "1200 W", speed: "4300 rpm", voltage: "220V" },
+                actions: [{ type: 'cart', name: 'Handy Vibrator Motor 1200W' }]
+            },
+            {
+                model: "SHM 1600",
+                name: "Handy Vibrator Motor 1600W",
+                image: "./Assets/Product Images/shm800.png",
+                description: "High-performance 1600W motor for demanding tasks.",
+                specs: [
+                    { icon: "fa-solid fa-bolt", text: "Power: 1600 W" },
+                    { icon: "fa-solid fa-gauge-high", text: "Speed: 4600 rpm" },
+                    { icon: "fa-solid fa-plug", text: "Voltage: 220V" }
+                ],
+                compare: { model: "SHM 1600", category: "handy-vibrators", power: "1600 W", speed: "4600 rpm", voltage: "220V" },
+                actions: [{ type: 'cart', name: 'Handy Vibrator Motor 1600W' }]
+            }
+        ],
+        highFrequency: [
+            {
+                model: "SHHM Hand Held",
+                name: "High Frequency Hand-Held Vibrator",
+                image: "./Assets/Product Images/hand-held.png",
+                description: "Powerful hand-held motor for high frequency applications.",
+                specs: [
+                    { icon: "fa-solid fa-bolt", text: "Power: 2300 W" },
+                    { icon: "fa-solid fa-gauge-high", text: "Speed: 16000 rpm" },
+                    { icon: "fa-solid fa-weight-hanging", text: "Weight: 5.8 kg" }
+                ],
+                compare: { model: "SHHM Hand Held", category: "handy-vibrators", power: "2300 W", speed: "16000 rpm", weight: "5.8 kg" },
+                actions: [{ type: 'cart', name: 'High Frequency Hand Held Motor' }]
+            }
+        ]
+    },
     'high-frequency-converter-models': [
         {
             model: "SHFC 35",
