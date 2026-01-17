@@ -57,10 +57,10 @@ const rootPath = getRootPath(),
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
                 <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer min-w-0" id="brand-wrapper">
-                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-9 md:h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
+                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-7 md:h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden pl-0 pr-1 py-1 flex-grow text-center transition-all duration-300 ease-in-out min-w-0" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
-                        <span class="text-[clamp(8px,2.5vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap drop-shadow-sm block mb-0 md:mb-2 leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="text-[clamp(9px,3.1vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap drop-shadow-sm block mb-0 md:mb-2 leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
                         <div class="hidden md:block absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
@@ -95,9 +95,9 @@ const rootPath = getRootPath(),
                     </div>
                 </a>
                 
-                <div class="md:hidden flex items-center flex-shrink-0 ml-2">
+                <div class="md:hidden flex items-center flex-shrink-0 ml-1">
                     <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none p-1">
-                        <i class="fa-solid fa-bars text-xl"></i>
+                        <i class="fa-solid fa-bars text-lg"></i>
                     </button>
                 </div>
                 </div>
@@ -620,13 +620,13 @@ function initNavbar() {
             n.classList.add("md:flex", "md:flex-row", "md:items-center", "md:justify-between");
             i.classList.remove("py-2");
             i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0");
-            r.classList.remove("h-9", "md:h-16");
-            r.classList.add("h-8");
+            r.classList.remove("h-7", "md:h-16");
+            r.classList.add("h-6");
             l.classList.remove("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
             l.classList.add("ml-2", "text-left");
             c.classList.add("opacity-0");
-            d.classList.remove("text-[clamp(8px,2.5vw,30px)]", "md:mb-2", "leading-none");
-            d.classList.add("text-[clamp(8px,2.3vw,24px)]", "leading-tight");
+            d.classList.remove("text-[clamp(9px,3.1vw,30px)]", "md:mb-2", "leading-none");
+            d.classList.add("text-[clamp(9px,3.0vw,24px)]", "leading-tight");
             m.classList.remove("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.add("py-1", "flex-shrink-0", "text-sm");
         } else {
@@ -636,13 +636,13 @@ function initNavbar() {
             n.classList.remove("md:flex", "md:flex-row", "md:items-center", "md:justify-between");
             i.classList.add("py-2");
             i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0");
-            r.classList.add("h-9", "md:h-16");
-            r.classList.remove("h-8");
+            r.classList.add("h-7", "md:h-16");
+            r.classList.remove("h-6");
             l.classList.add("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
             l.classList.remove("ml-2", "text-left");
             c.classList.remove("opacity-0");
-            d.classList.add("text-[clamp(8px,2.5vw,30px)]", "md:mb-2", "leading-none");
-            d.classList.remove("text-[clamp(8px,2.3vw,24px)]", "leading-tight");
+            d.classList.add("text-[clamp(9px,3.1vw,30px)]", "md:mb-2", "leading-none");
+            d.classList.remove("text-[clamp(9px,3.0vw,24px)]", "leading-tight");
             m.classList.add("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.remove("py-1", "flex-shrink-0", "text-sm");
         }
