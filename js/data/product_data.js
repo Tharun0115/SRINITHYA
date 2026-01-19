@@ -502,57 +502,71 @@ window.productData = {
     ],
     'plate-compactor-models': [
         {
-            model: "PC-80",
-            name: "PC-80 (Light Duty)",
-            image: "./Assets/plate_compactor.png",
-            description: "Ideal for walkways, small patches, and general light repair work. Forward travel only.",
+            model: "SFPC-2P",
+            name: "SFPC-2P",
+            image: "./Assets/Product Images/sfpc-2p.png",
+            description: "Hydraulic system for superior deep compaction and smooth directional changes.",
             specs: [
-                { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 80 kg" },
-                { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 15 kN" },
-                { icon: "fa-solid fa-gas-pump", text: "Engine: 5.5 HP Petrol" }
+                { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 90 kg" },
+                { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 40 kN" },
+                { icon: "fa-solid fa-gas-pump", text: "Power: 2 HP Petrol" }
             ],
-            compare: { model: "PC-80", category: "plate-compactors", weight: "80 kg", force: "15 kN", engine: "5.5 HP Petrol", feature: "-" },
-            actions: [{ type: 'cart', name: 'PC-80' }]
+            compare: { model: "SFPC-2P", category: "plate-compactors", weight: "90 kg", force: "40 kN", power: "2 HP Petrol", feature: "-" },
+            actions: [{ type: 'cart', name: 'SFPC-2P' }]
         },
         {
-            model: "PC-150",
-            name: "PC-150 (Medium Duty)",
-            image: "./Assets/plate_compactor.png",
+            model: "SFPC-5D",
+            name: "SFPC-5D",
+            image: "./Assets/Product Images/sfpc-5d.png",
+            description: "Ideal for walkways, small patches, and general light repair work. Forward travel only.",
+            specs: [
+                { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 100 kg" },
+                { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 15 kN" },
+                { icon: "fa-solid fa-gas-pump", text: "Power: 5 HP Diesel" }
+            ],
+            compare: { model: "SFPC-5D", category: "plate-compactors", weight: "100 kg", force: "15 kN", power: "5 HP Diesel", feature: "-" },
+            actions: [{ type: 'cart', name: 'SFPC-5D' }]
+        },
+        {
+            model: "SFPC-5E",
+            name: "SPFC-5E",
+            image: "./Assets/Product Images/sfpc-5e.png",
             description: "Higher compaction depth suitable for medium bases, gravel, and utility trenches.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 150 kg" },
                 { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 25 kN" },
-                { icon: "fa-solid fa-engine", text: "Engine: 8 HP Diesel" }
+                { icon: "fa-solid fa-gas-pump", text: "Power: 5 HP Electrical" }
             ],
-            compare: { model: "PC-150", category: "plate-compactors", weight: "150 kg", force: "25 kN", engine: "8 HP Diesel", feature: "-" },
-            actions: [{ type: 'cart', name: 'PC-150' }]
+            compare: { model: "SFPC-5E", category: "plate-compactors", weight: "150 kg", force: "25 kN", power: "5 HP Electrical", feature: "-" },
+            actions: [{ type: 'cart', name: 'SFPC-5E' }]
         },
+
         {
-            model: "PC-250R",
-            name: "PC-250R (Reversible)",
-            image: "./Assets/plate_compactor.png",
+            model: "SRPC-3D",
+            name: "SRPC-3D (Reversible)",
+            image: "./Assets/Product Images/srpc-3d.png",
             description: "Reversible control for maximum maneuverability in confined backfill areas and trenches.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 250 kg" },
                 { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 35 kN" },
-                { icon: "fa-solid fa-gas-pump", text: "Engine: 10 HP Petrol/Diesel" }
+                { icon: "fa-solid fa-gas-pump", text: "Power: 5 HP Diesel" }
             ],
-            compare: { model: "PC-250R", category: "plate-compactors", weight: "250 kg", force: "35 kN", engine: "10 HP Petrol/Diesel", feature: "Reversible" },
-            actions: [{ type: 'cart', name: 'PC-250R' }]
+            compare: { model: "SRPC-3D", category: "plate-compactors", weight: "250 kg", force: "35 kN", power: "5 HP Diesel", feature: "Reversible" },
+            actions: [{ type: 'cart', name: 'SRPC-3D' }]
         },
         {
-            model: "PC-300H",
-            name: "PC-300H (High Force)",
-            image: "./Assets/plate_compactor.png",
-            description: "Hydraulic system for superior deep compaction and smooth directional changes.",
+            model: "SRPC-3E",
+            name: "SRPC-3E (Reversible)",
+            image: "./Assets/Product Images/srpc-3e.png",
+            description: "System for superior deep compaction and smooth directional changes.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 300 kg" },
                 { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 40 kN" },
-                { icon: "fa-solid fa-engine", text: "Feature: Hydraulic Reversible" }
+                { icon: "fa-solid fa-gas-pump", text: "Power: 5 HP Electrical" }
             ],
-            compare: { model: "PC-300H", category: "plate-compactors", weight: "300 kg", force: "40 kN", engine: "-", feature: "Hydraulic Reversible" },
-            actions: [{ type: 'cart', name: 'PC-300H' }]
-        }
+            compare: { model: "SRPC-3E", category: "plate-compactors", weight: "300 kg", force: "40 kN", power: "5 HP Electrical", feature: "Reversible", feature: "Hydraulic Reversible" },
+            actions: [{ type: 'cart', name: 'SRPC-3E' }]
+        },
     ],
     'portable-bar-processing-models': {
         benders: [
@@ -951,6 +965,66 @@ window.productData = {
             ],
             compare: { model: "Hydraulic Scissor Lift", category: "scissor-lifts", height: "6m - 14m", capacity: "300kg - 500kg", operation: "Battery / Electric" },
             actions: [{ type: 'cart', name: 'Hydraulic Scissor Lift' }]
+        }
+    ],
+    'repair-services': [
+        {
+            name: "On-Site Repair",
+            icon: "fa-solid fa-gears",
+            description: "Expert technicians dispatched to your location for immediate repairs.",
+            actions: [{ type: 'repair', name: 'On-Site Repair' }]
+        },
+        {
+            name: "Workshop Service",
+            icon: "fa-solid fa-gears",
+            description: "Comprehensive servicing and overhauling at our fully equipped workshop.",
+            actions: [{ type: 'repair', name: 'Workshop Service' }]
+        },
+        {
+            name: "Spare Parts Replacement",
+            icon: "fa-solid fa-gears",
+            description: "Genuine spare parts replacement for all major construction equipment brands.",
+            actions: [{ type: 'repair', name: 'Spare Parts' }]
+        }
+    ],
+    'rental-services': [
+        {
+            name: "Bar Bender",
+            icon: "fa-solid fa-truck-ramp-box",
+            description: "Rent bar benders, cutters, and rollers for your heavy construction needs.",
+            actions: [{ type: 'rent', name: 'Bar Bender' }]
+        },
+        {
+            name: "Bar Cutter",
+            icon: "fa-solid fa-truck-ramp-box",
+            description: "Compactors, vibrators, and mixers available for daily or weekly rent.",
+            actions: [{ type: 'rent', name: 'Bar Cutter' }]
+        },
+        {
+            name: "Walk Behind Roller",
+            icon: "fa-solid fa-truck-ramp-box",
+            description: "Suspended platforms and material lifts available for rent.",
+            actions: [{ type: 'rent', name: 'Walk Behind Roller' }]
+        }
+    ],
+    'maintenance-services': [
+        {
+            name: "Preventive Maintenance",
+            icon: "fa-solid fa-screwdriver-wrench",
+            description: "Regular check-ups to prevent breakdowns and extend equipment life.",
+            actions: [{ type: 'enquire', name: 'Preventive Maintenance' }]
+        },
+        {
+            name: "Annual Maintenance Contract",
+            icon: "fa-solid fa-screwdriver-wrench",
+            description: "Cost-effective AMC packages for complete peace of mind.",
+            actions: [{ type: 'enquire', name: 'AMC' }]
+        },
+        {
+            name: "Emergency Support",
+            icon: "fa-solid fa-screwdriver-wrench",
+            description: "24/7 breakdown support to minimize project downtime.",
+            actions: [{ type: 'enquire', name: 'Emergency Support' }]
         }
     ],
     'prefabStructures': [

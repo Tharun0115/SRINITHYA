@@ -4,6 +4,8 @@
  * @returns {string} - The HTML string for the product card.
  */
 window.createProductCard = function(product) {
+    if (!product) return '';
+
     const rootPath = (window.location.pathname.includes('/Product_details/') || window.location.pathname.includes('/Service_details/')) ? '../' : './';
 
     // Generate data attributes for the compare functionality
@@ -35,8 +37,14 @@ window.createProductCard = function(product) {
             return `<button onclick="addToCart(${params})" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition text-xs md:text-sm" aria-label="Add ${action.name} to Estimate"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add</button>`;
         }
         if (action.type === 'enquire') {
-            const safeName = product.name.replace(/'/g, "\\'");
-            return `<button onclick="initiateSingleProductEnquiry('${safeName}')" class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Enquire about ${product.name}">Enquire</button>`;
+            const productName = product.name || 'Product';
+            const safeName = productName.replace(/'/g, "\\'");
+            return `<button onclick="initiateSingleProductEnquiry('${safeName}')" class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Enquire about ${productName}">Enquire</button>`;
+        }
+        if (action.type === 'rent') {
+            const productName = product.name || 'Product';
+            const safeName = productName.replace(/'/g, "\\'");
+            return `<button onclick="initiateSingleProductEnquiry('${safeName}')" class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Rent ${productName}">Rent Now</button>`;
         }
         if (action.type === 'enquire-link') {
             return `<a href="${rootPath}${action.href}" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto text-xs md:text-sm" aria-label="Enquire now about ${product.name}"><i class="fa-solid fa-headset" aria-hidden="true"></i> Enquire</a>`;
@@ -54,15 +62,25 @@ window.createProductCard = function(product) {
         </div>` : '';
 
     // Card classes and structure
-    const imageSrc = product.image.startsWith('http') ? product.image : rootPath + product.image.replace('./', '');
     const imageClass = product.imageClass || 'object-contain';
     const imageContainerClass = product.imageContainerClass || 'h-32 md:h-64';
     const cardWrapperClass = product.cardWrapperClass || 'bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.6)] transition-all duration-300 group flex flex-col';
 
+    let mediaHTML;
+    if (product.icon) {
+        mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50"><i class="${product.icon} text-6xl md:text-7xl text-gray-400 group-hover:text-secondary transition-colors duration-300"></i></div>`;
+    } else if (product.image && typeof product.image === 'string') {
+        const imageSrc = product.image.startsWith('http') ? product.image : rootPath + product.image.replace('./', '');
+        mediaHTML = `<img onclick="openImageModal('${imageSrc}')" src="${imageSrc}" alt="${product.name}" width="600" height="400" loading="lazy" decoding="async" class="w-full h-full ${imageClass} transition-transform duration-300 group-hover:scale-110 cursor-pointer">`;
+    } else {
+        // Fallback for items with neither image nor icon
+        mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50"><i class="fa-solid fa-image text-4xl text-gray-200"></i></div>`;
+    }
+
     return `
         <div class="${cardWrapperClass}" ${compareDataAttributes}>
             <div class="${imageContainerClass} bg-white flex items-center justify-center relative overflow-hidden">
-                <img onclick="openImageModal('${imageSrc}')" src="${imageSrc}" alt="${product.name}" width="600" height="400" loading="lazy" decoding="async" class="w-full h-full ${imageClass} transition-transform duration-300 group-hover:scale-110 cursor-pointer">
+                ${mediaHTML}
                 ${badgeHTML}
             </div>
             <div class="p-2 md:p-6 text-center flex flex-col flex-grow">
