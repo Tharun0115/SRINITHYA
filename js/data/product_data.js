@@ -143,7 +143,7 @@ window.productData = {
         {
             model: "2 Inch Dewatering Pump",
             name: "2 Inch Dewatering Pump",
-            image: "./Assets/electrical_vibrator.png",
+            image: "./Assets/Product Images/sdwp2.png",
             description: "Versatile pump for general dewatering tasks.",
             specs: [
                 { icon: "fa-solid fa-arrow-up-from-water-pump", text: "Discharge Diameter: 2 Inch" },
@@ -156,7 +156,7 @@ window.productData = {
         {
             model: "3 Inch Dewatering Pump",
             name: "3 Inch Dewatering Pump",
-            image: "./Assets/electrical_vibrator.png",
+            image: "./Assets/Product Images/sdwp3.png",
             description: "Higher capacity pump for faster water removal.",
             specs: [
                 { icon: "fa-solid fa-arrow-up-from-water-pump", text: "Discharge Diameter: 3 Inch" },
@@ -229,7 +229,7 @@ window.productData = {
         {
             model: "SHFC 35",
             name: "High Frequency Converter SHFC 35",
-            image: "./Assets/Others/logo.png",
+            image: "./Assets/Product Images/shfc35.png",
             description: "Compact converter designed for efficiency.",
             specs: [
                 { icon: "fa-solid fa-plug", text: "Outlets: 2 Outlet" },
@@ -241,7 +241,7 @@ window.productData = {
         {
             model: "SHFC90P",
             name: "High Frequency Converter SHFC90P",
-            image: "./Assets/Others/logo.png",
+            image: "./Assets/Product Images/shfc90.png",
             description: "Heavy-duty converter for multiple connections.",
             specs: [
                 { icon: "fa-solid fa-plug", text: "Outlets: 4 Outlet" },
@@ -311,7 +311,7 @@ window.productData = {
             {
                 model: "SHFN 60 (12Mtr)",
                 name: "SHFN 60 - 12Mtr Hose",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/shfn60_12m.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 58mm" },
@@ -348,7 +348,7 @@ window.productData = {
             {
                 model: "40MM Needle 12Mtr",
                 name: "40MM Needle - 12Mtr Hose",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/shfn40_12m.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
@@ -454,22 +454,22 @@ window.productData = {
     },
     'mechanical-poker-models': {
         handyNeedles: [
-            { model: "Handy Needle 25mm (3M)", name: "25MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Compact needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] },
-            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] },
-            { model: "Handy Needle 40mm (3M)", name: "40MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Standard size needle for general use.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] },
-            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] },
-            { model: "Handy Needle 60mm (3M)", name: "60MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Large diameter for heavy consolidation.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] },
-            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] }
+            { model: "Handy Needle 25mm (3M)", name: "25MM Needle (3Mtr)", image: "./Assets/Product Images/shp25_3m.png", description: "Compact needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] },
+            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/Product Images/shp25_6m.png", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] },
+            { model: "Handy Needle 40mm (3M)", name: "40MM Needle (3Mtr)", image: "./Assets/Product Images/shp40_3m.png", description: "Standard size needle for general use.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] },
+            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/Product Images/shp40_6m.png", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] },
+            { model: "Handy Needle 60mm (3M)", name: "60MM Needle (3Mtr)", image: "./Assets/Product Images/shp60_3m.png", description: "Large diameter for heavy consolidation.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] },
+            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/Product Images/shp60_6m.png", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] }
         ],
         handHeldNeedles: [
-            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/electrical_vibrator.png", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] },
-            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/electrical_vibrator.png", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] },
-            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/electrical_vibrator.png", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] }
+            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/Product Images/shhn25.png", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] },
+            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/Product Images/shhn40.png", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] },
+            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/Product Images/shhn60.png", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] }
         ],
         mechanicalNeedles: [
-            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/electrical_vibrator.png", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] },
-            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/electrical_vibrator.png", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] },
-            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/electrical_vibrator.png", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] }
+            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/Product Images/smp25.png", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] },
+            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/Product Images/smp40.png", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] },
+            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/Product Images/smp60.png", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] }
         ]
     },
     'mini-lift-models': [
@@ -502,54 +502,67 @@ window.productData = {
     ],
     'plate-compactor-models': [
         {
-            model: "PC-80",
-            name: "PC-80 (Light Duty)",
-            image: "./Assets/plate_compactor.png",
+            model: "SFPC-5E",
+            name: "SFPC-5E (Electric)",
+            image: "./Assets/Product Images/sfpc-5e.png",
             description: "Ideal for walkways, small patches, and general light repair work. Forward travel only.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 100 kg" },
                 { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 15 kN" },
-                { icon: "fa-solid fa-gas-pump", text: "Engine: 5.5 HP Petrol" }
+                { icon: "fa-solid fa-gas-pump", text: "Powered By: 5 HP Electrical Motor" }
             ],
             compare: { model: "PC-80", category: "plate-compactors", weight: "80 kg", force: "15 kN", engine: "5.5 HP Petrol", feature: "-" },
             actions: [{ type: 'cart', name: 'PC-80' }]
         },
         {
-            model: "PC-150",
-            name: "PC-150 (Medium Duty)",
-            image: "./Assets/plate_compactor.png",
+            model: "SFPC-5D",
+            name: "SFPC-5D (Diesel)",
+            image: "./Assets/Product Images/sfpc-5d.png",
             description: "Higher compaction depth suitable for medium bases, gravel, and utility trenches.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 150 kg" },
                 { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 25 kN" },
-                { icon: "fa-solid fa-engine", text: "Engine: 8 HP Diesel" }
+                { icon: "fa-solid fa-gas-pump", text: "Powered By: 5 HP Diesel Engine " }
             ],
             compare: { model: "PC-150", category: "plate-compactors", weight: "150 kg", force: "25 kN", engine: "8 HP Diesel", feature: "-" },
             actions: [{ type: 'cart', name: 'PC-150' }]
         },
 
         {
-            model: "PC-250R",
-            name: "PC-250R (Reversible)",
-            image: "./Assets/plate_compactor.png",
+            model: "SRPC-3E",
+            name: "SRPC-3E (Reversible Electric)",
+            image: "./Assets/Product Images/srpc-3e.png",
             description: "Reversible control for maximum maneuverability in confined backfill areas and trenches.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 250 kg" },
                 { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 35 kN" },
-                { icon: "fa-solid fa-gas-pump", text: "Engine: 10 HP Petrol/Diesel" }
+                { icon: "fa-solid fa-gas-pump", text: "Powered By: 5 HP Electrical Motor" }
             ],
             compare: { model: "PC-250R", category: "plate-compactors", weight: "250 kg", force: "35 kN", engine: "10 HP Petrol/Diesel", feature: "Reversible" },
             actions: [{ type: 'cart', name: 'PC-250R' }]
         },
         {
-            model: "PC-300H",
-            name: "PC-300H (High Force)",
-            image: "./Assets/plate_compactor.png",
+            model: "SRPC-3D",
+            name: "SRPC-3D (Diesel Reversible)",
+            image: "./Assets/Product Images/srpc-3d.png",
             description: "Hydraulic system for superior deep compaction and smooth directional changes.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 300 kg" },
                 { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 40 kN" },
-                { icon: "fa-solid fa-engine", text: "Feature: Hydraulic Reversible" }
+                { icon: "fa-solid fa-gas-pump", text: "Powered By: 5 HP Diesel Engine" }
+            ],
+            compare: { model: "PC-300H", category: "plate-compactors", weight: "300 kg", force: "40 kN", engine: "-", feature: "Hydraulic Reversible" },
+            actions: [{ type: 'cart', name: 'PC-300H' }]
+        },
+        {
+            model: "SFPC-2P",
+            name: "SFPC-2P (Petrol)",
+            image: "./Assets/Product Images/sfpc-2p.png",
+            description: "Hydraulic system for superior deep compaction and smooth directional changes.",
+            specs: [
+                { icon: "fa-solid fa-weight-hanging", text: "Operating Weight: 300 kg" },
+                { icon: "fa-solid fa-gauge-high", text: "Centrifugal Force: 40 kN" },
+                { icon: "fa-solid fa-gas-pump", text: "Powered By: 2 HP Petrol Engine" }
             ],
             compare: { model: "PC-300H", category: "plate-compactors", weight: "300 kg", force: "40 kN", engine: "-", feature: "Hydraulic Reversible" },
             actions: [{ type: 'cart', name: 'PC-300H' }]
