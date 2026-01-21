@@ -172,12 +172,25 @@ function renderCart() {
 }
 
 let pendingEnquiryProduct = null;
+let pendingEnquiryType = 'general';
 
 window.initiateSingleProductEnquiry = function(productName) {
+window.initiateSingleProductEnquiry = function(productName, type = 'general') {
     pendingEnquiryProduct = productName;
+    pendingEnquiryType = type;
     const modal = document.getElementById('name-input-modal');
     if (modal) {
         modal.classList.remove('hidden');
+        
+        const extraFields = document.getElementById('enquiry-extra-fields');
+        if (extraFields) {
+            if (type === 'repair') {
+                extraFields.classList.remove('hidden');
+            } else {
+                extraFields.classList.add('hidden');
+            }
+        }
+
         const input = document.getElementById('whatsapp-name-input');
         if (input) {
             input.focus();
@@ -219,6 +232,12 @@ window.closeNameInputModal = function() {
     const modal = document.getElementById('name-input-modal');
     if (modal) {
         modal.classList.add('hidden');
+        const daysInput = document.getElementById('enquiry-days');
+        const monthsInput = document.getElementById('enquiry-months');
+        if (daysInput) daysInput.value = '';
+        if (monthsInput) monthsInput.value = '';
+        const extraFields = document.getElementById('enquiry-extra-fields');
+        if (extraFields) extraFields.classList.add('hidden');
         const input = document.getElementById('whatsapp-name-input');
         if (input) input.value = ''; // Clear input
         validateNameInput(); // Re-disable button
@@ -238,6 +257,16 @@ window.confirmSendWhatsapp = function() {
     if (pendingEnquiryProduct) {
         // Single Product Enquiry
         message = `Hi There, I am "${userName}" we have requirement of ${pendingEnquiryProduct}.`;
+        
+        if (pendingEnquiryType === 'repair') {
+             const daysInput = document.getElementById('enquiry-days');
+             const monthsInput = document.getElementById('enquiry-months');
+             const days = daysInput ? daysInput.value : '';
+             const months = monthsInput ? monthsInput.value : '';
+             if (days || months) {
+                 message += ` Duration: ${days ? days + ' Days ' : ''}${months ? months + ' Months' : ''}`;
+             }
+        }
     } else {
         // Cart Enquiry
         message = `Hi Srinithya! I am ${userName} and I am sending this message from your website, we have requirement for the items below:\n`;
