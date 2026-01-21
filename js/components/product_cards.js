@@ -125,24 +125,24 @@ const lightEquipment = [
         },
         {
             title: "Dewatering Pumps",
-            image: ["./Assets/Product Images/sdwp2.png", "./Assets/Product Images/sdwp3.png"],
-            imageWebp: ["./Assets/Product Images/sdwp2.webp", "./Assets/Product Images/sdwp3.webp"],
+            image: "./Assets/Product Images/sdw.png",
+            imageWebp: "./Assets/Product Images/sdw.webp",
             description: "Submersible flexible shaft pumps for efficient water removal.",
             features: ["2 inch & 3 inch pumps", "Petrol/Diesel/Electric", "High Flow Rates"],
             link: "Product_details/dewatering_pump.html"
         },
         {
             title: "High Frequency Pokers",
-            image: ["./Assets/Product Images/shfn60_12m.png", "./Assets/Product Images/shfn40_12m.png"],
-            imageWebp: ["./Assets/Product Images/shfn60_12m.webp", "./Assets/Product Images/shfn40_12m.webp"],
+            image: "./Assets/Product Images/60hf.png",
+            imageWebp: "./Assets/Product Images/60hf.webp",
             description: "Internal concrete vibration needles for superior consolidation.",
             features: ["40mm & 60mm Diameters", "Hose lengths up to 12 meters", "Multiple Power Options"],
             link: "Product_details/high_frequency_poker_models.html"
         },
         {
             title: "High Frequency Converters",
-            image: ["./Assets/Product Images/shfc35.png", "./Assets/Product Images/shfc90.png"],
-            imageWebp: ["./Assets/Product Images/shfc35.webp", "./Assets/Product Images/shfc90.webp"],
+            image: "./Assets/Product Images/hfc.png",
+            imageWebp: "./Assets/Product Images/hfc.webp",
             description: "Reliable power conversion for high-frequency concrete vibrators.",
             features: ["2 & 4 Outlet Models", "Converts 415V to 42V/200Hz", "Robust Design"],
             link: "Product_details/high_frequency_converter_models.html"
@@ -157,8 +157,8 @@ const lightEquipment = [
         },
         {
             title: "Mechanical Pokers",
-            image: ["./Assets/Product Images/smp.png", "./Assets/Product Images/smp60.png", "./Assets/Product Images/shhn60.png", "./Assets/Product Images/shp60_6m.png"],
-            imageWebp: ["./Assets/Product Images/smp.webp"],
+            image: "./Assets/Product Images/smp.png",
+            imageWebp: "./Assets/Product Images/smp.webp",
             description: "High-quality vibration needles for various applications.",
             features: ["Handy & Hand-Held Needles", "Mechanical Needles", "Durable Construction"],
             link: "Product_details/mechanical_poker_models.html"

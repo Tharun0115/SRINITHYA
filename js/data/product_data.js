@@ -143,7 +143,7 @@ window.productData = {
         {
             model: "2 Inch Dewatering Pump",
             name: "2 Inch Dewatering Pump",
-            image: "./Assets/Product Images/sdwp2.png",
+            image: "./Assets/electrical_vibrator.png",
             description: "Versatile pump for general dewatering tasks.",
             specs: [
                 { icon: "fa-solid fa-arrow-up-from-water-pump", text: "Discharge Diameter: 2 Inch" },
@@ -156,7 +156,7 @@ window.productData = {
         {
             model: "3 Inch Dewatering Pump",
             name: "3 Inch Dewatering Pump",
-            image: "./Assets/Product Images/sdwp3.png",
+            image: "./Assets/electrical_vibrator.png",
             description: "Higher capacity pump for faster water removal.",
             specs: [
                 { icon: "fa-solid fa-arrow-up-from-water-pump", text: "Discharge Diameter: 3 Inch" },
@@ -229,7 +229,7 @@ window.productData = {
         {
             model: "SHFC 35",
             name: "High Frequency Converter SHFC 35",
-            image: "./Assets/Product Images/shfc35.png",
+            image: "./Assets/Others/logo.png",
             description: "Compact converter designed for efficiency.",
             specs: [
                 { icon: "fa-solid fa-plug", text: "Outlets: 2 Outlet" },
@@ -241,7 +241,7 @@ window.productData = {
         {
             model: "SHFC90P",
             name: "High Frequency Converter SHFC90P",
-            image: "./Assets/Product Images/shfc90.png",
+            image: "./Assets/Others/logo.png",
             description: "Heavy-duty converter for multiple connections.",
             specs: [
                 { icon: "fa-solid fa-plug", text: "Outlets: 4 Outlet" },
@@ -311,7 +311,7 @@ window.productData = {
             {
                 model: "SHFN 60 (12Mtr)",
                 name: "SHFN 60 - 12Mtr Hose",
-                image: "./Assets/Product Images/shfn60_12m.png",
+                image: "./Assets/electrical_vibrator.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 58mm" },
@@ -348,7 +348,7 @@ window.productData = {
             {
                 model: "40MM Needle 12Mtr",
                 name: "40MM Needle - 12Mtr Hose",
-                image: "./Assets/Product Images/shfn40_12m.png",
+                image: "./Assets/electrical_vibrator.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
@@ -455,21 +455,21 @@ window.productData = {
     'mechanical-poker-models': {
         handyNeedles: [
             { model: "Handy Needle 25mm (3M)", name: "25MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Compact needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] },
-            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/Product Images/shp25_6m.png", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] },
+            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] },
             { model: "Handy Needle 40mm (3M)", name: "40MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Standard size needle for general use.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] },
-            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/Product Images/shp40_6m.png", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] },
+            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] },
             { model: "Handy Needle 60mm (3M)", name: "60MM Needle (3Mtr)", image: "./Assets/electrical_vibrator.png", description: "Large diameter for heavy consolidation.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] },
-            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/Product Images/shp60_6m.png", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] }
+            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/electrical_vibrator.png", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] }
         ],
         handHeldNeedles: [
-            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/Product Images/shhn25.png", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] },
-            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/Product Images/shhn40.png", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] },
-            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/Product Images/shhn60.png", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] }
+            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/electrical_vibrator.png", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] },
+            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/electrical_vibrator.png", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] },
+            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/electrical_vibrator.png", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] }
         ],
         mechanicalNeedles: [
-            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/Product Images/smp25.png", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] },
-            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/Product Images/smp40.png", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] },
-            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/Product Images/smp60.png", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] }
+            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/electrical_vibrator.png", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] },
+            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/electrical_vibrator.png", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] },
+            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/electrical_vibrator.png", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] }
         ]
     },
     'mini-lift-models': [
