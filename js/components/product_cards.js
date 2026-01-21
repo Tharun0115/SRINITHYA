@@ -80,8 +80,8 @@ const lightEquipment = [
         },
         {
             title: "Plate Compactors",
-            image: ["./Assets/Product Images/sfpc.png", "./Assets/Product Images/srpc.png"],
-            imageWebp: ["./Assets/Product Images/sfpc.webp", "./Assets/Product Images/srpc.webp"],
+            image: ["./Assets/Product Images/sfpc-5e.png", "./Assets/Product Images/srpc-3d.png", "./Assets/Product Images/srpc-3e.png", "./Assets/Product Images/sfpc-2p.png", "./Assets/Product Images/sfpc-2p.png"],
+            imageWebp: ["./Assets/Product Images/sfpc-5e.webp", "./Assets/Product Images/srpc-3d.webp", "./Assets/Product Images/srpc-3e.webp", "./Assets/Product Images/sfpc-2p.webp", "./Assets/Product Images/sfpc-2p.webp"],
             description: "For soil, asphalt, and paving stone compaction.",
             features: ["Forward & Reversible", "Petrol & Diesel Engines"],
             link: "Product_details/plate_compactor_models.html"
@@ -120,24 +120,24 @@ const lightEquipment = [
         },
         {
             title: "Dewatering Pumps",
-            image: "./Assets/Product Images/sdw.png",
-            imageWebp: "./Assets/Product Images/sdw.webp",
+            image: ["./Assets/Product Images/sdwp2.png", "./Assets/Product Images/sdwp3.png"],
+            imageWebp: ["./Assets/Product Images/sdwp2.webp", "./Assets/Product Images/sdwp3.webp"],
             description: "Submersible flexible shaft pumps for efficient water removal.",
             features: ["2 inch & 3 inch pumps", "Petrol/Diesel/Electric"],
             link: "Product_details/dewatering_pump.html"
         },
         {
             title: "High Frequency Pokers",
-            image: "./Assets/Product Images/60hf.png",
-            imageWebp: "./Assets/Product Images/60hf.webp",
+            image: ["./Assets/Product Images/shfn60_12m.png", "./Assets/Product Images/shfn40_12m.png"],
+            imageWebp: ["./Assets/Product Images/shfn60_12m.webp", "./Assets/Product Images/shfn40_12m.webp"],
             description: "Internal concrete vibration needles for superior consolidation.",
             features: ["40mm & 60mm Diameters", "Hose lengths up to 12 meters"],
             link: "Product_details/high_frequency_poker_models.html"
         },
         {
             title: "High Frequency Converters",
-            image: "./Assets/Product Images/hfc.png",
-            imageWebp: "./Assets/Product Images/hfc.webp",
+            image: ["./Assets/Product Images/shfc35.png", "./Assets/Product Images/shfc90.png"],
+            imageWebp: ["./Assets/Product Images/shfc35.webp", "./Assets/Product Images/shfc90.webp"],
             description: "Reliable power conversion for high-frequency concrete vibrators.",
             features: ["2 & 4 Outlet Models", "Converts 415V to 42V/200Hz"],
             link: "Product_details/high_frequency_converter_models.html"
@@ -152,8 +152,8 @@ const lightEquipment = [
         },
         {
             title: "Mechanical Pokers",
-            image: "./Assets/Product Images/smp.png",
-            imageWebp: "./Assets/Product Images/smp.webp",
+            image: ["./Assets/Product Images/smp.png", "./Assets/Product Images/smp60.png", "./Assets/Product Images/shhn60.png", "./Assets/Product Images/shp60_6m.png"],
+            imageWebp: ["./Assets/Product Images/smp.webp"],
             description: "High-quality vibration needles for various applications.",
             features: ["Handy & Hand-Held Needles", "Mechanical Needles"],
             link: "Product_details/mechanical_poker_models.html"
