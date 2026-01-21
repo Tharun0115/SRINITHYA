@@ -454,22 +454,106 @@ window.productData = {
     },
     'mechanical-poker-models': {
         handyNeedles: [
-            { model: "Handy Needle 25mm (3M)", name: "25MM Needle (3Mtr)", image: "./Assets/Product Images/shp25_3m.png", description: "Compact needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] },
-            { model: "Handy Needle 25mm (6M)", name: "25MM Needle (6Mtr)", image: "./Assets/Product Images/shp25_6m.png", description: "Extended reach needle for handy vibrators.", actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] },
-            { model: "Handy Needle 40mm (3M)", name: "40MM Needle (3Mtr)", image: "./Assets/Product Images/shp40_3m.png", description: "Standard size needle for general use.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] },
-            { model: "Handy Needle 40mm (6M)", name: "40MM Needle (6Mtr)", image: "./Assets/Product Images/shp40_6m.png", description: "Long hose needle for deep pours.", actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] },
-            { model: "Handy Needle 60mm (3M)", name: "60MM Needle (3Mtr)", image: "./Assets/Product Images/shp60_3m.png", description: "Large diameter for heavy consolidation.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] },
-            { model: "Handy Needle 60mm (6M)", name: "60MM Needle (6Mtr)", image: "./Assets/Product Images/shp60_6m.png", description: "Maximum reach and power.", actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] }
+            { 
+                model: "Handy Needle 25mm (3M)", 
+                name: "25MM Needle (3Mtr)", 
+                image: "./Assets/Product Images/shp25_3m.png", 
+                description: "Compact needle for handy vibrators.", 
+                compare: { model: "Handy Needle 25mm (3M)", category: "mechanical-pokers", diameter: "25mm", length: "3 Meters", type: "Handy Needle" },
+                actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] 
+            },
+            { 
+                model: "Handy Needle 25mm (6M)", 
+                name: "25MM Needle (6Mtr)", 
+                image: "./Assets/Product Images/shp25_6m.png", 
+                description: "Extended reach needle for handy vibrators.", 
+                compare: { model: "Handy Needle 25mm (6M)", category: "mechanical-pokers", diameter: "25mm", length: "6 Meters", type: "Handy Needle" },
+                actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] 
+            },
+            { 
+                model: "Handy Needle 40mm (3M)", 
+                name: "40MM Needle (3Mtr)", 
+                image: "./Assets/Product Images/shp40_3m.png", 
+                description: "Standard size needle for general use.", 
+                compare: { model: "Handy Needle 40mm (3M)", category: "mechanical-pokers", diameter: "40mm", length: "3 Meters", type: "Handy Needle" },
+                actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] 
+            },
+            { 
+                model: "Handy Needle 40mm (6M)", 
+                name: "40MM Needle (6Mtr)", 
+                image: "./Assets/Product Images/shp40_6m.png", 
+                description: "Long hose needle for deep pours.", 
+                compare: { model: "Handy Needle 40mm (6M)", category: "mechanical-pokers", diameter: "40mm", length: "6 Meters", type: "Handy Needle" },
+                actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] 
+            },
+            { 
+                model: "Handy Needle 60mm (3M)", 
+                name: "60MM Needle (3Mtr)", 
+                image: "./Assets/Product Images/shp60_3m.png", 
+                description: "Large diameter for heavy consolidation.", 
+                compare: { model: "Handy Needle 60mm (3M)", category: "mechanical-pokers", diameter: "60mm", length: "3 Meters", type: "Handy Needle" },
+                actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] 
+            },
+            { 
+                model: "Handy Needle 60mm (6M)", 
+                name: "60MM Needle (6Mtr)", 
+                image: "./Assets/Product Images/shp60_6m.png", 
+                description: "Maximum reach and power.", 
+                compare: { model: "Handy Needle 60mm (6M)", category: "mechanical-pokers", diameter: "60mm", length: "6 Meters", type: "Handy Needle" },
+                actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] 
+            }
         ],
         handHeldNeedles: [
-            { model: "Hand-Held Needle 25mm", name: "25MM Needle", image: "./Assets/Product Images/shhn25.png", description: "Precision needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] },
-            { model: "Hand-Held Needle 40mm", name: "40MM Needle", image: "./Assets/Product Images/shhn40.png", description: "Versatile needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] },
-            { model: "Hand-Held Needle 60mm", name: "60MM Needle", image: "./Assets/Product Images/shhn60.png", description: "Heavy duty needle for high frequency motor.", actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] }
+            { 
+                model: "Hand-Held Needle 25mm", 
+                name: "25MM Needle", 
+                image: "./Assets/Product Images/shhn25.png", 
+                description: "Precision needle for high frequency motor.", 
+                compare: { model: "Hand-Held Needle 25mm", category: "mechanical-pokers", diameter: "25mm", type: "Hand-Held" },
+                actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] 
+            },
+            { 
+                model: "Hand-Held Needle 40mm", 
+                name: "40MM Needle", 
+                image: "./Assets/Product Images/shhn40.png", 
+                description: "Versatile needle for high frequency motor.", 
+                compare: { model: "Hand-Held Needle 40mm", category: "mechanical-pokers", diameter: "40mm", type: "Hand-Held" },
+                actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] 
+            },
+            { 
+                model: "Hand-Held Needle 60mm", 
+                name: "60MM Needle", 
+                image: "./Assets/Product Images/shhn60.png", 
+                description: "Heavy duty needle for high frequency motor.", 
+                compare: { model: "Hand-Held Needle 60mm", category: "mechanical-pokers", diameter: "60mm", type: "Hand-Held" },
+                actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] 
+            }
         ],
         mechanicalNeedles: [
-            { model: "Mechanical Needle 25mm", name: "25MM Needles", image: "./Assets/Product Images/smp25.png", description: "Robust mechanical needle for standard vibrators.", actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] },
-            { model: "Mechanical Needle 40mm", name: "40MM Needles", image: "./Assets/Product Images/smp40.png", description: "Standard mechanical needle for efficient compaction.", actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] },
-            { model: "Mechanical Needle 60mm", name: "60MM Needles", image: "./Assets/Product Images/smp60.png", description: "High capacity mechanical needle for large jobs.", actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] }
+            { 
+                model: "Mechanical Needle 25mm", 
+                name: "25MM Needles", 
+                image: "./Assets/Product Images/smp25.png", 
+                description: "Robust mechanical needle for standard vibrators.", 
+                compare: { model: "Mechanical Needle 25mm", category: "mechanical-pokers", diameter: "25mm", type: "Mechanical" },
+                actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] 
+            },
+            { 
+                model: "Mechanical Needle 40mm", 
+                name: "40MM Needles", 
+                image: "./Assets/Product Images/smp40.png", 
+                description: "Standard mechanical needle for efficient compaction.", 
+                compare: { model: "Mechanical Needle 40mm", category: "mechanical-pokers", diameter: "40mm", type: "Mechanical" },
+                actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] 
+            },
+            { 
+                model: "Mechanical Needle 60mm", 
+                name: "60MM Needles", 
+                image: "./Assets/Product Images/smp60.png", 
+                description: "High capacity mechanical needle for large jobs.", 
+                compare: { model: "Mechanical Needle 60mm", category: "mechanical-pokers", diameter: "60mm", type: "Mechanical" },
+                actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] 
+            }
         ]
     },
     'mini-lift-models': [
@@ -875,7 +959,6 @@ window.productData = {
             ],
             compare: { model: "3HP 1PH Vibrator", category: "vibrators", power: "3 HP", voltage: "220V-240V", current: "12-15 A", speed: "2800-3000 RPM" },
             actions: [
-                { type: 'enquire' },
                 { type: 'cart', name: '3HP 1PH Vibrator' }
             ]
         },
@@ -894,7 +977,7 @@ window.productData = {
             ],
             compare: { model: "3HP 3PH Vibrator", category: "vibrators", power: "3 HP", voltage: "380V-415V", current: "4.5-6 A", speed: "2850-3000 RPM" },
             actions: [
-                { type: 'enquire' },
+            
                 { type: 'cart', name: '3HP 3PH Vibrator' }
             ]
         },
@@ -913,7 +996,7 @@ window.productData = {
             ],
             compare: { model: "2HP Vibrator", category: "vibrators", power: "2 HP", voltage: "220V-240V", current: "8-10 A", speed: "2800-3000 RPM" },
             actions: [
-                { type: 'enquire' },
+                
                 { type: 'cart', name: '2HP Vibrator' }
             ]
         },
@@ -930,7 +1013,7 @@ window.productData = {
             ],
             compare: { model: "Diesel Vibrator", category: "vibrators", power: "5 HP", fuel: "Diesel", speed: "3000 RPM" },
             actions: [
-                { type: 'enquire' },
+                
                 { type: 'cart', name: 'Diesel Vibrator' }
             ]
         },
@@ -947,7 +1030,7 @@ window.productData = {
             ],
             compare: { model: "Petrol Vibrator", category: "vibrators", power: "5.5 HP", fuel: "Petrol", speed: "3000 RPM" },
             actions: [
-                { type: 'enquire' },
+               
                 { type: 'cart', name: 'Petrol Vibrator' }
             ]
         }
@@ -970,9 +1053,9 @@ window.productData = {
     'repair-services': [
         {
             name: "On-Site Repair",
-            icon: "fa-solid fa-gears",
+            icon: "../Assets/Icons/on-site.jpg",
             description: "Expert technicians dispatched to your location for immediate repairs.",
-            actions: [{ type: 'repair', name: 'On-Site Repair' }]
+            actions: [{ type: 'repair', name: 'On-Site sRepair' }]
         },
         {
             name: "Workshop Service",
