@@ -59,57 +59,31 @@ window.productData = {
     ],
     'concrete-mixer-models': [
         {
-            model: "CM-220L Electric",
-            name: "CM-220L (Electric)",
-            image: "./Assets/Others/logo.png",
+            model: "SCME-220L Electric",
+            name: "SCME-220L (Electric)",
+            image: "./Assets/Product Images/scme-220.png",
             description: "Standard 1-bag mixer ideal for small jobs and indoor sites with electrical access.",
             specs: [
                 { icon: "fa-solid fa-water-ladder", text: "Capacity: 220 Litres" },
                 { icon: "fa-solid fa-bolt-lightning", text: "Power: 3 HP Electric Motor" },
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Towable on site" }
             ],
-            compare: { model: "CM-220L Electric", category: "concrete-mixers", capacity: "220 Litres", power: "3 HP Electric Motor", mobility: "Towable on site" },
-            actions: [{ type: 'cart', name: 'CM-220L Electric' }]
+            compare: { model: "SCME-220L Electric", category: "concrete-mixers", capacity: "220 Litres", power: "3 HP Electric Motor", mobility: "Towable on site" },
+            actions: [{ type: 'cart', name: 'SCME-220L Electric' }]
         },
         {
-            model: "CM-220L Engine",
-            name: "CM-220L (Engine Powered)",
-            image: "./Assets/Others/logo.png",
-            description: "Heavy-duty mixer for remote construction sites without reliable electricity.",
-            specs: [
-                { icon: "fa-solid fa-water-ladder", text: "Capacity: 220 Litres" },
-                { icon: "fa-solid fa-gas-pump", text: "Power: 5 HP Diesel Engine" },
-                { icon: "fa-solid fa-truck-fast", text: "Mobility: Towable on site" }
-            ],
-            compare: { model: "CM-220L Engine", category: "concrete-mixers", capacity: "220 Litres", power: "5 HP Diesel Engine", mobility: "Towable on site" },
-            actions: [{ type: 'cart', name: 'CM-220L Engine' }]
-        },
-        {
-            model: "CM-350L Electric",
-            name: "CM-350L (Electric)",
-            image: "./Assets/Others/logo.png",
+            model: "SCME-350L Electric",
+            name: "SCME-350L (Electric)",
+            image: "./Assets/Product Images/scme-350.png",
             description: "High-capacity 2-bag mixer for medium-sized projects requiring higher output.",
             specs: [
                 { icon: "fa-solid fa-water-ladder", text: "Capacity: 350 Litres" },
                 { icon: "fa-solid fa-bolt-lightning", text: "Power: 5 HP Electric Motor" },
                 { icon: "fa-solid fa-truck-fast", text: "Mobility: Heavy Duty Chassis" }
             ],
-            compare: { model: "CM-350L Electric", category: "concrete-mixers", capacity: "350 Litres", power: "5 HP Electric Motor", mobility: "Heavy Duty Chassis" },
-            actions: [{ type: 'cart', name: 'CM-350L Electric' }]
+            compare: { model: "SCME-350L Electric", category: "concrete-mixers", capacity: "350 Litres", power: "5 HP Electric Motor", mobility: "Heavy Duty Chassis" },
+            actions: [{ type: 'cart', name: 'SCME-350L Electric' }]
         },
-        {
-            model: "CM-350L Engine",
-            name: "CM-350L (Engine Powered)",
-            image: "./Assets/Others/logo.png",
-            description: "Maximum capacity mixer with powerful engine for continuous, high-volume outdoor work.",
-            specs: [
-                { icon: "fa-solid fa-water-ladder", text: "Capacity: 350 Litres" },
-                { icon: "fa-solid fa-gas-pump", text: "Power: 9 HP Diesel Engine" },
-                { icon: "fa-solid fa-truck-fast", text: "Mobility: Heavy Duty Chassis" }
-            ],
-            compare: { model: "CM-350L Engine", category: "concrete-mixers", capacity: "350 Litres", power: "9 HP Diesel Engine", mobility: "Heavy Duty Chassis" },
-            actions: [{ type: 'cart', name: 'CM-350L Engine' }]
-        }
     ],
     'concrete-pouring-buckets': [
         {
@@ -372,49 +346,13 @@ window.productData = {
                 ],
                 compare: { model: "Groove Cutter 125mm", category: "industrial-cutters", "cutting-depth": "125 mm", power: "5 HP" },
                 actions: [{ type: 'cart', name: 'Groove Cutter 125mm' }]
-            },
-            {
-                model: "Groove Cutter 150mm",
-                name: "Groove Cutter (150mm)",
-                image: "./Assets/bar_cutter.png",
-                description: "",
-                specs: [
-                    { icon: "fa-solid fa-ruler-vertical", text: "Depth: 150 mm" },
-                    { icon: "fa-solid fa-horse-head", text: "Power: 5 / 9 HP" }
-                ],
-                compare: { model: "Groove Cutter 150mm", category: "industrial-cutters", "cutting-depth": "150 mm", power: "5/9 HP" },
-                actions: [{ type: 'cart', name: 'Groove Cutter 150mm' }]
-            },
-            {
-                model: "Groove Cutter 180mm",
-                name: "Groove Cutter (180mm)",
-                image: "./Assets/bar_cutter.png",
-                description: "",
-                specs: [
-                    { icon: "fa-solid fa-ruler-vertical", text: "Depth: 180 mm" },
-                    { icon: "fa-solid fa-horse-head", text: "Power: 9 / 13 HP" }
-                ],
-                compare: { model: "Groove Cutter 180mm", category: "industrial-cutters", "cutting-depth": "180 mm", power: "9/13 HP" },
-                actions: [{ type: 'cart', name: 'Groove Cutter 180mm' }]
-            },
-            {
-                model: "Groove Cutter 400mm",
-                name: "Groove Cutter (400mm)",
-                image: "./Assets/bar_cutter.png",
-                description: "",
-                specs: [
-                    { icon: "fa-solid fa-ruler-vertical", text: "Depth: 400 mm" },
-                    { icon: "fa-solid fa-horse-head", text: "Power: 15/20/25 HP" }
-                ],
-                compare: { model: "Groove Cutter 400mm", category: "industrial-cutters", "cutting-depth": "400 mm", power: "15/20/25 HP" },
-                actions: [{ type: 'cart', name: 'Groove Cutter 400mm' }]
             }
         ],
         coreCutters: [
             {
                 model: "Core Cutter SCC-90",
                 name: "Core Cutter SCC-90",
-                image: "./Assets/Product Images/core cutter.png",
+                image: "./Assets/Product Images/scc-90.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-circle-dot", text: "Core Diameter: 90 mm" },
@@ -427,7 +365,7 @@ window.productData = {
             {
                 model: "Core Cutter SCC-160",
                 name: "Core Cutter SCC-160",
-                image: "./Assets/bar_cutter.png",
+                image: "./Assets/Product Images/scc-160.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-circle-dot", text: "Core Diameter: 160 mm" },
@@ -440,7 +378,7 @@ window.productData = {
             {
                 model: "Core Cutter SCC-200",
                 name: "Core Cutter SCC-200",
-                image: "./Assets/bar_cutter.png",
+                image: "./Assets/Product Images/scc-200.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-circle-dot", text: "Core Diameter: 200 mm" },
@@ -965,7 +903,7 @@ window.productData = {
         {
             model: "3HP 3PH Vibrator",
             name: "3HP 3PH Electrical Vibrators",
-            image: "./Assets/electrical_vibrator.png",
+            image: "./Assets/Product Images/sev33.png",
             description: "Three-phase 3HP for continuous heavy-duty consolidation on large pours.",
             specs: [
                 { icon: "fa-solid fa-bolt-lightning", text: "Power Output: 3 HP (approx. 2.2 kW)" },
@@ -1053,19 +991,19 @@ window.productData = {
     'repair-services': [
         {
             name: "On-Site Repair",
-            icon: "../Assets/Icons/on-site.jpg",
+            image: "./Assets/Product Images/on-site.png",
             description: "Expert technicians dispatched to your location for immediate repairs.",
-            actions: [{ type: 'repair', name: 'On-Site sRepair' }]
+            actions: [{ type: 'repair', name: 'On-Site Repair' }]
         },
         {
             name: "Workshop Service",
-            icon: "fa-solid fa-gears",
+            image: "./Assets/Product Images/workshop.png",
             description: "Comprehensive servicing and overhauling at our fully equipped workshop.",
             actions: [{ type: 'repair', name: 'Workshop Service' }]
         },
         {
             name: "Spare Parts Replacement",
-            icon: "fa-solid fa-gears",
+            image: "./Assets/Product Images/spare.png",
             description: "Genuine spare parts replacement for all major construction equipment brands.",
             actions: [{ type: 'repair', name: 'Spare Parts' }]
         }

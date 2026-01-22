@@ -607,12 +607,16 @@ function initNavbar() {
     // Close Mobile Menu on Link Click
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu) {
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (link.getAttribute('href') && link.getAttribute('href') !== '#') {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
+        mobileMenu.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            const button = e.target.closest('button');
+
+            if (link && link.getAttribute('href') && link.getAttribute('href') !== '#' && !link.getAttribute('href').startsWith('javascript:')) {
+                mobileMenu.classList.add('hidden');
+            } else if (button && !button.id.includes('trigger')) {
+                // Close for buttons like "View Selection Tray" but not submenu triggers
+                mobileMenu.classList.add('hidden');
+            }
         });
     }
 
@@ -637,12 +641,12 @@ function initNavbar() {
             i.classList.remove("py-2");
             i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0");
             r.classList.remove("h-7", "md:h-16");
-            r.classList.add("h-6");
+            r.classList.add("h-10");
             l.classList.remove("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
             l.classList.add("ml-2", "text-left");
             c.classList.add("opacity-0");
             d.classList.remove("text-[clamp(8px,2.7vw,30px)]", "md:mb-2", "leading-none");
-            d.classList.add("text-[clamp(8px,1.5vw,20px)]", "leading-none");
+            d.classList.add("text-[clamp(8px,2.2vw,25px)]", "leading-none");
             m.classList.remove("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.add("py-1", "flex-shrink-0", "text-sm");
         } else {
@@ -653,12 +657,12 @@ function initNavbar() {
             i.classList.add("py-2");
             i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0");
             r.classList.add("h-7", "md:h-16");
-            r.classList.remove("h-6");
+            r.classList.remove("h-10");
             l.classList.add("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
             l.classList.remove("ml-2", "text-left");
             c.classList.remove("opacity-0");
             d.classList.add("text-[clamp(8px,2.7vw,30px)]", "md:mb-2", "leading-none");
-            d.classList.remove("text-[clamp(8px,1.5vw,20px)]", "leading-none");
+            d.classList.remove("text-[clamp(8px,2.2vw,25px)]", "leading-none");
             m.classList.add("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.remove("py-1", "flex-shrink-0", "text-sm");
         }

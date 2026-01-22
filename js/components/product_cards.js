@@ -47,8 +47,8 @@
 const lightEquipment = [
         {
             title: "Vibrators",
-            image: ["./Assets/Product Images/sdv.png", "./Assets/Product Images/sev.png", "./Assets/Product Images/spv.png"],
-            imageWebp: ["./Assets/Product Images/sdv.webp", "./Assets/Product Images/sev.webp", "./Assets/Product Images/spv.webp"],
+            image: ["./Assets/Product Images/sdv.png", "./Assets/Product Images/sev33.png", "./Assets/Product Images/spv.png"],
+            imageWebp: ["./Assets/Product Images/sdv.webp", "./Assets/Product Images/sev33.webp", "./Assets/Product Images/spv.webp"],
             description: "A wide range of concrete vibrators for perfect consolidation.",
             features: ["High Frequency Pokers", "Electric & Petrol Engines", "Multiple Power Options"],
             link: "Product_details/Vibrators.html"
@@ -96,7 +96,7 @@ const lightEquipment = [
         },
         {
             title: "Concrete Handling Equipment",
-            image: ["./Assets/Product Images/scme.png", "./Assets/Product Images/scpb.png"],
+            image: ["./Assets/Product Images/scme.png", "./Assets/Product Images/scpb.png", "./Assets/Product Images/scme-220.png"],
             imageWebp: ["./Assets/Product Images/scme.webp", "./Assets/Product Images/scpb.webp"],
             description: "Portable 1-bag and 2-bag mixers for any site.",
             features: ["Heavy-Duty Chassis", "Electric & Diesel Options", "Easy Mobility"],

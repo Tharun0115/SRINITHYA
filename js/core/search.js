@@ -1,514 +1,308 @@
+/**
+ * Search Functionality
+ * Handles searching through productData and rendering results.
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Determine path prefix based on current location to ensure links/images work from subdirectories
-    const isProductPage = window.location.pathname.includes('Product_details') || window.location.pathname.includes('Service_details');
-    const pathPrefix = isProductPage ? '../' : './';
+    initSearch();
+});
 
-    // Centralized Product Database
-    const searchProducts = [
-        { 
-            name: "Bar Cutting Machine", 
-            desc: "Hydraulic cutting for TMT bars up to 42mm.",
-            link: "Product_details/bar_cutting_models.html", 
-            image: "Assets/bar_cutter.png",
-            category: "Heavy Machinery",
-            specs: "Up to 42mm TMT 4 KW Motor Reinforced Oil Bath Up to 32mm TMT 3 KW Motor Speed 32 times/min"
-        },
-        { 
-            name: "Bar Bending Machine", 
-            desc: "Automatic bending with digital control.",
-            link: "Product_details/bar_bending_models.html", 
-            image: "Assets/bar_bender.png",
-            category: "Heavy Machinery",
-            specs: "6mm - 32mm Pin Foot Pedal Emergency Stop Up to 42mm Digital CNC Panel Save Angle Presets"
-        },
-        { 
-            name: "Scrap Straightener", 
-            desc: "Straighten scrap bars efficiently.",
-            link: "Product_details/scrap_straightener_models.html", 
-            image: "Assets/scrap_straightener.png",
-            category: "Heavy Machinery",
-            specs: "4mm - 12mm 25 meters/min Coil Light Scrap 6mm - 16mm Auto-Cut Function High Precision"
-        },
-        { 
-            name: "Road Rollers", 
-            desc: "Ride-on and Walk-behind rollers.",
-            link: "Product_details/road_roller_models.html", 
-            image: "Assets/road_roller.png",
-            category: "Heavy Machinery",
-            specs: "SRR30 Ride on SWR 30 Walk behind 10 HP Diesel Engine 600mm Drum"
-        },
-        { 
-            name: "Suspended Scaffold Solution", 
-            desc: "Customizable high-safety suspended platforms (ZLP800) for facade work.",
-            link: "Product_details/suspended_rope_platform.html", 
-            image: "Assets/Product Images/srp.jpg",
-            category: "Heavy Machinery",
-            specs: "ZLP800 Load Calibration cell Customizable Length upto 100Mtr Weight upto 1000Kgs scaffold"
-        },
-        { 
-            name: "Mini Lift / Crane 300Kg", 
-            desc: "Compact mini crane for lifting materials up to 30m.",
-            link: "Product_details/mini_lift_models.html", 
-            image: "Assets/Product Images/sml.png",
-            category: "Heavy Machinery",
-            specs: "300Kg Capacity 30Mtr Height 360 degree rotation"
-        },
-        { 
-            name: "Mini Lift / Crane 500Kg", 
-            desc: "Heavy-duty mini crane for lifting materials up to 30m.",
-            link: "Product_details/mini_lift_models.html", 
-            image: "Assets/Product Images/sml.png",
-            category: "Heavy Machinery",
-            specs: "500Kg Capacity 30Mtr Height 360 degree rotation"
-        },
-        { 
-            name: "Industrial Cutting Tools", 
-            desc: "Precision tools for groove and core cutting applications.",
-            link: "Product_details/industrial_cutting_tools.html", 
-            image: "Assets/bar_cutter.png",
-            category: "Heavy Machinery",
-            specs: "Groove Cutter Core Cutter SCC-90 SCC-160 SCC-200 125mm 150mm 180mm 400mm"
-        },
-        { 
-            name: "Groove Cutter 125mm", 
-            desc: "Groove cutter with 125mm cutting depth and 5 HP power.",
-            link: "Product_details/industrial_cutting_tools.html", 
-            image: "Assets/bar_cutter.png",
-            category: "Heavy Machinery",
-            specs: "125mm depth 5 HP"
-        },
-        { 
-            name: "Groove Cutter 150mm", 
-            desc: "Groove cutter with 150mm cutting depth and 5/9 HP power.",
-            link: "Product_details/industrial_cutting_tools.html", 
-            image: "Assets/bar_cutter.png",
-            category: "Heavy Machinery",
-            specs: "150mm depth 5/9 HP"
-        },
-        { 
-            name: "Groove Cutter 180mm", 
-            desc: "Groove cutter with 180mm cutting depth and 9/13 HP power.",
-            link: "Product_details/industrial_cutting_tools.html", 
-            image: "Assets/bar_cutter.png",
-            category: "Heavy Machinery",
-            specs: "180mm depth 9/13 HP"
-        },
-        { 
-            name: "Groove Cutter 400mm", 
-            desc: "Groove cutter with 400mm cutting depth and 15/20/25 HP power.",
-            link: "Product_details/industrial_cutting_tools.html", 
-            image: "Assets/bar_cutter.png",
-            category: "Heavy Machinery",
-            specs: "400mm depth 15/20/25 HP"
-        },
-        { 
-            name: "Core Cutter SCC-90", 
-            desc: "Core cutter with 90mm diameter.",
-            link: "Product_details/industrial_cutting_tools.html", 
-            image: "Assets/bar_cutter.png",
-            category: "Heavy Machinery",
-            specs: "SCC-90 90mm 1350W 1500 RPM"
-        },
-        { 
-            name: "Dewatering Pumps", 
-            desc: "Submersible flexible shaft pumps for efficient water removal.",
-            link: "Product_details/dewatering_pump.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "2 inch 3 inch pump water petrol diesel electric motor"
-        },
-        { 
-            name: "2 Inch Dewatering Pump", 
-            desc: "Versatile pump for general dewatering tasks.",
-            link: "Product_details/dewatering_pump.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "2 inch 600 ltr/min 12m lift"
-        },
-        { 
-            name: "3 Inch Dewatering Pump", 
-            desc: "Higher capacity pump for faster water removal.",
-            link: "Product_details/dewatering_pump.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "3 inch 800 ltr/min 12m lift"
-        },
-        { 
-            name: "Plate Compactors", 
-            desc: "For soil and asphalt compaction.",
-            link: "Product_details/plate_compactor_models.html", 
-            image: "Assets/plate_compactor.png",
-            category: "Light Equipment",
-            specs: "80 kg 15 kN 5.5 HP Petrol 150 kg 25 kN 8 HP Diesel 250 kg 35 kN 10 HP Petrol Diesel Reversible 300 kg 40 kN Hydraulic Reversible"
-        },
-        { 
-            name: "Power Trowels", 
-            desc: "Professional concrete finishing.",
-            link: "Product_details/surface_smootheners.html", 
-            image: "Assets/Others/logo.png", // Using logo as placeholder if specific image not available in root assets list provided
-            category: "Light Equipment",
-            specs: "1000 mm 4 Blades 2Hp 70Kg Honda Engine 3Hp 68Kg Crompton motor SPTE SPTP"
-        },
-        { 
-            name: "Surface Smootheners", 
-            desc: "Screed vibrators and power trowels for a perfect finish.",
-            link: "Product_details/surface_smootheners.html", 
-            image: "Assets/Others/logo.png",
-            category: "Light Equipment",
-            specs: "Screed Vibrator Power Trowel SPTE SPTP SSVE-2"
-        },
-        { 
-            name: "Screed Vibrator SSVE-2", 
-            desc: "Electric screed vibrator for leveling concrete surfaces.",
-            link: "Product_details/surface_smootheners.html", 
-            image: "Assets/Others/logo.png",
-            category: "Light Equipment",
-            specs: "2000rpm electric motor screed blade"
-        },
-        { 
-            name: "Power Trowel SPTE Electric", 
-            desc: "Electric powered trowel for concrete finishing.",
-            link: "Product_details/surface_smootheners.html", 
-            image: "Assets/Others/logo.png",
-            category: "Light Equipment",
-            specs: "3Hp 68Kg Crompton motor"
-        },
-        { 
-            name: "Concrete Handling Equipment", 
-            desc: "Portable 1-bag / 2-bag mixers.",
-            link: "Product_details/concrete_mixer_models.html", 
-            image: "Assets/Product Images/scme.png",
-            category: "Light Equipment",
-            specs: "220 Litres 3 HP Electric Motor Towable 5 HP Diesel Engine 350 Litres 9 HP Diesel Engine Heavy Duty Chassis"
-        },
-        { 
-            name: "High Frequency Converter", 
-            desc: "High performance frequency generators.",
-            link: "Product_details/high_frequency_converter_models.html", 
-            image: "Assets/Others/logo.png",
-            category: "Light Equipment",
-            specs: "SHFC 35 2 Outlet SHFC 90 4 Outlet 415V 50Hz 42V 200Hz"
-        },
-        { 
-            name: "High Frequency Poker", 
-            desc: "Internal concrete vibration needles.",
-            link: "Product_details/high_frequency_poker_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "SHFN 60 58mm 42V 200Hz 12000 RPM 40MM 5Mtr 10Mtr 12Mtr Hose"
-        },
-        { 
-            name: "Vibrators", 
-            desc: "Electric and petrol vibrators.",
-            "link": "Product_details/Vibrators.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "3 HP 220V 240V 12 15 A 2800 3000 RPM 380V 415V 4.5 6 A 2 HP 8 10 A"
-        },
-        { 
-            name: "Portable Bar Equipment", 
-            desc: "Portable benders and cutters.",
-            link: "Product_details/portable_bar_processing_models.html", 
-            image: "Assets/bar_bender.png",
-            category: "Light Equipment",
-            specs: "SPB25 SPB32 SPS 32 SPC25 SPC 32 Portable Bender Cutter Straightener"
-        },
-        { 
-            name: "High Frequency Hand Held Motor", 
-            desc: "Powerful hand-held motor for high frequency applications.",
-            link: "Product_details/handy_vibration_models.html", 
-            image: "Assets/Product Images/shm800.png",
-            category: "Light Equipment",
-            specs: "SHHM 2300W 16000 rpm 5.8kg"
-        },
-        { 
-            name: "Handy Vibrator Motor 800W", 
-            desc: "Compact 800W motor for light duty tasks.",
-            link: "Product_details/handy_vibration_models.html", 
-            image: "Assets/Product Images/shm800.png",
-            category: "Light Equipment",
-            specs: "SHM 800 800W 4200 rpm"
-        },
-        { 
-            name: "Handy Vibrator Motor 1200W", 
-            desc: "Versatile 1200W motor for general concrete vibration.",
-            link: "Product_details/handy_vibration_models.html", 
-            image: "Assets/Product Images/shm800.png",
-            category: "Light Equipment",
-            specs: "SHM 1200 1200W 4300 rpm"
-        },
-        { 
-            name: "Handy Vibrator Motor 1600W", 
-            desc: "High-performance 1600W motor for demanding tasks.",
-            link: "Product_details/handy_vibration_models.html", 
-            image: "Assets/Product Images/shm800.png",
-            category: "Light Equipment",
-            specs: "SHM 1600 1600W 4600 rpm"
-        },
-        { 
-            name: "40IV High Frequency Poker", 
-            desc: "Standalone poker with inbuilt frequency converter.",
-            link: "Product_details/high_frequency_poker_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "40IV 40mm Inbuilt Converter 220V"
-        },
-        { 
-            name: "60IV High Frequency Poker", 
-            desc: "High performance 60mm poker with inbuilt converter.",
-            link: "Product_details/high_frequency_poker_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "60IV 60mm Inbuilt Converter 220V"
-        },
-        { 
-            name: "Diesel Vibrator", 
-            desc: "Robust diesel-powered vibrator for heavy-duty site applications.",
-            "link": "Product_details/Vibrators.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "5 HP Diesel 3000 RPM Heavy Duty Frame"
-        },
-        { 
-            name: "Petrol Vibrator", 
-            desc: "Versatile petrol-powered vibrator for sites without electricity.",
-            "link": "Product_details/Vibrators.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "5.5 HP Petrol 3000 RPM Heavy Duty Frame"
-        },
-        { 
-            name: "Handy Needles", 
-            desc: "Compact needles compatible with Handy Vibrators.",
-            link: "Product_details/mechanical_poker_models.html", 
-            image: "Assets/Product Images/smp.png",
-            category: "Light Equipment",
-            specs: "25mm 40mm 60mm 3Mtr 6Mtr"
-        },
-        { 
-            name: "Hand-Held Needles", 
-            desc: "Precision needles compatible with High Frequency Hand-Held Motor.",
-            link: "Product_details/mechanical_poker_models.html", 
-            image: "Assets/Product Images/smp.png",
-            category: "Light Equipment",
-            specs: "25mm 40mm 60mm"
-        },
-        { 
-            name: "Mechanical Needles", 
-            desc: "Robust needles compatible with Petrol, Diesel and Electrical Vibrators.",
-            link: "Product_details/mechanical_poker_models.html", 
-            image: "Assets/Product Images/smp.png",
-            category: "Light Equipment",
-            specs: "25mm 40mm 60mm"
-        },
-        { 
-            name: "Shutter Vibrators", 
-            desc: "External vibrators for formwork, ensuring void-free concrete.",
-            link: "Product_details/shutter_vibrator_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "SHFS-4215 SHFS-4210 SSV-320 SSV-310 SSV-305"
-        },
-        { 
-            name: "Shutter Vibrator SHFS-4215", 
-            desc: "High frequency shutter vibrator, 1.5 HP.",
-            link: "Product_details/shutter_vibrator_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "1.5 HP 25A 42V 200Hz 6000 RPM"
-        },
-        { 
-            name: "Shutter Vibrator SHFS-4210", 
-            desc: "High frequency shutter vibrator, 1 HP.",
-            link: "Product_details/shutter_vibrator_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "1 HP 12A 42V 200Hz 3000 RPM"
-        },
-        { 
-            name: "Shutter Vibrator SSV-320", 
-            desc: "3-phase shutter vibrator, 2 HP.",
-            link: "Product_details/shutter_vibrator_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "2 HP 3.5A 415V 50Hz 3000 RPM"
-        },
-        { 
-            name: "Shutter Vibrator SSV-310", 
-            desc: "3-phase shutter vibrator, 1 HP.",
-            link: "Product_details/shutter_vibrator_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "1 HP 1.45A 415V 50Hz 3000 RPM"
-        },
-        { 
-            name: "Shutter Vibrator SSV-305", 
-            desc: "3-phase shutter vibrator, 0.5 HP.",
-            link: "Product_details/shutter_vibrator_models.html", 
-            image: "Assets/electrical_vibrator.png",
-            category: "Light Equipment",
-            specs: "0.5 HP 0.7A 415V 50Hz 3000 RPM"
-        }
-    ];
+// Re-initialize on Router navigation (if navigating back to home)
+window.addEventListener('router:navigation-complete', () => {
+    initSearch();
+});
 
-    // Inject Custom Styles for Animation and Modal
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes searchPopIn {
-            0% { opacity: 0; transform: scale(0.9) perspective(500px) translateZ(-50px); }
-            100% { opacity: 1; transform: scale(1) perspective(500px) translateZ(0); }
-        }
-        .search-modal-anim { 
-            animation: searchPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
-            transform-origin: center top;
-        }
-        .search-backdrop { 
-            background-color: rgba(0, 0, 0, 0.6); 
-            backdrop-filter: blur(5px); 
-        }
-        .search-card:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1); 
-        }
-    `;
-    document.head.appendChild(style);
+function initSearch() {
+    const searchInput = document.getElementById('catalogue-search');
+    if (!searchInput) return;
 
-    // Inject Modal HTML Structure
-    const modalHTML = `
-        <div id="global-search-modal" class="fixed inset-0 z-[100] hidden search-backdrop flex items-start justify-center pt-16 px-4 transition-opacity duration-300">
-            <div class="bg-white/95 w-full max-w-[80vw] rounded-2xl shadow-2xl overflow-hidden search-modal-anim flex flex-col max-h-[80vh] border border-white/20 ring-1 ring-black/5">
-                
-                <!-- Search Bar Row -->
-                <div class="p-5 border-b border-gray-100 flex items-center gap-4 bg-white sticky top-0 z-10">
-                    <div class="bg-secondary/10 p-3 rounded-full text-secondary">
-                        <i class="fa-solid fa-magnifying-glass text-xl"></i>
-                    </div>
-                    <input type="text" id="global-search-input" class="w-full bg-transparent text-2xl outline-none text-gray-800 placeholder-gray-400 font-medium h-12" placeholder="Search products..." autocomplete="off">
-                    <button id="close-search-modal" class="p-2 text-gray-400 hover:text-red-500 transition rounded-full hover:bg-red-50">
-                        <i class="fa-solid fa-xmark text-2xl"></i>
-                    </button>
-                </div>
+    let currentSearchResults = [];
 
-                <!-- Results Area -->
-                <div id="global-search-results" class="p-6 overflow-y-auto bg-gray-50/50 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 min-h-[300px]">
-                    <!-- Results will be injected here -->
-                </div>
-            </div>
-        </div>
-    `;
-    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    // Debounce to prevent excessive rendering
+    const debounce = (func, wait) => {
+        let timeout;
+        return function(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    };
 
-    // DOM Elements
-    const modal = document.getElementById('global-search-modal');
-    const input = document.getElementById('global-search-input');
-    const closeBtn = document.getElementById('close-search-modal');
-    const resultsContainer = document.getElementById('global-search-results');
-    const triggerInput = document.getElementById('catalogue-search');
+    const toggleOriginalContent = (show) => {
+        const productsSection = document.getElementById('products');
+        if (!productsSection) return;
+        const container = productsSection.querySelector('.max-w-7xl');
+        if (!container) return;
 
-    // Logic Functions
-    function openSearch() {
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        input.focus();
+        Array.from(container.children).forEach(child => {
+            if (child.id !== 'search-results-section') {
+                show ? child.classList.remove('hidden') : child.classList.add('hidden');
+            }
+        });
+    };
+
+    const resetSearch = () => {
+        const resultsSection = document.getElementById('search-results-section');
+        if (resultsSection) resultsSection.classList.add('hidden');
+        toggleOriginalContent(true);
+    };
+
+    const updateCategoryDropdown = () => {
+        const select = document.getElementById('search-category-filter');
+        if (!select) return;
+
+        // Extract unique categories from current results
+        const categories = [...new Set(currentSearchResults.map(p => p._searchCategory))].filter(Boolean).sort();
         
-        // If user typed in the trigger input, copy it over
-        if (triggerInput && triggerInput.value) {
-            input.value = triggerInput.value;
-            renderResults(input.value);
+        // Helper to format "bar-benders" to "Bar Benders"
+        const formatLabel = (str) => str.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+        if (categories.length <= 1) {
+            // Hide dropdown wrapper if only 1 or 0 categories
+            select.parentElement.classList.add('hidden');
         } else {
-            renderResults(''); // Show all products initially
+            select.parentElement.classList.remove('hidden');
+            select.innerHTML = '<option value="">All Categories</option>' + 
+                categories.map(c => `<option value="${c}">${formatLabel(c)}</option>`).join('');
+            select.value = ""; // Reset selection on new search
         }
-    }
+    };
 
-    function closeSearch() {
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-        if (triggerInput) triggerInput.value = '';
-        input.value = '';
-    }
+    const renderFilteredResults = () => {
+        const select = document.getElementById('search-category-filter');
+        const category = select ? select.value : "";
+        const query = searchInput.value;
 
-    function renderResults(query) {
-        const term = query.toLowerCase().trim();
-        
-        // Filter products
-        const filtered = term === '' 
-            ? searchProducts 
-            : searchProducts.filter(p => p.name.toLowerCase().includes(term) || p.category.toLowerCase().includes(term) || (p.specs && p.specs.toLowerCase().includes(term)));
+        const results = category 
+            ? currentSearchResults.filter(p => p._searchCategory === category) 
+            : currentSearchResults;
 
-        if (filtered.length === 0) {
-            resultsContainer.innerHTML = `
-                <div class="col-span-full flex flex-col items-center justify-center text-gray-400 py-12">
-                    <i class="fa-regular fa-face-frown text-4xl mb-4 opacity-50"></i>
-                    <p class="text-lg">No products found matching "${term}"</p>
+        const countEl = document.getElementById('search-count');
+        if (countEl) {
+            const catText = category ? ` in ${category.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}` : '';
+            countEl.textContent = `Found ${results.length} matching items for "${query}"${catText}`;
+        }
+
+        if (results.length > 0) {
+            window.renderProductCards('search-results-grid', results);
+        } else {
+            document.getElementById('search-results-grid').innerHTML = `
+                <div class="col-span-full flex flex-col items-center justify-center py-16 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200">
+                    <div class="relative mb-6">
+                        <i class="fa-solid fa-box-open text-8xl text-gray-200"></i>
+                        <i class="fa-solid fa-magnifying-glass absolute -bottom-2 -right-2 text-4xl text-gray-400 bg-gray-50 rounded-full p-1 border-4 border-gray-50"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-700 mb-2">No products found</h4>
+                    <p class="text-gray-500 text-center max-w-md">
+                        ${category ? 'Try switching back to "All Categories".' : `We couldn't find any matches for "<span class="font-semibold text-gray-800">${query}</span>".`}
+                        <br>Try checking for typos or using broader keywords.
+                    </p>
                 </div>
             `;
+        }
+    };
+
+    const performSearch = (query) => {
+        if (!window.productData || !window.renderProductCards) return;
+
+        const term = query.toLowerCase().trim();
+        const productsSection = document.getElementById('products');
+        
+        // 1. Setup Search Results Container (if not exists)
+        let resultsSection = document.getElementById('search-results-section');
+        
+        if (!resultsSection && productsSection) {
+            const container = productsSection.querySelector('.max-w-7xl');
+            if (container) {
+                const div = document.createElement('div');
+                div.id = 'search-results-section';
+                div.className = 'hidden mb-12 animate-fade-in-up';
+                div.innerHTML = `
+                    <div class="text-center mb-8 border-b border-gray-200 pb-4">
+                        <h3 class="text-3xl font-bold text-primary">Search Results</h3>
+                        <p id="search-count" class="text-gray-600 mt-2 font-medium"></p>
+                        <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
+                            
+                            <div class="relative hidden">
+                                <select id="search-category-filter" class="appearance-none bg-white border border-gray-300 text-gray-700 py-2 pl-4 pr-10 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary cursor-pointer font-medium min-w-[200px]">
+                                    <option value="">All Categories</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+
+                            <button id="clear-search-btn" class="text-sm text-red-500 hover:text-red-700 font-bold underline flex items-center gap-2 transition-colors">
+                                <i class="fa-solid fa-xmark"></i> Clear Search
+                            </button>
+                        </div>
+                    </div>
+                    <div id="search-results-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8"></div>
+                `;
+                
+                // Insert before the first content in the container
+                container.prepend(div);
+                resultsSection = div;
+                
+                // Bind Clear Button
+                const clearAction = () => {
+                    searchInput.value = '';
+                    resetSearch();
+                };
+                document.getElementById('clear-search-btn').addEventListener('click', clearAction);
+                document.getElementById('search-category-filter').addEventListener('change', renderFilteredResults);
+            }
+        }
+
+        // 3. Reset if query is empty
+        if (term.length < 2) {
+            resetSearch();
             return;
         }
 
-        resultsContainer.innerHTML = filtered.map(product => {
-            // Adjust paths for images and links based on current page location
-            const imgPath = pathPrefix + product.image;
-            let linkPath = product.link;
+        // 4. Flatten Product Data
+        let allProducts = [];
+        Object.entries(window.productData).forEach(([key, category]) => {
+            const defaultCat = key.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 
-            // Fix link paths if we are in a subdirectory
-            if (!linkPath.startsWith('http') && !linkPath.startsWith('#')) {
-                if (isProductPage) {
-                    if (linkPath.startsWith('Product_details/')) {
-                        linkPath = '../' + linkPath;
-                    } else if (linkPath.startsWith('Service_details/')) {
-                        linkPath = '../' + linkPath;
-                    } else if (linkPath.startsWith('index.html')) {
-                        linkPath = '../' + linkPath;
+            if (Array.isArray(category)) {
+                category.forEach(p => {
+                    const cat = (p.compare && p.compare.category) ? p.compare.category : defaultCat;
+                    allProducts.push({ ...p, _searchCategory: cat });
+                });
+            } else if (typeof category === 'object') {
+                // Handle nested categories (e.g. handy-vibration-models)
+                Object.values(category).forEach(subCat => {
+                    if (Array.isArray(subCat)) {
+                        subCat.forEach(p => {
+                            const cat = (p.compare && p.compare.category) ? p.compare.category : defaultCat;
+                            allProducts.push({ ...p, _searchCategory: cat });
+                        });
                     }
-                }
+                });
             }
+        });
 
-            // Highlight search term in name
-            let displayName = product.name;
-            if (term) {
-                const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                const regex = new RegExp(`(${escapedTerm})`, 'gi');
-                displayName = product.name.replace(regex, '<span class="text-secondary bg-yellow-100">$1</span>');
+        // 5. Filter Products
+        currentSearchResults = allProducts.filter(p => {
+            const nameMatch = p.name && p.name.toLowerCase().includes(term);
+            const modelMatch = p.model && p.model.toLowerCase().includes(term);
+            const descMatch = p.description && p.description.toLowerCase().includes(term);
+            const specsMatch = p.specs && p.specs.some(s => s.text && s.text.toLowerCase().includes(term));
+            
+            return nameMatch || modelMatch || descMatch || specsMatch;
+        });
+
+        // 6. Render Results
+        if (resultsSection) {
+            resultsSection.classList.remove('hidden');
+            toggleOriginalContent(false);
+            
+            updateCategoryDropdown();
+            renderFilteredResults();
+
+            // Scroll to results if user is far up (e.g. at Hero)
+            const navbarHeight = document.getElementById('navbar')?.offsetHeight || 80;
+            const targetPosition = resultsSection.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+            
+            // Only scroll if we are not already looking at it
+            if (Math.abs(window.scrollY - targetPosition) > 300) {
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
+        }
+    };
 
-            return `
-                <a href="${linkPath}" class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 hover:border-secondary transition-all duration-300 search-card group flex flex-col items-center text-center h-full">
-                    <div class="h-24 w-full flex items-center justify-center mb-2 overflow-hidden rounded-lg bg-white p-2">
-                        <img src="${imgPath}" alt="${product.name}" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <h4 class="font-bold text-gray-800 text-sm group-hover:text-primary transition leading-tight mb-1">${displayName}</h4>
-                    <p class="text-[10px] text-gray-500 line-clamp-2 mb-2 flex-grow">${product.desc}</p>
-                    <span class="inline-block px-2 py-0.5 bg-gray-100 text-[10px] font-bold text-secondary rounded uppercase tracking-wider">${product.category}</span>
-                </a>
-            `;
-        }).join('');
+    // Tooltip Setup
+    let tooltip = document.getElementById('search-tooltip');
+    if (tooltip) tooltip.remove(); // Remove old tooltip to ensure fresh render
+
+    tooltip = document.createElement('div');
+    tooltip.id = 'search-tooltip';
+    tooltip.className = 'absolute top-1/2 transform -translate-y-1/2 flex items-center gap-2 pointer-events-none transition-opacity duration-200 opacity-0 z-10';
+    tooltip.innerHTML = `
+        <i class="fa-solid fa-arrow-turn-down transform rotate-90 text-secondary text-lg animate-pulse"></i>
+        <span class="text-gray-400 text-sm font-medium whitespace-nowrap">Press Enter to See Results</span>
+    `;
+    
+    const parent = searchInput.parentElement;
+    if (parent) {
+        if (window.getComputedStyle(parent).position === 'static') {
+            parent.classList.add('relative');
+        }
+        parent.appendChild(tooltip);
     }
+
+    // Mirror for text width measurement
+    let mirror = document.getElementById('search-input-mirror');
+    if (!mirror) {
+        mirror = document.createElement('span');
+        mirror.id = 'search-input-mirror';
+        mirror.style.cssText = 'position:absolute; visibility:hidden; white-space:pre; left:-9999px; top:-9999px;';
+        document.body.appendChild(mirror);
+    }
+
+    const updateTooltip = () => {
+        if (!tooltip || !mirror) return;
+        
+        const val = searchInput.value;
+        if (val.length === 0) {
+            tooltip.classList.add('opacity-0');
+            return;
+        }
+
+        const styles = window.getComputedStyle(searchInput);
+        mirror.style.font = styles.font;
+        mirror.style.fontSize = styles.fontSize;
+        mirror.style.fontFamily = styles.fontFamily;
+        mirror.style.fontWeight = styles.fontWeight;
+        mirror.style.letterSpacing = styles.letterSpacing;
+        mirror.textContent = val;
+
+        const paddingLeft = parseFloat(styles.paddingLeft) || 0;
+        const textWidth = mirror.offsetWidth;
+        const scrollLeft = searchInput.scrollLeft;
+        
+        const leftPos = paddingLeft + textWidth - scrollLeft + 12;
+        
+        tooltip.style.left = `${leftPos}px`;
+        tooltip.classList.remove('opacity-0');
+    };
 
     // Event Listeners
-    if (triggerInput) {
-        triggerInput.addEventListener('click', (e) => {
+    searchInput.addEventListener('input', (e) => {
+        if (e.target.value.trim() === '') {
+            resetSearch();
+            if (tooltip) tooltip.classList.add('opacity-0');
+        } else {
+            updateTooltip();
+        }
+    });
+
+    // Update tooltip on scroll/click/keyup to handle cursor movement/scrolling
+    ['scroll', 'click', 'keyup'].forEach(evt => {
+        searchInput.addEventListener(evt, () => {
+            if (searchInput.value.trim() !== '') updateTooltip();
+        });
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
             e.preventDefault();
-            triggerInput.blur();
-            openSearch();
-        });
-        // Handle case where user tabs to input and types
-        triggerInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key.length === 1) {
-                e.preventDefault();
-                openSearch();
-            }
-        });
-    }
-
-    closeBtn.addEventListener('click', closeSearch);
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeSearch();
+            if (tooltip) tooltip.classList.add('opacity-0');
+            performSearch(searchInput.value);
+        }
     });
 
-    input.addEventListener('input', (e) => renderResults(e.target.value));
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeSearch();
+    searchInput.addEventListener('blur', () => {
+        if (tooltip) tooltip.classList.add('opacity-0');
     });
-});
+
+    searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim() !== '') {
+            updateTooltip();
+        }
+    });
+}

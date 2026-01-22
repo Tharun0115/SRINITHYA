@@ -70,9 +70,12 @@ window.createProductCard = function(product) {
     const imageClass = product.imageClass || 'object-contain';
     const imageContainerClass = product.imageContainerClass || 'h-32 md:h-64';
     const cardWrapperClass = product.cardWrapperClass || 'bg-white rounded-xl border border-gray-200 hover:border-primary hover:shadow-[0_0_20px_rgba(30,58,138,0.6)] transition-all duration-300 group flex flex-col';
+    const contentClass = product.contentClass || 'p-2 md:p-6 text-center flex flex-col flex-grow';
 
     let mediaHTML;
-    if (product.icon) {
+    if (product.placeholderText) {
+        mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50 text-gray-500 font-bold text-xl p-4 text-center group-hover:text-secondary transition-colors duration-300">${product.placeholderText}</div>`;
+    } else if (product.icon) {
         mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50"><i class="${product.icon} text-6xl md:text-7xl text-gray-400 group-hover:text-secondary transition-colors duration-300"></i></div>`;
     } else if (product.image && typeof product.image === 'string') {
         const imageSrc = product.image.startsWith('http') ? product.image : rootPath + product.image.replace('./', '');
@@ -88,10 +91,10 @@ window.createProductCard = function(product) {
                 ${mediaHTML}
                 ${badgeHTML}
             </div>
-            <div class="p-2 md:p-6 text-center flex flex-col flex-grow">
+            <div class="${contentClass}">
                 ${compareCheckboxHTML}
                 <h3 class="text-sm md:text-2xl font-bold text-gray-900 mb-1 md:mb-2 leading-tight">${product.name}</h3>
-                <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 flex-grow line-clamp-2">${product.description}</p>
+                ${product.description ? `<p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-4 flex-grow line-clamp-2">${product.description}</p>` : ''}
                 <ul class="text-xs md:text-sm text-left text-gray-700 space-y-1 md:space-y-2 mb-3 md:mb-6 inline-block w-full px-1 md:px-4">
                     ${specsHTML}
                 </ul>

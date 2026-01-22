@@ -106,18 +106,6 @@ async function loadPage(url, scroll = true) {
                 innerClasses = currentContent.firstElementChild.className || '';
             }
 
-            const checkPadding = (cls) => {
-                if (!cls) return false;
-                return cls.includes('pt-20') || cls.includes('pt-24') || cls.includes('pt-28') || cls.includes('pt-32') || cls.includes('pt-36') || cls.includes('pt-40') || 
-                       cls.includes('py-20') || cls.includes('py-24') || cls.includes('py-28') || cls.includes('py-32') ||
-                       cls.includes('mt-20') || cls.includes('mt-24') || cls.includes('mt-28') || cls.includes('mt-32');
-            };
-            
-            const hasLargeTopPadding = checkPadding(classes) || checkPadding(innerClasses);
-            
-            if (!hasLargeTopPadding) {
-                currentContent.classList.add('pt-20', 'md:pt-24');
-            }
             if (!classes.includes('pb-') && !classes.includes('py-')) {
                 currentContent.classList.add('pb-12');
             }
