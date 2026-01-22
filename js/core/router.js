@@ -39,6 +39,12 @@ async function loadPage(url, scroll = true) {
     const loader = document.getElementById('loader-wrapper');
     if (loader) loader.style.display = 'flex'; // Show loader briefly
 
+    // Close mobile menu if open (Fix for navigation not closing menu)
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+
     try {
         let fetchUrl = url;
         let targetId = '';
@@ -54,13 +60,67 @@ async function loadPage(url, scroll = true) {
         const doc = parser.parseFromString(html, 'text/html');
 
         // 1. Swap Main Content
-        const newContent = doc.getElementById('main-content');
-        const currentContent = document.getElementById('main-content');
+        // Helper to normalize DOM structure (ensure a content wrapper exists)
+        const normalizeStructure = (d) => {
+            // 1. Check for existing standard containers
+            let container = d.getElementById('main-content') || d.querySelector('main');
+            if (container) return container;
+
+            // 2. Fallback: Create a wrapper for "unoptimized" pages
+            const wrapper = d.createElement('main');
+            wrapper.id = 'dynamic-main-content';
+            
+            // Identify content nodes (everything between header and footer)
+            const children = Array.from(d.body.children);
+            const contentNodes = children.filter(el => {
+                const id = el.id || '';
+                const tag = el.tagName.toLowerCase();
+                // Exclude Navbar, Footer, Scripts, and Overlays
+                return tag !== 'nav' && id !== 'navbar' && tag !== 'footer' && 
+                       !id.includes('modal') && !id.includes('overlay') &&
+                       id !== 'loader-wrapper' && id !== 'scroll-progress' && id !== 'back-to-top-container' &&
+                       !el.classList.contains('fixed'); 
+            });
+
+            // Move nodes into wrapper and insert into DOM
+            contentNodes.forEach(node => wrapper.appendChild(node));
+            const footer = d.querySelector('footer');
+            (footer && footer.parentNode === d.body) ? d.body.insertBefore(wrapper, footer) : d.body.appendChild(wrapper);
+            return wrapper;
+        };
+
+        const newContent = normalizeStructure(doc);
+        const currentContent = normalizeStructure(document);
 
         if (newContent && currentContent) {
             currentContent.innerHTML = newContent.innerHTML;
             // Update classes to match (e.g., padding differences)
             currentContent.className = newContent.className;
+
+            // Fix for layout overlap: Ensure container has padding for fixed navbar and footer
+            const classes = currentContent.className;
+            
+            // Check inner first child for padding too (common in unoptimized pages wrapped by router)
+            let innerClasses = '';
+            if (currentContent.firstElementChild) {
+                innerClasses = currentContent.firstElementChild.className || '';
+            }
+
+            const checkPadding = (cls) => {
+                if (!cls) return false;
+                return cls.includes('pt-20') || cls.includes('pt-24') || cls.includes('pt-28') || cls.includes('pt-32') || cls.includes('pt-36') || cls.includes('pt-40') || 
+                       cls.includes('py-20') || cls.includes('py-24') || cls.includes('py-28') || cls.includes('py-32') ||
+                       cls.includes('mt-20') || cls.includes('mt-24') || cls.includes('mt-28') || cls.includes('mt-32');
+            };
+            
+            const hasLargeTopPadding = checkPadding(classes) || checkPadding(innerClasses);
+            
+            if (!hasLargeTopPadding) {
+                currentContent.classList.add('pt-20', 'md:pt-24');
+            }
+            if (!classes.includes('pb-') && !classes.includes('py-')) {
+                currentContent.classList.add('pb-12');
+            }
         } else {
             // Fallback if structure is different (shouldn't happen if all pages are updated)
             window.location.reload();
@@ -73,12 +133,43 @@ async function loadPage(url, scroll = true) {
         // 3. Re-execute Scripts
         // We need to find scripts in the new content and run them
         // Specifically looking for the inline script that calls renderProductCards
-        const scripts = doc.querySelectorAll('#main-content script');
-        scripts.forEach(oldScript => {
+        
+        // Helper: Intercept DOMContentLoaded/load events to force execution in SPA mode
+        const originalDocAddListener = document.addEventListener;
+        const originalWindowAddListener = window.addEventListener;
+        
+        const interceptListener = (type, listener, options) => {
+            if (type === 'DOMContentLoaded' || type === 'load') {
+                // Execute immediately since DOM is already ready
+                setTimeout(listener, 10);
+            } else {
+                // Pass through other events
+                if (this === document) originalDocAddListener.call(document, type, listener, options);
+                else originalWindowAddListener.call(window, type, listener, options);
+            }
+        };
+
+        document.addEventListener = interceptListener;
+        window.addEventListener = interceptListener;
+
+        // Find all scripts (both in the new body content and potentially new ones in head)
+        const bodyScripts = Array.from(newContent.querySelectorAll('script'));
+        const headScripts = Array.from(doc.head.querySelectorAll('script')).filter(s => s.src); // Only external scripts from head
+        const allScripts = [...headScripts, ...bodyScripts];
+
+        allScripts.forEach(oldScript => {
             const newScript = document.createElement('script');
             Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
             newScript.textContent = oldScript.textContent;
             
+            // Prevent re-executing core infrastructure scripts that might cause issues (e.g. double listeners)
+            if (newScript.src && (
+                newScript.src.includes('router.js') || 
+                newScript.src.includes('navbar.js') || 
+                newScript.src.includes('footer.js') ||
+                newScript.src.includes('product_renderer.js')
+            )) return;
+
             // If it's an inline script with renderProductCards, we might need to delay it 
             // or ensure dependencies are ready.
             // Since product_data.js and renderer are likely in head or cached, it should be fine.
@@ -93,6 +184,12 @@ async function loadPage(url, scroll = true) {
                 newScript.addEventListener('error', () => newScript.remove());
             }
         });
+
+        // Restore original event listeners after a short delay
+        setTimeout(() => {
+            document.addEventListener = originalDocAddListener;
+            window.addEventListener = originalWindowAddListener;
+        }, 500);
 
         // The MutationObservers in product_renderer.js and product_cards.js will handle re-rendering.
         // We only need to manually re-initialize components that don't use an observer.
@@ -143,7 +240,7 @@ async function loadPage(url, scroll = true) {
                     } else {
                         window.scrollTo(0, 0);
                     }
-                }, 100);
+                }, 600);
             } else {
                 window.scrollTo(0, 0);
             }

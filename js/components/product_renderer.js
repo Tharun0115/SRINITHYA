@@ -46,6 +46,11 @@ window.createProductCard = function(product) {
             const safeName = productName.replace(/'/g, "\\'");
             return `<button onclick="initiateSingleProductEnquiry('${safeName}')" class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Rent ${productName}">Rent Now</button>`;
         }
+        if (action.type === 'repair') {
+            const productName = product.name || 'Service';
+            const safeName = productName.replace(/'/g, "\\'");
+            return `<button onclick="initiateSingleProductEnquiry('${safeName}')" class="w-full bg-primary text-white font-bold py-1.5 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm transition" aria-label="Book ${productName}">Book Service</button>`;
+        }
         if (action.type === 'enquire-link') {
             return `<a href="${rootPath}${action.href}" class="w-full bg-secondary text-white py-1.5 md:py-2 rounded font-bold hover:bg-yellow-600 transition mt-auto text-xs md:text-sm" aria-label="Enquire now about ${product.name}"><i class="fa-solid fa-headset" aria-hidden="true"></i> Enquire</a>`;
         }

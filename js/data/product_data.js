@@ -256,7 +256,7 @@ window.productData = {
             {
                 model: "40IV Poker",
                 name: "40IV High Frequency Poker",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/shiv40.png",
                 description: "Standalone poker with inbuilt frequency converter.",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
@@ -269,7 +269,7 @@ window.productData = {
             {
                 model: "60IV Poker",
                 name: "60IV High Frequency Poker",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/shiv60.png",
                 description: "High performance 60mm poker with inbuilt converter.",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 60mm" },
@@ -284,7 +284,7 @@ window.productData = {
             {
                 model: "SHFN 60 (5Mtr)",
                 name: "SHFN 60 - 5Mtr Hose",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/shfn60_5m.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 58mm" },
@@ -324,7 +324,7 @@ window.productData = {
             {
                 model: "40MM Needle 5Mtr",
                 name: "40MM Needle - 5Mtr Hose",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/shfn40_5m.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
@@ -1023,7 +1023,7 @@ window.productData = {
         {
             name: "Emergency Support",
             icon: "fa-solid fa-screwdriver-wrench",
-            description: "24/7 breakdown support to minimize project downtime.",
+            description: "Breakdown support to minimize project downtime.",
             actions: [{ type: 'enquire', name: 'Emergency Support' }]
         }
     ],

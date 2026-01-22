@@ -60,7 +60,7 @@ const rootPath = getRootPath(),
                     <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-7 md:h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden pl-0 pr-1 py-1 flex-grow text-center transition-all duration-300 ease-in-out min-w-0" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
-                        <span class="text-[clamp(8px,2.9vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap drop-shadow-sm block mb-0 md:mb-1 leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="text-[clamp(8px,2.7vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap drop-shadow-sm block mb-0 md:mb-1 leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
                         <div class="hidden md:block absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
@@ -642,7 +642,7 @@ function initNavbar() {
             l.classList.add("ml-2", "text-left");
             c.classList.add("opacity-0");
             d.classList.remove("text-[clamp(8px,2.7vw,30px)]", "md:mb-2", "leading-none");
-            d.classList.add("text-[clamp(8px,2.9vw,24px)]", "leading-tight");
+            d.classList.add("text-[clamp(8px,1.5vw,20px)]", "leading-none");
             m.classList.remove("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.add("py-1", "flex-shrink-0", "text-sm");
         } else {
@@ -658,7 +658,7 @@ function initNavbar() {
             l.classList.remove("ml-2", "text-left");
             c.classList.remove("opacity-0");
             d.classList.add("text-[clamp(8px,2.7vw,30px)]", "md:mb-2", "leading-none");
-            d.classList.remove("text-[clamp(8px,2.9vw,24px)]", "leading-tight");
+            d.classList.remove("text-[clamp(8px,1.5vw,20px)]", "leading-none");
             m.classList.add("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.remove("py-1", "flex-shrink-0", "text-sm");
         }
