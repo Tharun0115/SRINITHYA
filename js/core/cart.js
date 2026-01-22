@@ -167,7 +167,7 @@ function renderCart() {
     
     let html = '';
     cart.forEach((item, index) => {
-        html += `<div class="bg-white p-4 rounded-lg shadow-sm mb-3 border border-gray-100"><div class="flex justify-between items-start mb-2"><h3 class="font-bold text-gray-800">${item.name}</h3><button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></div><div class="flex justify-between items-center"><div class="text-sm text-gray-500"></div><div class="flex items-center border rounded"><button onclick="updateQty(${index}, -1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">-</button><span class="px-2 py-1 font-medium text-sm w-8 text-center">${item.qty}</span><button onclick="updateQty(${index}, 1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">+</button></div></div></div>`;
+        html += `<div class="bg-white p-4 rounded-lg shadow-sm mb-3 border border-gray-100"><div class="flex justify-between items-start mb-2"><h3 class="font-bold text-gray-800">${item.name}</h3><button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></div><div class="flex justify-end items-center"><div class="flex items-center border rounded"><button onclick="updateQty(${index}, -1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">-</button><span class="px-2 py-1 font-medium text-sm w-8 text-center">${item.qty}</span><button onclick="updateQty(${index}, 1)" class="px-2 py-1 hover:bg-gray-100 text-gray-600">+</button></div></div></div>`;
     });
     container.innerHTML = html;
 }
