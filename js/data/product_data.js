@@ -1,32 +1,33 @@
 window.productData = {
     'bar-bending-models': [
         {
-            model: "SBB42",
+            model: "SBB52",
+            name: "SBB52",
+            image: "./Assets/Product Images/bender.png",
+            
+            description: "High-precision bending with programmable angles for complex shapes.",
+            specs: [
+                { icon: "fa-solid fa-rotate", text: "Bend Dia: Up to 42mm" },
+                { icon: "fa-solid fa-microchip", text: "Control: Pin / Foot Pedal" },
+                { icon: "fa-solid fa-shield-halved", text: "Features: Save Angle Presets, Emergency Stop" }
+            ],
+            compare: { model: "SBB52", category: "bar-benders", "bend-dia": "Up to 42mm", control: "Pin / Foot Pedal", features: "Save Angle Presets, Emergency Stop" },
+            actions: [{ type: 'cart', name: 'SBB52' }]
+        },
+        {
+            model: "SBB42", 
             name: "SBB42",
-            image: "./Assets/bar_bender.png",
+            image: "./Assets/Product Images/sbb-42.png",
             description: "Reliable bending for stirrups and standard angles with pin-type control.",
             specs: [
                 { icon: "fa-solid fa-rotate", text: "Bend Dia: 6mm - 32mm" },
                 { icon: "fa-solid fa-microchip", text: "Control: Pin / Foot Pedal" },
-                { icon: "fa-solid fa-shield-halved", text: "Features: Emergency Stop" }
+                { icon: "fa-solid fa-shield-halved", text: "Features: Save Angle Presets, Emergency Stop" }
             ],
-            compare: { model: "SBB42", category: "bar-benders", "bend-dia": "6mm - 32mm", control: "Pin / Foot Pedal", features: "Emergency Stop" },
+            compare: { model: "SBB42", category: "bar-benders", "bend-dia": "6mm - 32mm", control: "Pin / Foot Pedal", features: "Save Angle Presets, Emergency Stop" },
             actions: [{ type: 'cart', name: 'SBB42' }]
-        },
-        {
-            model: "SBB52",
-            name: "SBB52",
-            image: "./Assets/bar_bender.png",
-            badge: "Digital Control",
-            description: "High-precision bending with programmable angles for complex shapes.",
-            specs: [
-                { icon: "fa-solid fa-rotate", text: "Bend Dia: Up to 42mm" },
-                { icon: "fa-solid fa-display", text: "Control: Digital CNC Panel" },
-                { icon: "fa-solid fa-memory", text: "Memory: Save Angle Presets" }
-            ],
-            compare: { model: "SBB52", category: "bar-benders", "bend-dia": "Up to 42mm", control: "Digital CNC Panel", features: "Save Angle Presets" },
-            actions: [{ type: 'cart', name: 'SBB52' }]
         }
+        
     ],
     'bar-cutting-models': [
         {
@@ -45,15 +46,14 @@ window.productData = {
         {
             model: "SBC42 Standard",
             name: "SBC42 Standard",
-            image: "./Assets/bar_cutter.png",
-            badge: "Best Seller",
+            image: "./Assets/Product Images/sbc.png",
             description: "The industry standard for residential and commercial construction sites.",
             specs: [
                 { icon: "fa-solid fa-ruler-combined", text: "Capacity: Up to 32mm TMT" },
                 { icon: "fa-solid fa-bolt", text: "Power: 3 KW Motor" },
                 { icon: "fa-solid fa-gauge-high", text: "Speed: 32 times/min" }
             ],
-            compare: { model: "SBC42 Standard", category: "bar-cutters", capacity: "Up to 32mm TMT", power: "3 KW Motor", gearbox: "Speed: 32 times/min" },
+            compare: { model: "SBC42 Standard", category: "bar-cutters", capacity: "Up to 32mm TMT", power: "3 KW Motor", speed: "32 times/min" },
             actions: [{ type: 'cart', name: 'SBC42 Standard' }]
         }
     ],
@@ -397,6 +397,11 @@ window.productData = {
                 name: "25MM Needle (3Mtr)", 
                 image: "./Assets/Product Images/shp25_3m.png", 
                 description: "Compact needle for handy vibrators.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 25mm" },
+                    { icon: "fa-solid fa-ruler-vertical", text: "Length: 3 Meters" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Handy Needle" }
+                ],
                 compare: { model: "Handy Needle 25mm (3M)", category: "mechanical-pokers", diameter: "25mm", length: "3 Meters", type: "Handy Needle" },
                 actions: [{ type: 'cart', name: 'Handy Needle 25mm (3M)' }] 
             },
@@ -405,6 +410,11 @@ window.productData = {
                 name: "25MM Needle (6Mtr)", 
                 image: "./Assets/Product Images/shp25_6m.png", 
                 description: "Extended reach needle for handy vibrators.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 25mm" },
+                    { icon: "fa-solid fa-ruler-vertical", text: "Length: 6 Meters" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Handy Needle" }
+                ],
                 compare: { model: "Handy Needle 25mm (6M)", category: "mechanical-pokers", diameter: "25mm", length: "6 Meters", type: "Handy Needle" },
                 actions: [{ type: 'cart', name: 'Handy Needle 25mm (6M)' }] 
             },
@@ -413,6 +423,11 @@ window.productData = {
                 name: "40MM Needle (3Mtr)", 
                 image: "./Assets/Product Images/shp40_3m.png", 
                 description: "Standard size needle for general use.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
+                    { icon: "fa-solid fa-ruler-vertical", text: "Length: 3 Meters" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Handy Needle" }
+                ],
                 compare: { model: "Handy Needle 40mm (3M)", category: "mechanical-pokers", diameter: "40mm", length: "3 Meters", type: "Handy Needle" },
                 actions: [{ type: 'cart', name: 'Handy Needle 40mm (3M)' }] 
             },
@@ -421,6 +436,11 @@ window.productData = {
                 name: "40MM Needle (6Mtr)", 
                 image: "./Assets/Product Images/shp40_6m.png", 
                 description: "Long hose needle for deep pours.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
+                    { icon: "fa-solid fa-ruler-vertical", text: "Length: 6 Meters" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Handy Needle" }
+                ],
                 compare: { model: "Handy Needle 40mm (6M)", category: "mechanical-pokers", diameter: "40mm", length: "6 Meters", type: "Handy Needle" },
                 actions: [{ type: 'cart', name: 'Handy Needle 40mm (6M)' }] 
             },
@@ -429,6 +449,11 @@ window.productData = {
                 name: "60MM Needle (3Mtr)", 
                 image: "./Assets/Product Images/shp60_3m.png", 
                 description: "Large diameter for heavy consolidation.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 60mm" },
+                    { icon: "fa-solid fa-ruler-vertical", text: "Length: 3 Meters" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Handy Needle" }
+                ],
                 compare: { model: "Handy Needle 60mm (3M)", category: "mechanical-pokers", diameter: "60mm", length: "3 Meters", type: "Handy Needle" },
                 actions: [{ type: 'cart', name: 'Handy Needle 60mm (3M)' }] 
             },
@@ -437,6 +462,11 @@ window.productData = {
                 name: "60MM Needle (6Mtr)", 
                 image: "./Assets/Product Images/shp60_6m.png", 
                 description: "Maximum reach and power.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 60mm" },
+                    { icon: "fa-solid fa-ruler-vertical", text: "Length: 6 Meters" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Handy Needle" }
+                ],
                 compare: { model: "Handy Needle 60mm (6M)", category: "mechanical-pokers", diameter: "60mm", length: "6 Meters", type: "Handy Needle" },
                 actions: [{ type: 'cart', name: 'Handy Needle 60mm (6M)' }] 
             }
@@ -447,6 +477,10 @@ window.productData = {
                 name: "25MM Needle", 
                 image: "./Assets/Product Images/shhn25.png", 
                 description: "Precision needle for high frequency motor.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 25mm" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Hand-Held" }
+                ],
                 compare: { model: "Hand-Held Needle 25mm", category: "mechanical-pokers", diameter: "25mm", type: "Hand-Held" },
                 actions: [{ type: 'cart', name: 'Hand-Held Needle 25mm' }] 
             },
@@ -455,6 +489,10 @@ window.productData = {
                 name: "40MM Needle", 
                 image: "./Assets/Product Images/shhn40.png", 
                 description: "Versatile needle for high frequency motor.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Hand-Held" }
+                ],
                 compare: { model: "Hand-Held Needle 40mm", category: "mechanical-pokers", diameter: "40mm", type: "Hand-Held" },
                 actions: [{ type: 'cart', name: 'Hand-Held Needle 40mm' }] 
             },
@@ -463,6 +501,10 @@ window.productData = {
                 name: "60MM Needle", 
                 image: "./Assets/Product Images/shhn60.png", 
                 description: "Heavy duty needle for high frequency motor.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 60mm" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Hand-Held" }
+                ],
                 compare: { model: "Hand-Held Needle 60mm", category: "mechanical-pokers", diameter: "60mm", type: "Hand-Held" },
                 actions: [{ type: 'cart', name: 'Hand-Held Needle 60mm' }] 
             }
@@ -473,6 +515,10 @@ window.productData = {
                 name: "25MM Needles", 
                 image: "./Assets/Product Images/smp25.png", 
                 description: "Robust mechanical needle for standard vibrators.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 25mm" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Mechanical" }
+                ],
                 compare: { model: "Mechanical Needle 25mm", category: "mechanical-pokers", diameter: "25mm", type: "Mechanical" },
                 actions: [{ type: 'cart', name: 'Mechanical Needle 25mm' }] 
             },
@@ -481,6 +527,10 @@ window.productData = {
                 name: "40MM Needles", 
                 image: "./Assets/Product Images/smp40.png", 
                 description: "Standard mechanical needle for efficient compaction.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Mechanical" }
+                ],
                 compare: { model: "Mechanical Needle 40mm", category: "mechanical-pokers", diameter: "40mm", type: "Mechanical" },
                 actions: [{ type: 'cart', name: 'Mechanical Needle 40mm' }] 
             },
@@ -489,6 +539,10 @@ window.productData = {
                 name: "60MM Needles", 
                 image: "./Assets/Product Images/smp60.png", 
                 description: "High capacity mechanical needle for large jobs.", 
+                specs: [
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 60mm" },
+                    { icon: "fa-solid fa-bolt", text: "Type: Mechanical" }
+                ],
                 compare: { model: "Mechanical Needle 60mm", category: "mechanical-pokers", diameter: "60mm", type: "Mechanical" },
                 actions: [{ type: 'cart', name: 'Mechanical Needle 60mm' }] 
             }
@@ -511,7 +565,7 @@ window.productData = {
         {
             model: "Mini Lift 500Kg",
             name: "500Kg Mini Lift",
-            image: "./Assets/Product Images/sml.png",
+            image: "./Assets/Product Images/sml-500.png",
             description: "Heavy-duty lifting capacity for demanding construction environments.",
             specs: [
                 { icon: "fa-solid fa-weight-hanging", text: "Capacity: 500 Kg" },
@@ -649,7 +703,7 @@ window.productData = {
             description: "",
             specs: [
                 { icon: "fa-solid fa-tag", text: "Model: SPTP" },
-                { icon: "fa-solid fa-ruler-horizontal", text: "Roller Diameter: 1000 mm" },
+                { icon: "fa-solid fa-ruler-horizontal", text: "Working Diameter: 1000 mm" },
                 { icon: "fa-solid fa-gears", text: "Drive System: Honda Engine / Equivalent" },
                 { icon: "fa-solid fa-fan", text: "No Of Blades: 4" },
                 { icon: "fa-solid fa-horse-head", text: "Engine Power: 2Hp" },
@@ -665,7 +719,7 @@ window.productData = {
             description: "",
             specs: [
                 { icon: "fa-solid fa-tag", text: "Model: SPTE" },
-                { icon: "fa-solid fa-ruler-horizontal", text: "Roller Diameter: 1000 mm" },
+                { icon: "fa-solid fa-ruler-horizontal", text: "Working Diameter: 1000 mm" },
                 { icon: "fa-solid fa-bolt", text: "Drive System: Crompton motor / Equivalent" },
                 { icon: "fa-solid fa-fan", text: "No Of Blades: 4" },
                 { icon: "fa-solid fa-horse-head", text: "Motor Power: 3Hp" },
@@ -749,7 +803,7 @@ window.productData = {
             {
                 model: "SHFS-4215",
                 name: "SHFS-4215",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/shfs-4215.png",
                 description: "High-frequency model for superior performance.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 1.5 HP" },
@@ -762,7 +816,7 @@ window.productData = {
             {
                 model: "SHFS-4210",
                 name: "SHFS-4210",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/shfs.png",
                 description: "Reliable high-frequency performance.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 1 HP" },
@@ -777,7 +831,7 @@ window.productData = {
             {
                 model: "SSV-305",
                 name: "SSV-305",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/ssv-305.png",
                 description: "Compact 3-phase model for smaller precast elements.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 0.5 HP" },
@@ -790,7 +844,7 @@ window.productData = {
             {
                 model: "SSV-310",
                 name: "SSV-310",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/ssv-310.png",
                 description: "Standard 3-phase model for general formwork.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 1 HP" },
@@ -803,7 +857,7 @@ window.productData = {
             {
                 model: "SSV-320",
                 name: "SSV-320",
-                image: "./Assets/electrical_vibrator.png",
+                image: "./Assets/Product Images/ssv-320.png",
                 description: "Powerful 3-phase motor for heavy-duty applications.",
                 specs: [
                     { icon: "fa-solid fa-bolt", text: "Power: 2 HP" },
@@ -838,7 +892,7 @@ window.productData = {
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-tag", text: "Model: SPTP" },
-                    { icon: "fa-solid fa-ruler-horizontal", text: "Roller Diameter: 1000 mm" },
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Working Diameter: 1000 mm" },
                     { icon: "fa-solid fa-gears", text: "Drive System: Honda Engine / Equivalent" },
                     { icon: "fa-solid fa-fan", text: "No Of Blades: 4" },
                     { icon: "fa-solid fa-horse-head", text: "Engine Power: 2Hp" },
@@ -850,11 +904,11 @@ window.productData = {
             {
                 model: "SPTE Electric",
                 name: "SPTE (Electric Powered)",
-                image: "./Assets/Others/logo.png",
+                image: "./Assets/Product Images/spte.png",
                 description: "",
                 specs: [
                     { icon: "fa-solid fa-tag", text: "Model: SPTE" },
-                    { icon: "fa-solid fa-ruler-horizontal", text: "Roller Diameter: 1000 mm" },
+                    { icon: "fa-solid fa-ruler-horizontal", text: "Working Diameter: 1000 mm" },
                     { icon: "fa-solid fa-bolt", text: "Drive System: Crompton motor / Equivalent" },
                     { icon: "fa-solid fa-fan", text: "No Of Blades: 4" },
                     { icon: "fa-solid fa-horse-head", text: "Motor Power: 3Hp" },
@@ -885,7 +939,7 @@ window.productData = {
         {
             model: "3HP 1PH Vibrator",
             name: "3HP 1PH Electrical Vibrators",
-            image: "./Assets/electrical_vibrator.png",
+            image: "./Assets/Product Images/sev31.png",
             description: "Single-phase 3HP motor with high centrifugal force for medium-sized pours.",
             specs: [
                 { icon: "fa-solid fa-bolt-lightning", text: "Power Output: 3 HP (approx. 2.2 kW)" },
@@ -922,7 +976,7 @@ window.productData = {
         {
             model: "2HP Vibrator",
             name: "2HP Electrical Vibrators",
-            image: "./Assets/electrical_vibrator.png",
+            image: "./Assets/Product Images/sev31.png",
             description: "Compact 2HP units ideal for small pours and repair works.",
             specs: [
                 { icon: "fa-solid fa-bolt-lightning", text: "Power Output: 2 HP (approx. 1.5 kW)" },
@@ -1011,19 +1065,19 @@ window.productData = {
     'rental-services': [
         {
             name: "Bar Bender",
-            icon: "fa-solid fa-truck-ramp-box",
+            image: "./Assets/Product Images/bender_sketch.png",
             description: "Rent bar benders, cutters, and rollers for your heavy construction needs.",
             actions: [{ type: 'rent', name: 'Bar Bender' }]
         },
         {
             name: "Bar Cutter",
-            icon: "fa-solid fa-truck-ramp-box",
+            image: "./Assets/Product Images/cutter_sketch.png",
             description: "Compactors, vibrators, and mixers available for daily or weekly rent.",
             actions: [{ type: 'rent', name: 'Bar Cutter' }]
         },
         {
             name: "Walk Behind Roller",
-            icon: "fa-solid fa-truck-ramp-box",
+            image: "./Assets/Product Images/roller_sketch.png",
             description: "Suspended platforms and material lifts available for rent.",
             actions: [{ type: 'rent', name: 'Walk Behind Roller' }]
         }
@@ -1031,19 +1085,19 @@ window.productData = {
     'maintenance-services': [
         {
             name: "Preventive Maintenance",
-            icon: "fa-solid fa-screwdriver-wrench",
+            image: "./Assets/Product Images/pms.png",
             description: "Regular check-ups to prevent breakdowns and extend equipment life.",
             actions: [{ type: 'enquire', name: 'Preventive Maintenance' }]
         },
         {
             name: "Annual Maintenance Contract",
-            icon: "fa-solid fa-screwdriver-wrench",
+            image: "./Assets/Product Images/amc.png",
             description: "Cost-effective AMC packages for complete peace of mind.",
             actions: [{ type: 'enquire', name: 'AMC' }]
         },
         {
             name: "Emergency Support",
-            icon: "fa-solid fa-screwdriver-wrench",
+            image: "./Assets/Product Images/es.png",
             description: "Breakdown support to minimize project downtime.",
             actions: [{ type: 'enquire', name: 'Emergency Support' }]
         }

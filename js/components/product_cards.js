@@ -47,16 +47,16 @@
 const lightEquipment = [
         {
             title: "Vibrators",
-            image: ["./Assets/Product Images/sdv.png", "./Assets/Product Images/sev33.png", "./Assets/Product Images/spv.png"],
-            imageWebp: ["./Assets/Product Images/sdv.webp", "./Assets/Product Images/sev33.webp", "./Assets/Product Images/spv.webp"],
+            image: ["./Assets/Product Images/sdv.png", "./Assets/Product Images/sev33.png", "./Assets/Product Images/spv.png", "./Assets/Product Images/sev31.png"],
+            imageWebp: ["./Assets/Product Images/sdv.webp", "./Assets/Product Images/sev33.webp", "./Assets/Product Images/spv.webp", "./Assets/Product Images/sev31.webp"],
             description: "A wide range of concrete vibrators for perfect consolidation.",
             features: ["High Frequency Pokers", "Electric & Petrol Engines", "Multiple Power Options"],
             link: "Product_details/Vibrators.html"
         },
         {
             title: "Mini Lift / Crane",
-            image: "./Assets/Product Images/sml.png",
-            imageWebp: "./Assets/Product Images/sml.webp",
+            image: ["./Assets/Product Images/sml.png","./Assets/Product Images/sml-500.png"],
+            imageWebp: ["./Assets/Product Images/sml.webp", "./Assets/Product Images/sml-500.webp"],
             description: "Compact mini crane for lifting materials up to 30m.",
             features: ["300Kg & 500Kg Capacity", "360 degree rotation", "Electric Motor"],
             link: "Product_details/mini_lift_models.html"
@@ -72,7 +72,7 @@ const lightEquipment = [
 
         {
             title: "Industrial Cutting Tools",
-            image: ["./Assets/Product Images/core cutter.png", "./Assets/Product Images/groove.png"],
+            image: ["./Assets/Product Images/scc-90.png","./Assets/Product Images/scc-200.png", "./Assets/Product Images/groove.png"],
             imageWebp: ["./Assets/Product Images/core cutter.webp", "./Assets/Product Images/groove.webp"],
             description: "Precision tools for groove and core cutting applications.",
             features: ["Groove Cutters", "Core Cutters", "Electric & Petrol Options"],
@@ -88,8 +88,8 @@ const lightEquipment = [
         },
         {
             title: "Surface Smootheners",
-            image: ["./Assets/Product Images/screed vibrator.png", "./Assets/Product Images/sptp.png"],
-            imageWebp: ["./Assets/Product Images/screed vibrator.webp", "./Assets/Product Images/sptp.webp"],
+            image: ["./Assets/Product Images/screed vibrator.png", "./Assets/Product Images/sptp.png", "./Assets/Product Images/spte.png"],
+            imageWebp: ["./Assets/Product Images/screed vibrator.webp", "./Assets/Product Images/sptp.webp", "./Assets/Product Images/spte.webp"],
             description: "High-quality finishing with Power Trowels and Screed Vibrators.",
             features: ["Power Trowels (Petrol/Electric)", "Screed Vibrators & Blades","Durable Build"],
             link: "Product_details/surface_smootheners.html"
@@ -104,8 +104,8 @@ const lightEquipment = [
         },
         {
             title: "Shutter Vibrators",
-            image: "./Assets/Product Images/shfs.png",
-            imageWebp: "./Assets/Product Images/shfs.webp",
+            image: ["./Assets/Product Images/shfs.png", "./Assets/Product Images/shfs-4215.png", "./Assets/Product Images/ssv-305.png", "./Assets/Product Images/ssv-310.png", "./Assets/Product Images/ssv-320.png"],
+            imageWebp: ["./Assets/Product Images/shfs.webp", "./Assets/Product Images/shfs-4215.webp", "./Assets/Product Images/ssv-305.webp", "./Assets/Product Images/ssv-310.webp", "./Assets/Product Images/ssv-320.webp"],
             description: "External vibrators for formwork, ensuring void-free concrete.",
             features: ["High Frequency Models", "3-Phase Power Options", "Durable Construction"],
             link: "Product_details/shutter_vibrator_models.html"

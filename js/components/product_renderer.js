@@ -75,11 +75,11 @@ window.createProductCard = function(product) {
     let mediaHTML;
     if (product.placeholderText) {
         mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50 text-gray-500 font-bold text-xl p-4 text-center group-hover:text-secondary transition-colors duration-300">${product.placeholderText}</div>`;
-    } else if (product.icon) {
-        mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50"><i class="${product.icon} text-6xl md:text-7xl text-gray-400 group-hover:text-secondary transition-colors duration-300"></i></div>`;
     } else if (product.image && typeof product.image === 'string') {
         const imageSrc = product.image.startsWith('http') ? product.image : rootPath + product.image.replace('./', '');
         mediaHTML = `<img onclick="openImageModal('${imageSrc}')" src="${imageSrc}" alt="${product.name}" width="600" height="400" loading="lazy" decoding="async" class="w-full h-full ${imageClass} transition-transform duration-300 group-hover:scale-110 cursor-pointer">`;
+    } else if (product.icon) {
+        mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50"><i class="${product.icon} text-6xl md:text-7xl text-gray-400 group-hover:text-secondary transition-colors duration-300"></i></div>`;
     } else {
         // Fallback for items with neither image nor icon
         mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50"><i class="fa-solid fa-image text-4xl text-gray-200"></i></div>`;
