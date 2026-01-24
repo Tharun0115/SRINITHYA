@@ -57,10 +57,10 @@ const rootPath = getRootPath(),
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
                 <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer min-w-0" id="brand-wrapper">
-                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-7 md:h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
+                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-12 md:h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
                     <div class="relative overflow-hidden pl-0 pr-1 py-1 flex-grow text-center transition-all duration-300 ease-in-out min-w-0" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
-                        <span class="text-[clamp(8px,2.7vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-nowrap drop-shadow-sm block mb-0 md:mb-2 leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
+                        <span class="text-[clamp(14px,4vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-normal md:whitespace-nowrap drop-shadow-sm block mb-0 md:mb-2 leading-tight md:leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>
                         
                         <!-- Construction Animations Layer -->
                         <div class="hidden md:block absolute inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-300 ease-in-out" id="animation-layer">
@@ -638,15 +638,14 @@ function initNavbar() {
             o.classList.add("shadow-md");
             n.classList.remove("md:grid", "md:grid-cols-1");
             n.classList.add("md:flex", "md:flex-row", "md:items-center", "md:justify-between");
-            i.classList.remove("py-2");
-            i.classList.add("py-1", "md:w-auto", "flex-shrink", "min-w-0");
-            r.classList.remove("h-7", "md:h-16");
+            i.classList.add("md:w-auto", "flex-shrink", "min-w-0");
+            r.classList.remove("h-12", "md:h-16");
             r.classList.add("h-10");
-            l.classList.remove("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
+            l.classList.remove("flex-grow", "text-center", "pl-0", "pr-1");
             l.classList.add("ml-2", "text-left");
             c.classList.add("opacity-0");
-            d.classList.remove("text-[clamp(8px,2.7vw,30px)]", "md:mb-2", "leading-none");
-            d.classList.add("text-[clamp(8px,2.2vw,25px)]", "leading-none");
+            d.classList.remove("text-[clamp(14px,4vw,30px)]", "md:mb-2");
+            d.classList.add("text-[clamp(12px,3.5vw,25px)]");
             m.classList.remove("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.add("py-1", "flex-shrink-0", "text-sm");
         } else {
@@ -654,15 +653,14 @@ function initNavbar() {
             o.classList.remove("shadow-md");
             n.classList.add("md:grid", "md:grid-cols-1");
             n.classList.remove("md:flex", "md:flex-row", "md:items-center", "md:justify-between");
-            i.classList.add("py-2");
-            i.classList.remove("py-1", "md:w-auto", "flex-shrink", "min-w-0");
-            r.classList.add("h-7", "md:h-16");
+            i.classList.remove("md:w-auto", "flex-shrink", "min-w-0");
+            r.classList.add("h-12", "md:h-16");
             r.classList.remove("h-10");
-            l.classList.add("flex-grow", "text-center", "pl-0", "pr-1", "py-1");
+            l.classList.add("flex-grow", "text-center", "pl-0", "pr-1");
             l.classList.remove("ml-2", "text-left");
             c.classList.remove("opacity-0");
-            d.classList.add("text-[clamp(8px,2.7vw,30px)]", "md:mb-2", "leading-none");
-            d.classList.remove("text-[clamp(8px,2.2vw,25px)]", "leading-none");
+            d.classList.remove("text-[clamp(12px,3.5vw,25px)]");
+            d.classList.add("text-[clamp(14px,4vw,30px)]", "md:mb-2");
             m.classList.add("w-full", "border-t", "justify-center", "py-2", "lg:gap-8");
             m.classList.remove("py-1", "flex-shrink-0", "text-sm");
         }
