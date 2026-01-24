@@ -77,7 +77,19 @@ window.createProductCard = function(product) {
         mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50 text-gray-500 font-bold text-xl p-4 text-center group-hover:text-secondary transition-colors duration-300">${product.placeholderText}</div>`;
     } else if (product.image && typeof product.image === 'string') {
         const imageSrc = product.image.startsWith('http') ? product.image : rootPath + product.image.replace('./', '');
-        mediaHTML = `<img onclick="openImageModal('${imageSrc}')" src="${imageSrc}" alt="${product.name}" width="600" height="400" loading="lazy" decoding="async" class="w-full h-full ${imageClass} transition-transform duration-300 group-hover:scale-110 cursor-pointer">`;
+        
+        // Try to use explicit WebP or infer it from the image path
+        let webpSrc = product.imageWebp ? (product.imageWebp.startsWith('http') ? product.imageWebp : rootPath + product.imageWebp.replace('./', '')) : null;
+        
+        if (!webpSrc && !imageSrc.startsWith('http')) {
+            // Infer WebP path: replace extension with .webp
+            webpSrc = imageSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+        }
+
+        const imgTag = `<img onclick="openImageModal('${imageSrc}')" src="${imageSrc}" alt="${product.name}" width="600" height="400" loading="lazy" decoding="async" class="w-full h-full ${imageClass} transition-transform duration-300 group-hover:scale-110 cursor-pointer">`;
+        
+        // Wrap in picture tag if WebP source is available (or inferred)
+        mediaHTML = webpSrc ? `<picture class="w-full h-full block"><source srcset="${webpSrc.replace(/ /g, '%20')}" type="image/webp">${imgTag}</picture>` : imgTag;
     } else if (product.icon) {
         mediaHTML = `<div class="w-full h-full flex items-center justify-center bg-gray-50"><i class="${product.icon} text-6xl md:text-7xl text-gray-400 group-hover:text-secondary transition-colors duration-300"></i></div>`;
     } else {

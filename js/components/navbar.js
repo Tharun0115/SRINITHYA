@@ -37,6 +37,16 @@ window.updateNavbarLinks = function() {
         const src = logo.getAttribute('src');
         const cleanSrc = src.replace(/^(\.\/|\.\.\/)/, '');
         logo.setAttribute('src', newRootPath + cleanSrc);
+        
+        // Also update the source tag if it exists (for WebP)
+        const picture = logo.closest('picture');
+        if (picture) {
+            const source = picture.querySelector('source');
+            if (source && source.srcset) {
+                const cleanSrcset = source.srcset.replace(/^(\.\/|\.\.\/)/, '');
+                source.srcset = newRootPath + cleanSrcset;
+            }
+        }
     }
 
     // Update Desktop Links
@@ -57,7 +67,10 @@ const rootPath = getRootPath(),
             <div class="flex flex-col md:grid md:grid-cols-1 transition-all duration-300 ease-in-out" id="nav-container">
                 <div class="flex justify-between items-center py-2 transition-all duration-300 ease-in-out w-full" id="top-bar">
                 <a href="${rootPath}index.html" class="flex items-center relative group flex-1 transition-all duration-300 ease-in-out cursor-pointer min-w-0" id="brand-wrapper">
-                    <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-12 md:h-16 w-auto mr-1 relative z-20 transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
+                    <picture class="mr-1 relative z-20">
+                        <source srcset="${rootPath}Assets/Others/logo.webp" type="image/webp">
+                        <img src="${rootPath}Assets/Others/logo.png" alt="Srinithya Engineering Logo" class="h-12 md:h-16 w-auto transition-all duration-300 ease-in-out" width="64" height="64" id="nav-logo">
+                    </picture>
                     <div class="relative overflow-hidden pl-0 pr-1 py-1 flex-grow text-center transition-all duration-300 ease-in-out min-w-0" id="name-strip">
                         <!-- Updated to font-black (weight 900) for maximum thickness -->
                         <span class="text-[clamp(14px,4vw,30px)] text-primary relative z-10 transition-all duration-300 ease-in-out whitespace-normal md:whitespace-nowrap drop-shadow-sm block mb-0 md:mb-2 leading-tight md:leading-none w-full pr-1" id="company-name">SRINITHYA ENGINEERING PRIVATE LIMITED</span>

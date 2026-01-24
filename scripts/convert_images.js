@@ -14,22 +14,49 @@ try {
 
 const assetsDir = path.join(__dirname, '../Assets');
 
-console.log(`Scanning directory: ${assetsDir}...`);
+if (!fs.existsSync(assetsDir)) {
+    console.error(`\x1b[31mError: Assets directory not found at ${assetsDir}\x1b[0m`);
+    process.exit(1);
+}
 
-fs.readdir(assetsDir, (err, files) => {
-    if (err) return console.error('Unable to scan directory:', err);
+console.log(`Starting scan of: ${assetsDir}`);
 
-    files.forEach((file) => {
-        const ext = path.extname(file).toLowerCase();
-        if (['.png', '.jpg', '.jpeg'].includes(ext)) {
-            const inputFile = path.join(assetsDir, file);
-            const outputFile = path.join(assetsDir, path.basename(file, ext) + '.webp');
+function processDirectory(directory) {
+    fs.readdir(directory, { withFileTypes: true }, (err, entries) => {
+        if (err) return console.error(`Unable to scan directory ${directory}:`, err);
 
-            sharp(inputFile)
-                .webp({ quality: 80 })
-                .toFile(outputFile)
-                .then(() => console.log(`\x1b[32mConverted:\x1b[0m ${file} -> ${path.basename(outputFile)}`))
-                .catch(err => console.error(`\x1b[31mError converting ${file}:\x1b[0m`, err));
-        }
+        console.log(`Scanning ${path.basename(directory)}... Found ${entries.length} items.`);
+
+        entries.forEach((entry) => {
+            const fullPath = path.join(directory, entry.name);
+
+            if (entry.isDirectory()) {
+                console.log(`Entering subdirectory: ${entry.name}`);
+                processDirectory(fullPath);
+            } else {
+                const ext = path.extname(entry.name).toLowerCase();
+                if (['.png', '.jpg', '.jpeg'].includes(ext)) {
+                    const outputFile = path.join(directory, path.parse(entry.name).name + '.webp');
+
+                    // Skip if WebP exists and is newer than the source image
+                    if (fs.existsSync(outputFile)) {
+                        const srcStat = fs.statSync(fullPath);
+                        const destStat = fs.statSync(outputFile);
+                        if (destStat.mtime > srcStat.mtime) {
+                            console.log(`Skipped (Up to date): ${entry.name}`);
+                            return;
+                        }
+                    }
+
+                    sharp(fullPath)
+                        .webp({ quality: 80 })
+                        .toFile(outputFile)
+                        .then(() => console.log(`\x1b[32mConverted:\x1b[0m ${entry.name}`))
+                        .catch(err => console.error(`\x1b[31mFailed to convert ${entry.name}:\x1b[0m`, err));
+                }
+            }
+        });
     });
-});
+}
+
+processDirectory(assetsDir);

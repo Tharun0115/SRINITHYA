@@ -20,7 +20,7 @@
             title: "Suspended Scaffold Solution",
             image: ["./Assets/Product Images/srp.png", "./Assets/Product Images/srp2.webp"],
             imageWebp: ["./Assets/Product Images/srp.webp", "./Assets/Product Images/srp2.webp"],
-            description: "Customizable high-safety suspended platforms for facade work./n Hello",
+            description: "Customizable high-safety suspended platforms for facade work.",
             features: ["Model: ZLP800", "Customizable Platform Size", "Adjustable Rope Length"],
             link: "Product_details/suspended_rope_platform.html"
         },
@@ -136,7 +136,7 @@ const lightEquipment = [
         {
             title: "Industrial Cutting Tools",
             image: ["./Assets/Product Images/scc-90.png","./Assets/Product Images/scc-200.png", "./Assets/Product Images/groove.png"],
-            imageWebp: ["./Assets/Product Images/core cutter.webp", "./Assets/Product Images/groove.webp"],
+            // imageWebp removed to allow auto-inference (scc-90.webp, scc-200.webp, groove.webp)
             description: "Precision tools for groove and core cutting applications.",
             features: ["Groove Cutters", "Core Cutters", "Electric & Petrol Options"],
             link: "Product_details/industrial_cutting_tools.html"
@@ -189,12 +189,18 @@ const lightEquipment = [
                 let imgSrc = img.startsWith('./') ? rootPath + img.substring(2) : img;
                 let webpSrc = webpImages[index] ? (webpImages[index].startsWith('./') ? rootPath + webpImages[index].substring(2) : webpImages[index]) : null;
                 
+                // Auto-infer WebP if not explicitly provided
+                if (!webpSrc && imgSrc && !imgSrc.startsWith('data:') && !imgSrc.startsWith('http')) {
+                    webpSrc = imgSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+                }
+
                 const isFirst = index === 0;
                 // Use a transparent pixel as placeholder for hidden images to prevent immediate loading
                 const placeholder = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
                 
                 const srcAttr = isFirst ? `src="${imgSrc}"` : `src="${placeholder}" data-src="${imgSrc}"`;
-                const srcsetAttr = isFirst ? `srcset="${webpSrc}"` : `data-srcset="${webpSrc}"`;
+                const encodedWebpSrc = webpSrc ? webpSrc.replace(/ /g, '%20') : '';
+                const srcsetAttr = isFirst ? `srcset="${encodedWebpSrc}"` : `data-srcset="${encodedWebpSrc}"`;
 
                 const singleImgTag = `<img ${srcAttr} alt="${product.title}" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">`;
 
@@ -228,10 +234,15 @@ const lightEquipment = [
                 webpSrc = rootPath + webpSrc.substring(2);
             }
 
+            // Auto-infer WebP if not explicitly provided
+            if (!webpSrc && imgSrc && !imgSrc.startsWith('data:') && !imgSrc.startsWith('http')) {
+                webpSrc = imgSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+            }
+
             const singleImgTag = `<img onclick="openImageModal('${imgSrc}')" src="${imgSrc}" alt="${product.title}" loading="lazy" decoding="async" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 cursor-pointer" width="300" height="200">`;
 
             imageHTML = webpSrc
-                ? `<picture class="w-full h-full block"><source srcset="${webpSrc}" type="image/webp">${singleImgTag}</picture>`
+                ? `<picture class="w-full h-full block"><source srcset="${webpSrc.replace(/ /g, '%20')}" type="image/webp">${singleImgTag}</picture>`
                 : singleImgTag;
         }
 
