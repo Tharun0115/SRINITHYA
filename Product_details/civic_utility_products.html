@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Utility Products - Srinithya Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#d97706',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            // Replace with your actual public key if needed, or ensure it's loaded globally
+            // emailjs.init("YOUR_PUBLIC_KEY"); 
+        })();
+    </script>
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body class="bg-slate-50">
+    <!-- Navbar will be injected here -->
+
+    <main class="pt-36 md:pt-48 pb-12 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <nav class="flex mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="../index.html" class="inline-flex items-center hover:text-primary">
+                            <i class="fa-solid fa-home mr-2"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-gray-400 mx-2"></i>
+                            <a href="../index.html#products" class="hover:text-primary">Products</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-chevron-right text-gray-400 mx-2"></i>
+                            <span class="text-gray-800 font-medium">Civic Utility Products</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Civic Utility Products</h1>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">High-quality utility tools and equipment for municipal and construction needs.</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="civic-products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-product-key="civic-utility-products">
+                <!-- Products will be rendered here by product_renderer.js -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer will be injected here -->
+
+    <!-- Scripts -->
+    <script src="../js/data/product_data.js"></script>
+    <script src="../js/components/navbar.js"></script>
+    <script src="../js/components/footer.js"></script>
+    <script src="../js/components/whatsapp.js"></script>
+    <script src="../js/components/product_renderer.js"></script>
+    <script src="../js/core/cart.js"></script>
+    <script src="../js/core/router.js"></script>
+    <script src="../js/core/search.js"></script>
+</body>
+</html>

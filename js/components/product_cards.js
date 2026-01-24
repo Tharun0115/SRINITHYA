@@ -1,14 +1,6 @@
 (function() {
     const heavyMachinery = [
         {
-            title: "Bar Cutting Machine",
-            image: "./Assets/Product Images/sbc.png",
-            imageWebp: "./Assets/Product Images/sbc.webp",
-            description: "Precise cutting for TMT bars up to 40mm. Low noise, high efficiency.",
-            features: ["Heavy Duty Gearbox", "ISO Certified Components", "Low Noise Operation"],
-            link: "Product_details/bar_cutting_models.html"
-        },
-        {
             title: "Bar Bending Machine",
             image: "./Assets/Product Images/bender.png",
             imageWebp: "./Assets/Product Images/bender.webp",
@@ -17,12 +9,12 @@
             link: "Product_details/bar_bending_models.html"
         },
         {
-            title: "Scrap Straightener",
-            image: "./Assets/Product Images/sss.png",
-            imageWebp: "./Assets/Product Images/sss.webp",
-            description: "Now your scrap is no more scrap.",
-            features: ["Multiple models", "Overload Protection", "High Efficiency"],
-            link: "Product_details/scrap_straightener_models.html"
+            title: "Bar Cutting Machine",
+            image: "./Assets/Product Images/sbc.png",
+            imageWebp: "./Assets/Product Images/sbc.webp",
+            description: "Precise cutting for TMT bars up to 40mm. Low noise, high efficiency.",
+            features: ["Heavy Duty Gearbox", "ISO Certified Components", "Low Noise Operation"],
+            link: "Product_details/bar_cutting_models.html"
         },
         {
             title: "Suspended Scaffold Solution",
@@ -31,6 +23,14 @@
             description: "Customizable high-safety suspended platforms for facade work./n Hello",
             features: ["Model: ZLP800", "Customizable Platform Size", "Adjustable Rope Length"],
             link: "Product_details/suspended_rope_platform.html"
+        },
+        {
+            title: "Scrap Straightener",
+            image: "./Assets/Product Images/sss.png",
+            imageWebp: "./Assets/Product Images/sss.webp",
+            description: "Now your scrap is no more scrap.",
+            features: ["Multiple models", "Overload Protection", "High Efficiency"],
+            link: "Product_details/scrap_straightener_models.html"
         },
         {
             title: "Road Rollers",
@@ -46,12 +46,60 @@
 
 const lightEquipment = [
         {
+            title: "Portable Bar Equipment",
+            image: ["./Assets/Product Images/spb.png", "./Assets/Product Images/spc.png"],
+            imageWebp: ["./Assets/Product Images/spb.webp", "./Assets/Product Images/spc.webp"],
+            description: "Lightweight, on-site solutions for rebar cutting and bending.",
+            features: ["Portable Cutters up to 32mm", "Portable Benders up to 32mm", "Durable Construction"],
+            link: "Product_details/portable_bar_processing_models.html"
+        },
+        {
+            title: "High Frequency Converters",
+            image: ["./Assets/Product Images/shfc35.png", "./Assets/Product Images/shfc90.png"],
+            imageWebp: ["./Assets/Product Images/shfc35.webp", "./Assets/Product Images/shfc90.webp"],
+            description: "Reliable power conversion for high-frequency concrete vibrators.",
+            features: ["2 & 4 Outlet Models", "Converts 415V to 42V/200Hz", "Robust Design"],
+            link: "Product_details/high_frequency_converter_models.html"
+        },
+        {
+            title: "High Frequency Pokers",
+            image: ["./Assets/Product Images/shfn60_12m.png", "./Assets/Product Images/shfn40_12m.png", "./Assets/Product Images/shfn60_5m.png", "./Assets/Product Images/shfn40_5m.png","./Assets/Product Images/shiv40.png", "./Assets/Product Images/shiv60.png"],
+            imageWebp: ["./Assets/Product Images/60hf.webp", "./Assets/Product Images/40hf.webp", "./Assets/Product Images/shfn60_5m.webp", "./Assets/Product Images/shfn40_5m.webp", "./Assets/Product Images/shiv40.webp", "./Assets/Product Images/shiv60.webp"],
+            description: "Internal concrete vibration needles for superior consolidation.",
+            features: ["40mm & 60mm Diameters", "Hose lengths up to 12 meters", "Multiple Power Options"],
+            link: "Product_details/high_frequency_poker_models.html"
+        },
+        {
             title: "Vibrators",
             image: ["./Assets/Product Images/sdv.png", "./Assets/Product Images/sev33.png", "./Assets/Product Images/spv.png", "./Assets/Product Images/sev31.png"],
             imageWebp: ["./Assets/Product Images/sdv.webp", "./Assets/Product Images/sev33.webp", "./Assets/Product Images/spv.webp", "./Assets/Product Images/sev31.webp"],
             description: "A wide range of concrete vibrators for perfect consolidation.",
             features: ["High Frequency Pokers", "Electric & Petrol Engines", "Multiple Power Options"],
             link: "Product_details/Vibrators.html"
+        },
+        {
+            title: "Mechanical Pokers",
+            image: ["./Assets/Product Images/smp25.png", "./Assets/Product Images/smp40.png", "./Assets/Product Images/smp60.png"],
+            imageWebp: ["./Assets/Product Images/smp25.webp", "./Assets/Product Images/smp40.webp", "./Assets/Product Images/smp60.webp"],
+            description: "High-quality vibration needles for various applications.",
+            features: ["Handy & Hand-Held Needles", "Mechanical Needles", "Durable Construction"],
+            link: "Product_details/mechanical_poker_models.html"
+        },
+        {
+            title: "Shutter Vibrators",
+            image: ["./Assets/Product Images/shfs.png", "./Assets/Product Images/shfs-4215.png", "./Assets/Product Images/ssv-305.png", "./Assets/Product Images/ssv-310.png", "./Assets/Product Images/ssv-320.png"],
+            imageWebp: ["./Assets/Product Images/shfs.webp", "./Assets/Product Images/shfs-4215.webp", "./Assets/Product Images/ssv-305.webp", "./Assets/Product Images/ssv-310.webp", "./Assets/Product Images/ssv-320.webp"],
+            description: "External vibrators for formwork, ensuring void-free concrete.",
+            features: ["High Frequency Models", "3-Phase Power Options", "Durable Construction"],
+            link: "Product_details/shutter_vibrator_models.html"
+        },
+        {
+            title: "Handy Vibrator Solution",
+            image: ["./Assets/Product Images/shm800.png", "./Assets/Product Images/shm1200.png", "./Assets/Product Images/shm1600.png"],
+            imageWebp: ["./Assets/Product Images/shm800.webp", "./Assets/Product Images/shm1200.webp", "./Assets/Product Images/shm1600.webp"],
+            description: "Portable and efficient vibration solutions.",
+            features: ["Hand Held Motors", "800W - 1600W Options", "High Frequency Vibrators"],
+            link: "Product_details/handy_vibration_models.html"
         },
         {
             title: "Mini Lift / Crane",
@@ -68,15 +116,6 @@ const lightEquipment = [
             description: "Safe and stable platforms for elevated work.",
             features: ["Max Height: 14m", "Battery / Electric", "Hydraulic Operation"],
             link: "Product_details/scissorlift_models.html"
-        },
-
-        {
-            title: "Industrial Cutting Tools",
-            image: ["./Assets/Product Images/scc-90.png","./Assets/Product Images/scc-200.png", "./Assets/Product Images/groove.png"],
-            imageWebp: ["./Assets/Product Images/core cutter.webp", "./Assets/Product Images/groove.webp"],
-            description: "Precision tools for groove and core cutting applications.",
-            features: ["Groove Cutters", "Core Cutters", "Electric & Petrol Options"],
-            link: "Product_details/industrial_cutting_tools.html"
         },
         {
             title: "Plate Compactors",
@@ -95,28 +134,20 @@ const lightEquipment = [
             link: "Product_details/surface_smootheners.html"
         },
         {
+            title: "Industrial Cutting Tools",
+            image: ["./Assets/Product Images/scc-90.png","./Assets/Product Images/scc-200.png", "./Assets/Product Images/groove.png"],
+            imageWebp: ["./Assets/Product Images/core cutter.webp", "./Assets/Product Images/groove.webp"],
+            description: "Precision tools for groove and core cutting applications.",
+            features: ["Groove Cutters", "Core Cutters", "Electric & Petrol Options"],
+            link: "Product_details/industrial_cutting_tools.html"
+        },
+        {
             title: "Concrete Handling Equipment",
             image: ["./Assets/Product Images/scme.png", "./Assets/Product Images/scpb.png", "./Assets/Product Images/scme-220.png"],
             imageWebp: ["./Assets/Product Images/scme.webp", "./Assets/Product Images/scpb.webp"],
             description: "Portable 1-bag and 2-bag mixers for any site.",
             features: ["Heavy-Duty Chassis", "Electric & Diesel Options", "Easy Mobility"],
             link: "Product_details/concrete_mixer_models.html"
-        },
-        {
-            title: "Shutter Vibrators",
-            image: ["./Assets/Product Images/shfs.png", "./Assets/Product Images/shfs-4215.png", "./Assets/Product Images/ssv-305.png", "./Assets/Product Images/ssv-310.png", "./Assets/Product Images/ssv-320.png"],
-            imageWebp: ["./Assets/Product Images/shfs.webp", "./Assets/Product Images/shfs-4215.webp", "./Assets/Product Images/ssv-305.webp", "./Assets/Product Images/ssv-310.webp", "./Assets/Product Images/ssv-320.webp"],
-            description: "External vibrators for formwork, ensuring void-free concrete.",
-            features: ["High Frequency Models", "3-Phase Power Options", "Durable Construction"],
-            link: "Product_details/shutter_vibrator_models.html"
-        },
-        {
-            title: "Portable Bar Equipment",
-            image: ["./Assets/Product Images/spb.png", "./Assets/Product Images/spc.png"],
-            imageWebp: ["./Assets/Product Images/spb.webp", "./Assets/Product Images/spc.webp"],
-            description: "Lightweight, on-site solutions for rebar cutting and bending.",
-            features: ["Portable Cutters up to 32mm", "Portable Benders up to 32mm", "Durable Construction"],
-            link: "Product_details/portable_bar_processing_models.html"
         },
         {
             title: "Dewatering Pumps",
@@ -127,44 +158,20 @@ const lightEquipment = [
             link: "Product_details/dewatering_pump.html"
         },
         {
-            title: "High Frequency Pokers",
-            image: ["./Assets/Product Images/shfn60_12m.png", "./Assets/Product Images/shfn40_12m.png", "./Assets/Product Images/shfn60_5m.png", "./Assets/Product Images/shfn40_5m.png","./Assets/Product Images/shiv40.png", "./Assets/Product Images/shiv60.png"],
-            imageWebp: ["./Assets/Product Images/60hf.webp", "./Assets/Product Images/40hf.webp", "./Assets/Product Images/shfn60_5m.webp", "./Assets/Product Images/shfn40_5m.webp", "./Assets/Product Images/shiv40.webp", "./Assets/Product Images/shiv60.webp"],
-            description: "Internal concrete vibration needles for superior consolidation.",
-            features: ["40mm & 60mm Diameters", "Hose lengths up to 12 meters", "Multiple Power Options"],
-            link: "Product_details/high_frequency_poker_models.html"
-        },
-        {
-            title: "High Frequency Converters",
-            image: ["./Assets/Product Images/shfc35.png", "./Assets/Product Images/shfc90.png"],
-            imageWebp: ["./Assets/Product Images/shfc35.webp", "./Assets/Product Images/shfc90.webp"],
-            description: "Reliable power conversion for high-frequency concrete vibrators.",
-            features: ["2 & 4 Outlet Models", "Converts 415V to 42V/200Hz", "Robust Design"],
-            link: "Product_details/high_frequency_converter_models.html"
-        },
-        {
-            title: "Handy Vibrator Solution",
-            image: ["./Assets/Product Images/shm800.png", "./Assets/Product Images/shm1200.png", "./Assets/Product Images/shm1600.png"],
-            imageWebp: ["./Assets/Product Images/shm800.webp", "./Assets/Product Images/shm1200.webp", "./Assets/Product Images/shm1600.webp"],
-            description: "Portable and efficient vibration solutions.",
-            features: ["Hand Held Motors", "800W - 1600W Options", "High Frequency Vibrators"],
-            link: "Product_details/handy_vibration_models.html"
-        },
-        {
-            title: "Mechanical Pokers",
-            image: ["./Assets/Product Images/smp25.png", "./Assets/Product Images/smp40.png", "./Assets/Product Images/smp60.png"],
-            imageWebp: ["./Assets/Product Images/smp25.webp", "./Assets/Product Images/smp40.webp", "./Assets/Product Images/smp60.webp"],
-            description: "High-quality vibration needles for various applications.",
-            features: ["Handy & Hand-Held Needles", "Mechanical Needles", "Durable Construction"],
-            link: "Product_details/mechanical_poker_models.html"
-        },
-        {
             title: "Prefab. Structures",
             image: ["./Assets/Product Images/cabin.png", "./Assets/Product Images/container.png", "./Assets/Product Images/toilet.png"],
             imageWebp: ["./Assets/Product Images/cabin.webp", "./Assets/Product Images/container.webp", "./Assets/Product Images/toilet.webp"],
             description: "Customizable portable cabins, containers, and toilets.",
             features: ["Portable Office Cabins", "Shipping Containers", "FRP Toilets"],
             link: "Product_details/prefab_structures.html"
+        },
+        {
+            title: "Civic Utility Products",
+            image: ["./Assets/Product Images/heavybarrow.png", "./Assets/Product Images/screener.png", "./Assets/Product Images/fogger.png", "./Assets/Product Images/welding.png","./Assets/Product Images/weights.png"],
+            imageWebp: ["./Assets/Product Images/heavybarrow.webp", "./Assets/Product Images/screener.webp", "./Assets/Product Images/fogger.webp", "./Assets/Product Images/welding.webp","./Assets/Product Images/weights.webp"],
+            description: "Essential utility tools for civic maintenance and construction.",
+            features: ["Wheel Barrows", "Sand Screeners", "Fogger Machines", "Welding Machines", "Weights & Measures"],
+            link: "Product_details/civic_utility_products.html"
         }
     ];
 

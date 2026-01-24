@@ -1136,5 +1136,59 @@ window.productData = {
             ],
             actions: [{ type: 'enquire' }]
         }
+    ],
+    'civic-utility-products': [
+        {
+            name: "Wheel Barrow",
+            image: "./Assets/Product Images/heavybarrow.png",
+            description: "Heavy-duty wheel barrow for transporting construction materials and debris.",
+            specs: [
+                { icon: "fa-solid fa-cart-flatbed", text: "Capacity: 100 Litres" },
+                { icon: "fa-solid fa-weight-hanging", text: "Load: Up to 150 Kg" },
+                { icon: "fa-solid fa-circle", text: "Wheel: Pneumatic / Solid Rubber" }
+            ],
+            actions: [{ type: 'cart', name: 'Wheel Barrow' }]
+        },
+        {
+            name: "Sand Screener",
+            image: "./Assets/Product Images/screener.png",
+            description: "Electric sand screening machine for filtering fine sand from gravel.",
+            specs: [
+                { icon: "fa-solid fa-filter", text: "Mesh Size: Customizable" },
+                { icon: "fa-solid fa-bolt", text: "Motor: 1 HP Electric" },
+                { icon: "fa-solid fa-rotate", text: "Operation: Vibratory" }
+            ],
+            actions: [{ type: 'cart', name: 'Sand Screener' }]
+        },
+        {
+            name: "Fogger Machine",
+            image: "./Assets/Product Images/fogger.png",
+            description: "Thermal fogging machine for mosquito control and sanitation.",
+            specs: [
+                { icon: "fa-solid fa-spray-can-sparkles", text: "Tank: 5 Litres" },
+                { icon: "fa-solid fa-gas-pump", text: "Fuel: Petrol / Electric" }
+            ],
+            actions: [{ type: 'cart', name: 'Fogger Machine' }]
+        },
+        {
+            name: "Welding Machine",
+            image: "./Assets/Product Images/welding.png",
+            description: "Portable inverter welding machine for site fabrication.",
+            specs: [
+                { icon: "fa-solid fa-fire-burner", text: "Current: 200A - 400A" },
+                { icon: "fa-solid fa-plug", text: "Type: Inverter / Arc" }
+            ],
+            actions: [{ type: 'cart', name: 'Welding Machine' }]
+        },
+        {
+            name: "Cast Iron Weights",
+            image: "./Assets/Product Images/weights.png",
+            description: "Standard cast iron test weights for load testing and calibration.",
+            specs: [
+                { icon: "fa-solid fa-weight-hanging", text: "Range: 5kg - 50kg" },
+                { icon: "fa-solid fa-cube", text: "Material: Cast Iron" }
+            ],
+            actions: [{ type: 'cart', name: 'Cast Iron Weights' }]
+        }
     ]
 };
