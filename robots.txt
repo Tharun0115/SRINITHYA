@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://srinithyaepl.in/sitemap.xml
