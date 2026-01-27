@@ -203,9 +203,6 @@ const rootPath = getRootPath(),
                     </div>
 
                     <a href="${rootPath}index.html#contact" class="bg-primary text-white px-5 py-2 rounded hover:bg-blue-800 transition">Get in Touch</a>
-                    <button onclick="toggleSearch()" class="text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="Search Products">
-                        <i class="fa-solid fa-magnifying-glass text-xl"></i>
-                    </button>
                     <button onclick="toggleCart()" class="relative text-gray-700 hover:text-secondary font-medium px-2 py-1 ml-2" title="View Selection Tray">
                         <i class="fa-solid fa-shopping-cart text-2xl"></i>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-secondary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
@@ -262,10 +259,6 @@ const rootPath = getRootPath(),
                     </div>
                 </div>
                 <a href="${rootPath}index.html#contact" class="block text-primary font-bold hover:bg-gray-50 px-3 py-3 rounded mobile-link">Get in Touch</a>
-                <button onclick="toggleSearch()" class="w-full flex items-center justify-between text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">
-                    <span>Search Products</span>
-                    <i class="fa-solid fa-magnifying-glass text-xl mr-2"></i>
-                </button>
                 <button onclick="toggleCart()" class="w-full flex items-center justify-between text-gray-700 hover:text-secondary hover:bg-gray-50 font-medium px-3 py-3 rounded mobile-link">
                     <span>View Selection Tray</span>
                     <div class="relative mr-2">
@@ -351,22 +344,6 @@ const rootPath = getRootPath(),
         </div>
     </div>
 `,
-    searchModalHTML = `
-    <div id="search-modal" class="fixed inset-0 z-[90] hidden bg-black/60 backdrop-blur-sm transition-opacity" onclick="if(event.target === this) toggleSearch()">
-        <div class="absolute top-0 left-0 w-full bg-white shadow-2xl transform transition-transform duration-300 -translate-y-full" id="search-panel">
-            <div class="max-w-4xl mx-auto p-6">
-                <div class="relative flex items-center">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 text-gray-400 text-xl"></i>
-                    <input type="text" id="global-search-input" class="w-full pl-12 pr-12 py-4 text-xl border-b-2 border-gray-100 focus:border-secondary focus:outline-none bg-transparent" placeholder="Search for products (e.g., Bar Bender, Mixer)..." autocomplete="off">
-                    <button onclick="toggleSearch()" class="absolute right-0 p-2 text-gray-400 hover:text-red-500 transition-colors">
-                        <i class="fa-solid fa-xmark text-2xl"></i>
-                    </button>
-                </div>
-                <div id="search-results" class="mt-4 max-h-[60vh] overflow-y-auto hidden custom-scrollbar"></div>
-            </div>
-        </div>
-    </div>
-`,
     scrollButtonsHTML = `
     <div id="back-to-top-container" class="fixed bottom-24 right-7 z-40 hidden md:flex flex-col gap-3 transition-opacity duration-300 opacity-0 pointer-events-none">
         <div class="relative group">
@@ -414,23 +391,6 @@ window.openEmptyCartModal = function() {
 window.closeEmptyCartModal = function() {
     const modal = document.getElementById('empty-cart-modal');
     if (modal) modal.classList.add('hidden');
-}
-
-window.toggleSearch = function() {
-    const modal = document.getElementById('search-modal');
-    const panel = document.getElementById('search-panel');
-    const input = document.getElementById('global-search-input');
-    
-    if (modal.classList.contains('hidden')) {
-        modal.classList.remove('hidden');
-        setTimeout(() => {
-            panel.classList.remove('-translate-y-full');
-            if(input) input.focus();
-        }, 10);
-    } else {
-        panel.classList.add('-translate-y-full');
-        setTimeout(() => modal.classList.add('hidden'), 300);
-    }
 }
 
 function initScrollButtons() {
@@ -727,7 +687,7 @@ function initNavbar() {
     })
 }
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartHTML), document.body.insertAdjacentHTML("beforeend", searchModalHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", emptyCartModalHTML), document.body.insertAdjacentHTML("beforeend", nameInputModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation(), initScrollSpy();
+    document.body.insertAdjacentHTML("afterbegin", navbarHTML), document.body.insertAdjacentHTML("beforeend", cartHTML), document.body.insertAdjacentHTML("beforeend", clearCartModalHTML), document.body.insertAdjacentHTML("beforeend", emptyCartModalHTML), document.body.insertAdjacentHTML("beforeend", nameInputModalHTML), document.body.insertAdjacentHTML("beforeend", scrollButtonsHTML), initNavbar(), initScrollButtons(), initSmoothScroll(), initCartAnimation(), initScrollSpy();
 });
 
 // Loader Logic
