@@ -270,19 +270,6 @@ window.productData = {
                 actions: [{ type: 'cart', name: 'SHFN 60 (5Mtr)' }]
             },
             {
-                model: "SHFN 60 (10Mtr)",
-                name: "SHFN 60 - 10Mtr Hose",
-                image: "./Assets/electrical_vibrator.png",
-                description: "",
-                specs: [
-                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 58mm" },
-                    { icon: "fa-solid fa-ruler-vertical", text: "Hose Length: 10 Meters" },
-                    { icon: "fa-solid fa-bolt", text: "Voltage: 42V (200Hz)" }
-                ],
-                compare: { model: "SHFN 60 (10Mtr)", category: "high-frequency-poker", diameter: "58mm", length: "10 Meters", voltage: "42V", frequency: "200Hz" },
-                actions: [{ type: 'cart', name: 'SHFN 60 (10Mtr)' }]
-            },
-            {
                 model: "SHFN 60 (12Mtr)",
                 name: "SHFN 60 - 12Mtr Hose",
                 image: "./Assets/Product Images/shfn60_12m.png",
@@ -306,18 +293,6 @@ window.productData = {
                 ],
                 compare: { model: "40MM Needle 5Mtr", category: "high-frequency-poker", diameter: "40mm", length: "5 Meters" },
                 actions: [{ type: 'cart', name: '40MM Needle 5Mtr' }]
-            },
-            {
-                model: "40MM Needle 10Mtr",
-                name: "40MM Needle - 10Mtr Hose",
-                image: "./Assets/electrical_vibrator.png",
-                description: "",
-                specs: [
-                    { icon: "fa-solid fa-ruler-horizontal", text: "Diameter: 40mm" },
-                    { icon: "fa-solid fa-ruler-vertical", text: "Hose Length: 10 Meters" }
-                ],
-                compare: { model: "40MM Needle 10Mtr", category: "high-frequency-poker", diameter: "40mm", length: "10 Meters" },
-                actions: [{ type: 'cart', name: '40MM Needle 10Mtr' }]
             },
             {
                 model: "40MM Needle 12Mtr",
